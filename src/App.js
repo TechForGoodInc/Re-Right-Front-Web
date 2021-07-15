@@ -8,6 +8,8 @@ import SignUpPage from './pages/signUpPage';
 import ForgotPasswordPage from './pages/forgotPasswordPage';
 import HomePageLoggedIn from './pages/homePageLoggedIn';
 
+import ExamplePage from './pages/examplePage';
+
 
 class App extends Component {
     render() {
@@ -19,6 +21,8 @@ class App extends Component {
                     <Route exact path="/signUp" component={SignUpPage} />
                     <Route exact path="/forgotPassword" component={ForgotPasswordPage} />
                     <Route exact path="/home" component={HomePageLoggedIn}/>
+
+                    <Route exact path="/example" component={ExamplePage}/>
                 </Switch>
             </Router>
         );
