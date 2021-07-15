@@ -3,17 +3,31 @@ import NavBar from '../components/navbar'
 import Counters from '../components/counters';
 import {Link} from 'react-router-dom';
 
+// ExamplePage is an example of a "controlling component", while counters and counter are
+// "controlled components" (all of their state and data is controlled / passed by ExamplePage)
 class ExamplePage extends Component {
     state = { 
         counters: [
             {id: 1, value: 0},
-            {id: 2, value: 0},
-            {id: 3, value: 0},
-            {id: 4, value: 4}
+            {id: 2, value: 1},
+            {id: 3, value: 2},
+            {id: 4, value: 3}
         ]
      }
 
-    handleReset = () => {
+    handleResetList = () => {
+        // Resets all ORIGINAL counters to start state (deleted ones come back)
+        const counters = [
+            {id: 1, value: 0},
+            {id: 2, value: 1},
+            {id: 3, value: 2},
+            {id: 4, value: 3}
+        ]
+        this.setState({counters})
+    }
+
+    handleResetCount = () => {
+        // Resets all REMAINING counters to zero (deleted ones stay deleted)
         const counters = this.state.counters.map(c => {
             c.value = 0;
             return c;
@@ -42,12 +56,14 @@ class ExamplePage extends Component {
                 totalCounters={this.state.counters.filter(c => c.value > 0).length}/>
                 <main className="container">
                     <Counters
+                        // All data and functions needed by controlled components must be passed
+                        // to them through "props"
                         counters={this.state.counters}
-                        onReset={this.handleReset}
+                        onResetCount={this.handleResetCount}
+                        onResetList={this.handleResetList}
                         onIncrement={this.handleIncrement}
                         onDelete={this.handleDelete}/>
                 </main>
-                <Link to='/'>Back to Home</Link>
             </React.Fragment>
             
         );

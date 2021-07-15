@@ -8,9 +8,13 @@ class Counters extends Component {
         console.log(this.props);
         return (
         <div>
-            <button onClick={this.props.onReset}
+            <button onClick={this.props.onResetList}
                 className="btn btn-primary btn-sm m-2">
-                Reset
+                Reset List
+            </button>
+            <button onClick={this.props.onResetCount}
+                className="btn btn-primary btn-sm m-2">
+                Reset Counts
             </button>
             {this.props.counters.map(counter =>
             <Counter key={counter.id}
