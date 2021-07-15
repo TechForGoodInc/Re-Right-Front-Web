@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../components/navbar'
 import Counters from '../components/counters';
-import {Link} from 'react-router-dom';
 
 // ExamplePage is an example of a "controlling component", while counters and counter are
 // "controlled components" (all of their state and data is controlled / passed by ExamplePage)
@@ -14,6 +13,15 @@ class ExamplePage extends Component {
             {id: 4, value: 3}
         ]
      }
+
+    handleAddCounter = () => {
+        const counters = this.state.counters.slice();
+        const newCounterId = counters[counters.length - 1].id + 1;
+        counters.push({id: newCounterId, value: newCounterId});
+        console.log(newCounterId);
+        this.setState({counters});
+
+    }
 
     handleResetList = () => {
         // Resets all ORIGINAL counters to start state (deleted ones come back)
@@ -59,6 +67,7 @@ class ExamplePage extends Component {
                         // All data and functions needed by controlled components must be passed
                         // to them through "props"
                         counters={this.state.counters}
+                        onAddCounter={this.handleAddCounter}
                         onResetCount={this.handleResetCount}
                         onResetList={this.handleResetList}
                         onIncrement={this.handleIncrement}

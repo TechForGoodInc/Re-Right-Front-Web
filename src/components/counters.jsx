@@ -8,6 +8,10 @@ class Counters extends Component {
         console.log(this.props);
         return (
         <div>
+            <button onClick={this.props.onAddCounter}
+                className="btn btn-primary btn-sm m-2">
+                Add Counter
+            </button>
             <button onClick={this.props.onResetList}
                 className="btn btn-primary btn-sm m-2">
                 Reset List
