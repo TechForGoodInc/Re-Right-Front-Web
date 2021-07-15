@@ -1,54 +1,26 @@
 import React, { Component } from 'react';
-import NavBar from './components/navbar'
-import Counters from './components/counters';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import HomePageLoggedOut from './pages/homePageLoggedOut';
+import LoginPage from './pages/loginPage';
+import SignUpPage from './pages/signUpPage';
+import ForgotPasswordPage from './pages/forgotPasswordPage';
+import HomePageLoggedIn from './pages/homePageLoggedIn';
+
 
 class App extends Component {
-    state = { 
-        counters: [
-            {id: 1, value: 0},
-            {id: 2, value: 0},
-            {id: 3, value: 0},
-            {id: 4, value: 4}
-        ]
-     }
-
-    handleReset = () => {
-        const counters = this.state.counters.map(c => {
-            c.value = 0;
-            return c;
-        })
-        this.setState({counters})
-    }
-
-    handleIncrement = counter => {
-        console.log(counter);
-        const counters = [...this.state.counters];
-        const idx = counters.indexOf(counter);
-        counters[idx] = {...counter};
-        counters[idx].value++;
-        this.setState({counters})
-    }
-
-    handleDelete = (counterId) => {
-        console.log("onDelete Event Raised! :)", counterId)
-        const counters = this.state.counters.filter(c => c.id !== counterId);
-        this.setState({counters});
-    }
     render() {
-        return(
-            <React.Fragment>
-                <NavBar
-                totalCounters={this.state.counters.filter(c => c.value > 0).length}/>
-                <main className="container">
-                    <Counters
-                        counters={this.state.counters}
-                        onReset={this.handleReset}
-                        onIncrement={this.handleIncrement}
-                        onDelete={this.handleDelete}/>
-                </main>
-            </React.Fragment>
-            
+        return (
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={HomePageLoggedOut} />
+                    <Route exact path="/login" component={LoginPage} />
+                    <Route exact path="/signUp" component={SignUpPage} />
+                    <Route exact path="/forgotPassword" component={ForgotPasswordPage} />
+                    <Route exact path="/home" component={HomePageLoggedIn}/>
+                </Switch>
+            </Router>
         );
     }
 }
