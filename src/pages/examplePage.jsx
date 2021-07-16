@@ -16,7 +16,10 @@ class ExamplePage extends Component {
 
     handleAddCounter = () => {
         const counters = this.state.counters.slice();
-        const newCounterId = counters[counters.length - 1].id + 1;
+        let newCounterId = 1;
+        if (counters.length !== 0) {
+            newCounterId = counters[counters.length - 1].id + 1;
+        }
         counters.push({id: newCounterId, value: newCounterId});
         console.log(newCounterId);
         this.setState({counters});
