@@ -9,6 +9,9 @@ import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import HomeScreen from './screens/HomeScreen';
 import ForgotPassScreen1 from './screens/ForgotPassScreen1';
+import ForgotPassScreen2 from './screens/ForgotPassScreen2';
+import ForgotPassScreen3 from './screens/ForgotPassScreen3';
+import ForgotPassScreen4 from './screens/ForgotPassScreen4';
 
 
 const Stack = createStackNavigator();
@@ -38,6 +41,19 @@ export default function ReRightApp() {
             name="Forgot Password 1"
             component={ForgotPassScreen1}
             />
+        <Stack.Screen
+            name="Forgot Password 2"
+            component={ForgotPassScreen2}
+            />
+        <Stack.Screen
+            name="Forgot Password 3"
+            component={ForgotPassScreen3}
+            />
+        <Stack.Screen
+            name="Forgot Password 4"
+            component={ForgotPassScreen4}
+            />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
+import { color } from 'react-native-reanimated';
 
 import colors from '../../config/colors';
 
@@ -11,7 +12,7 @@ export default function LoggedOutScreen({navigation}) {
         navigation.navigate("Signup");
     }
     return (
-        <View style={styles.background}>
+        <View style={styles.screenBackground}>
             <Text>Logged Out Screen</Text>
             <View style={styles.buttonContainer}>
                 <Pressable style={({pressed}) => [{
@@ -38,16 +39,17 @@ export default function LoggedOutScreen({navigation}) {
 
  
 const styles = StyleSheet.create({
-    background: {
+    screenBackground: {
         flex: 1,
-        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'flex-end',
         backgroundColor: colors.white,
-
+        
     },
     buttonContainer: {
         flexDirection: 'row',
+        alignSelf: 'stretch',
+        backgroundColor: colors.black,
     },
     loginButton: {
         width: "50%",

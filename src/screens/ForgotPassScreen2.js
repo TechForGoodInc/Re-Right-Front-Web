@@ -3,13 +3,13 @@ import { Text, View, StyleSheet, Pressable } from 'react-native';
 
 import colors from '../../config/colors';
 
-export default function ForgotPassScreen1({navigation}) {
+export default function ForgotPassScreen2({navigation}) {
     const handleContinueRoute = () => {
-        navigation.navigate("Forgot Password 2");
+        navigation.navigate("Forgot Password 3");
     }
     return (
         <View>
-            <Text>Enter username or email</Text>
+            <Text>Enter code sent to email linked with account</Text>
             <Pressable style={({pressed}) => [{
                     backgroundColor: pressed ? colors.grey : colors.primary,},
                     styles.continueButton,]}
