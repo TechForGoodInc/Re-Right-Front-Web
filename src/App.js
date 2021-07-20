@@ -8,6 +8,7 @@ import LoggedOutScreen from './screens/LoggedOutScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import HomeScreen from './screens/HomeScreen';
+import ForgotPassScreen1 from './screens/ForgotPassScreen1';
 
 
 const Stack = createStackNavigator();
@@ -32,6 +33,10 @@ export default function ReRightApp() {
         <Stack.Screen
             name="Home"
             component={HomeScreen}
+            />
+        <Stack.Screen
+            name="Forgot Password 1"
+            component={ForgotPassScreen1}
             />
       </Stack.Navigator>
     </NavigationContainer>
