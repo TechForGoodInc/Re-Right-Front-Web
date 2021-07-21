@@ -8,8 +8,10 @@ export default function LoginScreen({navigation}) {
         navigation.navigate("Forgot Password 1");
     }
     const handleContinueRoute = () => {
-        navigation.navigate("Home"); // Need to check if username/email and password are correct
         // Display error messages and don't navigate if info is incorrect / user not found
+        navigation.navigate("Home"); // Need to check if username/email and password are correct
+        navigation.reset({index: 0, routes: [{name: 'Home'}]}); // This clearns the nav stack
+        // so users can't go back to signup/login/forgot password once they log in
     }
     return (
         <View>

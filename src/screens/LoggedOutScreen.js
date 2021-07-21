@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
-import { color } from 'react-native-reanimated';
 
 import colors from '../../config/colors';
 

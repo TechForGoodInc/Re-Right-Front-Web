@@ -18,7 +18,6 @@ export default class ForgotPassScreen1 extends Component {
     render () {
         return (
             <View style={styles.background}>
-    
                 <View style={styles.inputContainer}>
                     <Text style={styles.text}>Please enter your Username or Email</Text>
                     <TextInput style={styles.textInput}
