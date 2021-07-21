@@ -17,7 +17,7 @@ const Stack = createStackNavigator();
 // The last entry, "Home", nests the HomeDrawerNav (hamburger menu) inside the project wide stack nav
 export default function EntryStack() {
     return (
-        <Stack.Navigator initialRoute="Logged Out" >
+        <Stack.Navigator initialRoute="Logged Out">
                 <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{title: "",}} />
                 <Stack.Screen name="Login" component={LoginScreen} options={{title: "",}} />
                 <Stack.Screen name="Signup" component={SignupScreen} options={{title: "",}} />

@@ -1,16 +1,17 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import HomeScreen from '../screens/HomeScreen';
-import ResearchAnalyticsScreen from '../screens/ResearchAnalyticsScreen';
+import ResearchAnalyticsScreen from '../screens/ResearchScreen';
+import HomeStackNav from '../components/HomeStackNav';
+import ResearchStackNav from './ResearchStackNav';
 
 const Drawer = createDrawerNavigator();
 
-export default function HomeDrawerNav() {
+export default function HomeDrawerNav({navigation}) {
     return (
         <Drawer.Navigator initialRoute="Home">
-            <Drawer.Screen name="Home" component={HomeScreen}/>
-            <Drawer.Screen name="Research Analytics" component={ResearchAnalyticsScreen}/>
+            <Drawer.Screen name="Home" component={HomeStackNav}/>
+            <Drawer.Screen name="Research Analytics" component={ResearchStackNav}/>
         </Drawer.Navigator>
     )
 }

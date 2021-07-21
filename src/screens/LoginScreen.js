@@ -11,6 +11,7 @@ export default function LoginScreen({navigation}) {
         // Display error messages and don't navigate if info is incorrect / user not found
         navigation.navigate("Home"); // Need to check if username/email and password are correct
         navigation.reset({index: 0, routes: [{name: 'Home'}]}); // This clearns the nav stack
+        //navigation.setParams({ headerShown: false });
         // so users can't go back to signup/login/forgot password once they log in
     }
     return (
