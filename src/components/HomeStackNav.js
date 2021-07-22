@@ -10,7 +10,7 @@ export default function HomeStackNav({navigation}) {
     return (
         <Stack.Navigator initialRoute="Home" >
             <Stack.Screen name="Home" component={HomeScreen}
-                options={{title: "Uwu", headerLeft: () => (
+                options={{title: "Uwu 2.0 :)", headerLeft: () => (
                     <Button title="=" onPress={() => navigation.openDrawer()}/>)}} />
         </Stack.Navigator>
     )

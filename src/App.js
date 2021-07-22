@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import * as React from 'react';
+import React, {Button} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -24,7 +24,7 @@ export default function ReRightApp() {
                 <Stack.Screen name="Forgot Password 2" component={ForgotPassScreen2} options={{title: "",}} />
                 <Stack.Screen name="Forgot Password 3" component={ForgotPassScreen3} options={{title: "",}} />
                 <Stack.Screen name="Forgot Password 4" component={ForgotPassScreen4} options={{title: "",}} />
-                <Stack.Screen name="Home" component={HomeDrawerNav} options={{title: "",}} />
+                <Stack.Screen name="Home" component={HomeDrawerNav} options={{headerShown: false}} />
             </Stack.Navigator>
         </NavigationContainer>
     );
