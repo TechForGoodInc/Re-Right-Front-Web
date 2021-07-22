@@ -48,7 +48,7 @@ const SignupScreen2 = ({navigation}) => {
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
 
-                <Text style={styles.text}>Continue</Text>
+                <Text style={styles.buttonText}>Continue</Text>
             </Pressable>
         
         </View>
@@ -108,7 +108,7 @@ const styles = StyleSheet.create( {
         backgroundColor: colors.white,
         
     },
-    text: {
+    buttonText: {
         fontSize: 16,
         lineHeight: 21,
         fontWeight: 'bold',

@@ -36,7 +36,7 @@ export default class ForgotPassScreen4 extends Component {
                         styles.continueButton,]}
                         onPress={this.handleContinueRoute}>
     
-                        <Text style={styles.text}>Continue</Text>
+                        <Text style={styles.buttonText}>Continue</Text>
                     </Pressable>
             </View>
         );
