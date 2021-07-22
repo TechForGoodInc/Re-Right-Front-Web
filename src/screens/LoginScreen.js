@@ -8,7 +8,7 @@ export default function LoginScreen({navigation}) {
       navigation.navigate("Forgot Password 1");
   }
   const handleSignUpRoute = () => {
-   navigation.navigate("Signup1");
+   navigation.navigate("Signup 1");
 }
  
   const handleContinueRoute = () => {

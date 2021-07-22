@@ -13,10 +13,9 @@ const viewConstants = {
 
 const SignupScreen4 = ({navigation}) => {
     const handleSubmitPress = () => {
-        navigation.navigate("Login");
         navigation.reset({
-            index: 1,
-            routes: [{name: 'Logged Out'}, {name: 'Login'}],
+            index: 0,
+            routes: [{name: 'Login'}],
           });
     }
     return ( 
