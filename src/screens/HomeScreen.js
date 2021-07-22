@@ -19,20 +19,7 @@ export default function HomeScreen() {
     }}>
       {/* Top */}
 
-      <SafeAreaView style={{
-        // backgroundColor: "tomato",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "flex-start"
-      }}>
-        <Image source={require("../../assets/HMIcon.png")} style={styles.menuicon} />
-        <Text style={{
-          alignItems: "center",
-          fontSize: 30,
-        }}>
-          W E L C O M E</Text>
-        <Image source={require("../../assets/ProfileIcon.png")} style={styles.menuicon} />
-      </SafeAreaView>
+      <Text/>
 
       {/* Middle */}
       <SafeAreaView style={{

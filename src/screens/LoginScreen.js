@@ -24,7 +24,7 @@ export default function LoginScreen({navigation}) {
             
         <View style = {styles.header}>
 
-          <Image source={require("../../assets/rerightlogo.png")} style = {styles.logo}/>
+          <Image source={require("../../assets/FriendsIcon.png")} style = {styles.logo}/>
 
         </View>
         
