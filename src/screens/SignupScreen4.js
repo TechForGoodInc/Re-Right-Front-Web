@@ -12,6 +12,13 @@ const viewConstants = {
 }
 
 const SignupScreen4 = ({navigation}) => {
+    const handleSubmitPress = () => {
+        navigation.navigate("Login");
+        navigation.reset({
+            index: 1,
+            routes: [{name: 'Logged Out'}, {name: 'Login'}],
+          });
+    }
     return ( 
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <SafeAreaView style = { styles.container} > 
@@ -33,7 +40,7 @@ const SignupScreen4 = ({navigation}) => {
                     </View>
                 </View>
                 <Button style={styles.submitButton} title="Submit"
-                    onPress={() => navigation.navigate("Login")}/>
+                    onPress={() => handleSubmitPress()}/>
             </SafeAreaView>
         </TouchableWithoutFeedback>
      );
