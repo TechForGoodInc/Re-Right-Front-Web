@@ -22,9 +22,8 @@ export default function LoginScreen({navigation}) {
      
   return (
     <View style = {styles.background}>
-
-        <View style = {styles.header}>
-          <Image source={require("../../assets/FriendsIcon.png")} style = {styles.logo}/>
+        <View style={styles.header}>
+            <Image source={require("../../assets/rerightlogo.png")} style = {styles.logo}/>
         </View>
 
         <View style = {styles.inputbar}>
@@ -56,7 +55,6 @@ export default function LoginScreen({navigation}) {
             </View>
 
             <Pressable style={({pressed}) => [{
-
                  backgroundColor: pressed ? colors.grey : colors.primary,},
                  styles.continueButton,]}
                  onPress={() => handleContinueRoute()}>
