@@ -24,7 +24,8 @@ export default function EntryStack() {
                 <Stack.Screen name="Forgot Password 2" component={ForgotPassScreen2} options={{title: "2",}} />
                 <Stack.Screen name="Forgot Password 3" component={ForgotPassScreen3} options={{title: "Answer Security Questions",}} />
                 <Stack.Screen name="Forgot Password 4" component={ForgotPassScreen4} options={{title: "4",}} />
-                <Stack.Screen name="Home" component={HomeDrawerNav} options={{title: "",}} />
+                <Stack.Screen name="Home" component={HomeDrawerNav} options={{title: "Uwu", headerLeft: () => (
+                        <Button title="=" onPress={() => navigation.openDrawer()}/>)}} />
             </Stack.Navigator>
     )
 }
