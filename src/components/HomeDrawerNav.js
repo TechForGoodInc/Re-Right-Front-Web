@@ -5,6 +5,7 @@ import ResearchAnalyticsScreen from '../screens/ResearchScreen';
 import HomeStackNav from '../components/HomeStackNav';
 import ResearchStackNav from './ResearchStackNav';
 import HomeTabNav from './HomeTabNav';
+import LoggedOutScreen from '../screens/LoggedOutScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -13,6 +14,7 @@ export default function HomeDrawerNav({navigation}) {
         <Drawer.Navigator initialRoute="Home">
             <Drawer.Screen name="Home" component={HomeTabNav}/>
             <Drawer.Screen name="Research Analytics" component={ResearchStackNav}/>
+            <Drawer.Screen name="Logout" component={LoggedOutScreen}/>
         </Drawer.Navigator>
     )
 }

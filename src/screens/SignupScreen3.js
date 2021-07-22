@@ -21,11 +21,11 @@ const SignupScreen3 = ({navigation}) => {
                 <View style = {styles.inputForm}>
                     <View style = {styles.inputContainer}>
                         <Text style={styles.label}>Display Name: </Text>
-                        <TextInput numberOfLines="2" style={styles.inputText} placeholder="Enter Fake Name " autoCapitalize='none'/>
+                        <TextInput style={styles.inputText} placeholder="Enter Fake Name " autoCapitalize='none'/>
                     </View>
                     <View style = {styles.inputContainer}>
                         <Text style={styles.label} >Bio </Text>
-                        <TextInput numberOfLines= '2' style={styles.inputText} placeholder="Let people know who you are " />
+                        <TextInput style={styles.inputText} placeholder="Let people know who you are " />
                     </View>
                     <View style = {styles.inputContainer}>
                         <Button style={styles.submitButton} title = "Add Tags"/>

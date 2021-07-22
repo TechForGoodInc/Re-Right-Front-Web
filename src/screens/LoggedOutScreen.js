@@ -8,10 +8,11 @@ export default function LoggedOutScreen({navigation}) {
         navigation.navigate("Login");
     }
     const handleSignupRoute = () => {
-        navigation.navigate("Signup");
+        navigation.navigate("Signup 1");
     }
     return (
         <View style={styles.screenBackground}>
+            <Text style= {styles.title}>Welcome to Re-Right</Text>
             <Text>Logged Out Screen</Text>
             <View style={styles.buttonContainer}>
                 <Pressable style={({pressed}) => [{
@@ -38,6 +39,12 @@ export default function LoggedOutScreen({navigation}) {
 
  
 const styles = StyleSheet.create({
+    title: {
+        fontWeight: '800',
+        color: colors.blue,
+        fontSize: 60,
+        paddingBottom: 350
+    },
     screenBackground: {
         flex: 1,
         alignItems: 'center',
