@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, Pressable, Image, TextInput } from 'react-native';
+
 import colors from '../../config/colors';
 
 export default function LoginScreen({navigation}) {
@@ -21,43 +22,38 @@ export default function LoginScreen({navigation}) {
      
   return (
     <View style = {styles.background}>
-            
+
         <View style = {styles.header}>
-
           <Image source={require("../../assets/FriendsIcon.png")} style = {styles.logo}/>
-
         </View>
-        
-        <View style = {styles.inputbar}>
 
+        <View style = {styles.inputbar}>
            <Text style = {styles.headertext}> Login in with your account: </Text>
-           
+
             <TextInput
- 
              style={styles.username}
              onChangeText={onChangeUsername}
              value={username}
              placeholder = ' Username'/>
  
             <TextInput style={styles.password}
- 
              style={styles.password}
              onChangeText={onChangePassword}
              value={password}
              placeholder = ' Password'/>
-            
         </View>
 
         <View style = {styles.links}>
 
             <View style = {styles.link}>
-
-            <Button title="Create Account"
-                onPress={() => handleSignUpRoute()}/>
- 
-            <Button title="Forgot Password"
-                onPress={() => handleForgotPassRoute()}/>
-
+                <Text style={styles.linkText}
+                    onPress={() => handleSignUpRoute()}>
+                        Create Account
+                </Text>
+                <Text style={styles.linkText}
+                    onPress={() => handleForgotPassRoute()}>
+                        Forgot Password
+                </Text>
             </View>
 
             <Pressable style={({pressed}) => [{
@@ -150,9 +146,14 @@ const styles = StyleSheet.create({
     },
 
     link: {
-      bottom: '10%',
- 
+        alignItems: 'center',
+        bottom: '10%',
     },
+    linkText: {
+        color: colors.blue,
+        fontSize: 18,
+        padding: 10,
+    }
  
 });
  
