@@ -13,7 +13,6 @@ export default function LoggedOutScreen({navigation}) {
     return (
         <View style={styles.screenBackground}>
             <Text style= {styles.title}>Welcome to Re-Right</Text>
-            <Text>Logged Out Screen</Text>
             <View style={styles.buttonContainer}>
                 <Pressable style={({pressed}) => [{
                     backgroundColor: pressed ? colors.grey : colors.secondary,},

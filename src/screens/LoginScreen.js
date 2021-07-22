@@ -44,8 +44,7 @@ export default function LoginScreen({navigation}) {
         </View>
 
         <View style = {styles.links}>
-
-            <View style = {styles.link}>
+            <View style = {styles.linkView}>
                 <Text style={styles.linkText}
                     onPress={() => handleSignUpRoute()}>
                         Create Account
@@ -62,7 +61,7 @@ export default function LoginScreen({navigation}) {
                  styles.continueButton,]}
                  onPress={() => handleContinueRoute()}>
 
-                 <Text style={styles.text}>Continue</Text>
+                 <Text style={styles.text}>Log In</Text>
 
             </Pressable>
 
@@ -145,14 +144,14 @@ const styles = StyleSheet.create({
        left: '5%', 
     },
 
-    link: {
+    linkView: {
         alignItems: 'center',
         bottom: '10%',
     },
     linkText: {
         color: colors.blue,
         fontSize: 18,
-        padding: 10,
+        padding: '3%',
     }
  
 });

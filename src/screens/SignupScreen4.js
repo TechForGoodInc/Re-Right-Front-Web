@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import colors from '../../config/colors';
-import { TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
+import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -14,12 +14,13 @@ const viewConstants = {
 const SignupScreen4 = ({navigation}) => {
     const handleSubmitPress = () => {
         navigation.reset({
-            index: 0,
-            routes: [{name: 'Login'}],
+            index: 1,
+            routes: [{name: 'Logged Out'}, {name: 'Login'}],
           });
     }
     return ( 
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.screenBackground}>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <SafeAreaView style = { styles.container} > 
                 <View style = {styles.header}>
                         <Text style = {styles.headerTitle}>Social Media Abuse Tracking</Text>
@@ -38,16 +39,24 @@ const SignupScreen4 = ({navigation}) => {
                         <TextInput style={styles.inputText} placeholder="CheckBox Yes/No " />
                     </View>
                 </View>
-                <Button style={styles.submitButton} title="Submit"
-                    onPress={() => handleSubmitPress()}/>
+
             </SafeAreaView>
         </TouchableWithoutFeedback>
+        <Pressable style={({pressed}) => [{
+                backgroundColor: pressed ? colors.grey : colors.primary,},
+                styles.continueButton,]}
+                onPress={() => handleSubmitPress()}>
+
+                <Text style={styles.text}>Submit</Text>
+            </Pressable>
+        </View>
+        
      );
 }
  
 export default SignupScreen4;
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create( {
     container: {
         marginBottom: viewConstants.containerBottomMargin,
         marginTop: viewConstants.containerTopMargin,
@@ -64,36 +73,50 @@ const styles = StyleSheet.create({
         color: colors.blue,
         paddingVertical: '3%'
     },
-    displayName:{
-        flex:1,
-        flexDirection: 'row',
-        height: '20%'
-    },  
-    inputForm: {
-        flex:1,
-        flexDirection: 'column'
-    },  
-    inputContainer: {
-        flex:1,
-        flexDirection: 'row'
+    headerText: {
+        fontSize: viewConstants.textSize,
+    },
+    linkText: {
+        textDecorationLine: 'underline',
+        paddingVertical: '3%',
+        
     },
     label: {
         fontSize: viewConstants.textSize,
-        padding: 10,
-        flex:1,
-        flexDirection: 'column'
+        padding: 10
     },
     inputText: {
-        flex:1,
-        flexDirection: 'column',
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: colors.light_grey,
-        textAlign: "left",
-        justifyContent: 'flex-start',
-        paddingBottom: 40,
-        marginBottom: 100
+        borderRadius: 10,
+        textAlign: 'center',
+        padding: 10,
+        fontSize: viewConstants.textSize,
+    },
+    lastInput:{
+        paddingBottom: 20,
     },
     submitButton: {
-        marginTop: 100
-    }
+        marginTop: 20
+    },
+    screenBackground: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        backgroundColor: colors.white,
+        
+    },
+    text: {
+        fontSize: 16,
+        lineHeight: 21,
+        fontWeight: 'bold',
+        letterSpacing: 0.25,
+        color: 'white',
+      },
+    continueButton: {
+        width: "100%",
+        height: 70,
+        justifyContent: "center",
+        alignItems: "center",
+    },
 })

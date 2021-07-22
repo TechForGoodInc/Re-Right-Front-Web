@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import colors from '../../config/colors';
-import { TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
+import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -12,8 +12,12 @@ const viewConstants = {
 }
 
 const SignupScreen2 = ({navigation}) => {
+    const handleContinuePress = () => {
+        navigation.navigate("Signup 3");
+    }
     return ( 
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.screenBackground}>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <SafeAreaView style = { styles.container} > 
                 <View style = {styles.header}>
                         <Text style = {styles.headerTitle}>Security Questions</Text>
@@ -35,16 +39,26 @@ const SignupScreen2 = ({navigation}) => {
                     </View>
                     
                 </View>
-                <Button style={styles.submitButton} title="Continue"
-                    onPress={() => navigation.navigate("Signup 3")}/>
+
             </SafeAreaView>
         </TouchableWithoutFeedback>
+
+        <Pressable style={({pressed}) => [{
+                backgroundColor: pressed ? colors.grey : colors.primary,},
+                styles.continueButton,]}
+                onPress={() => handleContinuePress()}>
+
+                <Text style={styles.text}>Continue</Text>
+            </Pressable>
+        
+        </View>
+        
      );
 }
  
 export default SignupScreen2;
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create( {
     container: {
         marginBottom: viewConstants.containerBottomMargin,
         marginTop: viewConstants.containerTopMargin,
@@ -82,9 +96,29 @@ const styles = StyleSheet.create({
         fontSize: viewConstants.textSize,
     },
     lastInput:{
-        paddingBottom: 40,
+        paddingBottom: 20,
     },
     submitButton: {
-        marginTop: 100
-    }
+        marginTop: 20
+    },
+    screenBackground: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        backgroundColor: colors.white,
+        
+    },
+    text: {
+        fontSize: 16,
+        lineHeight: 21,
+        fontWeight: 'bold',
+        letterSpacing: 0.25,
+        color: 'white',
+      },
+    continueButton: {
+        width: "100%",
+        height: 70,
+        justifyContent: "center",
+        alignItems: "center",
+    },
 })

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import colors from '../../config/colors';
-import { TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
+import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -12,8 +12,12 @@ const viewConstants = {
 }
 
 const SignupScreen3 = ({navigation}) => {
+    const handleContinuePress = () => {
+        navigation.navigate("Signup 4");
+    }
     return ( 
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.screenBackground}>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <SafeAreaView style = { styles.container} > 
                 <View style = {styles.header}>
                         <Text style = {styles.headerTitle}>Set Up Public Profile</Text>
@@ -31,16 +35,24 @@ const SignupScreen3 = ({navigation}) => {
                         <Button style={styles.submitButton} title = "Add Tags"/>
                     </View>
                 </View>
-                <Button style={styles.submitButton} title="Continue"
-                    onPress={() => navigation.navigate("Signup 4")}/>
+
             </SafeAreaView>
         </TouchableWithoutFeedback>
+        <Pressable style={({pressed}) => [{
+                backgroundColor: pressed ? colors.grey : colors.primary,},
+                styles.continueButton,]}
+                onPress={() => handleContinuePress()}>
+
+                <Text style={styles.text}>Continue</Text>
+            </Pressable>
+        </View>
+        
      );
 }
  
 export default SignupScreen3;
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create( {
     container: {
         marginBottom: viewConstants.containerBottomMargin,
         marginTop: viewConstants.containerTopMargin,
@@ -57,36 +69,50 @@ const styles = StyleSheet.create({
         color: colors.blue,
         paddingVertical: '3%'
     },
-    displayName:{
-        flex:1,
-        flexDirection: 'row',
-        height: '20%'
-    },  
-    inputForm: {
-        flex:1,
-        flexDirection: 'column'
-    },  
-    inputContainer: {
-        flex:1,
-        flexDirection: 'row'
+    headerText: {
+        fontSize: viewConstants.textSize,
+    },
+    linkText: {
+        textDecorationLine: 'underline',
+        paddingVertical: '3%',
+        
     },
     label: {
         fontSize: viewConstants.textSize,
-        padding: 10,
-        flex:1,
-        flexDirection: 'column'
+        padding: 10
     },
     inputText: {
-        flex:1,
-        flexDirection: 'column',
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: colors.light_grey,
-        textAlign: "left",
-        justifyContent: 'flex-start',
-        paddingBottom: 40,
-        marginBottom: 100
+        borderRadius: 10,
+        textAlign: 'center',
+        padding: 10,
+        fontSize: viewConstants.textSize,
+    },
+    lastInput:{
+        paddingBottom: 20,
     },
     submitButton: {
-        marginTop: 100
-    }
+        marginTop: 20
+    },
+    screenBackground: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        backgroundColor: colors.white,
+        
+    },
+    text: {
+        fontSize: 16,
+        lineHeight: 21,
+        fontWeight: 'bold',
+        letterSpacing: 0.25,
+        color: 'white',
+      },
+    continueButton: {
+        width: "100%",
+        height: 70,
+        justifyContent: "center",
+        alignItems: "center",
+    },
 })
