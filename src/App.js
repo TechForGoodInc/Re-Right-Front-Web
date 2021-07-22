@@ -17,13 +17,13 @@ export default function ReRightApp() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRoute="Logged Out" >
-                <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{title: "",}} />
-                <Stack.Screen name="Login" component={LoginScreen} options={{title: "",}} />
-                <Stack.Screen name="Signup" component={SignupScreen} options={{title: "",}} />
-                <Stack.Screen name="Forgot Password 1" component={ForgotPassScreen1} options={{title: "",}} />
-                <Stack.Screen name="Forgot Password 2" component={ForgotPassScreen2} options={{title: "",}} />
-                <Stack.Screen name="Forgot Password 3" component={ForgotPassScreen3} options={{title: "",}} />
-                <Stack.Screen name="Forgot Password 4" component={ForgotPassScreen4} options={{title: "",}} />
+                <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{title: "About Re-Right",}} />
+                <Stack.Screen name="Login" component={LoginScreen} options={{title: "Login",}} />
+                <Stack.Screen name="Signup" component={SignupScreen} options={{title: "Signup",}} />
+                <Stack.Screen name="Forgot Password 1" component={ForgotPassScreen1} options={{title: "Forgot Password",}} />
+                <Stack.Screen name="Forgot Password 2" component={ForgotPassScreen2} options={{title: "Forgot Password"}} />
+                <Stack.Screen name="Forgot Password 3" component={ForgotPassScreen3} options={{title: "Forgot Password"}} />
+                <Stack.Screen name="Forgot Password 4" component={ForgotPassScreen4} options={{title: "Forgot Password"}} />
                 <Stack.Screen name="Home" component={HomeDrawerNav} options={{headerShown: false}} />
             </Stack.Navigator>
         </NavigationContainer>
