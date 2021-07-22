@@ -21,15 +21,15 @@ const SignupScreen4 = ({navigation}) => {
                 <View style = {styles.inputForm}>
                     <View style = {styles.inputContainer}>
                         <Text style={styles.label}> Instagram </Text>
-                        <TextInput numberOfLines="2" style={styles.inputText} placeholder="CheckBox Yes/No " autoCapitalize='none'/>
+                        <TextInput style={styles.inputText} placeholder="CheckBox Yes/No " autoCapitalize='none'/>
                     </View>
                     <View style = {styles.inputContainer}>
                         <Text style={styles.label} >Facebook </Text>
-                        <TextInput numberOfLines= '2' style={styles.inputText} placeholder="CheckBox Yes/No " />
+                        <TextInput style={styles.inputText} placeholder="CheckBox Yes/No " />
                     </View>
                     <View style = {styles.inputContainer}>
                         <Text style={styles.label} >Twitter </Text>
-                        <TextInput numberOfLines= '2' style={styles.inputText} placeholder="CheckBox Yes/No " />
+                        <TextInput style={styles.inputText} placeholder="CheckBox Yes/No " />
                     </View>
                 </View>
                 <Button style={styles.submitButton} title="Submit"
