@@ -33,11 +33,11 @@ const wait = (timeout) => {
 }
 
 export default function HomeScreen() {
-  const [refreshing, setRefreshing] = React.useState(false);
-  const onRefresh = React.useCallback(() => {
-    setRefreshing(true);
-    wait(2000).then(() => setRefreshing(false));
-  }, []);
+  //const [refreshing, setRefreshing] = React.useState(false);
+  //const onRefresh = React.useCallback(() => {
+    //setRefreshing(true);
+    //wait(2000).then(() => setRefreshing(false));
+  //}, []);
   return (
       <SafeAreaView style={{
         flex: feedflex,
@@ -53,47 +53,14 @@ export default function HomeScreen() {
         <Text/>
         <ScrollView 
         directionalLockEnabled = 'true'
-        style="styles.feed"
-        refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={onRefresh}
-          /> }
+        //style="styles.feed"
+        //refreshControl={
+        //  <RefreshControl
+        //    refreshing={refreshing}
+        //    onRefresh={onRefresh}
+        //  /> }
         >
-        <View style= {styles.posts}>
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        < SamplePost />
-        </View>
+        
         </ScrollView>
       </SafeAreaView>
   );
