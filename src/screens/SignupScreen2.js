@@ -60,8 +60,6 @@ export default SignupScreen2;
 
 const styles = StyleSheet.create( {
     container: {
-        marginBottom: viewConstants.containerBottomMargin,
-        marginTop: viewConstants.containerTopMargin,
         marginHorizontal: viewConstants.containerHorizontalMargins,
         flex: 1,
         justifyContent: 'center'
