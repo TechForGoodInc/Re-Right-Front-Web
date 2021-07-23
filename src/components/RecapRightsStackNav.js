@@ -2,18 +2,18 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 
-import ResearchAnalyticsScreen from '../screens/ResearchScreen';
+import RecapRightScreen1 from '../screens/RecapRightsScreen1';
 
 const Stack = createStackNavigator();
 
-export default function ResearchStackNav({navigation}) {
+export default function RecapRightsStackNav({navigation}) {
     const handleHamburgerPress = () => {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Research Analytics" >
-            <Stack.Screen name="Research Anayltics" component={ResearchAnalyticsScreen}
-                options={{title: "Research Analytics", headerLeft: () => (
+        <Stack.Navigator initialRoute="Recap Rights" >
+            <Stack.Screen name="Recap Rights" component={RecapRightScreen1}
+                options={{title: "Recap Rights", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
