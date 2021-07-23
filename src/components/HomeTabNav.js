@@ -1,19 +1,22 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import CreatePostScreen from '../screens/CreatePostScreen';
-import FriendsScreen from '../screens/FriendsScreen';
-import HomeScreen from '../screens/HomeScreen';
 import HomeStackNav from './HomeStackNav';
+import ProfileStackNav from './ProfileStackNav';
+import FriendsStackNav from './FriendsStackNav';
+import CreatePostStackNav from './CreatePostStackNav';
+
+
 
 const BottomTabs = createBottomTabNavigator();
 
-export default function HomeTabNav() {
+export default function HomeTabNav({navigation}) {
     return (
         <BottomTabs.Navigator initialRoute="Home">
             <BottomTabs.Screen name="Home" component={HomeStackNav}/>
-            <BottomTabs.Screen name="Create Post" component={CreatePostScreen}/>
-            <BottomTabs.Screen name="Friends" component={FriendsScreen}/>
+            <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}/>
+            <BottomTabs.Screen name="Friends" component={FriendsStackNav}/>
+            <BottomTabs.Screen name="Profile" component={ProfileStackNav}/>
         </BottomTabs.Navigator>
     )
 }

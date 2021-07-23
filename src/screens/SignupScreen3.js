@@ -15,6 +15,9 @@ const SignupScreen3 = ({navigation}) => {
     const handleContinuePress = () => {
         navigation.navigate("Signup 4");
     }
+    const handleAddTagsPress = () => {
+
+    }
     return ( 
         <View style={styles.screenBackground}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -31,9 +34,13 @@ const SignupScreen3 = ({navigation}) => {
                         <Text style={styles.label} >Bio </Text>
                         <TextInput style={styles.inputText} placeholder="Let people know who you are " />
                     </View>
-                    <View style = {styles.inputContainer}>
-                        <Button style={styles.submitButton} title = "Add Tags"/>
+                    <View style={{alignItems: 'center', marginTop: '5%'}}>
+                        <Text style={styles.linkText}
+                            onPress={() => handleAddTagsPress()}>
+                            Add Tags
+                        </Text>
                     </View>
+                    
                 </View>
 
             </SafeAreaView>
@@ -113,4 +120,12 @@ const styles = StyleSheet.create( {
         justifyContent: "center",
         alignItems: "center",
     },
+    linkText: {
+        color: colors.blue,
+        fontSize: 18,
+        marginBottom: '2%',
+    },
+    inputForm: {
+        //alignItems: 'center',
+    }
 })
