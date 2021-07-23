@@ -3,7 +3,7 @@
     "name": "re-right-hybrid",
     "slug": "re-right-hybrid",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",

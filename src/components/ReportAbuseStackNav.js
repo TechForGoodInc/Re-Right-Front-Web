@@ -1,10 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import ReportAbuseScreen1 from '../screens/ReportAbuseScreen1';
 
 const Stack = createStackNavigator();
+const BottomTabs = createBottomTabNavigator();
 
 export default function ReportAbuseStackNav({navigation}) {
     const handleHamburgerPress = () => {
