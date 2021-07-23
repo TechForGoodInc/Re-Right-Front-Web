@@ -17,6 +17,7 @@ export default function LoggedOutScreen({navigation}) {
             height: 20,
             width: 150,
             padding: 20,
+            marginTop: 50,
             marginBottom: width > height || landscape ? 30: 150
         },
         title: {

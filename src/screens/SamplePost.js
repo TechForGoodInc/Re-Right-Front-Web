@@ -1,4 +1,4 @@
-//Rename to App.js to run
+
 import React from 'react';
 import colors from '../../config/colors';
 import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable } from 'react-native';
@@ -27,9 +27,9 @@ const getComment = () => {
   return comments[index];
 }
 const getImage = () => {
-    const postnumber = getRandomInt(5);
-    const link = ['https://picsum.photos/200','https://picsum.photos/200/300','https://picsum.photos/200','https://picsum.photos/200/300','https://picsum.photos/200']
-    return {postNumber: postnumber, url: link[postnumber]};
+    const postnumber = getRandomInt(400);
+    const link = 'https://picsum.photos/' + String(postnumber);
+    return {postNumber: postnumber, url: link};
 }
 
 const SamplePost = () => {

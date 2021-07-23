@@ -3,6 +3,7 @@ import React from 'react';
 import colors from '../../config/colors';
 import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable } from 'react-native';
 import SamplePost from './SamplePost';
+
 const backgcolor = colors.white;
 const feedcolor = "white"
 const pad = 10;
