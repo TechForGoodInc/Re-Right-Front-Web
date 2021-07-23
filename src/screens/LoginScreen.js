@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, Pressable, Image, TextInput } from 'react-native';
+import { Platform, View, Text, Button, StyleSheet, Pressable, Image, TextInput } from 'react-native';
 
 import colors from '../../config/colors';
 
@@ -12,10 +12,9 @@ export default function LoginScreen({navigation}) {
    navigation.navigate("Signup 1");
 }
  
-  const handleContinueRoute = () => {
- 
-      navigation.navigate("Home"); // Need to check if username/email and password are correct
-      // Display error messages and don't navigate if info is incorrect / user not found   
+  const handleLoginRoute = () => {
+        navigation.navigate("Home"); // Need to check if username/email and password are correct
+        // Display error messages and don't navigate if info is incorrect / user not found   
   }
   const [username, onChangeUsername] = React.useState(null);
   const [password, onChangePassword] = React.useState(null);
@@ -53,18 +52,15 @@ export default function LoginScreen({navigation}) {
                         Forgot Password
                 </Text>
             </View>
-
-            <Pressable style={({pressed}) => [{
-                 backgroundColor: pressed ? colors.grey : colors.primary,},
-                 styles.continueButton,]}
-                 onPress={() => handleContinueRoute()}>
-
-                 <Text style={styles.text}>Log In</Text>
-
-            </Pressable>
-
         </View>
+        <Pressable style={({pressed}) => [{
+            backgroundColor: pressed ? colors.grey : colors.primary,},
+            styles.continueButton,]}
+            onPress={() => handleLoginRoute()}>
 
+            <Text style={styles.buttonText}>Log In</Text>
+
+        </Pressable>
     </View>
   );
 }
@@ -77,7 +73,7 @@ const styles = StyleSheet.create({
   },
  
    header: {
-       flex: 1,
+       flex: 0.5,
        alignItems: 'center',
        justifyContent: 'center',
    },
@@ -85,22 +81,45 @@ const styles = StyleSheet.create({
    inputbar: {
        flex: 2,
        justifyContent: 'center',
+       alignItems: 'center',
+       ...Platform.select({
+        web: {
+            marginLeft: '30%',
+            marginRight: '30%',
+        },
+        default: {
+            marginLeft: '5%',
+            marginRight: '5%',
+        },
+      }),
+       
    },
  
    links: {
        justifyContent: 'flex-end',
        alignItems: 'center',
-       flex: 1, 
+       flex: 0.5, 
+       
    },
  
    logo: {
-      width: '55%',
-      height: '30%',  
+      
+      resizeMode: 'contain', 
+      ...Platform.select({
+          web: {
+            width: '25%',
+            height: '75%',
+          },
+          default: {
+            width: '55%',
+            height: '50%',
+          }
+      })
    },
  
    username: {
        height: '18%',
-       margin: 20,
+       margin: '1%',
        width: '90%',
        borderWidth: 1,
        alignSelf: 'center',
@@ -109,7 +128,7 @@ const styles = StyleSheet.create({
 
    password: {
        height: '18%',
-       margin: 20,
+       margin: '1%',
        width: '90%',
        borderWidth: 1,
        alignSelf: 'center',
@@ -127,7 +146,7 @@ const styles = StyleSheet.create({
       alignItems: "center",
     },
 
-    text: {
+    buttonText: {
        fontSize: 20,
        lineHeight: 21,
         fontWeight: 'bold',
@@ -136,20 +155,19 @@ const styles = StyleSheet.create({
     },
  
   headertext: {
-       fontSize: 25,
-       top: '0%',
-       alignSelf: 'flex-start',
-       left: '5%', 
+       fontSize: 25, 
+       marginBottom: '4%',
     },
 
     linkView: {
         alignItems: 'center',
         bottom: '10%',
+        width: '100%'
     },
     linkText: {
         color: colors.blue,
         fontSize: 18,
-        padding: '3%',
+        marginBottom: '2%',
     }
  
 });
