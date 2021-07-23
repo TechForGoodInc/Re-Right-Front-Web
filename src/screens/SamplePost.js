@@ -27,7 +27,9 @@ const getComment = () => {
   return comments[index];
 }
 const getImage = () => {
-    return 'https://picsum.photos/200';
+    const postnumber = getRandomInt(5);
+    const link = ['https://picsum.photos/200','https://picsum.photos/200/300','https://picsum.photos/200','https://picsum.photos/200/300','https://picsum.photos/200']
+    return {postNumber: postnumber, url: link[postnumber]};
 }
 
 const SamplePost = () => {
@@ -38,8 +40,9 @@ const SamplePost = () => {
                 style = {styles.postUsername} > { getUsername() }                                                          
               </Text>   
             </View>
-                <Image style = {styles.post} source = { { 
-                    uri: { getImage() },
+                <Image style = {styles.post} 
+                source = { { 
+                    uri: getImage().url,
                     width: '100%',
                     height: 400,} }
                   />
@@ -69,7 +72,7 @@ const SamplePost = () => {
             <Text> {getRandomInt(99999)} likes</Text>
             <View style = {styles.CommentBar} >
                 <View style = {styles.wholeComment} >
-                    <Text numberOfLines = '3' style = {styles.comment}> 
+                    <Text numberOfLines = {3} style = {styles.comment}> 
                     <Text style = {styles.name} > 
                         { getName() } : 
                     </Text>  
@@ -77,7 +80,7 @@ const SamplePost = () => {
                     </Text>
                 </View>
                     <View style = {styles.wholeComment} >
-                    <Text numberOfLines = '3' style = {styles.comment}> 
+                    <Text numberOfLines = {3} style = {styles.comment}> 
                     <Text style = {styles.name} > 
                         { getName() } : 
                     </Text>  
