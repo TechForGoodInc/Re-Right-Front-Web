@@ -1,8 +1,8 @@
 //Rename to App.js to run
 import React from 'react';
 import colors from '../../config/colors';
-import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView } from 'react-native';
-
+import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable } from 'react-native';
+import SamplePost from './SamplePost';
 const backgcolor = colors.white;
 const feedcolor = "white"
 const pad = 10;
@@ -10,12 +10,22 @@ const regularflex = 1;
 const feedflex = 6;
 
 const usernames = ["@davidgross", "@hanyyacoub","@malavmevada", "@mariamatthews","@matthewdeangelo","@moisesvenouziou","@nathancook","@nicolasprate","@nyuneihlaing","@prachipatel","@shaylingzhao","@yacoubabulubad","@zeelpatel","@tarafishman","@abhinavgupta" ];
+const comments = ["You're the best! Such a nice post :)","Stay strong! Your posts are the best!","Amazing picture","Please be my friend","Sending positive vibes to you","Never change! You're amazing", "This is the best thing I've seen all day!","Thanks for spreading positive energy","You made my day better","This post is what I needed today, Thank you so much", "I love Re-Right"]
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 const getUsername = () => {
-  const index = getRandomInt(usernames.length)
+  const index = getRandomInt(usernames.length);
   return usernames[index];
+}
+const getName = () => {
+  const index = getRandomInt(usernames.length);
+  const user = usernames[index];
+  return user.substr(1);
+}
+const getComment = () => {
+  const index = getRandomInt(comments.length);
+  return comments[index];
 }
 const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
@@ -32,7 +42,7 @@ export default function HomeScreen() {
         flex: feedflex,
         padding: pad,
         backgroundColor: "white",
-        flexDirection: "row",
+        flexDirection: "column",
         width: '98%',
         height: '100%',
         alignSelf: "center",
@@ -48,292 +58,40 @@ export default function HomeScreen() {
             onRefresh={onRefresh}
           /> }
         >
-        <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View><View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View><View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View><View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View><View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
-          <View style="styles.postContainer">
-            <Text style = "styles.postHeader" > Post by { getUsername() } </Text>
-              <View style="styles.post">
-                <Image source = { { 
-                    uri: 'https://picsum.photos/200' ,
-                    width: '100%',
-                    height: 400,} }
-                  />
-              </View>
-          </View>
+        <View style= {styles.posts}>
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        < SamplePost />
+        </View>
         </ScrollView>
       </SafeAreaView>
   );
@@ -350,23 +108,13 @@ const styles = StyleSheet.create({
     alignItems:'center',
     alignContent: 'center',
     alignSelf: 'center',
-    width: '90%',
   },
-  post: {
+  posts: {
     flex:1,
-    backgroundColor: colors.light_grey,
-    height: 100,
-    borderColor: "black",
-
+    flexDirection: 'column',
+    width: '100%',
   },
-  postHeader: {
-    fontWeight: '900'
-  },
-  postContainer: {
-    borderColor: "black",
-    marginVertical: 20
-  },
+  
 });
-
 
 
