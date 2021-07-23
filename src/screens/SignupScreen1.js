@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import colors from '../../config/colors';
+import React from 'react';
 import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+
+import colors from '../../config/colors';
+
 const viewConstants = {
     containerTopMargin: '10%',
     containerBottomMargin: '16%',
@@ -122,63 +124,63 @@ export default function SignupScreen1({navigation}) {
                         </Text>
                     </View>
                     <View styles = { styles.details }>
-                            <View>
-                                <Text 
-                                    style={styles.label}>
-                                    Email: 
-                                </Text>
-                                <TextInput 
-                                    style={styles.inputText} 
-                                    placeholder="Enter Your E-mail ID" 
-                                    keyboardType = 'email-address' 
-                                    textContentType = 'emailAddress' 
-                                    autoCompleteType='email' 
-                                    autoCapitalize='none'/>
-                            </View>
-                            <View>
-                                <Text 
-                                    style={styles.label} >
-                                    Username: 
-                                </Text>
-                                <TextInput 
-                                    style={styles.inputText} 
-                                    placeholder="Create a Username" 
-                                    textContentType='username'
-                                    autoCapitalize='none'/>
-                            </View>
-                            <View>
-                                <Text style={styles.label}>Date of Birth: </Text>
-                                <TextInput style={styles.inputText} placeholder="Date of Birth" />
-                            </View>
+                        <View>
+                            <Text 
+                                style={styles.label}>
+                                Email: 
+                            </Text>
+                            <TextInput 
+                                style={styles.inputText} 
+                                placeholder="Enter Your E-mail ID" 
+                                keyboardType = 'email-address' 
+                                textContentType = 'emailAddress' 
+                                autoCompleteType='email' 
+                                autoCapitalize='none'/>
                         </View>
-                        <View styles = { styles.password }>
-                            <View>
-                                <Text 
-                                    style={styles.label}>
-                                    Password: 
-                                </Text>
-                                <TextInput 
-                                    secureTextEntry={true} 
-                                    textContentType = "newPassword" 
-                                    autoCompleteType='password' 
-                                    style={styles.inputText} 
-                                    placeholder="Create a Password" 
-                                    autoCapitalize='none'/>
-                            </View>
-                            <View>
-                                <Text 
-                                    style={styles.label}>
-                                    Confirm Password: 
-                                </Text>
-                                <TextInput 
-                                    secureTextEntry={true} 
-                                    textContentType = "newPassword" 
-                                    autoCompleteType='password' 
-                                    autoCapitalize='none'
-                                    style={styles.inputText} 
-                                    placeholder="Confirm your Password"/>
-                            </View>
+                        <View>
+                            <Text 
+                                style={styles.label} >
+                                Username: 
+                            </Text>
+                            <TextInput 
+                                style={styles.inputText} 
+                                placeholder="Create a Username" 
+                                textContentType='username'
+                                autoCapitalize='none'/>
                         </View>
+                        <View>
+                            <Text style={styles.label}>Date of Birth: </Text>
+                            <TextInput style={styles.inputText} placeholder="Date of Birth" />
+                        </View>
+                    </View>
+                    <View styles = { styles.password }>
+                        <View>
+                            <Text 
+                                style={styles.label}>
+                                Password: 
+                            </Text>
+                            <TextInput 
+                                secureTextEntry={true} 
+                                textContentType = "newPassword" 
+                                autoCompleteType='password' 
+                                style={styles.inputText} 
+                                placeholder="Create a Password" 
+                                autoCapitalize='none'/>
+                        </View>
+                        <View>
+                            <Text 
+                                style={styles.label}>
+                                Confirm Password: 
+                            </Text>
+                            <TextInput 
+                                secureTextEntry={true} 
+                                textContentType = "newPassword" 
+                                autoCompleteType='password' 
+                                autoCapitalize='none'
+                                style={styles.inputText} 
+                                placeholder="Confirm your Password"/>
+                        </View>
+                    </View>
                 </SafeAreaView>
             </TouchableWithoutFeedback>
             <Pressable style={({pressed}) => [{
