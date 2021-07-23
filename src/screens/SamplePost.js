@@ -9,7 +9,7 @@ const regularflex = 1;
 const feedflex = 6;
 
 const usernames = ["@davidgross", "@hanyyacoub","@malavmevada", "@mariamatthews","@matthewdeangelo","@moisesvenouziou","@nathancook","@nicolasprate","@nyuneihlaing","@prachipatel","@shaylingzhao","@yacoubabulubad","@zeelpatel","@tarafishman","@abhinavgupta" ];
-const comments = ["You're the best! Such a nice post :)","Stay strong! Your posts are the best!","Amazing picture","Please be my friend","Sending positive vibes to you","Never change! You're amazing", "This is the best thing I've seen all day!","Thanks for spreading positive energy","You made my day better","This post is what I needed today, Thank you so much", "I love Re-Right"]
+const comments = ["Did you click that??","Terrific post!","WoW!!!","I admire you","You are inspirational","There's so much positivity on this app","Beautiful!","I'm so glad I met you on this app!","You're the best! Such a nice post :)","Stay strong! Your posts are the best!","Amazing picture","Please be my friend","Sending positive vibes to you","Never change! You're amazing", "This is the best thing I've seen all day!","Thanks for spreading positive energy","You made my day better","This post is what I needed today, Thank you so much", "I love Re-Right"]
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -26,6 +26,9 @@ const getComment = () => {
   const index = getRandomInt(comments.length);
   return comments[index];
 }
+const getImage = () => {
+    return 'https://picsum.photos/200';
+}
 
 const SamplePost = () => {
     return ( 
@@ -36,7 +39,7 @@ const SamplePost = () => {
               </Text>   
             </View>
                 <Image style = {styles.post} source = { { 
-                    uri: 'https://picsum.photos/200' ,
+                    uri: { getImage() },
                     width: '100%',
                     height: 400,} }
                   />
@@ -82,7 +85,7 @@ const SamplePost = () => {
                     </Text>
                 </View>
                     <View style = {styles.wholeComment} >
-                    <Text numberOfLines = '3' style = {styles.comment}> 
+                    <Text numberOfLines = {3} style = {styles.comment}> 
                     <Text style = {styles.name} > 
                         { getName() } : 
                     </Text>  
@@ -147,7 +150,7 @@ const styles = StyleSheet.create({
     },
     wholeComment: {
       flexDirection: 'row',
-      
+      paddingVertical: 2
     },
     name: {
       fontWeight: '700',
