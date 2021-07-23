@@ -6,7 +6,7 @@ import colors from '../../config/colors';
 
 export default function CreatePostScreen() {
     return (
-        <Text>Profile Screen</Text>
+        <Text>Create Post Screen</Text>
     );
 }
 
