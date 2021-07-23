@@ -51,6 +51,7 @@ export default function HomeScreen() {
       }}>
         <Text/>
         <ScrollView 
+        directionalLockEnabled = 'true'
         style="styles.feed"
         refreshControl={
           <RefreshControl
@@ -108,6 +109,7 @@ const styles = StyleSheet.create({
     alignItems:'center',
     alignContent: 'center',
     alignSelf: 'center',
+    width: '10%',
   },
   posts: {
     flex:1,

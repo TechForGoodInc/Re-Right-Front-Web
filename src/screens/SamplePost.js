@@ -34,9 +34,6 @@ const SamplePost = () => {
               <Text 
                 style = {styles.postUsername} > { getUsername() }                                                          
               </Text>   
-              <View style = {styles.postDots} > 
-                <Text>                                                 ...</Text>                                                         
-              </View>   
             </View>
                 <Image style = {styles.post} source = { { 
                     uri: 'https://picsum.photos/200' ,
@@ -45,13 +42,13 @@ const SamplePost = () => {
                   />
             <View style={styles.likeBar}>
                   <Pressable>
-                    <Image style = {styles.likeHeartComment} source = { { 
+                    <Image  tintColor='white' style = {styles.likeHeartComment} source = { { 
                     uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPkns6lML4oMFvmxMM_H0055UCIPsEk152dw&usqp=CAU' ,
                     width: '12%',
                     height: 39,} }
                   />
                   </Pressable>
-                  <Pressable>
+                  <Pressable >
                     <Image style = {styles.likeHeartComment} source = { { 
                     uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT45bKRsJCXqu3xgT5ydfKRJJRV0VK5Ms6jVg&usqp=CAU' ,
                     width: '12%',
@@ -59,7 +56,7 @@ const SamplePost = () => {
                   />
                   </Pressable>
                   <Pressable>
-                    <Image style = {styles.likeHeartComment} source = { { 
+                    <Image tintColor='black' style = {styles.likeHeartComment} source = { { 
                     uri: 'https://static.thenounproject.com/png/638755-200.png' ,
                     width: '12%',
                     height: 49,} }
@@ -67,29 +64,31 @@ const SamplePost = () => {
                   </Pressable>
             </View>
             <Text> {getRandomInt(99999)} likes</Text>
-            <View style = {styles.wholeComment} >
-              <Text style = {styles.name} numberOfLines = '3' > 
-                { getName() } :
-              </Text>  
-              <Text numberOfLines = '3' style = {styles.comment}> 
-                {getComment()} 
-              </Text>
-            </View>
-            <View style = {styles.wholeComment} >
-              <Text style = {styles.name} numberOfLines = '3' > 
-                { getName() } :
-              </Text>  
-              <Text numberOfLines = '3' style = {styles.comment}> 
-                {getComment()} 
-              </Text>
-            </View>
-            <View style = {styles.wholeComment} >
-              <Text style = {styles.name} numberOfLines = '3' > 
-                { getName() } :
-              </Text>  
-              <Text numberOfLines = '3' style = {styles.comment}> 
-                {getComment()} 
-              </Text>
+            <View style = {styles.CommentBar} >
+                <View style = {styles.wholeComment} >
+                    <Text numberOfLines = '3' style = {styles.comment}> 
+                    <Text style = {styles.name} > 
+                        { getName() } : 
+                    </Text>  
+                        {getComment()} 
+                    </Text>
+                </View>
+                    <View style = {styles.wholeComment} >
+                    <Text numberOfLines = '3' style = {styles.comment}> 
+                    <Text style = {styles.name} > 
+                        { getName() } : 
+                    </Text>  
+                        {getComment()} 
+                    </Text>
+                </View>
+                    <View style = {styles.wholeComment} >
+                    <Text numberOfLines = '3' style = {styles.comment}> 
+                    <Text style = {styles.name} > 
+                        { getName() } : 
+                    </Text>  
+                        {getComment()} 
+                    </Text>
+                </View>
             </View>
           </View>
      );
@@ -135,7 +134,7 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       padding: 20,
       flexDirection: 'column',
-      width: '90%',
+      width: '95%',
     },
     likeBar: {
       paddingTop: 10,
@@ -143,9 +142,12 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignContent: 'flex-start'
     },
+    CommentBar: {
+        width: '100%'
+    },
     wholeComment: {
       flexDirection: 'row',
-      width: '80%'
+      
     },
     name: {
       fontWeight: '700',
@@ -158,5 +160,6 @@ const styles = StyleSheet.create({
       padding: 20,
       marginHorizontal: 10,
       flexDirection: 'column',
+      
     },
   });
