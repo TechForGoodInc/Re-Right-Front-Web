@@ -1,9 +1,30 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {SafeAreaView, Text, TextInput} from 'react-native';
 
 
 export default function ReportAbuseScreen1() {
     return (
-        <Text>Report Abuse Page</Text>
+        <SafeAreaView>        
+            <Text
+            style = {{
+                padding: '2%'
+            }}>
+            Please Explain What Happened: 
+            </Text>
+            <TextInput
+                style = {{
+                    backgroundColor: 'white',
+                    padding: '2%',
+                    width: '90%',
+                    height: '90%',
+                    alignSelf: 'center',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+                multiline={true}
+                placeholder="Let us know your story..." 
+            />
+        </SafeAreaView>
+
     )
 }

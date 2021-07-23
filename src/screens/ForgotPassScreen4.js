@@ -29,6 +29,7 @@ export default function ForgotPassScreen4({navigation}) {
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,
+            marginBottom: '40%',
             flex: 1,
             justifyContent: 'center',
             flexDirection: ( landscape|| width>height)? 'row' : null,
@@ -112,7 +113,7 @@ export default function ForgotPassScreen4({navigation}) {
                 <SafeAreaView style={styles.container}>
                     <View style = {styles.header}>
                         <Text style = {styles.headerTitle}>
-                            Answer Security Questions
+                            Create New Password
                         </Text>
                     </View>
                     <View styles = { styles.inputView }>

@@ -28,6 +28,7 @@ export default function ForgotPassScreen1({navigation}) {
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,
+            marginTop: '8%',
             flex: 1,
             justifyContent: 'center',
             flexDirection: ( landscape|| width>height)? 'row' : null,

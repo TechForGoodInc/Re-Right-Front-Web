@@ -154,6 +154,7 @@ export default function LoginScreen({navigation}) {
              style={styles.inputFields}
              onChangeText={onChangePassword}
              value={password}
+             secureTextEntry={true} 
              autoCompleteType='password' 
              autoCapitalize='none'
              textContentType = 'password'

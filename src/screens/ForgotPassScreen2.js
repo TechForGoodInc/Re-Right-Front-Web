@@ -31,6 +31,7 @@ export default function ForgotPassScreen2({navigation}) {
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,
+            marginTop: '8%',
             flex: 1,
             justifyContent: 'center',
             flexDirection: ( landscape|| width>height)? 'row' : null,
@@ -101,7 +102,7 @@ export default function ForgotPassScreen2({navigation}) {
         //Alert.alert("You entered: " + this.state.code, "Code must match one sent through email to proceed.");
         navigation.navigate("Forgot Password 3");
     }
-    handleCodeComplete = (code) => {
+    const handleCodeComplete = (code) => {
         console.log(code);
         navigation.navigate("Forgot Password 3");
     }

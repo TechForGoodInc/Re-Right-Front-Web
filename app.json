@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "re-right-hybrid",
-    "slug": "re-right-hybrid",
+    "name": "Re-Right Test App",
+    "slug": "re-right-test-app",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }
