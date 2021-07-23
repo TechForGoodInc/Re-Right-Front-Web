@@ -182,7 +182,7 @@ export default function SignupScreen1({navigation}) {
                 </SafeAreaView>
             </TouchableWithoutFeedback>
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.primary,},
+                backgroundColor: pressed ? colors.grey : colors.blue,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
 

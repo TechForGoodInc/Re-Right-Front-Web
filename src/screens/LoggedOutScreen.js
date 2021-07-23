@@ -1,6 +1,6 @@
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 import React from 'react';
-import { Text, View, StyleSheet, Pressable, Image } from 'react-native';
+import { Text, View, StyleSheet, Pressable, Image, SafeAreaView } from 'react-native';
 
 import colors from '../../config/colors';
 
@@ -64,7 +64,7 @@ export default function LoggedOutScreen({navigation}) {
         navigation.navigate("Signup 1");
     }
     return (
-        <View style={styles.screenBackground}>
+        <SafeAreaView style={styles.screenBackground}>
             <View style = {styles.titleView}> 
                 <Image source={require("../../assets/rerightlogo.png")} style = {styles.logo}/>
                 <Text style= {styles.title}>Welcome to Re-Right</Text>
@@ -78,15 +78,14 @@ export default function LoggedOutScreen({navigation}) {
                     <Text style={styles.text}>To Signup</Text>
                 </Pressable>
                 <Pressable style={({pressed}) => [{
-                    backgroundColor: pressed ? colors.grey : colors.primary,},
+                    backgroundColor: pressed ? colors.grey : colors.blue,},
                     styles.loginButton,]}
                     onPress={() => handleLoginRoute()}>
 
                     <Text style={styles.text}>To Login</Text>
                 </Pressable>
             </View>
-
-        </View>
+        </SafeAreaView>
         
     );
 }

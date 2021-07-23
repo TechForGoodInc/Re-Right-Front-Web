@@ -175,7 +175,7 @@ export default function LoginScreen({navigation}) {
             </View>
         </View>
         <Pressable style={({pressed}) => [{
-            backgroundColor: pressed ? colors.grey : colors.primary,},
+            backgroundColor: pressed ? colors.grey : colors.blue,},
             styles.continueButton,]}
             onPress={() => handleLoginRoute()}>
             <Text style={styles.buttonText}>Log In</Text>

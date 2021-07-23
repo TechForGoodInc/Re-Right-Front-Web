@@ -1,10 +1,11 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
-
 import ReachOutScreen1 from '../screens/ReachOutScreen1';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createStackNavigator();
+const BottomTabs = createBottomTabNavigator();
 
 export default function ReachOutStackNav({navigation}) {
     const handleHamburgerPress = () => {

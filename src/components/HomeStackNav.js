@@ -13,7 +13,7 @@ export default function HomeStackNav({navigation}) {
     return (
         <Stack.Navigator initialRoute="Home" >
             <Stack.Screen name="Home" component={HomeScreen}
-                options={{title: "W E L C O M E", headerLeft: () => (
+                options={{title: "R E - R I G H T", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>

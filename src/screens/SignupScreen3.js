@@ -139,7 +139,7 @@ const SignupScreen3 = ({navigation}) => {
             </SafeAreaView>
         </TouchableWithoutFeedback>
         <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.primary,},
+                backgroundColor: pressed ? colors.grey : colors.blue,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
                 <Text style={styles.buttonText}>Continue</Text>

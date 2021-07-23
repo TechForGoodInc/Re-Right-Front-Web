@@ -1,10 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import RecapRightScreen1 from '../screens/RecapRightsScreen1';
 
 const Stack = createStackNavigator();
+const BottomTabs = createBottomTabNavigator();
 
 export default function RecapRightsStackNav({navigation}) {
     const handleHamburgerPress = () => {

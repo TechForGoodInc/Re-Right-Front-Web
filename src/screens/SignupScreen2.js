@@ -123,7 +123,7 @@ const SignupScreen2 = ({navigation}) => {
         </TouchableWithoutFeedback>
 
         <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.primary,},
+                backgroundColor: pressed ? colors.grey : colors.blue,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
 

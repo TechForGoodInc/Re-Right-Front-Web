@@ -1,10 +1,11 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
-
 import ResearchAnalyticsScreen from '../screens/ResearchScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createStackNavigator();
+const BottomTabs = createBottomTabNavigator();
 
 export default function ResearchStackNav({navigation}) {
     const handleHamburgerPress = () => {
