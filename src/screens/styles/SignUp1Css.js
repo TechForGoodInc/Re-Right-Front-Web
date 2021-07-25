@@ -1,11 +1,7 @@
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 //all the styles for Sign Up Screen 1 is here
 
-export default function GetSignUp1Style (colors) {
-    //getting the dimensions and the orientation
-    const { landscape } = useDeviceOrientation();
-    const {width, height} = useDimensions().window;
+export default function GetSignUp1Style (landscape,width, height,colors, ) {
     //numerical values to be used for styling
     const viewConstants = {
         containerTopMargin: '10%',
@@ -36,6 +32,7 @@ export default function GetSignUp1Style (colors) {
             container: {
                 marginHorizontal: viewConstants.containerHorizontalMargins,
                 flex: 1,
+                justifyContent: 'center',
                 //implementing different code for differnet orientations
                 flexDirection: ( landscape|| width>height)? 'row' : null,
             },
