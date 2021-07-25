@@ -1,28 +1,23 @@
 import React, { useState } from 'react';
 import colors from '../../config/colors';
-import { Form, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
+import { Platform, Form, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
 import GetSignUp1Style from './styles/SignUp1Css';
 import KeyboardViewStyles from './styles/KeyboardViewStyles';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 export default function SignupScreen1({navigation}) {
+    
     const { landscape } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
         GetSignUp1Style(landscape, width, height, colors) 
     ));
-    if (landscape || width > height){
+    if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
             GetSignUp1Style(landscape, width, height, colors) 
         ))
-    }} 
-    if (!landscape || height > width){
-        () => {
-            setStyles(StyleSheet.create( 
-                GetSignUp1Style(landscape, width, height, colors) 
-            ))
     }} 
     //setting up the user input variables
     const [email, setEmail] = useState('');
@@ -47,49 +42,65 @@ export default function SignupScreen1({navigation}) {
         const emailIsInUse = handleEmailChecks(email);
         const usernameIsInUse = handleUsernameChecks(username);
         if (email==="" || username==="" || password==="" || dob === "" || confirmPassword === "") {
-            Alert.alert(
-                "All fields are compulsory",
-                "Kindly fill all the fields to continue",
-                [
-                    {
-                        text: "Go Back",
-                        onPress: () => console.log(email + password + dob +confirmPassword + username)
-                    }
-                ]
-            )
+            if (Platform.OS === 'web'){
+                alert("Kindly fill all the fields to continue")
+            }else {
+                Alert.alert(
+                    "All fields are compulsory",
+                    "Kindly fill all the fields to continue",
+                    [
+                        {
+                            text: "Go Back",
+                            onPress: () => console.log(email + password + dob +confirmPassword + username)
+                        }
+                    ]
+                )
+            }
         } else if (emailIsInUse) {
-            Alert.alert(
-                "Email Already In Use",
-                "An account is already registered with the same email address",
-                [
-                    {
-                        text: "Enter Email Again",
-                        onPress: () => console.log('Used Email')
-                    }
-                ]
-            )
+            if (Platform.OS === 'web'){
+                alert("An account is already registered with the same email address")
+            }else {
+                Alert.alert(
+                    "Email Already In Use",
+                    "An account is already registered with the same email address",
+                    [
+                        {
+                            text: "Enter Email Again",
+                            onPress: () => console.log('Used Email')
+                        }
+                    ]
+                )
+            }
         }else if (usernameIsInUse) {
-            Alert.alert(
+            if (Platform.OS === 'web'){
+                alert("This username has already been used by someone else")
+            }else {
+                Alert.alert(
                 "Invalid Username",
                 "This username has already been used by someone else ",
-                [
-                    {
-                        text: "Set a new username",
-                        onPress: () => console.log('Used Username')
-                    }
-                ]
-            )
+                    [
+                        {
+                            text: "Set a new username",
+                            onPress: () => console.log('Used Username')
+                        }
+                    ]
+                )
+            }
         }else if (confirmPassword!=password){
-            Alert.alert(
-                "Passwords Don't Match",
-                "Kindly ensure that your passwords match",
-                [
-                    {
-                        text: "Edit Password",
-                        onPress: () => console.log('Password error')
-                    }
-                ]
-            )
+            if (Platform.OS === 'web'){
+                alert("Passwords Don't Match")
+            }else {
+                Alert.alert(
+                    "Passwords Don't Match",
+                    "Kindly ensure that your passwords match",
+                    [
+                        {
+                            text: "Edit Password",
+                            onPress: () => console.log('Password error')
+                        }
+                    ]
+                )
+            }
         }else {
             navigation.navigate("Signup 2");
         }
