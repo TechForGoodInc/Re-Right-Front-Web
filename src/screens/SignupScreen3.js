@@ -96,7 +96,7 @@ const SignupScreen3 = ({navigation}) => {
           },
         continueButton: {
             width: "100%",
-            height: 70,
+            height: ( landscape|| width>height) ? 45 : 70,
             justifyContent: "center",
             alignItems: "center",
         },

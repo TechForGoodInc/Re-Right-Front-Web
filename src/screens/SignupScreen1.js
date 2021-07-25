@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import colors from '../../config/colors';
-import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput, KeyboardAvoidingView } from 'react-native';
 import GetSignUp1Style from './styles/SignUp1Css';
+import KeyboardViewStyles from './styles/KeyboardViewStyles';
 
 export default function SignupScreen1({navigation}) {
     //styles are in a sperate folder 
-    const styles = StyleSheet.create( 
+    const [styles,setStyles] = useState(StyleSheet.create( 
         GetSignUp1Style(colors) 
-    );
+    ));
     //setting up the user input variables
     const [email, setEmail] = useState('');
     const [username, setUSername] = useState('');
@@ -20,11 +20,27 @@ export default function SignupScreen1({navigation}) {
     const handleContinuePress = () => {
         navigation.navigate("Signup 2");
     }
+    
+    const keyboardInputMode = () => {
+        setStyles(StyleSheet.create( 
+            KeyboardViewStyles() 
+        ))
+    }
+    const outOfKeyboardInputMode = () => {
+        Keyboard.dismiss;
+        setStyles(StyleSheet.create( 
+            GetSignUp1Style(colors)
+        ))
+    }
 
     return (
-        <View style={styles.screenBackground}>
+        <KeyboardAvoidingView style={styles.screenBackground}>
             {/*  Wrapping the code with TouchableWithoutFeedback dismisses the keyboard when the user taps out of the input box*/}
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <TouchableWithoutFeedback onPress={ () => { 
+                Keyboard.dismiss;
+                setStyles(StyleSheet.create( 
+            GetSignUp1Style(colors)
+        )) } }>
                 <SafeAreaView style = { styles.container} > 
                     <View style = {styles.header}>
                         <Text 
@@ -47,8 +63,8 @@ export default function SignupScreen1({navigation}) {
                                     style={styles.label}>
                                     Email: 
                                 </Text>
-                                <TextInput 
-                                    style={styles.inputText} 
+                                <TextInput  onTouchStart = { () => { keyboardInputMode() } }
+                                    style= {styles.inputText} 
                                     keyboardType = 'email-address'     // Works on all platforms
                                     textContentType = 'emailAddress'  // Only for iOS
                                     autoCompleteType='email'         // Only for Android
@@ -60,8 +76,8 @@ export default function SignupScreen1({navigation}) {
                                     style={styles.label} >
                                     Username: 
                                 </Text>
-                                <TextInput 
-                                    style={styles.inputText} 
+                                <TextInput onTouchStart = { () => { keyboardInputMode() } }
+                                    style= {styles.inputText} 
                                     textContentType='username'   // Only for iOS
                                     autoCompleteType="username" // Only for Android
                                     autoCapitalize='none'
@@ -72,8 +88,8 @@ export default function SignupScreen1({navigation}) {
                                     style={styles.label}>
                                     Date of Birth: 
                                     </Text>
-                                <TextInput 
-                                    style={styles.inputText} 
+                                <TextInput  onTouchStart = { () => { keyboardInputMode() } }
+                                    style= {styles.inputText} 
                                     placeholder="Date of Birth" />
                             </View>
                         </View>
@@ -83,11 +99,11 @@ export default function SignupScreen1({navigation}) {
                                     style={styles.label}>
                                     Password: 
                                 </Text>
-                                <TextInput 
+                                <TextInput onTouchStart = { () => { keyboardInputMode() } }
+                                    style= {styles.inputText} 
                                     secureTextEntry={true} 
                                     textContentType = "newPassword" 
                                     autoCompleteType='password' 
-                                    style={styles.inputText} 
                                     placeholder="Create a Password" 
                                     autoCapitalize='none'/>
                             </View>
@@ -96,12 +112,12 @@ export default function SignupScreen1({navigation}) {
                                     style={styles.label}>
                                     Confirm Password: 
                                 </Text>
-                                <TextInput 
+                                <TextInput  onTouchStart = { () => { keyboardInputMode() } }
+                                    style= {styles.inputText}  
                                     secureTextEntry={true} 
                                     textContentType = "newPassword" 
                                     autoCompleteType='password' 
-                                    autoCapitalize='none'
-                                    style={styles.inputText} 
+                                    autoCapitalize='none'                                   
                                     placeholder="Confirm your Password"/>
                             </View>
                         </View>
@@ -111,10 +127,9 @@ export default function SignupScreen1({navigation}) {
                 backgroundColor: pressed ? colors.grey : colors.blue,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
-
                 <Text style={styles.buttonText}>Continue</Text>
             </Pressable>
-        </View>
+        </KeyboardAvoidingView>
     );
     
 }
