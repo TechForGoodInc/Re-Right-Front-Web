@@ -137,7 +137,7 @@ export default function SignupScreen1({navigation}) {
     return (
         <KeyboardAvoidingView style={styles.screenBackground}>
             {/*  Wrapping the code with TouchableWithoutFeedback dismisses the keyboard when the user taps out of the input box*/}
-            <TouchableWithoutFeedback onPress={ () => { Keyboard.dismiss; } }>
+            <TouchableWithoutFeedback onPress={ Keyboard.dismiss}>
                 <SafeAreaView style = { styles.container} > 
                     <View style = {styles.header}>
                         <Text 

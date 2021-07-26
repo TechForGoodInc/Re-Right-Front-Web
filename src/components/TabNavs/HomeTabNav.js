@@ -9,7 +9,7 @@ import ChatStackNav from '../ChatStackNav';
 
 const BottomTabs = createBottomTabNavigator();
 
-export default function HomeTabNav({navigation}) {
+export default function HomeTabNav() {
     return (
         <BottomTabs.Navigator initialRoute="Home">
             <BottomTabs.Screen name="Home" component={HomeStackNav}/>

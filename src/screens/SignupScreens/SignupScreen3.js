@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import colors from '../../../config/colors';
 import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
@@ -106,6 +106,9 @@ const SignupScreen3 = ({navigation}) => {
             marginBottom: '2%',
         },
     })
+    //variables for the user input 
+    const [displayName,setDisplayName] = useState('');
+
     const handleContinuePress = () => {
         navigation.navigate("Signup 4");
     }

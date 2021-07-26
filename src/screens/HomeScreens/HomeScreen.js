@@ -14,7 +14,7 @@ const wait = (timeout) => {
 export default function HomeScreen() {
   if (Platform.OS === 'web'){
     return (
-      <Text/>
+      <Text> Web Feed Coming Soon </Text>
     )
   }else {
     const [refreshing, setRefreshing] = React.useState(false);
