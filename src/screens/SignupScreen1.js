@@ -1,30 +1,127 @@
 import React, { useState } from 'react';
 import colors from '../../config/colors';
-import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { Platform, Form, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
 import GetSignUp1Style from './styles/SignUp1Css';
+import KeyboardViewStyles from './styles/KeyboardViewStyles';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 export default function SignupScreen1({navigation}) {
+    
+    const { landscape } = useDeviceOrientation();
+    const {width, height} = useDimensions().window;
     //styles are in a sperate folder 
-    const styles = StyleSheet.create( 
-        GetSignUp1Style(colors) 
-    );
+    const [styles,setStyles] = useState(StyleSheet.create( 
+        GetSignUp1Style(landscape, width, height, colors) 
+    ));
+    if (landscape || width > height ){
+        () => {
+        setStyles(StyleSheet.create( 
+            GetSignUp1Style(landscape, width, height, colors) 
+        ))
+    }} 
     //setting up the user input variables
     const [email, setEmail] = useState('');
     const [username, setUSername] = useState('');
     const [dob, setDob] = useState('');
-
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('')
     //checking if user exists and showing an error if it does
-
+    const handleEmailChecks = (email) => {
+        const isEmailInUse = false;
+        //query the database to find the email, if it exists set isEmailInUse to true
+        return isEmailInUse;
+    }
+    const handleUsernameChecks = (username) => {
+        const isUsernameInUse = false;
+        //query the database to find if the username is in use
+        return isUsernameInUse;
+    }
     //
     const handleContinuePress = () => {
-        navigation.navigate("Signup 2");
+        //checking for empty fields
+        const emailIsInUse = handleEmailChecks(email);
+        const usernameIsInUse = handleUsernameChecks(username);
+        if (email==="" || username==="" || password==="" || dob === "" || confirmPassword === "") {
+            if (Platform.OS === 'web'){
+                alert("Kindly fill all the fields to continue")
+            }else {
+                Alert.alert(
+                    "All fields are compulsory",
+                    "Kindly fill all the fields to continue",
+                    [
+                        {
+                            text: "Go Back",
+                            onPress: () => console.log(email + password + dob +confirmPassword + username)
+                        }
+                    ]
+                )
+            }
+        } else if (emailIsInUse) {
+            if (Platform.OS === 'web'){
+                alert("An account is already registered with the same email address")
+            }else {
+                Alert.alert(
+                    "Email Already In Use",
+                    "An account is already registered with the same email address",
+                    [
+                        {
+                            text: "Enter Email Again",
+                            onPress: () => console.log('Used Email')
+                        }
+                    ]
+                )
+            }
+        }else if (usernameIsInUse) {
+            if (Platform.OS === 'web'){
+                alert("This username has already been used by someone else")
+            }else {
+                Alert.alert(
+                "Invalid Username",
+                "This username has already been used by someone else ",
+                    [
+                        {
+                            text: "Set a new username",
+                            onPress: () => console.log('Used Username')
+                        }
+                    ]
+                )
+            }
+        }else if (confirmPassword!=password){
+            if (Platform.OS === 'web'){
+                alert("Passwords Don't Match")
+            }else {
+                Alert.alert(
+                    "Passwords Don't Match",
+                    "Kindly ensure that your passwords match",
+                    [
+                        {
+                            text: "Edit Password",
+                            onPress: () => console.log('Password error')
+                        }
+                    ]
+                )
+            }
+        }else {
+            navigation.navigate("Signup 2");
+        }
     }
+    
+    // const keyboardInputMode = () => {
+    //     setStyles(StyleSheet.create( 
+    //         KeyboardViewStyles() 
+    //     ))
+    // }
+    // const outOfKeyboardInputMode = () => {
+    //     Keyboard.dismiss;
+    //     setStyles(StyleSheet.create( 
+    //         GetSignUp1Style(colors)
+    //     ))
+    // }
 
     return (
-        <View style={styles.screenBackground}>
+        <KeyboardAvoidingView style={styles.screenBackground}>
             {/*  Wrapping the code with TouchableWithoutFeedback dismisses the keyboard when the user taps out of the input box*/}
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <TouchableWithoutFeedback onPress={ () => { Keyboard.dismiss; } }>
                 <SafeAreaView style = { styles.container} > 
                     <View style = {styles.header}>
                         <Text 
@@ -49,11 +146,16 @@ export default function SignupScreen1({navigation}) {
                             </Text>
                             <TextInput 
                                 style={styles.inputText} 
+                                onChangeText = { email => setEmail(email) }
+                                defaultValue = {email}
+                                enablesReturnKeyAutomatically = {true}
                                 keyboardType = 'email-address'     // Works on all platforms
                                 textContentType = 'emailAddress'  // Only for iOS
                                 autoCompleteType='email'         // Only for Android
                                 autoCapitalize='none'           // Works on all platforms
-                                placeholder="Enter Your E-mail ID" />
+                                returnKeyType="next"
+                                // onSubmitEditing={() => { this.secondTextInput.focus() }}
+                                placeholder="Enter Your Email ID" />
                         </View>
                         <View>
                             <Text 
@@ -61,24 +163,29 @@ export default function SignupScreen1({navigation}) {
                                 Username: 
                             </Text>
                             <TextInput 
+                                enablesReturnKeyAutomatically = {true}
+                                returnKeyType="next"
+                                onChangeText = { username => setUSername(username) }
+                                defaultValue = {username}
                                 style={styles.inputText} 
                                 textContentType='username'   // Only for iOS
                                 autoCompleteType="username" // Only for Android
+                                
                                 autoCapitalize='none'
                                 placeholder="Create a Username" />
                         </View>
                         <View>
                             <Text 
+                                enablesReturnKeyAutomatically = {true}
                                 style={styles.label}>
                                 Date of Birth: 
                                 </Text>
                             <TextInput 
+                                onChangeText = { dob => setDob(dob) }
+                                returnKeyType="next"
+                                defaultValue = {dob}
                                 style={styles.inputText} 
                                 placeholder="Date of Birth" />
-                        </View>
-                        <View>
-                            <Text style={styles.label}>Date of Birth: </Text>
-                            <TextInput style={styles.inputText} placeholder="Date of Birth" />
                         </View>
                     </View>
                     <View styles = { styles.password }>
@@ -88,7 +195,11 @@ export default function SignupScreen1({navigation}) {
                                 Password: 
                             </Text>
                             <TextInput 
+                                enablesReturnKeyAutomatically = {true}
                                 secureTextEntry={true} 
+                                returnKeyType="next"
+                                onChangeText = { password => setPassword(password) }
+                                defaultValue = {password}
                                 textContentType = "newPassword" 
                                 autoCompleteType='password' 
                                 style={styles.inputText} 
@@ -101,11 +212,16 @@ export default function SignupScreen1({navigation}) {
                                 Confirm Password: 
                             </Text>
                             <TextInput 
+                                enablesReturnKeyAutomatically = {true}
                                 secureTextEntry={true} 
+                                returnKeyType= "done"
+                                onChangeText = { confirmPassword => setConfirmPassword(confirmPassword) }
+                                defaultValue = {confirmPassword}
                                 textContentType = "newPassword" 
                                 autoCompleteType='password' 
                                 autoCapitalize='none'
                                 style={styles.inputText} 
+                                onSubmitEditing = { handleContinuePress} 
                                 placeholder="Confirm your Password"/>
                         </View>
                     </View>
@@ -115,10 +231,9 @@ export default function SignupScreen1({navigation}) {
                 backgroundColor: pressed ? colors.grey : colors.blue,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
-
                 <Text style={styles.buttonText}>Continue</Text>
             </Pressable>
-        </View>
+        </KeyboardAvoidingView>
     );
     
 }

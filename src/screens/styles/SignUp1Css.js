@@ -1,29 +1,34 @@
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 //all the styles for Sign Up Screen 1 is here
 
-//numerical values to be used for styling
-const viewConstants = {
-    containerTopMargin: '10%',
-    containerBottomMargin: '16%',
-    containerHorizontalMargins: '7%',
-    headingFontSize: 34,
-    headingFontSizeLandscape: 50,
-    headerBottomMargin: 18,
-    textSize: 15,
-    textSizeLandscape: 18,
-    headerTextLandscapePadding: 80,
-    labelPadding: 10,
-    textBoxBorderWidth: 2,
-    textBoxBorderRadius: 10,
-    textBoxPadding: 10
-}
-
-export default function GetSignUp1Style (colors) {
-    //getting the dimensions and the orientation
-    const { landscape } = useDeviceOrientation();
-    const {width, height} = useDimensions().window;
+export default function GetSignUp1Style (landscape,width, height,colors, ) {
+    //numerical values to be used for styling
+    const viewConstants = {
+        containerTopMargin: '10%',
+        containerBottomMargin: '16%',
+        containerHorizontalMargins: '7%',
+        headingFontSize: 34,
+        headingWeight: '800',
+        headingFontSizeLandscape: width*0.04,
+        headerBottomMargin: 5,
+        textSize: 15,
+        textSizeLandscape: 18,
+        headerTextLandscapePadding: 80,
+        labelPadding: 10,
+        textBoxBorderWidth: 2,
+        textBoxBorderRadius: 10,
+        textBoxPadding: 10,
+        formHorizontalMargin: 40,
+        formBottomMarginLandscape: 30,
+        buttonTextLineHeight: 21,
+        buttonTextLineHeightLandscape: 21,
+        buttonHeight: 70,
+        buttonHeightLandscape: 45,
+        }
     return {
+            screenBackground: {
+                flex: 1
+            },
             container: {
                 marginHorizontal: viewConstants.containerHorizontalMargins,
                 flex: 1,
@@ -38,7 +43,7 @@ export default function GetSignUp1Style (colors) {
             width: ( landscape|| width>height) ? '50%' : '100%',
             },
             headerTitle: {
-                fontWeight: '800',
+                fontWeight: viewConstants.headingWeight,
                 fontSize: ( landscape|| width>height) ? viewConstants.headingFontSizeLandscape: viewConstants.headingFontSize,
                 color: colors.blue,
                 paddingVertical: ( landscape|| width>height) ? 0 : '3%',
@@ -54,15 +59,18 @@ export default function GetSignUp1Style (colors) {
                 paddingVertical: '3%',
                 fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
             },
+            signUpForm:{
+                flex: 1,
+            },
             details: {
-                flex:1,
                 flexDirection: 'column',
-                marginHorizontal: 40
+                marginHorizontal: viewConstants.formHorizontalMargin,
+                marginBottom: ( landscape|| width>height) ? viewConstants.formBottomMarginLandscape : 0
             },
             password: {
-                flex:1,
                 flexDirection: 'column',
-                marginHorizontal: 40
+                marginHorizontal: viewConstants.formHorizontalMargin,
+                marginBottom: ( landscape|| width>height) ? viewConstants.formBottomMarginLandscape : 0
             },
             label: {
                 fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
@@ -85,15 +93,14 @@ export default function GetSignUp1Style (colors) {
                 backgroundColor: colors.white,
             },
             buttonText: {
-                fontSize: 16,
-                lineHeight: 21,
+                fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
+                lineHeight: ( landscape|| width>height) ? viewConstants.buttonTextLineHeightLandscape : viewConstants.buttonTextLineHeight,
                 fontWeight: 'bold',
-                letterSpacing: 0.25,
                 color: 'white',
             },
             continueButton: {
                 width: "100%",
-                height: 70,
+                height: ( landscape|| width>height) ? viewConstants.buttonHeightLandscape : viewConstants.buttonHeight,
                 justifyContent: "center",
                 alignItems: "center",
             }, 

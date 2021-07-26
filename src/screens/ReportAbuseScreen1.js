@@ -1,8 +1,7 @@
 import React from 'react';
-import {SafeAreaView, Text, TextInput} from 'react-native';
+import {SafeAreaView, Text, TextInput, Button} from 'react-native';
 
-
-export default function ReportAbuseScreen1() {
+export default function ReportAbuseScreen1({ navigation }) {
     return (
         <SafeAreaView>        
             <Text
@@ -23,6 +22,11 @@ export default function ReportAbuseScreen1() {
                 }}
                 multiline={true}
                 placeholder="Let us know your story..." 
+            />
+            <Button
+                title="Continue"
+                color = "dodgerblue"
+                onPress ={() => navigation.navigate('Incident Info')}
             />
         </SafeAreaView>
 

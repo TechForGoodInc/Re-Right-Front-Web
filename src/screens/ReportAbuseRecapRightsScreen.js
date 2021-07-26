@@ -11,7 +11,7 @@ import {
 
 import colors from "../../config/colors"; 
 
-const RecapRightsScreen1 = ({navigation}) => {
+const ReportAbuseRecapRightsScreen = ({navigation}) => {
 
   const ArticleFacts = [
     {
@@ -166,12 +166,12 @@ const RecapRightsScreen1 = ({navigation}) => {
   
   ];
 // create button and page for each element in ArticleFacts 
-  const RecapArticleList = () => { 
+  const ReportAbuseRecapArticleList = () => { 
     return ArticleFacts.map((element) => {
       return (
         <TouchableOpacity 
           onPress={() => {
-          navigation.navigate('RecapArticle', 
+          navigation.navigate('Report RecapArticle', 
           {title : element.title, 
           description: element.description})
           }}
@@ -190,11 +190,11 @@ const RecapRightsScreen1 = ({navigation}) => {
       <ScrollView style={styles.recapboxes}>
         <Text style = {styles.title}>Know your Rights!</Text>
         <Text style = {styles.subtitle}>The Universal Declaration of Human Rights is a historic document which outlined the rights and freedoms everyone is entitled to.</Text>
-          {RecapArticleList()}
+          {ReportAbuseRecapArticleList()}
         <Pressable style={({pressed}) => [{
             backgroundColor: pressed ? colors.grey : colors.black},
             styles.quizButton]} 
-            onPress={() => navigation.navigate("Human Rights Quiz")} >
+            onPress={() => navigation.navigate("Report Human Rights Quiz")} >
             <Text style={styles.quizText}>Take the Quiz Here!</Text>
         </Pressable>
       </ScrollView>
@@ -278,4 +278,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default RecapRightsScreen1;
+export default ReportAbuseRecapRightsScreen;
