@@ -102,6 +102,21 @@ export default function SignupScreen1({navigation}) {
                     ]
                 )
             }
+        }else if (password.length<8){
+            if (Platform.OS === 'web'){
+                alert("Please make sure that the password has atleast 8 characters")
+            }else {
+                Alert.alert(
+                    "Passwords Too Short",
+                    "Please make sure that the password has atleast 8 characters",
+                    [
+                        {
+                            text: "Edit Password",
+                            onPress: () => console.log('Password error')
+                        }
+                    ]
+                )
+            }
         }else {
             navigation.navigate("Signup 2");
         }
