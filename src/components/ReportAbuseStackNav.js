@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import ReportAbuseScreen1 from '../screens/ReportAbuseScreen1';
 import RAScreen2 from '../screens/ReportAbuseScreen2';
+import RecapRightsScreen from '../screens/RecapRightsScreen1';
 
 const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -22,6 +23,7 @@ export default function ReportAbuseStackNav({navigation}) {
                     </TouchableOpacity>
                     )}} />
             <Stack.Screen name="Report Abuse Pg2" component={RAScreen2} />
+            <Stack.Screen name="RecapRightsScreen" component={RecapRightsScreen} />
         </Stack.Navigator>
     )
 }
