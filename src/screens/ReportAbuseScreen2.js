@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Button, TextInput} from 'react-native';
+import {SafeAreaView, StyleSheet, Button, TextInput, Alert} from 'react-native';
 
 export default function ReportAbuseScreen2({ navigation }) {
     return (
@@ -42,6 +42,9 @@ export default function ReportAbuseScreen2({ navigation }) {
             <Button
                 title= "Submit"
                 color = "dodgerblue"
+                onPress = {() => {
+                    alert('Report of Abuse and Information of Incident Have been Submitted');
+                }}
             />
         </SafeAreaView>
 
