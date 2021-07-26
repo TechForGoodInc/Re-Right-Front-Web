@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, Text, TextInput} from 'react-native';
+import {SafeAreaView, Text, TextInput, Button} from 'react-native';
 
 
 export default function ReportAbuseScreen1() {
@@ -23,6 +23,11 @@ export default function ReportAbuseScreen1() {
                 }}
                 multiline={true}
                 placeholder="Let us know your story..." 
+            />
+            <Button
+                title="Submit"
+                color = "dodgerblue"
+                accessibilityLabel="Learn more about this purple button"
             />
         </SafeAreaView>
 
