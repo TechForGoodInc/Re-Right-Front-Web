@@ -1,17 +1,17 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ProfileStackNav from './ProfileStackNav';
-import FriendsStackNav from './FriendsStackNav';
-import CreatePostStackNav from './CreatePostStackNav';
-import ChatStackNav from './ChatStackNav';
-import RecapRightsStackNav from './RecapRightsStackNav';
+import ProfileStackNav from '../ProfileStackNav';
+import FriendsStackNav from '../FriendsStackNav';
+import CreatePostStackNav from '../CreatePostStackNav';
+import ChatStackNav from '../ChatStackNav';
+import ResearchStackNav from '../ResearchStackNav';
 
 const BottomTabs = createBottomTabNavigator();
 
-export default function RecapRightsTabNav({navigation}) {
+export default function ResearchTabNav({navigation}) {
     return (
-        <BottomTabs.Navigator initialRoute="Recap Rights">
-            <BottomTabs.Screen name="Recap Rights" component={RecapRightsStackNav}/>
+        <BottomTabs.Navigator initialRoute="Research Analytics">
+            <BottomTabs.Screen name="Research Analytics" component={ResearchStackNav}/>
             <BottomTabs.Screen name="Chat" component={ChatStackNav}/>
             <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}/>
             <BottomTabs.Screen name="Friends" component={FriendsStackNav}/>

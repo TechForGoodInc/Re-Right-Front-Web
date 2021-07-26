@@ -5,10 +5,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import ReportAbuseScreen1 from '../screens/ReportAbuseScreen1';
 import RAScreen2 from '../screens/ReportAbuseScreen2';
-import ReportRecapArticle from '../screens/ReportAbuseRecapArticle';
-import ReportRecapQuiz from '../screens/ReportAbuseRecapQuiz';
-import ReportRecapRightsScreen from '../screens/ReportAbuseRecapRightsScreen';
-
+// import ReportRecapArticle from '../screens/ReportAbuseRecapArticle';
+// import ReportRecapQuiz from '../screens/ReportAbuseRecapQuiz';
+// import ReportRecapRightsScreen from '../screens/ReportAbuseRecapRightsScreen';
+import RecapRightsScreen1 from '../screens/RecapRightsScreens/RecapRightsScreen1';
 
 const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -26,9 +26,7 @@ export default function ReportAbuseStackNav({navigation}) {
                     </TouchableOpacity>
                     )}} />
             <Stack.Screen name="Incident Info" component={RAScreen2} />
-            <Stack.Screen name="Report RecapRightsScreen" component={ReportRecapRightsScreen} />
-            <Stack.Screen name="Report RecapArticle" component={ReportRecapArticle} options = { ({route}) => ({title: route.params.title})} />  
-            <Stack.Screen name="Report Human Rights Quiz" component={ReportRecapQuiz} />   
+            <Stack.Screen name="RecapRightsScreen" component={RecapRightsScreen1} />
         </Stack.Navigator>
     )
 }

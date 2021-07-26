@@ -1,11 +1,11 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import HomeTabNav from './HomeTabNav';
+import HomeTabNav from './TabNavs/HomeTabNav';
 import LoggedOutScreen from '../screens/LoggedOutScreen';
-import ReachOutTabNav from './ReachOutTabNav';
-import RecapRightsTabNav from './RecapRightsTabNav';
-import ReportAbuseTabNav from './ReportAbuseTabNav copy';
-import ResearchTabNav from './ResearchTabNav';
+import ReachOutTabNav from './TabNavs/ReachOutTabNav';
+import RecapRightsTabNav from './TabNavs/RecapRightsTabNav';
+import ReportAbuseTabNav from './TabNavs/ReportAbuseTabNav';
+import ResearchTabNav from './TabNavs/ResearchTabNav';
 
 const Drawer = createDrawerNavigator();
 
