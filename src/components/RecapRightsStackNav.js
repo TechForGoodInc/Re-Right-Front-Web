@@ -1,24 +1,29 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
-import ResearchAnalyticsScreen from '../screens/ResearchScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import RecapRightScreen1 from '../screens/RecapRightsScreens/RecapRightsScreen1';
+import RecapArticle from '../screens/RecapRightsScreens/RecapArticle';
+import RecapQuiz from '../screens/RecapRightsScreens/RecapQuiz';
 
 const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
-export default function ResearchStackNav({navigation}) {
+export default function RecapRightsStackNav({navigation}) {
     const handleHamburgerPress = () => {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Research Analytics" >
-            <Stack.Screen name="Research Anayltics" component={ResearchAnalyticsScreen}
-                options={{title: "Research Analytics", headerLeft: () => (
+        <Stack.Navigator initialRoute="Recap Rights" >
+            <Stack.Screen name="Recap Rights" component={RecapRightScreen1}
+                options={{title: "Recap Rights", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
+            <Stack.Screen name="RecapArticle" component={RecapArticle} options = { ({route}) => ({title: route.params.title})} />  
+            <Stack.Screen name="Human Rights Quiz" component={RecapQuiz} />    
         </Stack.Navigator>
     )
 }
