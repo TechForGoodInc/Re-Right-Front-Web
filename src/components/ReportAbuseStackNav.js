@@ -4,6 +4,7 @@ import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import ReportAbuseScreen1 from '../screens/ReportAbuseScreen1';
+import RAScreen2 from '../screens/ReportAbuseScreen2';
 
 const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -20,6 +21,7 @@ export default function ReportAbuseStackNav({navigation}) {
                         <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
+            <Stack.Screen name="Report Abuse Pg2" component={RAScreen2} />
         </Stack.Navigator>
     )
 }
