@@ -4,6 +4,8 @@ import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import RecapRightScreen1 from '../screens/RecapRightsScreen1';
+import RecapArticle from '../screens/RecapArticle';
+import RecapQuiz from '../screens/RecapQuiz';
 
 const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -20,6 +22,8 @@ export default function RecapRightsStackNav({navigation}) {
                         <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
+            <Stack.Screen name="RecapArticle" component={RecapArticle} options = { ({route}) => ({title: route.params.title})} />  
+            <Stack.Screen name="Human Rights Quiz" component={RecapQuiz} />    
         </Stack.Navigator>
     )
 }
