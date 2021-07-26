@@ -8,7 +8,7 @@ export default function ReportAbuseScreen1({ navigation }) {
             style = {{
                 padding: '2%'
             }}>
-            Please Explain hat Happened: 
+            Please Explain What Happened: 
             </Text>
             <TextInput
                 style = {{
@@ -24,10 +24,9 @@ export default function ReportAbuseScreen1({ navigation }) {
                 placeholder="Let us know your story..." 
             />
             <Button
-                title="Submit"
+                title="Continue"
                 color = "dodgerblue"
-                onPress ={() => navigation.navigate('Report Abuse Pg2')}
-                accessibilityLabel="Learn more about this purple button"
+                onPress ={() => navigation.navigate('Incident Info')}
             />
         </SafeAreaView>
 
