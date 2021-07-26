@@ -3,9 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import RecapRightScreen1 from '../screens/RecapRightsScreen1';
-import RecapArticle from '../screens/RecapArticle';
-import RecapQuiz from '../screens/RecapQuiz';
+import RecapRightScreen1 from '../screens/RecapRightsScreens/RecapRightsScreen1';
+import RecapArticle from '../screens/RecapRightsScreens/RecapArticle';
+import RecapQuiz from '../screens/RecapRightsScreens/RecapQuiz';
 
 const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();

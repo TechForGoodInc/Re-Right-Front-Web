@@ -9,7 +9,7 @@ import {
   Pressable,
 } from "react-native";
 
-import colors from "../../config/colors"; 
+import colors from "../../../config/colors"; 
 
 const RecapRightsScreen1 = ({navigation}) => {
 
