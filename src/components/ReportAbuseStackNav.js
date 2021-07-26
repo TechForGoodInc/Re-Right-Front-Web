@@ -22,7 +22,7 @@ export default function ReportAbuseStackNav({navigation}) {
                         <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
-            <Stack.Screen name="Report Abuse Pg2" component={RAScreen2} />
+            <Stack.Screen name="Incident Info" component={RAScreen2} />
             <Stack.Screen name="RecapRightsScreen" component={RecapRightsScreen} />
         </Stack.Navigator>
     )
