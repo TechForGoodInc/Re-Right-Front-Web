@@ -6,6 +6,7 @@ import ReachOutTabNav from './TabNavs/ReachOutTabNav';
 import RecapRightsTabNav from './TabNavs/RecapRightsTabNav';
 import ReportAbuseTabNav from './TabNavs/ReportAbuseTabNav';
 import ResearchTabNav from './TabNavs/ResearchTabNav';
+import ResearchStackNav from './ResearchStackNav';
 
 const Drawer = createDrawerNavigator();
 
@@ -16,7 +17,7 @@ export default function HomeDrawerNav({navigation}) {
             <Drawer.Screen name="Recap Rights" component={RecapRightsTabNav}/>
             <Drawer.Screen name="Report Abuse" component={ReportAbuseTabNav}/>
             <Drawer.Screen name="Reach Out" component={ReachOutTabNav}/>
-            <Drawer.Screen name="Research Analytics" component={ResearchTabNav}/>
+            <Drawer.Screen name="Research Analytics" component={ResearchStackNav}/>
             <Drawer.Screen name="Log Out" component={LoggedOutScreen}/>
         </Drawer.Navigator>
     )
