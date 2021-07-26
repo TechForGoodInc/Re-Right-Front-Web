@@ -25,7 +25,7 @@ export default function ReportAbuseScreen2({ navigation }) {
             <Button
                 title="Don't Know?"
                 color = "dodgerblue"
-                onPress ={() => navigation.navigate('Report RecapRightsScreen')}
+                onPress ={() => navigation.navigate('Recap Rights')}
             />
 
 
