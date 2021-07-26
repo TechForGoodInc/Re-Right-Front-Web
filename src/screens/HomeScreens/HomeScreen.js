@@ -1,8 +1,8 @@
 //Rename to App.js to run
 import React from 'react';
-import colors from '../../config/colors';
+import colors from '../../../config/colors';
 import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable, Platform } from 'react-native';
-import SamplePost from './SamplePost';
+import SamplePost from '../SamplePost';
 
 const pad = 10;
 const feedflex = 6;
