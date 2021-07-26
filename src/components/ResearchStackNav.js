@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
-import ResearchAnalyticsScreen from '../screens/ResearchScreen';
+import ResearchScreen from '../screens/ResearchAnalyticsScreens/ResearchScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createStackNavigator();
@@ -13,7 +13,7 @@ export default function ResearchStackNav({navigation}) {
     }
     return (
         <Stack.Navigator initialRoute="Research Analytics" >
-            <Stack.Screen name="Research Anayltics" component={ResearchAnalyticsScreen}
+            <Stack.Screen name="Research Anayltics" component={ResearchScreen}
                 options={{title: "Research Analytics", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
