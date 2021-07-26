@@ -176,7 +176,7 @@ const RecapRightsScreen1 = ({navigation}) => {
           description: element.description})
           }}
           style={styles.button}>
-           <Image style={styles.arrow} source={require('../../assets/right-arrow.png')}
+           <Image style={styles.arrow} source={require('../../../assets/right-arrow.png')}
       />
           <Text style={styles.buttonText}>{element.title}</Text>
         </TouchableOpacity>

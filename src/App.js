@@ -9,10 +9,10 @@ import SignupScreen1 from './screens/SignupScreens/SignupScreen1';
 import SignupScreen2 from './screens/SignupScreens/SignupScreen2';
 import SignupScreen3 from './screens/SignupScreens/SignupScreen3';
 import SignupScreen4 from './screens/SignupScreens/SignupScreen4';
-import ForgotPassScreen1 from './screens/ForgotPassScreen1';
-import ForgotPassScreen2 from './screens/ForgotPassScreen2';
-import ForgotPassScreen3 from './screens/ForgotPassScreen3';
-import ForgotPassScreen4 from './screens/ForgotPassScreen4';
+import ForgotPassScreen1 from './screens/ForgetPasswordScreens/ForgotPassScreen1';
+import ForgotPassScreen2 from './screens/ForgetPasswordScreens/ForgotPassScreen2';
+import ForgotPassScreen3 from './screens/ForgetPasswordScreens/ForgotPassScreen3';
+import ForgotPassScreen4 from './screens/ForgetPasswordScreens/ForgotPassScreen4';
 import HomeDrawerNav from './components/HomeDrawerNav';
 
 const Stack = createStackNavigator();

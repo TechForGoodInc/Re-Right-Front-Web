@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import { Pressable, Alert, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
+import React from 'react';
+import { Text, View, StyleSheet, Pressable, TextInput, Keyboard, SafeAreaView } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
+import colors from '../../../config/colors';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-import colors from '../../config/colors';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -21,14 +22,14 @@ const viewConstants = {
     textBoxPadding: 10
 }
 
-export default function ForgotPassScreen1({navigation}) {
+export default function ForgotPassScreen4({navigation}) {
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are here
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,
-            marginTop: '8%',
+            marginBottom: '40%',
             flex: 1,
             justifyContent: 'center',
             flexDirection: ( landscape|| width>height)? 'row' : null,
@@ -95,45 +96,57 @@ export default function ForgotPassScreen1({navigation}) {
             alignItems: "center",
         },
     })
-
-    const handleContinuePress = () => {
-        // Determine if entered username/email is linked to existing account
-        // If not, display error and keep them on this page
-        navigation.navigate("Forgot Password 2");
+    const handleContinueRoute = () => {
+        navigation.navigate("Login");
     }
-    
+    const handleChangeText1 = ({userInput}) => {
+        // Runs everytime the user enters or deletes a character
+        console.log("Password: " + userInput);
+    }
+    const handleChangeText2 = ({userInput}) => {
+        // Runs everytime the user enters or deletes a character
+        console.log("Confirmation: " + userInput);
+    }
     return (
         <View style={styles.screenBackground}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <SafeAreaView style={styles.container}>
                     <View style = {styles.header}>
                         <Text style = {styles.headerTitle}>
-                            Forgot Password
+                            Create New Password
                         </Text>
                     </View>
                     <View styles = { styles.inputView }>
                         <View>
                             <Text style={styles.label}>
-                                Username or Email: 
+                                Enter New Password
                             </Text>
                             <TextInput style={styles.inputText} 
-                                placeholder="Enter Your Username or Email" 
-                                keyboardType = 'email-address' 
-                                textContentType = 'emailAddress' 
-                                autoCompleteType='email' 
+                                placeholder="Enter Your Password" 
                                 autoCapitalize='none'
-                                onChangeText={(userInput) => handleChangeText({userInput})}/>
+                                onChangeText={(userInput) => handleChangeText1({userInput})}/>
                         </View>
-                    </View>      
+                        <View>
+                            <Text style={styles.label}>
+                                Confirm Password
+                            </Text>
+                            <TextInput style={styles.inputText} 
+                                placeholder="Re-enter Your Password" 
+                                autoCapitalize='none'
+                                onChangeText={(userInput) => handleChangeText2({userInput})}/>
+                        </View>
+                    </View>
                 </SafeAreaView>
             </TouchableWithoutFeedback>
+
             <Pressable style={({pressed}) => [{
                 backgroundColor: pressed ? colors.grey : colors.blue,},
                 styles.continueButton,]}
-                onPress={() => handleContinuePress()}>
+                onPress={() => handleContinueRoute()}>
 
                 <Text style={styles.buttonText}>Continue</Text>
             </Pressable>
         </View>
     );
+    
 }

@@ -1,10 +1,9 @@
-import React from 'react';
-import { Text, TouchableWithoutFeedback, View, StyleSheet, Pressable, Alert, Keyboard, SafeAreaView } from 'react-native';
-import { KeycodeInput } from 'react-native-keycode';
+import React, { Component } from 'react';
+import { Pressable, Alert, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 
-import colors from '../../config/colors';
+import colors from '../../../config/colors';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -22,9 +21,7 @@ const viewConstants = {
     textBoxPadding: 10
 }
 
-const CODE_LENGTH = 6;
-
-export default function ForgotPassScreen2({navigation}) {
+export default function ForgotPassScreen1({navigation}) {
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are here
@@ -98,39 +95,45 @@ export default function ForgotPassScreen2({navigation}) {
             alignItems: "center",
         },
     })
+
     const handleContinuePress = () => {
-        //Alert.alert("You entered: " + this.state.code, "Code must match one sent through email to proceed.");
-        navigation.navigate("Forgot Password 3");
+        // Determine if entered username/email is linked to existing account
+        // If not, display error and keep them on this page
+        navigation.navigate("Forgot Password 2");
     }
-    const handleCodeComplete = (code) => {
-        console.log(code);
-        navigation.navigate("Forgot Password 3");
-    }
+    
     return (
         <View style={styles.screenBackground}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <SafeAreaView style={styles.container}>
                     <View style = {styles.header}>
                         <Text style = {styles.headerTitle}>
-                            Enter Code Sent to Email
+                            Forgot Password
                         </Text>
                     </View>
-                    <View style={styles.inputView}>
-                        <KeycodeInput numeric={true}
-                            length={CODE_LENGTH}
-                            onComplete={(code) => handleCodeComplete(code)}/>
-                    </View>
+                    <View styles = { styles.inputView }>
+                        <View>
+                            <Text style={styles.label}>
+                                Username or Email: 
+                            </Text>
+                            <TextInput style={styles.inputText} 
+                                placeholder="Enter Your Username or Email" 
+                                keyboardType = 'email-address' 
+                                textContentType = 'emailAddress' 
+                                autoCompleteType='email' 
+                                autoCapitalize='none'
+                                onChangeText={(userInput) => handleChangeText({userInput})}/>
+                        </View>
+                    </View>      
                 </SafeAreaView>
             </TouchableWithoutFeedback>
-            
             <Pressable style={({pressed}) => [{
-                    backgroundColor: pressed ? colors.grey : colors.blue,},
-                    styles.continueButton,]}
-                    onPress={() => handleContinuePress()}>
+                backgroundColor: pressed ? colors.grey : colors.blue,},
+                styles.continueButton,]}
+                onPress={() => handleContinuePress()}>
 
-                    <Text style={styles.buttonText}>Continue</Text>
-                </Pressable>
+                <Text style={styles.buttonText}>Continue</Text>
+            </Pressable>
         </View>
     );
-    
 }
