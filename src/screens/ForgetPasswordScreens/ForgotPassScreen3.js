@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet, Pressable, TextInput, Keyboard, SafeAreaView } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
-import colors from '../../config/colors';
+import colors from '../../../config/colors';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 
@@ -22,14 +22,14 @@ const viewConstants = {
     textBoxPadding: 10
 }
 
-export default function ForgotPassScreen4({navigation}) {
+export default function ForgotPassScreen3({navigation}) {
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are here
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,
-            marginBottom: '40%',
+            marginBottom: '25%',
             flex: 1,
             justifyContent: 'center',
             flexDirection: ( landscape|| width>height)? 'row' : null,
@@ -97,15 +97,19 @@ export default function ForgotPassScreen4({navigation}) {
         },
     })
     const handleContinueRoute = () => {
-        navigation.navigate("Login");
+        navigation.navigate("Forgot Password 4");
     }
     const handleChangeText1 = ({userInput}) => {
         // Runs everytime the user enters or deletes a character
-        console.log("Password: " + userInput);
+        console.log("Q1 Answer: " + userInput);
     }
     const handleChangeText2 = ({userInput}) => {
         // Runs everytime the user enters or deletes a character
-        console.log("Confirmation: " + userInput);
+        console.log("Q2 Answer: " + userInput);
+    }
+    const handleChangeText3 = ({userInput}) => {
+        // Runs everytime the user enters or deletes a character
+        console.log("Q3 Answer: " + userInput);
     }
     return (
         <View style={styles.screenBackground}>
@@ -113,27 +117,36 @@ export default function ForgotPassScreen4({navigation}) {
                 <SafeAreaView style={styles.container}>
                     <View style = {styles.header}>
                         <Text style = {styles.headerTitle}>
-                            Create New Password
+                            Answer Security Questions
                         </Text>
                     </View>
                     <View styles = { styles.inputView }>
                         <View>
                             <Text style={styles.label}>
-                                Enter New Password
+                                Security Question 1
                             </Text>
                             <TextInput style={styles.inputText} 
-                                placeholder="Enter Your Password" 
+                                placeholder="Enter Your Answer" 
                                 autoCapitalize='none'
                                 onChangeText={(userInput) => handleChangeText1({userInput})}/>
                         </View>
                         <View>
                             <Text style={styles.label}>
-                                Confirm Password
+                                Security Question 2
                             </Text>
                             <TextInput style={styles.inputText} 
-                                placeholder="Re-enter Your Password" 
+                                placeholder="Enter Your Answer" 
                                 autoCapitalize='none'
                                 onChangeText={(userInput) => handleChangeText2({userInput})}/>
+                        </View>
+                        <View>
+                            <Text style={styles.label}>
+                                Security Question 3
+                            </Text>
+                            <TextInput style={styles.inputText} 
+                                placeholder="Enter Your Answer" 
+                                autoCapitalize='none'
+                                onChangeText={(userInput) => handleChangeText3({userInput})}/>
                         </View>
                     </View>
                 </SafeAreaView>

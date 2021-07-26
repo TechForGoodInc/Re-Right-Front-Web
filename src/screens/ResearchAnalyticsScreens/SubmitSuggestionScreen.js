@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Pressable, Alert, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
-
-
-import colors from '../../config/colors';
+import colors from '../../../config/colors';
+import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -21,23 +19,23 @@ const viewConstants = {
     textBoxPadding: 10
 }
 
-export default function ForgotPassScreen1({navigation}) {
+export default function SignupScreen3({navigation}) {
+    //getting the dimensions and the orientation
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are here
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,
-            marginTop: '8%',
             flex: 1,
             justifyContent: 'center',
             flexDirection: ( landscape|| width>height)? 'row' : null,
         },
         header: {
-            marginBottom: viewConstants.headerBottomMargin,
-            flex: (landscape|| width>height) ? 1 : 0,
-            flexDirection: 'column',
-            width: ( landscape|| width>height) ? '50%' : '100%',
+           marginBottom: viewConstants.headerBottomMargin,
+           flex: (landscape|| width>height) ? 1 : 0,
+           flexDirection: 'column',
+           width: ( landscape|| width>height) ? '50%' : '100%',
         },
         headerTitle: {
             fontWeight: '800',
@@ -56,10 +54,8 @@ export default function ForgotPassScreen1({navigation}) {
             paddingVertical: '3%',
             fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
         },
-        inputView: {
-            flex:1,
-            flexDirection: 'column',
-            marginHorizontal: 40
+        inputForm: {
+            flex:( landscape|| width>height) ? 1 : 0
         },
         label: {
             fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
@@ -68,6 +64,16 @@ export default function ForgotPassScreen1({navigation}) {
         },
         inputText: {
             borderWidth: viewConstants.textBoxBorderWidth,
+            borderColor: colors.light_grey,
+            borderRadius: viewConstants.textBoxBorderRadius,
+            textAlign: 'center',
+            padding: viewConstants.textBoxPadding,
+            fontSize:  ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
+            marginHorizontal: viewConstants.textBoxPadding,
+        },
+        inputParagraph: {
+            borderWidth: viewConstants.textBoxBorderWidth,
+            height: ( landscape|| width>height) ? 100 : 200,
             borderColor: colors.light_grey,
             borderRadius: viewConstants.textBoxBorderRadius,
             textAlign: 'center',
@@ -87,53 +93,45 @@ export default function ForgotPassScreen1({navigation}) {
             fontWeight: 'bold',
             letterSpacing: 0.25,
             color: 'white',
-            },
-        continueButton: {
+          },
+        submitButton: {
             width: "100%",
-            height: 70,
+            height: ( landscape|| width>height) ? 45 : 70,
             justifyContent: "center",
             alignItems: "center",
         },
+        linkText: {
+            color: colors.blue,
+            fontSize: 18,
+            marginBottom: '2%',
+        },
     })
-
-    const handleContinuePress = () => {
-        // Determine if entered username/email is linked to existing account
-        // If not, display error and keep them on this page
-        navigation.navigate("Forgot Password 2");
+    const handleSubmitPress = () => {
+        // Submit suggestion to a suggestion database ?
     }
-    
-    return (
+
+    return ( 
         <View style={styles.screenBackground}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <SafeAreaView style={styles.container}>
-                    <View style = {styles.header}>
-                        <Text style = {styles.headerTitle}>
-                            Forgot Password
-                        </Text>
+            <SafeAreaView style = { styles.container} > 
+                <View style = {styles.header}>
+                        <Text style = {styles.headerTitle}>Submit a Suggestion</Text>
+                </View>
+                <View style = {styles.inputForm}>
+                    <View style = {styles.inputContainer}>
+                        <TextInput style={styles.inputParagraph} placeholder="Describe an improvement or a a new tool!" />
                     </View>
-                    <View styles = { styles.inputView }>
-                        <View>
-                            <Text style={styles.label}>
-                                Username or Email: 
-                            </Text>
-                            <TextInput style={styles.inputText} 
-                                placeholder="Enter Your Username or Email" 
-                                keyboardType = 'email-address' 
-                                textContentType = 'emailAddress' 
-                                autoCompleteType='email' 
-                                autoCapitalize='none'
-                                onChangeText={(userInput) => handleChangeText({userInput})}/>
-                        </View>
-                    </View>      
-                </SafeAreaView>
-            </TouchableWithoutFeedback>
-            <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.blue,},
-                styles.continueButton,]}
-                onPress={() => handleContinuePress()}>
+                </View>
 
-                <Text style={styles.buttonText}>Continue</Text>
+            </SafeAreaView>
+        </TouchableWithoutFeedback>
+        <Pressable style={({pressed}) => [{
+                backgroundColor: pressed ? colors.grey : colors.blue,},
+                styles.submitButton,]}
+                onPress={() => handleContinuePress()}>
+                <Text style={styles.buttonText}>Submit</Text>
             </Pressable>
         </View>
-    );
+        
+     );
 }

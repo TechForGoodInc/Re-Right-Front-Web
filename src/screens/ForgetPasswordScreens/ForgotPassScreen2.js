@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, View, StyleSheet, Pressable, TextInput, Keyboard, SafeAreaView } from 'react-native';
+import { Text, TouchableWithoutFeedback, View, StyleSheet, Pressable, Alert, Keyboard, SafeAreaView } from 'react-native';
+import { KeycodeInput } from 'react-native-keycode';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
-import colors from '../../config/colors';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
+import colors from '../../../config/colors';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -22,14 +22,16 @@ const viewConstants = {
     textBoxPadding: 10
 }
 
-export default function ForgotPassScreen3({navigation}) {
+const CODE_LENGTH = 6;
+
+export default function ForgotPassScreen2({navigation}) {
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are here
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,
-            marginBottom: '25%',
+            marginTop: '8%',
             flex: 1,
             justifyContent: 'center',
             flexDirection: ( landscape|| width>height)? 'row' : null,
@@ -96,20 +98,13 @@ export default function ForgotPassScreen3({navigation}) {
             alignItems: "center",
         },
     })
-    const handleContinueRoute = () => {
-        navigation.navigate("Forgot Password 4");
+    const handleContinuePress = () => {
+        //Alert.alert("You entered: " + this.state.code, "Code must match one sent through email to proceed.");
+        navigation.navigate("Forgot Password 3");
     }
-    const handleChangeText1 = ({userInput}) => {
-        // Runs everytime the user enters or deletes a character
-        console.log("Q1 Answer: " + userInput);
-    }
-    const handleChangeText2 = ({userInput}) => {
-        // Runs everytime the user enters or deletes a character
-        console.log("Q2 Answer: " + userInput);
-    }
-    const handleChangeText3 = ({userInput}) => {
-        // Runs everytime the user enters or deletes a character
-        console.log("Q3 Answer: " + userInput);
+    const handleCodeComplete = (code) => {
+        console.log(code);
+        navigation.navigate("Forgot Password 3");
     }
     return (
         <View style={styles.screenBackground}>
@@ -117,48 +112,24 @@ export default function ForgotPassScreen3({navigation}) {
                 <SafeAreaView style={styles.container}>
                     <View style = {styles.header}>
                         <Text style = {styles.headerTitle}>
-                            Answer Security Questions
+                            Enter Code Sent to Email
                         </Text>
                     </View>
-                    <View styles = { styles.inputView }>
-                        <View>
-                            <Text style={styles.label}>
-                                Security Question 1
-                            </Text>
-                            <TextInput style={styles.inputText} 
-                                placeholder="Enter Your Answer" 
-                                autoCapitalize='none'
-                                onChangeText={(userInput) => handleChangeText1({userInput})}/>
-                        </View>
-                        <View>
-                            <Text style={styles.label}>
-                                Security Question 2
-                            </Text>
-                            <TextInput style={styles.inputText} 
-                                placeholder="Enter Your Answer" 
-                                autoCapitalize='none'
-                                onChangeText={(userInput) => handleChangeText2({userInput})}/>
-                        </View>
-                        <View>
-                            <Text style={styles.label}>
-                                Security Question 3
-                            </Text>
-                            <TextInput style={styles.inputText} 
-                                placeholder="Enter Your Answer" 
-                                autoCapitalize='none'
-                                onChangeText={(userInput) => handleChangeText3({userInput})}/>
-                        </View>
+                    <View style={styles.inputView}>
+                        <KeycodeInput numeric={true}
+                            length={CODE_LENGTH}
+                            onComplete={(code) => handleCodeComplete(code)}/>
                     </View>
                 </SafeAreaView>
             </TouchableWithoutFeedback>
-
+            
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.blue,},
-                styles.continueButton,]}
-                onPress={() => handleContinueRoute()}>
+                    backgroundColor: pressed ? colors.grey : colors.blue,},
+                    styles.continueButton,]}
+                    onPress={() => handleContinuePress()}>
 
-                <Text style={styles.buttonText}>Continue</Text>
-            </Pressable>
+                    <Text style={styles.buttonText}>Continue</Text>
+                </Pressable>
         </View>
     );
     

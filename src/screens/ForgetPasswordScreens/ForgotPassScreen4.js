@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
-import colors from '../../config/colors';
-import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
-import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+import React from 'react';
+import { Text, View, StyleSheet, Pressable, TextInput, Keyboard, SafeAreaView } from 'react-native';
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+
+import colors from '../../../config/colors';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -19,23 +22,23 @@ const viewConstants = {
     textBoxPadding: 10
 }
 
-const SignupScreen2 = ({navigation}) => {
-    //getting the dimensions and the orientation
+export default function ForgotPassScreen4({navigation}) {
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are here
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,
+            marginBottom: '40%',
             flex: 1,
             justifyContent: 'center',
             flexDirection: ( landscape|| width>height)? 'row' : null,
         },
         header: {
-           marginBottom: viewConstants.headerBottomMargin,
-           flex: (landscape|| width>height) ? 1 : 0,
-           flexDirection: 'column',
-           width: ( landscape|| width>height) ? '50%' : '100%',
+            marginBottom: viewConstants.headerBottomMargin,
+            flex: (landscape|| width>height) ? 1 : 0,
+            flexDirection: 'column',
+            width: ( landscape|| width>height) ? '50%' : '100%',
         },
         headerTitle: {
             fontWeight: '800',
@@ -54,8 +57,10 @@ const SignupScreen2 = ({navigation}) => {
             paddingVertical: '3%',
             fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
         },
-        inputForm: {
-            flex:( landscape|| width>height) ? 1 : 0
+        inputView: {
+            flex:1,
+            flexDirection: 'column',
+            marginHorizontal: 40
         },
         label: {
             fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
@@ -83,57 +88,65 @@ const SignupScreen2 = ({navigation}) => {
             fontWeight: 'bold',
             letterSpacing: 0.25,
             color: 'white',
-          },
+            },
         continueButton: {
             width: "100%",
-            height: ( landscape|| width>height) ? 45 : 70,
+            height: 70,
             justifyContent: "center",
             alignItems: "center",
         },
     })
-    const handleContinuePress = () => {
-        navigation.navigate("Signup 3");
+    const handleContinueRoute = () => {
+        navigation.navigate("Login");
     }
-    return ( 
+    const handleChangeText1 = ({userInput}) => {
+        // Runs everytime the user enters or deletes a character
+        console.log("Password: " + userInput);
+    }
+    const handleChangeText2 = ({userInput}) => {
+        // Runs everytime the user enters or deletes a character
+        console.log("Confirmation: " + userInput);
+    }
+    return (
         <View style={styles.screenBackground}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <SafeAreaView style = { styles.container} > 
-                <View style = {styles.header}>
-                        <Text style = {styles.headerTitle}>Security Questions</Text>
-                        <Text style = {styles.headerText} >Answer a couple of security questions to help you get back into your account if you ever forget your password.</Text>
-                        
-                </View>
-                <View style ={styles.inputForm}>
-                    <View>
-                        <Text style={styles.label}>Security Question 1: </Text>
-                        <TextInput style={styles.inputText} placeholder="Dropdowm SQ and input " autoCapitalize='none'/>
+                <SafeAreaView style={styles.container}>
+                    <View style = {styles.header}>
+                        <Text style = {styles.headerTitle}>
+                            Create New Password
+                        </Text>
                     </View>
-                    <View>
-                        <Text style={styles.label} >Security Question 2: </Text>
-                        <TextInput style={styles.inputText} placeholder="Dropdowm SQ and input " />
+                    <View styles = { styles.inputView }>
+                        <View>
+                            <Text style={styles.label}>
+                                Enter New Password
+                            </Text>
+                            <TextInput style={styles.inputText} 
+                                placeholder="Enter Your Password" 
+                                autoCapitalize='none'
+                                onChangeText={(userInput) => handleChangeText1({userInput})}/>
+                        </View>
+                        <View>
+                            <Text style={styles.label}>
+                                Confirm Password
+                            </Text>
+                            <TextInput style={styles.inputText} 
+                                placeholder="Re-enter Your Password" 
+                                autoCapitalize='none'
+                                onChangeText={(userInput) => handleChangeText2({userInput})}/>
+                        </View>
                     </View>
-                    <View style = {styles.lastInput}>
-                        <Text style={styles.label}>Security Question 3: </Text>
-                        <TextInput style={styles.inputText} placeholder="Dropdowm SQ and input " />
-                    </View>
-                    
-                </View>
+                </SafeAreaView>
+            </TouchableWithoutFeedback>
 
-            </SafeAreaView>
-        </TouchableWithoutFeedback>
-
-        <Pressable style={({pressed}) => [{
+            <Pressable style={({pressed}) => [{
                 backgroundColor: pressed ? colors.grey : colors.blue,},
                 styles.continueButton,]}
-                onPress={() => handleContinuePress()}>
+                onPress={() => handleContinueRoute()}>
 
                 <Text style={styles.buttonText}>Continue</Text>
             </Pressable>
-        
         </View>
-        
-     );
+    );
+    
 }
- 
-export default SignupScreen2;
-

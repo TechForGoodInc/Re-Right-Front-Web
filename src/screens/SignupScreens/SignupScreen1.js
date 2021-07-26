@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import colors from '../../config/colors';
+import colors from '../../../config/colors';
 import { Platform, Form, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
-import GetSignUp1Style from './styles/SignUp1Css';
-import KeyboardViewStyles from './styles/KeyboardViewStyles';
+import GetSignUp1Style from '../styles/SignUp1Css';
+import KeyboardViewStyles from '../styles/KeyboardViewStyles';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 export default function SignupScreen1({navigation}) {
@@ -72,6 +72,7 @@ export default function SignupScreen1({navigation}) {
                 )
             }
         }else if (usernameIsInUse) {
+            //Set up with backend database
             if (Platform.OS === 'web'){
                 alert("This username has already been used by someone else")
             }else {
@@ -93,6 +94,21 @@ export default function SignupScreen1({navigation}) {
                 Alert.alert(
                     "Passwords Don't Match",
                     "Kindly ensure that your passwords match",
+                    [
+                        {
+                            text: "Edit Password",
+                            onPress: () => console.log('Password error')
+                        }
+                    ]
+                )
+            }
+        }else if (password.length<8){
+            if (Platform.OS === 'web'){
+                alert("Please make sure that the password has atleast 8 characters")
+            }else {
+                Alert.alert(
+                    "Passwords Too Short",
+                    "Please make sure that the password has atleast 8 characters",
                     [
                         {
                             text: "Edit Password",
