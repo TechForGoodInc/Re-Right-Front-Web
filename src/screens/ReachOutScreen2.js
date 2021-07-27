@@ -9,7 +9,7 @@ export default function ReportOutScreen2({navigation}) {
                 style={styles.textInput}
                 placeholder="Search">
             </TextInput>
-            <ScrollView style="styles.feed">
+            <ScrollView >
                 <SampleChats />
                 <SampleChats/>
                 <SampleChats/>
