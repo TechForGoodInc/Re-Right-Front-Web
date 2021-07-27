@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, TextInput, Text, Image, Platform, Alert, View, ScrollView} from 'react-native';
 import SampleChats from './SampleChats';
 
-export default function ReportOutScreen2() {
+export default function ReportOutScreen2({navigation}) {
     return (
         <SafeAreaView>
             <TextInput
@@ -10,7 +10,7 @@ export default function ReportOutScreen2() {
                 placeholder="Search">
             </TextInput>
             <ScrollView style="styles.feed">
-                <SampleChats/>
+                <SampleChats />
                 <SampleChats/>
                 <SampleChats/>
                 <SampleChats/>
