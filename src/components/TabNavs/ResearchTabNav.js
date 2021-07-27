@@ -1,10 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ProfileStackNav from '../ProfileStackNav';
-import FriendsStackNav from '../FriendsStackNav';
-import CreatePostStackNav from '../CreatePostStackNav';
-import ChatStackNav from '../ChatStackNav';
-import ResearchStackNav from '../ResearchStackNav';
+import ProfileStackNav from '../StackNavs/ProfileStackNav';
+import FriendsStackNav from '../StackNavs/FriendsStackNav';
+import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
+import ChatStackNav from '../StackNavs/ChatStackNav';
+import ResearchStackNav from '../StackNavs/ResearchStackNav';
 
 const BottomTabs = createBottomTabNavigator();
 
