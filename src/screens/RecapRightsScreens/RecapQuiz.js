@@ -5,243 +5,243 @@ export default function RecapQuiz({ navigation }) {
  //sample questions
  const questions = [
    {
-     questionText: "Question 1",
+     questionText: "Which of the following is the first charter of Human's rights?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Bill of rights", isCorrect: false },
+       { answerText: "Constitution of media", isCorrect: false },
+       { answerText: "The Cyrus cylinder", isCorrect: true },
      ],
    },
    {
-     questionText: "Question 2",
+     questionText: "Who played an important role in international human rights law?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Economic summit", isCorrect: false },
+       { answerText: "World War", isCorrect: false },
+       { answerText: "The United Nations", isCorrect: true },
      ],
    },
    {
-     questionText: "Question 3 ",
+     questionText: "Who adopted the landmark document, the universal declaration of human rights?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "UNESCO", isCorrect: false },
+       { answerText: "UNICEF", isCorrect: false },
+       { answerText: "UNO", isCorrect: true },
      ],
    },
    {
-     questionText: "Question 4",
+     questionText: " When was the universal declaration of human rights adopted by UNO?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "10th December 1946", isCorrect: false },
+       { answerText: "10th December 1947", isCorrect: false },
+       { answerText: "10th December 1948", isCorrect: true },
      ],
    },
    {
-     questionText: "Question 5",
+     questionText: "Which article of the universal declaration of human rights tells that the right of nationality depends on one's wish?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Article 15", isCorrect: true },
+       { answerText: "Article 20", isCorrect: false },
+       { answerText: "Article 10", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 6 ",
+     questionText: "Who was the first chairman of the commission on human rights?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Eleanor Roosevelt", isCorrect: true },
+       { answerText: "Thomas Jefferson", isCorrect: false },
+       { answerText: "Thomas Paine", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 7",
+     questionText: "The Universal declaration of human rights was adopted under whose chairmanship?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Eleanor Roosevelt", isCorrect: true },
+       { answerText: "Jawaharlal Nehru", isCorrect: false },
+       { answerText: "Adolf Hitler", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 8",
+     questionText: "The Universal declaration of human rights is applicable to -",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Every individual, regardless of religion, race, gender, or cultural background", isCorrect: true },
+       { answerText: "The citizens of UN member countries", isCorrect: false },
+       { answerText: "Some countries", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 9",
+     questionText: "On which anniversary of the Universal Declaration of human rights, the slogan 'All human rights for all' was adopted?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "12th", isCorrect: false },
+       { answerText: "30th", isCorrect: false },
+       { answerText: "50th", isCorrect: true },
      ],
    },
    {
-     questionText: "Question 10",
+     questionText: "How many articles are there in the Universal Declaration of human rights?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "30", isCorrect: true },
+       { answerText: "15", isCorrect: false },
+       { answerText: "10", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 11",
+     questionText: "In which of the following year, the declaration of the rights of the child passed by the UN?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "1949", isCorrect: false },
+       { answerText: "1959", isCorrect: true },
+       { answerText: "1969", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 12",
+     questionText: "Which of the following country has adopted the 'Declaration of the rights of man and of the citizen'?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "France", isCorrect: true },
+       { answerText: "Italy", isCorrect: false },
+       { answerText: "India", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 13",
+     questionText: "The human rights day is observed on -",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "9th December", isCorrect: false },
+       { answerText: "10th December", isCorrect: true },
+       { answerText: "1st December", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 14",
+     questionText: "When did the NHRC (National Human Rights Commission) of India constitute?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "1993", isCorrect: true },
+       { answerText: "1992", isCorrect: false },
+       { answerText: "1990", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 15",
+     questionText: "In which article 'right to education' is guaranteed in India?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "21", isCorrect: false},
+       { answerText: "19", isCorrect: false },
+       { answerText: "21A", isCorrect: true },
      ],
    },
    {
-     questionText: "Question 16",
+     questionText: "Who is the current chairman of the NHRC (National Human rights commission)?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Justice A.S. Anand", isCorrect: false },
+       { answerText: "Justice H.L. Dattu", isCorrect: true },
+       { answerText: "Both of the above", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 17",
+     questionText: "Which of the following can be the chairman of NHRC (National Human rights commission)?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Any retired chief justice of the supreme court", isCorrect: true },
+       { answerText: "Anyone who is appointed by the president", isCorrect: false },
+       { answerText: "Any sitting judge of the supreme court", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 18",
+     questionText: "Which of the following year is observed as the International Year of the child?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "1949", isCorrect: false },
+       { answerText: "1959", isCorrect: false },
+       { answerText: "1979", isCorrect: true },
      ],
    },
    {
-     questionText: "Question 19",
+     questionText: " Which of the following article of the Indian constitution prohibits hazardous jobs to children?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Article 24", isCorrect: true },
+       { answerText: "Article 21", isCorrect: false },
+       { answerText: "Article 22", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 20",
+     questionText: " What is the full form of UNHCR?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "United Nations high commissioner for refugees", isCorrect: true },
+       { answerText: "United Nations high-level committee for refugees", isCorrect: false },
+       { answerText: "United Nations health committee for refugees", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 21",
+     questionText: "Who is the author of the book 'Human rights and inhuman wrongs'?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "V.R. Krishna Iyer", isCorrect: true },
+       { answerText: "Upendra Baxi", isCorrect: false },
+       { answerText: "Chiranjeev Nirmal", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 22",
+     questionText: "What is the full form of ECOSOC?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Eco society of Canada", isCorrect: false },
+       { answerText: "Ecosocial council", isCorrect: false },
+       { answerText: "Economic and social council", isCorrect: true },
      ],
    },
    {
-     questionText: "Question 23",
+     questionText: "The tenure of the chairperson of NHRC (National Human Rights Commission) is -",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "4 years or upto 68 years of age", isCorrect: true },
+       { answerText: "3 years or upto 69 years of age", isCorrect: false },
+       { answerText: "5 years or upto 70 years of age", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 24",
+     questionText: "The members and chairperson of NHRC are appointed by the recommendation of the committee that consists -",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "The Prime Minister, Opposition's leader in the Lok Sabha, Lok Sabha Speaker, The Deputy Chairman of the Rajya Sabha", isCorrect: false },
+       { answerText: "The Prime Minister, The Home Minister, Opposition Leader in the Lok Sabha, Opposition leader in the Rajya Sabha, Lok Sabha Speaker, The Deputy Chairman of the Rajya Sabha", isCorrect: true },
+       { answerText: "The Prime Minister, T", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 25",
+     questionText: "NHRC consists of a chairman and -",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Four members", isCorrect: true },
+       { answerText: "Three members", isCorrect: false },
+       { answerText: "Two members", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 26",
+     questionText: "Where is the headquarter of the NHRC (National Human Rights Commission)?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Kolkata", isCorrect: false },
+       { answerText: "Mumbai", isCorrect: false },
+       { answerText: "Delhi", isCorrect: true},
      ],
    },
    {
-     questionText: "Question 27",
+     questionText: "Article 340 of the Indian constitution deals with -",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Election commission", isCorrect: false },
+       { answerText: "Union Public Service Commission", isCorrect: false },
+       { answerText: "Backward classes commission", isCorrect: true },
      ],
    },
    {
-     questionText: "Question 28",
+     questionText: " Article 21 of the Indian Constitution provides for -",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Right to lively and liberal life", isCorrect: true },
+       { answerText: "Right to subsist", isCorrect: false },
+       { answerText: "Right to lively and liberal life", isCorrect: false },
      ],
    },
    {
-     questionText: "Question 29",
+     questionText: "Where is an International criminal court located?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "Geneva", isCorrect: false},
+       { answerText: "Brussels", isCorrect: false },
+       { answerText: "The Hague", isCorrect: true },
      ],
    },
    {
-     questionText: "Question 30",
+     questionText: "In which year have the changes been made in the NHRC (National Human Right Commission) Act?",
      answerOptions: [
-       { answerText: "Answer 1", isCorrect: true },
-       { answerText: "Answer 2", isCorrect: false },
-       { answerText: "Answer 3", isCorrect: false },
+       { answerText: "2006", isCorrect: true },
+       { answerText: "2000", isCorrect: false },
+       { answerText: "1999", isCorrect: false },
      ],
    },
  ];
@@ -267,7 +267,7 @@ export default function RecapQuiz({ navigation }) {
    if (nextQuestion < 10) {
      {createRandomNumber();}
      setQuestionNumber(questionNumber + 1);
-     
+
    } else {
      setShowScore(true);
    }
@@ -319,13 +319,14 @@ const styles = StyleSheet.create({
    color: colors.dblue,
  },
  question: {
-   fontSize: 15,
+   fontSize: 20,
    margin: 10,
    alignSelf: "center",
+   textAlign: 'center',
  },
  answerOption: {
    margin: 10,
-   padding: 10,
+   padding: 15,
    width: "90%",
    alignSelf: "center",
    borderRadius: 10,
@@ -335,6 +336,7 @@ const styles = StyleSheet.create({
  optionText: {
    fontSize: 18,
    alignSelf: "center",
+   textAlign: 'center',
  },
  score: {
    fontSize: 30,
