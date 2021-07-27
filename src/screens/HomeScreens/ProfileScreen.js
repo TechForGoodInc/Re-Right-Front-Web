@@ -139,7 +139,8 @@ export default function ProfileScreen({navigation}) {
                 <View style = {styles.bioAndTags}>
                     <Text style = {{fontWeight:'700',paddingBottom:'5%',fontSize: 18}} > Bio: </Text>
                     <Text style = {{display: editMode? 'none':'flex',fontSize: 17}}> {bio} </Text>
-                    <TextInput style = {{display: editMode? 'flex':'none', borderWidth: 2, padding: '2%', borderRadius: 10,borderColor: colors.light_grey}}
+                    <TextInput numberOfLines = '4'
+                            style = {{display: editMode? 'flex':'none', borderWidth: 2, padding: '2%', borderRadius: 10,borderColor: colors.light_grey, maxWidth: 180}}
                             defaultValue = {bio}
                             onChangeText = {bio => setBio(bio)}
                             onSubmitEditing = {editing}
