@@ -1,6 +1,6 @@
 
 import React from 'react';
-import colors from '../../config/colors';
+import colors from '../../../config/colors';
 import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable } from 'react-native';
 const backgcolor = colors.white;
 const feedcolor = "white"
@@ -27,7 +27,7 @@ const getComment = () => {
   return comments[index];
 }
 const getImage = () => {
-    const postnumber = getRandomInt(400);
+    const postnumber = getRandomInt(6000);
     const link = 'https://picsum.photos/' + String(postnumber);
     return {postNumber: postnumber, url: link};
 }
