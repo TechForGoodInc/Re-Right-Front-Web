@@ -9,6 +9,7 @@ import ResearchStackNav from './StackNavs/ResearchStackNav';
 import ProfileStackNav from './StackNavs/ProfileStackNav';
 
 import LoggedOutScreen from '../screens/LoggedOutScreen';
+import { StyleSheet } from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
@@ -17,11 +18,6 @@ export default function HomeDrawerNav({navigation}) {
     return (
         <Drawer.Navigator initialRoute="Home">
             <Drawer.Screen name="Home" component={HomeTabNav}/>
-            <Drawer.Screen name = "Profile"  component={ProfileStackNav} options={{title: "@username", headerLeft: () => (
-                    <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
-                    </TouchableOpacity>
-                    )}} />
             <Drawer.Screen name="Recap Rights" component={RecapRightsTabNav}/>
             <Drawer.Screen name="Report Abuse" component={ReportAbuseTabNav}/>
             <Drawer.Screen name="Reach Out" component={ReachOutTabNav}/>
