@@ -1,13 +1,29 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, TextInput, Text, Pressable, Platform, Alert} from 'react-native';
+import {SafeAreaView, StyleSheet, TextInput, Text, Image, Platform, Alert, View, ScrollView} from 'react-native';
+import SampleChats from './SampleChats';
 
-export default function ReportOutScreen2() {
+export default function ReportOutScreen2({navigation}) {
     return (
         <SafeAreaView>
             <TextInput
                 style={styles.textInput}
                 placeholder="Search">
-            </TextInput>      
+            </TextInput>
+            <ScrollView style="styles.feed">
+                <SampleChats />
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+            </ScrollView>
         </SafeAreaView>
 
     )
@@ -17,10 +33,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: '90%',
         paddingLeft: '2%',
-        height: '22%',
+        height: 50,
         alignSelf: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
         marginTop: '5%',
     }
 })
