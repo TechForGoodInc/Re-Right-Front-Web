@@ -7,7 +7,7 @@ export default function ReportOutScreen2({ navigation }) {
             <Text
                 style = {styles.pretext}
             >
-                Reach Out Screen 2
+                Reach Out Screen 2 Testing
             </Text>        
             
         </SafeAreaView>
