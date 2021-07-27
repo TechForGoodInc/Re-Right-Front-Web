@@ -21,7 +21,7 @@ export default function ReachOutStackNav({navigation}) {
                         <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
-            <Stack.Screen name="Reach Out 2" component={ReachOutScreen2}/>  
+            <Stack.Screen name="Chats" component={ReachOutScreen2}/>  
         </Stack.Navigator>
     )
 }
