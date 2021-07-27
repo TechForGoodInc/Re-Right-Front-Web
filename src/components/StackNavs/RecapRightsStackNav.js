@@ -3,9 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import RecapRightScreen1 from '../screens/RecapRightsScreens/RecapRightsScreen1';
-import RecapArticle from '../screens/RecapRightsScreens/RecapArticle';
-import RecapQuiz from '../screens/RecapRightsScreens/RecapQuiz';
+import RecapRightScreen1 from '../../screens/RecapRightsScreens/RecapRightsScreen1';
+import RecapArticle from '../../screens/RecapRightsScreens/RecapArticle';
+import RecapQuiz from '../../screens/RecapRightsScreens/RecapQuiz';
 
 const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -19,7 +19,7 @@ export default function RecapRightsStackNav({navigation}) {
             <Stack.Screen name="Recap Rights" component={RecapRightScreen1}
                 options={{title: "Recap Rights", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
             <Stack.Screen name="RecapArticle" component={RecapArticle} options = { ({route}) => ({title: route.params.title})} />  

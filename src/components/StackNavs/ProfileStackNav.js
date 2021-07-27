@@ -1,27 +1,26 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-import HomeScreen from '../screens/HomeScreens/HomeScreen';
+import ProfileScreen from '../../screens/HomeScreens/ProfileScreen';
 
 const Stack = createStackNavigator();
 
-export default function HomeStackNav({navigation}) {
+export default function ProfileStackNav({navigation}) {
     const handleHamburgerPress = () => {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Home" >
-            <Stack.Screen name="Home" component={HomeScreen}
-                options={{title: "R E - R I G H T", headerLeft: () => (
+        <Stack.Navigator initialRoute="Profile" >
+            <Stack.Screen name="Profile" component={ProfileScreen}
+                options={{title: "Profile", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
         </Stack.Navigator>
     )
 }
-
 const styles = StyleSheet.create({
     menuicon: {
       width: 50,

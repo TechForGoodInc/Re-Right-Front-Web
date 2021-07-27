@@ -108,6 +108,7 @@ export default function SignupScreen3({navigation}) {
     })
     const handleSubmitPress = () => {
         // Submit suggestion to a suggestion database ?
+        navigation.navigate("Research Analytics");
     }
 
     return ( 
