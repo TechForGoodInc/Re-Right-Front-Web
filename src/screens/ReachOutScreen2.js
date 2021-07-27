@@ -1,5 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, TextInput, Text, Image, Platform, Alert, View} from 'react-native';
+import SampleChats from './SampleChats';
 
 export default function ReportOutScreen2() {
     return (
@@ -8,18 +9,7 @@ export default function ReportOutScreen2() {
                 style={styles.textInput}
                 placeholder="Search">
             </TextInput>
-            <View style = {styles.people}> 
-            <Image style = {styles.friendpfp} source = { require("./../../assets/man.png") }
-            />
-            <View style = {styles.textmessage}>
-                <Text>
-                    John Smith
-                </Text>
-                <Text>
-                    John Smith
-                </Text>
-            </View>
-            </View>      
+            <SampleChats/>
         </SafeAreaView>
 
     )
@@ -34,18 +24,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: '5%',
-    },
-    friendpfp:{ 
-        backgroundColor: 'white',
-        width: 50,
-        height: 50,
-        borderRadius: 500 / 2
-    },
-    people:{
-        flexDirection: 'row',
-    },
-    textmessage:{
-        paddingLeft:'2%',
-        flexDirection: 'column',
     }
 })
