@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    borderColor: "#77ACF1",
+    borderColor: colors.dblue,
     borderRadius:10,
     padding: 10,
     paddingRight: 20,
