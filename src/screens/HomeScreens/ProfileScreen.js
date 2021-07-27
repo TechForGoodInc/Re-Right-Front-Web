@@ -84,8 +84,13 @@ export default function ProfileScreen({navigation}) {
             });
         });
     }
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
     const getImage = () => {
-        return 'https://picsum.photos/100/150';
+        const postnumber = getRandomInt(300);
+        const link = 'https://picsum.photos/150/'+String(postnumber);
+        return link;
     }
     const editing = () => {
         const mode = editMode
@@ -155,17 +160,16 @@ export default function ProfileScreen({navigation}) {
                     <View style={{flex:1,flexDirection: 'row',borderColor: colors.black, width:'100%'}}>
                         <View style = {{display: (postType === 'myPosts')? 'flex':'none',width: '50%'}}>  
                         <TouchableOpacity onPress = {()=> navigation.navigate("Post")}style = {{flex:1,flexDirection: 'column',display: (postType === 'myPosts')? 'flex':'none'}}>
-                        <Image style = {{margin: 2 }} source = { { 
+                        <Image style = {{margin: 8 }} source = { { 
                                         uri: getImage(),
                                         width: 150,
-                                        height: 100,
-                                        padding: 3} }
+                                        height: 100,} }
                                 />
                         </TouchableOpacity>
                         </View>
                         <View style = {{display: (postType === 'myPosts')? 'flex':'none',width: '50%'}}>  
                         <TouchableOpacity onPress = {()=> navigation.navigate("Post")} style = {{flex:1,flexDirection: 'column',display: (postType === 'myPosts')? 'flex':'none'}}>
-                        <Image style = {{margin: 2 }} source = { { 
+                        <Image style = {{margin: 8 }} source = { { 
                                         uri: getImage(),
                                         width: 150,
                                         height: 100,} }
@@ -176,7 +180,7 @@ export default function ProfileScreen({navigation}) {
                     <View style={{flex:1,flexDirection: 'row',borderColor: colors.black, width:'100%'}}>
                         <View style = {{display: (postType === 'myPosts')? 'flex':'none',width: '50%'}}>  
                         <TouchableOpacity onPress = {()=> navigation.navigate("Post")}style = {{flex:1,flexDirection: 'column',display: (postType === 'myPosts')? 'flex':'none'}}>
-                        <Image style = {{margin: 2 }} source = { { 
+                        <Image style = {{margin: 8 }} source = { { 
                                         uri: getImage(),
                                         width: 150,
                                         height: 100,
@@ -186,7 +190,7 @@ export default function ProfileScreen({navigation}) {
                         </View>
                         <View style = {{display: (postType === 'myPosts')? 'flex':'none',width: '50%'}}>  
                         <TouchableOpacity onPress = {()=> navigation.navigate("Post")} style = {{flex:1,flexDirection: 'column',display: (postType === 'myPosts')? 'flex':'none'}}>
-                        <Image style = {{margin: 2 }} source = { { 
+                        <Image style = {{margin: 8 }} source = { { 
                                         uri: getImage(),
                                         width: 150,
                                         height: 100,} }
@@ -197,7 +201,7 @@ export default function ProfileScreen({navigation}) {
                     <View style={{flex:1,flexDirection: 'row',borderColor: colors.black, width:'100%'}}>
                         <View style = {{display: (postType === 'myPosts')? 'flex':'none',width: '50%'}}>  
                         <TouchableOpacity onPress = {()=> navigation.navigate("Post")}style = {{flex:1,flexDirection: 'column',display: (postType === 'myPosts')? 'flex':'none'}}>
-                        <Image style = {{margin: 2 }} source = { { 
+                        <Image style = {{margin: 8 }} source = { { 
                                         uri: getImage(),
                                         width: 150,
                                         height: 100,
@@ -207,7 +211,7 @@ export default function ProfileScreen({navigation}) {
                         </View>
                         <View style = {{display: (postType === 'myPosts')? 'flex':'none',width: '50%'}}>  
                         <TouchableOpacity onPress = {()=> navigation.navigate("Post")} style = {{flex:1,flexDirection: 'column',display: (postType === 'myPosts')? 'flex':'none'}}>
-                        <Image style = {{margin: 2 }} source = { { 
+                        <Image style = {{margin: 8 }} source = { { 
                                         uri: getImage(),
                                         width: 150,
                                         height: 100,} }

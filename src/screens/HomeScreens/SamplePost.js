@@ -27,7 +27,7 @@ const getComment = () => {
   return comments[index];
 }
 const getImage = () => {
-    const postnumber = getRandomInt(400);
+    const postnumber = getRandomInt(6000);
     const link = 'https://picsum.photos/' + String(postnumber);
     return {postNumber: postnumber, url: link};
 }
