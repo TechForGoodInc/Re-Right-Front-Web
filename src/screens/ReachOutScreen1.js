@@ -115,7 +115,7 @@ export default function ReachOutScreen1({navigation}) {
         }
     })
     const handleConnectPress = () => {
-        navigation.navigate("Reach Out 2")
+        navigation.navigate("Chats")
         // Submit suggestion to a suggestion database ?
     }
 
