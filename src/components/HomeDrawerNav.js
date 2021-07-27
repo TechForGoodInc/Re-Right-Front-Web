@@ -7,6 +7,8 @@ import RecapRightsTabNav from './TabNavs/RecapRightsTabNav';
 import ReportAbuseTabNav from './TabNavs/ReportAbuseTabNav';
 import ResearchTabNav from './TabNavs/ResearchTabNav';
 import ResearchStackNav from './ResearchStackNav';
+import ProfileScreen from '../screens/HomeScreens/ProfileScreen';
+import { Text } from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
@@ -18,6 +20,7 @@ export default function HomeDrawerNav({navigation}) {
             <Drawer.Screen name="Report Abuse" component={ReportAbuseTabNav}/>
             <Drawer.Screen name="Reach Out" component={ReachOutTabNav}/>
             <Drawer.Screen name="Research Analytics" component={ResearchStackNav}/>
+            <Drawer.Screen name="Profile" component={ProfileScreen}/>
             <Drawer.Screen name="Log Out" component={LoggedOutScreen}/>
         </Drawer.Navigator>
     )
