@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import { Button, Text, View, StyleSheet, Image, SafeAreaView, ScrollView, Pressable, TouchableOpacity, TextInput } from 'react-native'
+import React, { useState } from 'react';
+import prompt from 'react-native-prompt-android';
+import { Button, Text, View, StyleSheet, Image, SafeAreaView, ScrollView, Pressable, TouchableOpacity, TextInput, Alert } from 'react-native'
+import { Prompt } from 'react-router-dom';
 import colors from '../../../config/colors';
 import SamplePost from './SamplePost';
 var styles = StyleSheet.create({
@@ -97,6 +99,24 @@ export default function ProfileScreen({navigation}) {
         const mode = editMode
         setEditMode(!mode);
     }
+    const editTags = () => {
+        return (
+          prompt(
+            'Select tags',
+            'Select the tags you wish to be displayed on your profile. These tags help you find friends, or Reach Out to people who have gone through the same experiences as you',
+            [
+             {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+             {text: 'OK', onPress: password => console.log('OK Pressed, password: ' + password)},
+            ],
+            {
+                type: 'email-address',
+                cancelable: false,
+                
+                placeholder: 'placeholder'
+            }
+          )
+        );
+    }
     return (
         <ScrollView style={{
             flex: 0,
@@ -133,7 +153,7 @@ export default function ProfileScreen({navigation}) {
                 <View style = {{width: '100%', flexDirection: 'row'}}> 
                     <Text style = {{fontWeight:'700',width: '77%', paddingVertical:5,fontSize: 18, alignSelf: 'flex-start'}} > Tags: </Text>
                     <View style = {{fontSize: '13%', display: editMode? 'flex':'none', alignSelf: 'flex-end', alignContent: 'flex-end', textAlign: 'flex-end'}}> 
-                        <TouchableOpacity backgroundColor = "red">  
+                        <TouchableOpacity onPress={() => editTags()} backgroundColor = "red">  
                         <View style= {{backgroundColor: colors.light_grey, borderRadius: 10, marginBottom: '4%', marginTop: '5%'}}>
                             <Text style = {{padding: '2%', color: colors.red, fontWeight: '900'}}>Edit Tags</Text>
                         </View> 
