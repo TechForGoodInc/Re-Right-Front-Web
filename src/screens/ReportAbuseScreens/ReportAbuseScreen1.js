@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         padding: '2%',
         width: '90%',
-        height: '80%',
+        height: '70%',
         alignSelf: 'center',
         justifyContent: 'center',
         alignItems: 'center',
