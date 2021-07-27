@@ -1,9 +1,11 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, TextInput, Text, Image, Platform, Alert, View} from 'react-native';
+import { StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
 
-const SampleChats = () => {
+export default function SampleChats ({navigation}) {
     return ( 
-        <View style = {styles.people}> 
+        <TouchableOpacity 
+        style = {styles.people}
+        onPress={() => navigation.navigate("Texting")}> 
                 <Image style = {styles.friendpfp} source = { require("./../../assets/man.png") }
                 />
                 <View style = {styles.textmessage}>
@@ -16,12 +18,9 @@ const SampleChats = () => {
                 </View>
                 <Image style={styles.arrow} source={require('./../../assets/right-arrow.png')}
       />
-        </View>  
+        </TouchableOpacity>  
      );
 }
- 
-export default SampleChats;
-
 const styles = StyleSheet.create({
     friendpfp:{ 
         backgroundColor: 'white',
@@ -30,10 +29,12 @@ const styles = StyleSheet.create({
         borderRadius: 500 / 2,
     },
     people:{
-        paddingTop: '4%',
+        paddingTop: '3%',
         paddingLeft: '1%',
-        paddingBottom: '4%',
+        paddingBottom: '3%',
         flexDirection: 'row',
+        borderBottomWidth: 1,
+        borderColor: 'gray',
     },
     textmessage:{
         paddingLeft:'2%',
