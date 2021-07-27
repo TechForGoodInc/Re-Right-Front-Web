@@ -23,8 +23,10 @@ var styles = StyleSheet.create({
         paddingHorizontal: '5%',
     },
     tagView: {
-        width: '40%',
-        height: '90%',
+        width: 71,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
         borderWidth: 2,
         borderRadius: 10,
         borderColor: colors.light_grey,
@@ -47,7 +49,7 @@ export default function ProfileScreen({navigation}) {
     const [displayName, setDisplayName] = useState('Display Name');
     const [bio, setBio] = useState('Bio from database');
     //query the database for tags
-    const [tags,setTags] = useState(["#AssaultSurvivor", "#Feminist", "#LGBTQ", "#Activist"]);
+    const [tags,setTags] = useState(["#Feminist", "#LGBTQ"]);
     const [tagList, setTagList] = useState((editMode) => {
         return tags.map( (tag) => {
             return (
@@ -120,8 +122,8 @@ export default function ProfileScreen({navigation}) {
         }}>
             <View> 
             <TouchableOpacity  id= "editButton" onPress={() => {editing()} } title ="Edit "> 
-                <Image source= {require('../../../assets/editing.png')} style={{display: editMode? "none":'flex',color:editMode? "red":"blue", marginLeft: '88%',paddingTop:"5%", width: (Platform.OS!=='web')? 35 :60 , height: (Platform.OS!=='web')? 35 :60}}/>
-                <View style= {{textAlign: "center" ,alignItems: 'center',backgroundColor: colors.light_grey, borderRadius: 10, marginLeft: '80%',marginBottom: '4%',marginRight: '3%'}}>
+                <Image source= {require('../../../assets/editing.png')} style={{display: editMode? "none":'flex',color:editMode? "red":"blue", marginLeft: '86%',paddingTop:"5%", width: (Platform.OS!=='web')? 35 :60 , height: (Platform.OS!=='web')? 35 :60}}/>
+                <View style= {{textAlign: "center" ,alignItems: 'center',backgroundColor: colors.light_grey, borderRadius: 10, marginLeft: '80%',marginBottom: '4%',marginRight: '5%'}}>
                             <Text style = {{display: editMode? "flex":'none',padding: '9%', color: colors.blue, fontWeight: '900'}}>Done</Text>
                         </View> 
             </TouchableOpacity>
@@ -146,7 +148,7 @@ export default function ProfileScreen({navigation}) {
                             onSubmitEditing = {editing}
                     />
                     <View style = {{width: '100%', flexDirection: 'row'}}> 
-                        <Text style = {{fontWeight:'700',width: '77%', paddingVertical:5,fontSize: 18, alignSelf: 'flex-start'}} > Tags: </Text>
+                        <Text style = {{fontWeight:'700',width: '50%', paddingVertical:5,fontSize: 18, alignSelf: 'flex-start'}} > Tags: </Text>
                         <View style = {{fontSize: '13%', display: editMode? 'flex':'none', alignSelf: 'flex-end', alignContent: 'flex-end', textAlign: 'flex-end'}}> 
                             <TouchableOpacity onPress={() => editTags()} backgroundColor = "red">  
                             <View style= {{backgroundColor: colors.light_grey, borderRadius: 10, marginBottom: '4%', marginTop: '5%'}}>
