@@ -15,9 +15,9 @@ export default function ReportOutScreen2() {
 const styles = StyleSheet.create({
     textInput: {
         backgroundColor: 'white',
-        padding: '5%',
         width: '90%',
-        height: '10%',
+        paddingLeft: '2%',
+        height: '22%',
         alignSelf: 'center',
         justifyContent: 'center',
         alignItems: 'center',
