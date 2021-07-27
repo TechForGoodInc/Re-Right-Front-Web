@@ -9,21 +9,21 @@ export default function ReportOutScreen2() {
                 style={styles.textInput}
                 placeholder="Search">
             </TextInput>
-                <ScrollView style="styles.feed">
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                    <SampleChats/>
-                </ScrollView>
+            <ScrollView style="styles.feed">
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+                <SampleChats/>
+            </ScrollView>
         </SafeAreaView>
 
     )

@@ -14,7 +14,9 @@ const SampleChats = () => {
                         Hi!
                     </Text>
                 </View>
-            </View>  
+                <Image style={styles.arrow} source={require('./../../assets/right-arrow.png')}
+      />
+        </View>  
      );
 }
  
@@ -25,11 +27,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: 50,
         height: 50,
-        borderRadius: 500 / 2
+        borderRadius: 500 / 2,
     },
     people:{
-        paddingTop: '5%',
+        paddingTop: '4%',
         paddingLeft: '1%',
+        paddingBottom: '4%',
         flexDirection: 'row',
     },
     textmessage:{
@@ -41,5 +44,12 @@ const styles = StyleSheet.create({
     },
     textcontents:{
         paddingTop: '2%',
+    },
+    arrow:{
+        alignSelf: 'center',
+        left: 225, 
+        opacity: 0.5,
+        width: 20,
+        height: 20,
     }
 })
