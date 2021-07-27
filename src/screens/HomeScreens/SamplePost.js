@@ -1,6 +1,6 @@
 
 import React from 'react';
-import colors from '../../config/colors';
+import colors from '../../../config/colors';
 import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable } from 'react-native';
 const backgcolor = colors.white;
 const feedcolor = "white"
