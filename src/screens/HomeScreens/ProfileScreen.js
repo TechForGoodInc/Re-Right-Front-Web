@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
-import { Button, Text, View, StyleSheet, Image, SafeAreaView, ScrollView } from 'react-native'
+import { Button, Text, View, StyleSheet, Image, SafeAreaView, ScrollView, Pressable, TouchableOpacity } from 'react-native'
 
 
 
 export default function ProfileScreen({navigation}) {
     const [editMode,setEditMode] = useState(false);
+    const editing = () => {
+        setEditMode(!editMode);
+    }
     if (editMode){
         //turn diplay on for the crosses
     }
@@ -24,14 +27,16 @@ export default function ProfileScreen({navigation}) {
                 return (
                     <View style = {styles.tagView}> 
                     <Text> {tag} </Text>
-                    <Button style = {styles.crossButton} onPress = {() => {deleteTag(tag)}} title="X"/>
+                    <Pressable onPress = {() => {deleteTag(tag)}}> 
+                        <Text style = {styles.crossButton} > X </Text>
+                    </Pressable>
                     </View>
                 );
             });
         });
     }
     
-    const styles = StyleSheet.create({
+    var styles = StyleSheet.create({
         container:{
             flex: 1
         },
@@ -43,10 +48,10 @@ export default function ProfileScreen({navigation}) {
         },
         profileImage: {
             width: '20%',
-            height: '60%',
+            height: '50%',
         },
         bioAndTags: {
-            paddingTop: '6%',
+            paddingTop: '2%',
         },
         tagView: {
             width: '40%',
@@ -56,7 +61,7 @@ export default function ProfileScreen({navigation}) {
             marginHorizontal:'2%'
         },
         crossButton: {
-            display: editMode ? "flex" : 'none'
+            color: editMode ? 'blue' : 'red'
         },
         tagsGroup: {
             flexDirection: 'row',
@@ -68,21 +73,28 @@ export default function ProfileScreen({navigation}) {
             return (
                 <View style = {styles.tagView}> 
                 <Text> {tag} </Text>
-                <Button style = {styles.crossButton} onPress = {() => {deleteTag(tag)}} title="X"/>
+                <Pressable onPress = {() => {deleteTag(tag)}}> 
+                    <Text style = {styles.crossButton} > X </Text>
+                </Pressable>
                 </View>
             );
         });
     });
     return (
         <ScrollView style={styles.container}>
+            <View> 
+            <TouchableOpacity  onPress={() => {editing()} } title ="Edit "> 
+                <Text style={{color:editMode? "red":"blue",paddingHorizontal:"45%",paddingTop:"5%"}}> Edit </Text> 
+            </TouchableOpacity>
+            </View>
             <View style = {styles.header}>
                 <Image style = {styles.profileImage}source={require('./../../../assets/man.png')}/> 
                 <Text> Display Name</Text>
             </View>
             <View style = {styles.bioAndTags}>
-                <Text style = {{fontWeight:'700'}} > Bio: </Text>
+                <Text style = {{fontWeight:'700',paddingBottom:'5%'}} > Bio: </Text>
                 <Text> Bio from account</Text>
-                <Text style = {{fontWeight:'700'}} > Tags: </Text>
+                <Text style = {{fontWeight:'700',paddingVertical:'5%'}} > Tags: </Text>
                 <View style={styles.tagsGroup}>
                     {tagList}
                 </View>

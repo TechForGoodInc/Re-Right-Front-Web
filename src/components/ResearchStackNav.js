@@ -3,6 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import ResearchScreen from '../screens/ResearchAnalyticsScreens/ResearchScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MapToolScreen from '../screens/ResearchAnalyticsScreens/MapToolScreen';
+import SubmitSuggestionScreen from '../screens/ResearchAnalyticsScreens/SubmitSuggestionScreen';
 
 const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -19,6 +21,8 @@ export default function ResearchStackNav({navigation}) {
                         <Image source={require('../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
+            <Stack.Screen name="Map Tool" component={MapToolScreen}/>
+            <Stack.Screen name="Submit Suggestion" component={SubmitSuggestionScreen}/>
         </Stack.Navigator>
     )
 }
