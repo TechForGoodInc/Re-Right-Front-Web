@@ -113,9 +113,7 @@ export default function ChangeUsernameScreen() {
           }
        
       });
-  const [username, onChangeUsername] = React.useState(null);
-  const [password, onChangePassword] = React.useState(null);
-     
+  const [username, onChangeUsername] = React.useState(null);     
   return (
     
     <View style = {styles.background}>
@@ -143,8 +141,6 @@ export default function ChangeUsernameScreen() {
             <Text style={styles.labels} > Enter your password to ensure the change is saved:  </Text>
             <TextInput 
              style={styles.inputFields}
-             onChangeText={onChangePassword}
-             value={password}
              secureTextEntry={true} 
              autoCompleteType='password' 
              autoCapitalize='none'
@@ -154,7 +150,7 @@ export default function ChangeUsernameScreen() {
 
         <View style = {styles.button}>
             <Button
-                title="Update Password"
+                title="Update Username"
                 accessibilityLabel="Learn more about this purple button"
                 onPress={() =>alert("Username Successfully Updated")}
             />
