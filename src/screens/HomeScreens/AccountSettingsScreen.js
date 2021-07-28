@@ -9,23 +9,31 @@ const AccountSettings = ({navigation}) => {
     const togglediscoverSwitch = () => setdiscoverIsEnabled(previousState => !previousState);
     const [darkIsEnabled, setdarkIsEnabled] = useState(false);
     const toggledarkSwitch = () => setdarkIsEnabled(previousState => !previousState);
-
+    const handleUserNamePress = () => {
+        navigation.navigate("ChangeUserName")
+    }
+    const handleEmailPress = () => {
+        navigation.navigate("ChangeEmail")
+    }
+    const handlePasswordPress = () => {
+        navigation.navigate("ChangePassWord")
+    }
     return ( 
         <ScrollView>
             <View style={{width: '100%',padding:'2%'}}>
             <Text style={{marginTop: 20, marginLeft:'5%', fontSize: 20, fontWeight: '600'}}> Account Details </Text>
                 <View style={{marginTop: 10,width: '92%', flexDirection: 'column', alignContent: 'center',backgroundColor:colors.white, alignSelf: 'center', borderRadius: 20}}>
-                <Pressable style={ ({pressed}) => [ { backgroundColor: pressed? colors.light_grey: 'white', paddingVertical: 15, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 1,borderTopStartRadius:20, paddingTop: 18,borderTopEndRadius:20, borderColor: colors.light_grey}]}>
+                <Pressable onPress={() => handleUserNamePress()} style={ ({pressed}) => [ { backgroundColor: pressed? colors.light_grey: 'white', paddingVertical: 15, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 1,borderTopStartRadius:20, paddingTop: 18,borderTopEndRadius:20, borderColor: colors.light_grey}]}>
                     <Image style={{ alignItems: "flex-start", width: 30, height: 30,marginRight: 2}} source={require('../../../assets/user.png')} />
                     <Text style = {{ textAlignVertical:'center', flex: 1, alignItems: "flex-start", fontWeight: "400"}}> Change Username </Text>
                     <Image style={{alignItems: "flex-end",alignContent: "flex-end",alignSelf: "flex-end", width: 12, height: 12, marginTop:0,marginRight: 20}} source={require('../../../assets/right-arrow.png')} />
                 </Pressable>
-                <Pressable style={ ({pressed}) => [ { backgroundColor: pressed? colors.light_grey: 'white', paddingVertical: 15, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 1,borderTopStartRadius:0, paddingTop: 18,borderTopEndRadius:0, borderColor: colors.light_grey}]}>
+                <Pressable onPress={() => handleEmailPress()}style={ ({pressed}) => [ { backgroundColor: pressed? colors.light_grey: 'white', paddingVertical: 15, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 1,borderTopStartRadius:0, paddingTop: 18,borderTopEndRadius:0, borderColor: colors.light_grey}]}>
                     <Image style={{ alignItems: "flex-start", width: 30, height: 30,marginRight: 2}} source={require('../../../assets/email.png')} />
                     <Text style = {{ textAlignVertical:'center', flex: 1, alignItems: "flex-start", fontWeight: "400"}}> Change Email </Text>
                     <Image style={{alignItems: "flex-end",alignContent: "flex-end",alignSelf: "flex-end", width: 12, height: 12, marginTop:0,marginRight: 20}} source={require('../../../assets/right-arrow.png')} />
                 </Pressable>
-                <Pressable style={ ({pressed}) => [ { backgroundColor: pressed? colors.light_grey: 'white', paddingVertical: 15, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 0,borderBottomStartRadius:20, paddingTop: 18,borderBottomEndRadius:20,  borderColor: colors.light_grey}]}>
+                <Pressable onPress={() => handlePasswordPress()}style={ ({pressed}) => [ { backgroundColor: pressed? colors.light_grey: 'white', paddingVertical: 15, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 0,borderBottomStartRadius:20, paddingTop: 18,borderBottomEndRadius:20,  borderColor: colors.light_grey}]}>
                     <Image style={{ alignItems: "flex-start", width: 30, height: 30,marginRight: 2}} source={require('../../../assets/padlock.png')} />
                     <Text style = {{ textAlignVertical:'center', flex: 1, alignItems: "flex-start", fontWeight: "400"}}> Change Password </Text>
                     <Image style={{alignItems: "flex-end",alignContent: "flex-end",alignSelf: "flex-end", width: 12, height: 12, marginTop:0,marginRight: 20}} source={require('../../../assets/right-arrow.png')} />
