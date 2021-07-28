@@ -10,7 +10,6 @@ import ResearchStackNav from './StackNavs/ResearchStackNav';
 import ProfileStackNav from './StackNavs/ProfileStackNav';
 
 import LoggedOutScreen from '../screens/LoggedOutScreen';
-import ReachOutStackNav from './StackNavs/ReachOutStackNav';
 
 const Drawer = createDrawerNavigator();
 
