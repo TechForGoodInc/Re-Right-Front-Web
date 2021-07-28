@@ -8,6 +8,7 @@ import RecapRightsTabNav from './TabNavs/RecapRightsTabNav';
 import ReportAbuseTabNav from './TabNavs/ReportAbuseTabNav';
 import ResearchStackNav from './StackNavs/ResearchStackNav';
 import ProfileStackNav from './StackNavs/ProfileStackNav';
+import ReachOutStackNav from './StackNavs/ReachOutStackNav';
 
 import LoggedOutScreen from '../screens/LoggedOutScreen';
 
