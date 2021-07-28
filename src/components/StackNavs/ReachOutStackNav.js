@@ -9,6 +9,7 @@ import ReachOutScreen2 from '../../screens/ReachOutScreen2';
 import { AppStyles } from '../../../config/styles';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
+const StackTitleStyle = AppStyles.StackTitleStyle;
 const Stack = createStackNavigator();
 
 export default function ReachOutStackNav({navigation}) {
@@ -16,7 +17,9 @@ export default function ReachOutStackNav({navigation}) {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Reach Out" screenOptions={{ headerStyle: StackHeaderStyle }}>
+        <Stack.Navigator initialRoute="Reach Out" screenOptions={{
+            headerStyle: StackHeaderStyle,
+            headerTitleStyle: StackTitleStyle }}>
             <Stack.Screen name="Reach Out" component={ReachOutScreen1}
                 options={{title: "Reach Out", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

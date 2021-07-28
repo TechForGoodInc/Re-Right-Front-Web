@@ -12,7 +12,10 @@ export default {
 
     blue: "#428AF8",
     light_blue: "#ADD8E6",
-    
+
     cream: "#FDFCDC",
     dblue: "#0081A7",
+
+    active_tab: "#ADD8E6",
+    inactive_tab: "#428AF8",
 }

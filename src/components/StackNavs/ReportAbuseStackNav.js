@@ -12,6 +12,7 @@ import ReportRecapQuiz from '../../screens/ReportAbuseScreens/ReportAbuseRecapQu
 import { AppStyles } from '../../../config/styles';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
+const StackTitleStyle = AppStyles.StackTitleStyle;
 const Stack = createStackNavigator();
 
 export default function ReportAbuseStackNav({navigation}) {
@@ -19,7 +20,9 @@ export default function ReportAbuseStackNav({navigation}) {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Report Abuse" screenOptions={{ headerStyle: StackHeaderStyle }}>
+        <Stack.Navigator initialRoute="Report Abuse" screenOptions={{
+            headerStyle: StackHeaderStyle,
+            headerTitleStyle: StackTitleStyle }}>
             <Stack.Screen name="Report Abuse" component={ReportAbuseScreen1}
                 options={{title: "Report Abuse", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

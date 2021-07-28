@@ -9,6 +9,7 @@ import SubmitSuggestionScreen from '../../screens/ResearchAnalyticsScreens/Submi
 import { AppStyles } from '../../../config/styles';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
+const StackTitleStyle = AppStyles.StackTitleStyle;
 const Stack = createStackNavigator();
 
 export default function ResearchStackNav({navigation}) {
@@ -16,7 +17,9 @@ export default function ResearchStackNav({navigation}) {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Research Analytics" screenOptions={{ headerStyle: StackHeaderStyle }}>
+        <Stack.Navigator initialRoute="Research Analytics" screenOptions={{
+            headerStyle: StackHeaderStyle,
+            headerTitleStyle: StackTitleStyle }}>
             <Stack.Screen name="Research Anayltics" component={ResearchScreen}
                 options={{title: "Research Analytics", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

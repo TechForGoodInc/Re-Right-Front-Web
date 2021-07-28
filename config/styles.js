@@ -16,12 +16,20 @@ export const AppStyles = StyleSheet.create({
     StackTitleStyle: {
         fontWeight: 'bold',
         letterSpacing: 0.25,
-        fontSize: '125%',
+        fontSize: 20,
         color: colors.white,
     },
-
-    TabBarStyle: {
-        backgroundColor: colors.blue,
-        borderTopColor: colors.black,     
+    TabStyle: {
+        borderTopColor: colors.black,
+        borderTopWidth: 1,
+        shadowColor: colors.black,
+        shadowRadius: 10,
     },
+    TabLabelStyle: {
+        fontWeight: 'bold',
+        letterSpacing: 0.25,
+        fontSize: 16,
+        color: colors.white, 
+    },
+
 })

@@ -7,6 +7,7 @@ import ChatScreen from '../../screens/HomeScreens/ChatScreen';
 import { AppStyles } from '../../../config/styles';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
+const StackTitleStyle = AppStyles.StackTitleStyle;
 const Stack = createStackNavigator();
 
 export default function ChatStackNav({navigation}) {
@@ -14,7 +15,9 @@ export default function ChatStackNav({navigation}) {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Chat" screenOptions={{ headerStyle: StackHeaderStyle }}>
+        <Stack.Navigator initialRoute="Chat" screenOptions={{
+            headerStyle: StackHeaderStyle,
+            headerTitleStyle: StackTitleStyle }}>
             <Stack.Screen name="Chat" component={ChatScreen}
                 options={{title: "Chat", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

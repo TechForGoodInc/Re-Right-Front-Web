@@ -16,23 +16,26 @@ import HomeDrawerNav from '../HomeDrawerNav'
 import { AppStyles } from '../../../config/styles';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
+const StackTitleStyle = AppStyles.StackTitleStyle;
 const Stack = createStackNavigator();
 
 // The last entry, "Home", nests the HomeDrawerNav (hamburger menu) inside the project wide stack nav
 export default function EntryStack() {
     return (
-        <Stack.Navigator initialRoute="Logged Out" screenOptions={{ headerStyle: StackHeaderStyle }}>
-                <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{title: "",}} />
-                <Stack.Screen name="Login" component={LoginScreen} options={{title: "",}} />
-                <Stack.Screen name="Signup 1" component={SignupScreen1} options={{title: "",}} />
-                <Stack.Screen name="Signup 2" component={SignupScreen2} options={{title: "",}} />
-                <Stack.Screen name="Signup 3" component={SignupScreen3} options={{title: "",}} />
-                <Stack.Screen name="Signup 4" component={SignupScreen4} options={{title: "",}} />
-                <Stack.Screen name="Forgot Password 1" component={ForgotPassScreen1} options={{title: "1",}} />
-                <Stack.Screen name="Forgot Password 2" component={ForgotPassScreen2} options={{title: "2",}} />
-                <Stack.Screen name="Forgot Password 3" component={ForgotPassScreen3} options={{title: "Answer Security Questions",}} />
-                <Stack.Screen name="Forgot Password 4" component={ForgotPassScreen4} options={{title: "4",}} />
-                <Stack.Screen name="Home" component={HomeDrawerNav} options={{title: "",}} />
-            </Stack.Navigator>
+        <Stack.Navigator initialRoute="Logged Out" screenOptions={{
+            headerStyle: StackHeaderStyle,
+            headerTitleStyle: StackTitleStyle }}>
+            <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{title: "",}} />
+            <Stack.Screen name="Login" component={LoginScreen} options={{title: "",}} />
+            <Stack.Screen name="Signup 1" component={SignupScreen1} options={{title: "",}} />
+            <Stack.Screen name="Signup 2" component={SignupScreen2} options={{title: "",}} />
+            <Stack.Screen name="Signup 3" component={SignupScreen3} options={{title: "",}} />
+            <Stack.Screen name="Signup 4" component={SignupScreen4} options={{title: "",}} />
+            <Stack.Screen name="Forgot Password 1" component={ForgotPassScreen1} options={{title: "1",}} />
+            <Stack.Screen name="Forgot Password 2" component={ForgotPassScreen2} options={{title: "2",}} />
+            <Stack.Screen name="Forgot Password 3" component={ForgotPassScreen3} options={{title: "Answer Security Questions",}} />
+            <Stack.Screen name="Forgot Password 4" component={ForgotPassScreen4} options={{title: "4",}} />
+            <Stack.Screen name="Home" component={HomeDrawerNav} options={{title: "",}} />
+        </Stack.Navigator>
     )
 }

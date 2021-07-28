@@ -10,32 +10,21 @@ import ChatStackNav from '../StackNavs/ChatStackNav';
 import { AppStyles } from '../../../config/styles';
 import colors from '../../../config/colors';
 
-const TabBarStyle = AppStyles.TabBarStyle;
 const BottomTabs = createBottomTabNavigator();
+const TabStyle = AppStyles.TabStyle;
+const TabLabelStyle = AppStyles.TabLabelStyle;
+
 const closeCreatePost = () => {
     navigation.navigate('Home');
 }
 export default function HomeTabNav() {
     return (
         <BottomTabs.Navigator initialRoute="Home" tabBarOptions={{ 
-            inactiveBackgroundColor: colors.blue,
-            activeBackgroundColor: colors.light_blue,
+            activeBackgroundColor: colors.active_tab,
+            inactiveBackgroundColor: colors.inactive_tab,
             keyboardHidesTabBar: true,
-            
-            tabStyle: {
-                borderTopColor: colors.black,
-                borderTopWidth: 1,
-                shadowColor: colors.black,
-                shadowRadius: 10,
-            },
-            labelStyle: {
-                //lineHeight: 21,
-                fontWeight: 'bold',
-                letterSpacing: 0.25,
-                fontSize: '125%',
-                color: colors.white,
-                
-            },
+            tabStyle: TabStyle,
+            labelStyle: TabLabelStyle
         }}>
             <BottomTabs.Screen name="Home" component={HomeStackNav}/>
             <BottomTabs.Screen name="Chat" component={ChatStackNav}/>
