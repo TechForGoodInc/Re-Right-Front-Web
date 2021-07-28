@@ -43,11 +43,13 @@ export default function MapToolScreen() {
             flex: 1,
             backgroundColor: colors.white,
             alignItems: 'center',
+            padding: 10,
         },
         filtersGroup: {
             flex: 1,
             flexDirection: 'row',
-            justifyContent: 'space-around',
+            justifyContent: 'space-between',
+            //padding: 10
         },
         filtersTitleContainer: {
             //flex: 0.5,
@@ -95,7 +97,10 @@ export default function MapToolScreen() {
         return (
             <View style={styles.screenBackground}>
                 <View style={styles.mapContainer}>
-                    <MapView style={styles.map} />
+                    <MapView style={styles.map} region={{longitude: -95,
+                        latitude: 40,
+                        longitudeDelta: 50,
+                        latitudeDelta: 50}}/>
                 </View>
                 <View style={styles.filtersTitleContainer}>
                     <Text style={styles.filtersTitleText}>
@@ -143,7 +148,7 @@ export default function MapToolScreen() {
     return (
         <View style={styles.screenBackground}>
                 <View style={styles.mapContainer}>
-                    
+
                 </View>
                 <View style={styles.filtersTitleContainer}>
                     <Text style={styles.filtersTitleText}>
