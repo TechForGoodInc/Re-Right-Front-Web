@@ -16,7 +16,7 @@ const AccountSettings = ({navigation}) => {
         navigation.navigate("ChangeEmail")
     }
     const handlePasswordPress = () => {
-        navigation.navigate("ChangePassWord")
+        navigation.navigate("ChangePassword")
     }
     return ( 
         <ScrollView>
