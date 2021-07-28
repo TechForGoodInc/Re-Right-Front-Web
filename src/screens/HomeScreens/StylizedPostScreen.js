@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, Modal, View, Pressable, TouchableOpacity, Button } from "react-native";
+import { StyleSheet, Text, Modal, View, Pressable, TouchableOpacity, Button, Platform } from "react-native";
 import colors from "../../../config/colors";
 const backgroundColors = [colors.black, colors.blue, colors.cream, colors.dblue, colors.grey, colors.primary, colors.secondary, colors.red, colors.light_grey, colors.lightblue, "green", "orange"]
 function getRandomInt(max) {
