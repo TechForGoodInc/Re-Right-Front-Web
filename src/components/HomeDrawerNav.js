@@ -3,9 +3,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StyleSheet } from 'react-native';
 
 import HomeTabNav from './TabNavs/HomeTabNav';
-import ReachOutTabNav from './TabNavs/ReachOutTabNav';
 import RecapRightsTabNav from './TabNavs/RecapRightsTabNav';
-import ReportAbuseTabNav from './TabNavs/ReportAbuseTabNav';
+import ReportAbuseStackNav from './StackNavs/ReportAbuseStackNav';
 import ResearchStackNav from './StackNavs/ResearchStackNav';
 import ProfileStackNav from './StackNavs/ProfileStackNav';
 import ReachOutStackNav from './StackNavs/ReachOutStackNav';
@@ -20,7 +19,7 @@ export default function HomeDrawerNav({navigation}) {
         <Drawer.Navigator initialRoute="Home">
             <Drawer.Screen name="Home" component={HomeTabNav}/>
             <Drawer.Screen name="Recap Rights" component={RecapRightsTabNav}/>
-            <Drawer.Screen name="Report Abuse" component={ReportAbuseTabNav}/>
+            <Drawer.Screen name="Report Abuse" component={ReportAbuseStackNav}/>
             <Drawer.Screen name="Reach Out" component={ReachOutStackNav}/>
             <Drawer.Screen name="Research Analytics" component={ResearchStackNav}/>
             <Drawer.Screen name="Profile" component={ProfileStackNav}/>

@@ -10,6 +10,7 @@ import ReportRecapArticle from '../../screens/ReportAbuseScreens/ReportAbuseReca
 import ReportRecapQuiz from '../../screens/ReportAbuseScreens/ReportAbuseRecapQuiz';
 
 import { AppStyles } from '../../../config/styles';
+import AboutReportAbuseScreen from '../../screens/ReportAbuseScreens/AboutReportAbuseScreen';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const StackTitleStyle = AppStyles.StackTitleStyle;
@@ -32,7 +33,8 @@ export default function ReportAbuseStackNav({navigation}) {
             <Stack.Screen name="Incident Info" component={ReportAbuseScreen2} />
             <Stack.Screen name="Recap Rights" component={ReportRecapRightsScreen} />
             <Stack.Screen name="Report RecapArticle" component={ReportRecapArticle} options = { ({route}) => ({title: route.params.title})} />  
-            <Stack.Screen name="Report Human Rights Quiz" component={ReportRecapQuiz} />   
+            <Stack.Screen name="Report Human Rights Quiz" component={ReportRecapQuiz} />  
+            <Stack.Screen name="About Report Abuse" component={AboutReportAbuseScreen}/> 
         </Stack.Navigator>
     )
 }
