@@ -6,15 +6,17 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ReachOutScreen1 from '../../screens/ReachOutScreen1';
 import ReachOutScreen2 from '../../screens/ReachOutScreen2';
 
+import { AppStyles } from '../../../config/styles';
+
+const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const Stack = createStackNavigator();
-const BottomTabs = createBottomTabNavigator();
 
 export default function ReachOutStackNav({navigation}) {
     const handleHamburgerPress = () => {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Reach Out" >
+        <Stack.Navigator initialRoute="Reach Out" screenOptions={{ headerStyle: StackHeaderStyle }}>
             <Stack.Screen name="Reach Out" component={ReachOutScreen1}
                 options={{title: "Reach Out", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import ReportAbuseScreen1 from '../../screens/ReportAbuseScreens/ReportAbuseScreen1';
 import ReportAbuseScreen2 from '../../screens/ReportAbuseScreens/ReportAbuseScreen2';
@@ -10,7 +9,9 @@ import ReportRecapRightsScreen from '../../screens/ReportAbuseScreens/ReportAbus
 import ReportRecapArticle from '../../screens/ReportAbuseScreens/ReportAbuseRecapArticle';
 import ReportRecapQuiz from '../../screens/ReportAbuseScreens/ReportAbuseRecapQuiz';
 
+import { AppStyles } from '../../../config/styles';
 
+const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const Stack = createStackNavigator();
 
 export default function ReportAbuseStackNav({navigation}) {
@@ -18,7 +19,7 @@ export default function ReportAbuseStackNav({navigation}) {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Report Abuse" >
+        <Stack.Navigator initialRoute="Report Abuse" screenOptions={{ headerStyle: StackHeaderStyle }}>
             <Stack.Screen name="Report Abuse" component={ReportAbuseScreen1}
                 options={{title: "Report Abuse", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

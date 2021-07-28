@@ -3,6 +3,10 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ChatScreen from '../../screens/HomeScreens/ChatScreen';
+
+import { AppStyles } from '../../../config/styles';
+
+const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const Stack = createStackNavigator();
 
 export default function ChatStackNav({navigation}) {
@@ -10,7 +14,7 @@ export default function ChatStackNav({navigation}) {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Chat" >
+        <Stack.Navigator initialRoute="Chat" screenOptions={{ headerStyle: StackHeaderStyle }}>
             <Stack.Screen name="Chat" component={ChatScreen}
                 options={{title: "Chat", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

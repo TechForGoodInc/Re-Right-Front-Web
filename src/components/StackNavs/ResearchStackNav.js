@@ -6,6 +6,9 @@ import ResearchScreen from '../../screens/ResearchAnalyticsScreens/ResearchScree
 import MapToolScreen from '../../screens/ResearchAnalyticsScreens/MapToolScreen';
 import SubmitSuggestionScreen from '../../screens/ResearchAnalyticsScreens/SubmitSuggestionScreen';
 
+import { AppStyles } from '../../../config/styles';
+
+const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const Stack = createStackNavigator();
 
 export default function ResearchStackNav({navigation}) {
@@ -13,7 +16,7 @@ export default function ResearchStackNav({navigation}) {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Research Analytics" >
+        <Stack.Navigator initialRoute="Research Analytics" screenOptions={{ headerStyle: StackHeaderStyle }}>
             <Stack.Screen name="Research Anayltics" component={ResearchScreen}
                 options={{title: "Research Analytics", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

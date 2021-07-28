@@ -4,6 +4,10 @@ import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 import PostPreview from '../../screens/HomeScreens/PostPreview';
 import ProfileScreen from '../../screens/HomeScreens/ProfileScreen';
 import AccountSettings from '../../screens/HomeScreens/AccountSettingsScreen';
+
+import { AppStyles } from '../../../config/styles';
+
+const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const Stack = createStackNavigator();
 
 export default function ProfileStackNav({navigation}) {
@@ -14,8 +18,8 @@ export default function ProfileStackNav({navigation}) {
         navigation.navigate('Account Settings')
     }
     return (
-        <Stack.Navigator initialRoute="Profile" >
-        <Stack.Screen name="Profile" component={ProfileScreen}
+        <Stack.Navigator initialRoute="Profile" screenOptions={{ headerStyle: StackHeaderStyle }}>
+            <Stack.Screen name="Profile" component={ProfileScreen}
                 options={{title: "Profile", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />

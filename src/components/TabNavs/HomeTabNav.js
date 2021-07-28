@@ -7,6 +7,7 @@ import FriendsStackNav from '../StackNavs/FriendsStackNav';
 import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
 import ReachOutScreen2 from '../../screens/ReachOutScreen2';
+import colors from '../../../config/colors';
 
 const BottomTabs = createBottomTabNavigator();
 const closeCreatePost = () => {
@@ -14,7 +15,9 @@ const closeCreatePost = () => {
 }
 export default function HomeTabNav() {
     return (
-        <BottomTabs.Navigator initialRoute="Home">
+        <BottomTabs.Navigator initialRoute="Home" screenOptions={{
+            
+        }}>
             <BottomTabs.Screen name="Home" component={HomeStackNav}/>
             <BottomTabs.Screen name="Chat" component={ChatStackNav}/>
             <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}

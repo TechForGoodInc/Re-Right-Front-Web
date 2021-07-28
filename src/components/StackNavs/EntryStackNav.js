@@ -11,15 +11,17 @@ import ForgotPassScreen1 from '../../screens/ForgotPassScreen1';
 import ForgotPassScreen2 from '../../screens/ForgotPassScreen2';
 import ForgotPassScreen3 from '../../screens/ForgotPassScreen3';
 import ForgotPassScreen4 from '../../screens/ForgotPassScreen4';
-
 import HomeDrawerNav from '../HomeDrawerNav'
 
+import { AppStyles } from '../../../config/styles';
+
+const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const Stack = createStackNavigator();
 
 // The last entry, "Home", nests the HomeDrawerNav (hamburger menu) inside the project wide stack nav
 export default function EntryStack() {
     return (
-        <Stack.Navigator initialRoute="Logged Out">
+        <Stack.Navigator initialRoute="Logged Out" screenOptions={{ headerStyle: StackHeaderStyle }}>
                 <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{title: "",}} />
                 <Stack.Screen name="Login" component={LoginScreen} options={{title: "",}} />
                 <Stack.Screen name="Signup 1" component={SignupScreen1} options={{title: "",}} />
