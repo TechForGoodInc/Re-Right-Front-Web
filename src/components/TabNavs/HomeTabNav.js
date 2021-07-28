@@ -7,8 +7,12 @@ import FriendsStackNav from '../StackNavs/FriendsStackNav';
 import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
 
-import { AppStyles } from '../../../config/styles';
 import colors from '../../../config/colors';
+import colorsTest from '../../../config/colorsTest';
+
+import { AppStyles } from '../../../config/styles';
+import { Platform } from 'react-native';
+
 
 const BottomTabs = createBottomTabNavigator();
 const TabStyle = AppStyles.TabStyle;
@@ -18,10 +22,17 @@ const closeCreatePost = () => {
     navigation.navigate('Home');
 }
 export default function HomeTabNav() {
+    let Colors = colors;
+    /*let Colors = {};
+    if (Platform.OS === 'web') {
+        Colors = colors;
+    } else {
+        Colors = colorsTest;
+    } Can use a different color import based on a conditional (need to link up dark mode state)*/
     return (
         <BottomTabs.Navigator initialRoute="Home" tabBarOptions={{ 
-            activeBackgroundColor: colors.active_tab,
-            inactiveBackgroundColor: colors.inactive_tab,
+            activeBackgroundColor: Colors.active_tab,
+            inactiveBackgroundColor: Colors.inactive_tab,
             keyboardHidesTabBar: true,
             tabStyle: TabStyle,
             labelStyle: TabLabelStyle
