@@ -4,11 +4,16 @@ import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 import PostPreview from '../../screens/HomeScreens/PostPreview';
 import ProfileScreen from '../../screens/HomeScreens/ProfileScreen';
 import AccountSettings from '../../screens/HomeScreens/AccountSettingsScreen';
+import ChangeUsernameScreen from '../../screens/HomeScreens/ChangeUsernameScreen';
+import ChangePasswordScreen from '../../screens/HomeScreens/ChangePasswordScreen';
+import ChangeEmailScreen from '../../screens/HomeScreens/ChangeEmailScreen';
 
 import { AppStyles } from '../../../config/styles';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const StackTitleStyle = AppStyles.StackTitleStyle;
+
+
 const Stack = createStackNavigator();
 
 export default function ProfileStackNav({navigation}) {
@@ -34,6 +39,10 @@ export default function ProfileStackNav({navigation}) {
                     )}} />
         <Stack.Screen name="Account Settings" component={AccountSettings}/>
         <Stack.Screen name="Post" component={PostPreview}/>
+
+        <Stack.Screen name="ChangeUserName" component={ChangeUsernameScreen}/>
+        <Stack.Screen name="ChangeEmail" component={ChangeEmailScreen}/>
+        <Stack.Screen name="ChangePassword" component={ChangePasswordScreen}/>
         </Stack.Navigator>
     )
 }
