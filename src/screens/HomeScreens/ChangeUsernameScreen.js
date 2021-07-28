@@ -1,14 +1,13 @@
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 import React from 'react';
-import { Platform, View, Text, Button, StyleSheet, Pressable, Image, TextInput, Alert } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-
+import { Platform, View, Text, Button, StyleSheet, TextInput } from 'react-native';
 import colors from '../../../config/colors';
 
-export default function LoginScreen({navigation}) {
+export default function ChangeUsernameScreen() {
     //getting the dimensions and the orientation
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
+    
     //styles are here
     const styles = StyleSheet.create({
 
