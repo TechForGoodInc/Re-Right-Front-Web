@@ -13,7 +13,7 @@ export default function RecapArticle({route}) {
     return (
         <View style= {styles.background}>
             <Text style= {styles.title}>{title}</Text>
-            <Text style={styles.description}>{description}</Text>
+            <Text style={styles.description}>"{description}"</Text>
         </View>
     )
 }
