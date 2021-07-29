@@ -7,7 +7,7 @@ import FriendsStackNav from '../StackNavs/FriendsStackNav';
 import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
 import { AntDesign, FontAwesome5 } from '@expo/vector-icons';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 import colors from '../../../config/colors';
 import colorsTest from '../../../config/colorsTest';
@@ -38,10 +38,10 @@ export default function HomeTabNav() {
             tabStyle: TabStyle,
             labelStyle: TabLabelStyle,
             showIcon: true,
-            //showLabel: false,
+            showLabel: Platform.OS === 'web' ? true: false,
         }}>
             <BottomTabs.Screen name="Home" component={HomeStackNav} options={{
-                tabBarIcon: () => <AntDesign name="home" size={24} color="black" />
+                tabBarIcon: () => <AntDesign name="home" size={24} color="black"/>
             }}/>
             <BottomTabs.Screen name="Chat" component={ChatStackNav} options={{
                 tabBarIcon: () => <AntDesign name="wechat" size={24} color="black" />

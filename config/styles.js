@@ -20,8 +20,8 @@ export const AppStyles = StyleSheet.create({
         color: colors.white,
     },
     TabStyle: {
-        borderTopColor: colors.black,
-        borderTopWidth: 1,
+        borderColor: colors.black,
+        borderWidth: 1,
         shadowColor: colors.black,
         shadowRadius: 10,
     },
