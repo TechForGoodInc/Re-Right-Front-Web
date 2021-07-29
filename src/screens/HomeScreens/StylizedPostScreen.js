@@ -21,7 +21,7 @@ const StylizedPostScreen = ({navigation}) => {
     // setting up all the variables that can be changed by the user
     const [backgroundType, setBackgroundType] = useState ('solid');
     // different background types
-    const [solidBackground, setSolidBackground] = useState(colors.blue);
+    const [solidBackground, setSolidBackground] = useState('white');
     const [textureBackground, setTextureBackground] = useState('none');
     const [imageBackground, setImageBackground] = useState('none');
     // Editor for solid backgrounds
@@ -29,13 +29,11 @@ const StylizedPostScreen = ({navigation}) => {
     const enterSolidMode = () => {setSolidEditorOn(true); setTextureEditorOn(false);setImageEditorOn(false)}
     const SolidBackgroundEditor = () => {
         const primaryColorBar = colorBarColors.map((colorCombo) => 
-                
                 <TouchableOpacity 
                     onPress={()=> {setBackgroundType('solid');setSolidBackground(colorCombo.primaryColor)}}
                     key={colorBarColors.indexOf(colorCombo)} 
                     style = {[{backgroundColor:colorCombo.primaryColor,width: 100/colorBarColors.length + '%'}]}>
-                </TouchableOpacity>
-                
+                </TouchableOpacity>   
         );
         return(
             <View style ={{ flex:1, display: solidEditorOn? 'flex' : 'none'}}>

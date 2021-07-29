@@ -13,16 +13,14 @@ import ForgotPassScreen1 from './screens/ForgetPasswordScreens/ForgotPassScreen1
 import ForgotPassScreen2 from './screens/ForgetPasswordScreens/ForgotPassScreen2';
 import ForgotPassScreen3 from './screens/ForgetPasswordScreens/ForgotPassScreen3';
 import ForgotPassScreen4 from './screens/ForgetPasswordScreens/ForgotPassScreen4';
-import StylizedPostScreen from './screens/HomeScreens/StylizedPostScreen';
 import HomeDrawerNav from './components/HomeDrawerNav';
-import StylizedPostScreen2 from './screens/HomeScreens/StylizedPostScreen2';
 
 const Stack = createStackNavigator();
 export default function ReRightApp() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRoute="Logged Out" >
-                <Stack.Screen name="Logged Out" component={StylizedPostScreen} options={{title: "",}} />
+                <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{title: "",}} />
                 <Stack.Screen name="Login" component={LoginScreen} options={{title: "",}} />
                 <Stack.Screen name="Signup 1" component={SignupScreen1} options={{title: "",}} />
                 <Stack.Screen name="Signup 2" component={SignupScreen2} options={{title: "",}} />
