@@ -12,11 +12,6 @@ const wait = (timeout) => {
 }
 
 export default function HomeScreen() {
-  if (Platform.OS === 'web'){
-    return (
-      <Text> Web Feed Coming Soon </Text>
-    )
-  }else {
     const [refreshing, setRefreshing] = React.useState(false);
     const onRefresh = React.useCallback(() => {
       setRefreshing(true);
@@ -36,7 +31,6 @@ export default function HomeScreen() {
         }}>
           <ScrollView 
           direction alLockEnabled = 'true'
-          style="styles.feed"
           refreshControl={
           <RefreshControl
             refreshing={refreshing}
@@ -70,7 +64,6 @@ export default function HomeScreen() {
           </ScrollView>
         </SafeAreaView>
     );
-  }
 }
   
 

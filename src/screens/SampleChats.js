@@ -22,21 +22,24 @@ export default function SampleChats ({navigation}) {
      );
 }
 const styles = StyleSheet.create({
-    friendpfp:{ 
-        backgroundColor: 'white',
-        width: 50,
-        height: 50,
-        borderRadius: 500 / 2,
-    },
     people:{
-        paddingTop: '3%',
-        paddingLeft: '1%',
-        paddingBottom: '3%',
         flexDirection: 'row',
+        paddingTop: '4%',
+        paddingLeft: '1%',
+        paddingBottom: '4%',
         borderBottomWidth: 1,
         borderColor: 'gray',
     },
+    friendpfp:{ 
+        flexDirection: 'row',
+        backgroundColor: 'white',
+        height:'100%',
+        width: '11%',
+        resizeMode: 'contain',
+        borderRadius: 500 / 2,
+    },
     textmessage:{
+        flex: 7,
         paddingLeft:'2%',
         flexDirection: 'column',
     },
@@ -48,9 +51,9 @@ const styles = StyleSheet.create({
     },
     arrow:{
         alignSelf: 'center',
-        left: 225, 
         opacity: 0.5,
-        width: 20,
-        height: 20,
+        height:'40%',
+        width:'5%',
+        right: '3%'
     }
 })

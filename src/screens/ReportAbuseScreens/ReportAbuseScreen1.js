@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         },
     continueButton: {
         width: "100%",
-        height: 70,
+        height: 50,
         justifyContent: "center",
         alignItems: "center",
     },

@@ -7,11 +7,22 @@ import FriendsStackNav from '../StackNavs/FriendsStackNav';
 import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
 
+import { AppStyles } from '../../../config/styles';
+import colors from '../../../config/colors';
+
 const BottomTabs = createBottomTabNavigator();
+const TabStyle = AppStyles.TabStyle;
+const TabLabelStyle = AppStyles.TabLabelStyle;
 
 export default function ReachOutTabNav({navigation}) {
     return (
-        <BottomTabs.Navigator initialRoute="Reach Out">
+        <BottomTabs.Navigator initialRoute="Reach Out" tabBarOptions={{ 
+            activeBackgroundColor: colors.active_tab,
+            inactiveBackgroundColor: colors.inactive_tab,
+            keyboardHidesTabBar: true,
+            tabStyle: TabStyle,
+            labelStyle: TabLabelStyle
+        }}>
             <BottomTabs.Screen name="Reach Out" component={ReachOutStackNav}/>
             <BottomTabs.Screen name="Chat" component={ChatStackNav}/>
             <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}/>

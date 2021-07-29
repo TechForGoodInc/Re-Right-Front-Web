@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, Modal, View, Pressable, TouchableOpacity, Button } from "react-native";
+import { StyleSheet, Text, Modal, View, Pressable, TouchableOpacity, Button, Platform } from "react-native";
 import colors from "../../../config/colors";
 
 const StylizedPostScreen = ({navigation}) => {

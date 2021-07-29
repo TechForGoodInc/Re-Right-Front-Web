@@ -16,6 +16,6 @@ export default {
     cream: "#FDFCDC",
     dblue: "#0081A7",
 
-    active_tab: "#ADD8E6",
-    inactive_tab: "#428AF8",
+    active_tab: "yellow",
+    inactive_tab: "purple",
 }

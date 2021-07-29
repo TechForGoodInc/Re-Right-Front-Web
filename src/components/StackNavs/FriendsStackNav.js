@@ -4,6 +4,13 @@ import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 import FriendsScreen from '../../screens/HomeScreens/FriendsScreen';
 
+import { AppStyles } from '../../../config/styles';
+import StackHeaderBackImage from '../StackHeaderBackImage';
+
+const StackHeaderStyle = AppStyles.StackHeaderStyle;
+const StackTitleStyle = AppStyles.StackTitleStyle;
+const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
+
 const Stack = createStackNavigator();
 
 export default function FriendsStackNav({navigation}) {
@@ -11,7 +18,11 @@ export default function FriendsStackNav({navigation}) {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Friends" >
+        <Stack.Navigator initialRoute="Friends" screenOptions={{
+            headerStyle: StackHeaderStyle,
+            headerTitleStyle: StackTitleStyle,
+            headerBackImage: StackHeaderBackImage,
+            headerBackTitleStyle: StackBackTitleStyle }}>
             <Stack.Screen name="Friends" component={FriendsScreen}
                 options={{title: "Friends", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
