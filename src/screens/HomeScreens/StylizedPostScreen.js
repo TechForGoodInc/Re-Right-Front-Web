@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, Modal, View, Pressable, TouchableOpacity, Button } from "react-native";
 import colors from "../../../config/colors";
-const backgroundColors = [colors.black, colors.blue, colors.cream, colors.dblue, colors.grey, colors.primary, colors.secondary, colors.red, colors.light_grey, colors.lightblue, "green", "orange"]
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-const chooseRandomColor = (max)=> {
-    return backgroundColors[max];
-}
+
 const StylizedPostScreen = ({navigation}) => {
     const [chooseBackground, setChooseBackground] = useState(false)
     return ( 
@@ -54,22 +48,7 @@ const StylizedPostScreen = ({navigation}) => {
                         </View>
                     </TouchableOpacity>
                     </View>
-                    {/*<View style={{flexDirection:'row'}}>
-                    <TouchableOpacity>
-                        <View style={styles.color}> 
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.color}> 
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.color}> 
-                        </View>
-                    </TouchableOpacity>
                     
-                    </View>
-                </View> */}
                 </View>
             </Modal>
         </View>

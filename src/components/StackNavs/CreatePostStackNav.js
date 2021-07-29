@@ -5,6 +5,7 @@ import CreatePostScreen from '../../screens/HomeScreens/CreatePostScreen';
 import DevicePostScreen from '../../screens/HomeScreens/DevicePostScreen';
 import TextPostScreen from '../../screens/HomeScreens/TextPostScreen';
 import StylizedPostScreen from '../../screens/HomeScreens/StylizedPostScreen';
+import colors from '../../../config/colors';
 const Stack = createStackNavigator();
 
 export default function CreatePostStackNav({navigation}) {
@@ -13,13 +14,20 @@ export default function CreatePostStackNav({navigation}) {
     }
     return (
         <Stack.Navigator initialRoute="Create Post" >
-            <Stack.Screen name="Create Post" component={CreatePostScreen}
-                options={{title: "Create Post", headerRight: () => (
+            <Stack.Screen name="Create Post" component={CreatePostScreen}/>
+             <Stack.Screen name="Create Stylized Post" component={StylizedPostScreen}options={{title: "Choose Background", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../../assets/cross-round.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
+                    ), headerRight: () => (
+                    <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
+                        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center'}}> 
+                            <Text style= {{ alignSelf: 'center', color: colors.blue, paddingHorizontal: 2}}> 
+                                Next {'>'}
+                            </Text>  
+                        </View>
+                    </TouchableOpacity>
                     )}} />
-             <Stack.Screen name="Create Stylized Post" component={StylizedPostScreen}/>
              <Stack.Screen name="Create Text-Only Post" component={TextPostScreen}/>
              <Stack.Screen name="Choose From Device" component={DevicePostScreen}/>
         </Stack.Navigator>
