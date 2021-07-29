@@ -6,12 +6,13 @@ import ProfileStackNav from '../StackNavs/ProfileStackNav';
 import FriendsStackNav from '../StackNavs/FriendsStackNav';
 import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
+import { AntDesign, FontAwesome5 } from '@expo/vector-icons';
+import { StyleSheet } from 'react-native';
 
 import colors from '../../../config/colors';
 import colorsTest from '../../../config/colorsTest';
 
 import { AppStyles } from '../../../config/styles';
-import { Platform } from 'react-native';
 
 
 const BottomTabs = createBottomTabNavigator();
@@ -35,20 +36,36 @@ export default function HomeTabNav() {
             inactiveBackgroundColor: Colors.inactive_tab,
             keyboardHidesTabBar: true,
             tabStyle: TabStyle,
-            labelStyle: TabLabelStyle
+            labelStyle: TabLabelStyle,
+            showIcon: true,
+            //showLabel: false,
         }}>
-            <BottomTabs.Screen name="Home" component={HomeStackNav}/>
-            <BottomTabs.Screen name="Chat" component={ChatStackNav}/>
+            <BottomTabs.Screen name="Home" component={HomeStackNav} options={{
+                tabBarIcon: () => <AntDesign name="home" size={24} color="black" />
+            }}/>
+            <BottomTabs.Screen name="Chat" component={ChatStackNav} options={{
+                tabBarIcon: () => <AntDesign name="wechat" size={24} color="black" />
+            }}/>
             <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}
-                options={{title: "Create Post", headerLeft : () => (
+                options={{title: "Create Post",
+                    headerLeft : () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ closeCreatePost }>
                         <Image source={require('../../../assets/delete-button.png')} style = {{width:45, height: 45,resizeMode: "contain"}} />
-                    </TouchableOpacity>
-                    )}} options={{
-                        tabBarVisible:false
-                    }}/>
-            <BottomTabs.Screen name="Friends" component={FriendsStackNav}/>
-            <BottomTabs.Screen name="Profile" component={ProfileStackNav}/>
+                    </TouchableOpacity>),
+                    tabBarIcon: () => <AntDesign name="pluscircleo" size={24} color="black" />}}/>
+            <BottomTabs.Screen name="Friends" component={FriendsStackNav} options={{
+                tabBarIcon: () => <FontAwesome5 name="user-friends" size={24} color="black" />
+            }}/>
+            <BottomTabs.Screen name="Profile" component={ProfileStackNav} options={{
+                tabBarIcon: () => <FontAwesome5 name="user" size={24} color="black" />
+            }}/>
         </BottomTabs.Navigator>
     )
 }
+const styles = StyleSheet.create({
+    menuicon: {
+      width: 50,
+      height: 50,
+      resizeMode: "contain",
+    },
+  });
