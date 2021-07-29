@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import colors from '../../../config/colors';
-import { Platform, Form, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
+import { Platform, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
 import GetSignUp1Style from '../styles/SignUp1Css';
-import KeyboardViewStyles from '../styles/KeyboardViewStyles';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
-export default function SignupScreen1() {
+export default function ChangeEmailScreen() {
     
     const { landscape } = useDeviceOrientation();
     const {width, height} = useDimensions().window;

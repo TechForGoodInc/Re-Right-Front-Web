@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import colors from '../../../config/colors';
-import { Platform, Form, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
+import { Platform, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
 import GetSignUp1Style from '../styles/SignUp1Css';
-import KeyboardViewStyles from '../styles/KeyboardViewStyles';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
-export default function SignupScreen1() {
+export default function ChangeUserNameScreen() {
     
     const { landscape } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
@@ -23,21 +22,21 @@ export default function SignupScreen1() {
     }} 
 
     //setting up the user input variables
-    const [email, setEmail] = useState('');
-    const [confirmEmail, setConfirmEmail] = useState('')
+    const [username, setUsername] = useState('');
+    const [confirmUsername, setConfirmUsername] = useState('')
     const [password, confirmPassword] = useState('');
 
     //checking if user exists and showing an error if it does
-    const handleEmailChecks = (email) => {
-        const isEmailInUse = false;
-        //query the database to find the email, if it exists set isEmailInUse to true
-        return isEmailInUse;
+    const handleUsernameChecks = (username) => {
+        const isUsernameInUse = false;
+        //query the database to find the username, if it exists set isusernameInUse to true
+        return isUsernameInUse;
     }
 
     const handleContinuePress = () => {
         //checking for empty fields
-        const emailIsInUse = handleEmailChecks(email);
-        if (email==="" || confirmEmail =="" || password==="" ) {
+        const usernameIsInUse = handleUsernameChecks(username);
+        if (username==="" || confirmUsername =="" || password==="" ) {
             if (Platform.OS === 'web'){
                 alert("Kindly fill all the fields to continue")
             }else {
@@ -47,43 +46,43 @@ export default function SignupScreen1() {
                     [
                         {
                             text: "Go Back",
-                            onPress: () => console.log(email +confirmEmail + password)
+                            onPress: () => console.log(username +confirmUsername + password)
                         }
                     ]
                 )
             }
-        } else if (emailIsInUse) {
+        } else if (usernameIsInUse) {
             if (Platform.OS === 'web'){
-                alert("An account is already registered with the same email address")
+                alert("An account is already registered with the same username address")
             }else {
                 Alert.alert(
-                    "Email Already In Use",
-                    "An account is already registered with the same email address",
+                    "Username Already In Use",
+                    "An account is already registered with the same username address",
                     [
                         {
-                            text: "Enter Email Again",
-                            onPress: () => console.log('Used Email')
+                            text: "Enter username Again",
+                            onPress: () => console.log('Used username')
                         }
                     ]
                 )
             }
-        }else if (email != confirmEmail) {
+        }else if (username != confirmUsername) {
             if (Platform.OS === 'web'){
-                alert("An account is already registered with the same email address")
+                alert("Usernames do not match")
             }else {
                 Alert.alert(
-                    "Emails do not match",
-                    "Please make sure that the two email fields match",
+                    "Usernames do not match",
+                    "Please make sure that the two username fields match",
                     [
                         {
-                            text: "Enter Email Again",
-                            onPress: () => console.log('Used Email')
+                            text: "Enter username Again",
+                            onPress: () => console.log('User Names Do Not Match')
                         }
                     ]
                 )
             }
         }else {
-            alert("Email Successfully Updated");
+            alert("Username Successfully Updated");
         }
     }
     
@@ -95,44 +94,44 @@ export default function SignupScreen1() {
                     <View style = {styles.header}>
                         <Text 
                             style = {styles.headerTitle}>
-                            Change Email
+                            Change Username
                         </Text>
                     </View>
                     <View styles = { styles.details }>
                         <View>
                             <Text 
                                 style={styles.label}>
-                                Enter your newly desired Email: 
+                                Enter your newly desired Username: 
                             </Text>
                             <TextInput 
                                 style={styles.inputText} 
-                                onChangeText = { email => setEmail(email) }
-                                defaultValue = {email}
+                                onChangeText = { username => setUsername(username) }
+                                defaultValue = {username}
                                 enablesReturnKeyAutomatically = {true}
-                                keyboardType = 'email-address'     // Works on all platforms
-                                textContentType = 'emailAddress'  // Only for iOS
-                                autoCompleteType='email'         // Only for Android
+                                keyboardType = 'username-address'     // Works on all platforms
+                                textContentType = 'usernameAddress'  // Only for iOS
+                                autoCompleteType='username'         // Only for Android
                                 autoCapitalize='none'           // Works on all platforms
                                 returnKeyType="next"
                                 // onSubmitEditing={() => { this.secondTextInput.focus() }}
-                                placeholder="New Email" />
+                                placeholder="New Username" />
                         </View>
                         <View>
                             <Text 
                                 style={styles.label} >
-                                Confirm your new Email: 
+                                Confirm your new Username: 
                             </Text>
                             <TextInput 
                                 style={styles.inputText} 
-                                onChangeText = { email => setConfirmEmail(email) }
-                                defaultValue = {confirmEmail}
+                                onChangeText = { username => setConfirmUsername(username) }
+                                defaultValue = {confirmUsername}
                                 enablesReturnKeyAutomatically = {true}
-                                keyboardType = 'email-address'     // Works on all platforms
-                                textContentType = 'emailAddress'  // Only for iOS
-                                autoCompleteType='email'         // Only for Android
+                                keyboardType = 'username-address'     // Works on all platforms
+                                textContentType = 'usernameAddress'  // Only for iOS
+                                autoCompleteType='username'         // Only for Android
                                 autoCapitalize='none'           // Works on all platforms
                                 returnKeyType="next"
-                                placeholder="Confirm new Email" />
+                                placeholder="Confirm new Username" />
                         </View>
                     </View>
                     <View styles = { styles.password }>
@@ -144,7 +143,7 @@ export default function SignupScreen1() {
                             <TextInput 
                                 enablesReturnKeyAutomatically = {true}
                                 secureTextEntry={true} 
-                                onChangeText = { email => confirmPassword(email) }
+                                onChangeText = { username => confirmPassword(username) }
                                 returnKeyType="next"
                                 defaultValue = {password}
                                 textContentType = "newPassword" 
