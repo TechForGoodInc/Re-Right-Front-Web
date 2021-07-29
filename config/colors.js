@@ -9,6 +9,7 @@ export default {
 
     grey: "grey",
     light_grey: "#D3D3D3",
+    lighter_grey : '#E0E0E0',
 
     blue: "#428AF8",
     light_blue: "#ADD8E6",
