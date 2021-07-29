@@ -5,9 +5,12 @@ import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import HomeScreen from '../../screens/HomeScreens/HomeScreen';
 
 import { AppStyles } from '../../../config/styles';
+import StackHeaderBackImage from '../StackHeaderBackImage';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const StackTitleStyle = AppStyles.StackTitleStyle;
+const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
+
 const Stack = createStackNavigator();
 
 export default function HomeStackNav({navigation}) {
@@ -17,7 +20,9 @@ export default function HomeStackNav({navigation}) {
     return (
         <Stack.Navigator initialRoute="Home" screenOptions={{
             headerStyle: StackHeaderStyle,
-            headerTitleStyle: StackTitleStyle }}>
+            headerTitleStyle: StackTitleStyle,
+            headerBackImage: StackHeaderBackImage,
+            headerBackTitleStyle: StackBackTitleStyle }}>
             <Stack.Screen name="Home" component={HomeScreen}
                 options={{title: "R E - R I G H T", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

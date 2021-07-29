@@ -4,16 +4,18 @@ import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 import ReportAbuseScreen1 from '../../screens/ReportAbuseScreens/ReportAbuseScreen1';
 import ReportAbuseScreen2 from '../../screens/ReportAbuseScreens/ReportAbuseScreen2';
-
 import ReportRecapRightsScreen from '../../screens/ReportAbuseScreens/ReportAbuseRecapRightsScreen';
 import ReportRecapArticle from '../../screens/ReportAbuseScreens/ReportAbuseRecapArticle';
 import ReportRecapQuiz from '../../screens/ReportAbuseScreens/ReportAbuseRecapQuiz';
+import AboutReportAbuseScreen from '../../screens/ReportAbuseScreens/AboutReportAbuseScreen';
 
 import { AppStyles } from '../../../config/styles';
-import AboutReportAbuseScreen from '../../screens/ReportAbuseScreens/AboutReportAbuseScreen';
+import StackHeaderBackImage from '../StackHeaderBackImage';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const StackTitleStyle = AppStyles.StackTitleStyle;
+const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
+
 const Stack = createStackNavigator();
 
 export default function ReportAbuseStackNav({navigation}) {
@@ -23,7 +25,9 @@ export default function ReportAbuseStackNav({navigation}) {
     return (
         <Stack.Navigator initialRoute="Report Abuse" screenOptions={{
             headerStyle: StackHeaderStyle,
-            headerTitleStyle: StackTitleStyle }}>
+            headerTitleStyle: StackTitleStyle,
+            headerBackImage: StackHeaderBackImage,
+            headerBackTitleStyle: StackBackTitleStyle }}>
             <Stack.Screen name="Report Abuse" component={ReportAbuseScreen1}
                 options={{title: "Report Abuse", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

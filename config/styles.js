@@ -19,6 +19,9 @@ export const AppStyles = StyleSheet.create({
         fontSize: 20,
         color: colors.white,
     },
+    StackBackTitleStyle: {
+        color: colors.black,
+    },
     TabStyle: {
         borderColor: colors.black,
         borderWidth: 1,

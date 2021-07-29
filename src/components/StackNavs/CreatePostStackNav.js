@@ -7,9 +7,12 @@ import TextPostScreen from '../../screens/HomeScreens/TextPostScreen';
 import StylizedPostScreen from '../../screens/HomeScreens/StylizedPostScreen';
 
 import { AppStyles } from '../../../config/styles';
+import StackHeaderBackImage from '../StackHeaderBackImage';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const StackTitleStyle = AppStyles.StackTitleStyle;
+const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
+
 const Stack = createStackNavigator();
 
 export default function CreatePostStackNav({navigation}) {
@@ -19,7 +22,9 @@ export default function CreatePostStackNav({navigation}) {
     return (
         <Stack.Navigator initialRoute="Create Post" screenOptions={{
             headerStyle: StackHeaderStyle,
-            headerTitleStyle: StackTitleStyle }}>
+            headerTitleStyle: StackTitleStyle,
+            headerBackImage: StackHeaderBackImage,
+            headerBackTitleStyle: StackBackTitleStyle }}>
             <Stack.Screen name="Create Post" component={CreatePostScreen}
                 options={{title: "Create Post", headerRight: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>

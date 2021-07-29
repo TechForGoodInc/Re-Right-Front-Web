@@ -8,9 +8,12 @@ import RecapArticle from '../../screens/RecapRightsScreens/RecapArticle';
 import RecapQuiz from '../../screens/RecapRightsScreens/RecapQuiz';
 
 import { AppStyles } from '../../../config/styles';
+import StackHeaderBackImage from '../StackHeaderBackImage';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const StackTitleStyle = AppStyles.StackTitleStyle;
+const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
+
 const Stack = createStackNavigator();
 
 export default function RecapRightsStackNav({navigation}) {
@@ -20,7 +23,9 @@ export default function RecapRightsStackNav({navigation}) {
     return (
         <Stack.Navigator initialRoute="Recap Rights" screenOptions={{
             headerStyle: StackHeaderStyle,
-            headerTitleStyle: StackTitleStyle }}>
+            headerTitleStyle: StackTitleStyle,
+            headerBackImage: StackHeaderBackImage,
+            headerBackTitleStyle: StackBackTitleStyle }}>
             <Stack.Screen name="Recap Rights" component={RecapRightScreen1}
                 options={{title: "Recap Rights", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
