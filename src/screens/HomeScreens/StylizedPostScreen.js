@@ -2,7 +2,21 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text, Modal, Pressable, TouchableOpacity, Button, Platform } from "react-native";
 import colors from "../../../config/colors";
 
-
+const colorBarColors = [ 
+    {primaryColor: 'white'},
+    { primaryColor: "#C00000" },
+    { primaryColor: "#FF0000"},
+    { primaryColor: "#FFC000"},
+    { primaryColor: "#FFFF00"},
+    { primaryColor: "#92D050"},
+    { primaryColor: "#00B050"},
+    { primaryColor: "#00B0F0"},
+    { primaryColor: "#0070C0"},
+    { primaryColor: "#002060"},
+    { primaryColor: "#7030A0"},
+    { primaryColor: 'black'}
+    ]
+const numberOfPrimaryColors = colorBarColors.length
 const StylizedPostScreen = ({navigation}) => {
     // setting up all the variables that can be changed by the user
     const [backgroundType, setBackgroundType] = useState ('solid');
@@ -14,12 +28,24 @@ const StylizedPostScreen = ({navigation}) => {
     const [solidEditorOn,setSolidEditorOn] = useState(true)
     const enterSolidMode = () => {setSolidEditorOn(true); setTextureEditorOn(false);setImageEditorOn(false)}
     const SolidBackgroundEditor = () => {
+        const primaryColorBar = colorBarColors.map((colorCombo) => 
+                
+                <TouchableOpacity 
+                    onPress={()=> {setBackgroundType('solid');setSolidBackground(colorCombo.primaryColor)}}
+                    key={colorBarColors.indexOf(colorCombo)} 
+                    style = {[{backgroundColor:colorCombo.primaryColor,width: 100/colorBarColors.length + '%'}]}>
+                </TouchableOpacity>
+                
+        );
         return(
             <View style ={{ flex:1, display: solidEditorOn? 'flex' : 'none'}}>
                 <View style = {styles.editorContent}> 
                     <Text style={{fontSize: 19}}> 
                         Solid Editor
                     </Text>
+                        <View style={styles.colorBar}>
+                            {primaryColorBar}
+                        </View>
                 </View>
                 <View style={styles.navigationDotsView}>
                         <View style= {styles.closedDot}></View>
@@ -162,6 +188,18 @@ const styles = StyleSheet.create({
         padding: '6%',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    colorBar: {
+        width: '93%',
+        height: '13%',
+        borderWidth: 1,
+        borderColor: 'black',
+        alignSelf: 'center',
+        flexDirection: 'row'
+    },
+    primaryColorBar: {
+        width : 100,
+        height : '100%'
     },
     navigationDotsView: {
        width: '5%',
