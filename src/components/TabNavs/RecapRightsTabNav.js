@@ -1,5 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
+
 import RecapRightsStackNav from '../StackNavs/RecapRightsStackNav';
 import RecapQuiz from '../../screens/RecapRightsScreens/RecapQuiz';
 
@@ -19,8 +21,12 @@ export default function RecapRightsTabNav({navigation}) {
             tabStyle: TabStyle,
             labelStyle: TabLabelStyle
         }}>
-            <BottomTabs.Screen name="Recap Rights" component={RecapRightsStackNav}/>
-            <BottomTabs.Screen name="Quiz" component={RecapQuiz}/>
+            <BottomTabs.Screen name="Recap Rights" component={RecapRightsStackNav} options={{
+                tabBarIcon: () => <FontAwesome name="book" size={24} color="black" />
+            }}/>
+            <BottomTabs.Screen name="Quiz" component={RecapQuiz} options={{
+                tabBarIcon: () => <MaterialCommunityIcons name="brain" size={24} color="black" />
+            }}/>
         </BottomTabs.Navigator>
     )
 }
