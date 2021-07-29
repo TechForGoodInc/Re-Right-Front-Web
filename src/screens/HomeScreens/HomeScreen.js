@@ -3,7 +3,8 @@ import React from 'react';
 import colors from '../../../config/colors';
 import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable, Platform } from 'react-native';
 import SamplePost from './SamplePost';
-
+import { useState } from 'react/cjs/react.development';
+import { useEffect } from 'react';
 const pad = 10;
 const feedflex = 6;
 
@@ -12,11 +13,17 @@ const wait = (timeout) => {
 }
 
 export default function HomeScreen() {
+   
     const [refreshing, setRefreshing] = React.useState(false);
+    
     const onRefresh = React.useCallback(() => {
       setRefreshing(true);
       wait(2000).then(() => setRefreshing(false));
     }, []);
+    useEffect(() => {
+      setRefreshing(true);
+      wait(2000).then(() => setRefreshing(false));
+      }, []);
     return (
         <SafeAreaView style={{
           flex: feedflex,
@@ -28,8 +35,10 @@ export default function HomeScreen() {
           alignSelf: "center",
           justifyContent: "center",
           alignItems: "center",
+          backgroundColor: 'white'
         }}>
           <ScrollView 
+          style={{backgroundColor: 'white'}}
           direction alLockEnabled = 'true'
           refreshControl={
           <RefreshControl

@@ -1,6 +1,5 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import HomeStackNav from '../StackNavs/HomeStackNav';
 import ProfileStackNav from '../StackNavs/ProfileStackNav';
 import FriendsStackNav from '../StackNavs/FriendsStackNav';
@@ -8,10 +7,8 @@ import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
 import { AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import { Platform, StyleSheet } from 'react-native';
-
 import colors from '../../../config/colors';
 import colorsTest from '../../../config/colorsTest';
-
 import { AppStyles } from '../../../config/styles';
 
 

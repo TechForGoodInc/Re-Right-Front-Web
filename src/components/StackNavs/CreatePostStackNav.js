@@ -42,7 +42,7 @@ export default function CreatePostStackNav({navigation}) {
             <Stack.Screen name="Create Stylized Post" component={StylizedPostScreen}
                 options= {{title: "Choose Background",headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleCrossPress }>
-                        <Image source={require('../../../assets/cross-button.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../assets/cross-round.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     ), headerRight: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleStylizedNextPress }>
