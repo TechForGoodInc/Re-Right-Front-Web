@@ -41,7 +41,7 @@ export default function ReachOutScreen1({navigation}) {
         headerTitle: {
             fontWeight: '800',
             fontSize: ( landscape|| width>height) ? viewConstants.headingFontSizeLandscape: viewConstants.headingFontSize,
-            color: colors.blue,
+            color: colors.primary,
             paddingVertical: ( landscape|| width>height) ? 0 : '3%',
             paddingTop: ( landscape|| width>height) ? '5%' : 0
         },
@@ -102,7 +102,7 @@ export default function ReachOutScreen1({navigation}) {
             alignItems: "center",
         },
         linkText: {
-            color: colors.blue,
+            color: colors.hyperlink,
             fontSize: 18,
             marginBottom: '2%',
         },
@@ -147,7 +147,7 @@ export default function ReachOutScreen1({navigation}) {
 
             </SafeAreaView>
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.blue,},
+                backgroundColor: pressed ? colors.primary_light : colors.primary,},
                 styles.submitButton,]}
                 onPress={() => handleConnectPress()}>
                 <Text style={styles.buttonText}>Connect</Text>

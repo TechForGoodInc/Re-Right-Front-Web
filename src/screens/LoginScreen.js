@@ -95,7 +95,7 @@ export default function LoginScreen({navigation}) {
         headertext: {
             fontWeight: '700',
             fontSize: 25, 
-            color: colors.blue,
+            color: colors.primary,
             marginBottom: '4%',
           },
       
@@ -105,7 +105,7 @@ export default function LoginScreen({navigation}) {
               width: '100%'
           },
           linkText: {
-              color: colors.blue,
+              color: colors.hyperlink,
               fontSize: 18,
               marginBottom: '2%',
           }
@@ -171,7 +171,7 @@ export default function LoginScreen({navigation}) {
             </View>
         </View>
         <Pressable style={({pressed}) => [{
-            backgroundColor: pressed ? colors.grey : colors.blue,},
+            backgroundColor: pressed ? colors.primary_light : colors.primary,},
             styles.continueButton,]}
             onPress={() => handleLoginRoute()}>
             <Text style={styles.buttonText}>Log In</Text>
@@ -179,114 +179,6 @@ export default function LoginScreen({navigation}) {
     </View>
   );
 }
-// const styles = StyleSheet.create({
-
-//   background: {
-//       flex: 1,
-//       backgroundColor: colors.white,
-//       flexDirection: 'column',
-//   },
- 
-//    header: {
-//        flex: 0.5,
-//        alignItems: 'center',
-//        justifyContent: 'center',
-//    },
- 
-//    inputbar: {
-//        flex: 2,
-//        justifyContent: 'center',
-//        alignItems: 'center',
-//        ...Platform.select({
-//         web: {
-//             marginLeft: '30%',
-//             marginRight: '30%',
-//         },
-//         default: {
-//             marginLeft: '5%',
-//             marginRight: '5%',
-//         },
-//       }),
-       
-//    },
- 
-//    links: {
-//        justifyContent: 'flex-end',
-//        alignItems: 'center',
-//        flex: 0.5, 
-       
-//    },
- 
-//    logo: {
-      
-//       resizeMode: 'contain', 
-//       ...Platform.select({
-//           web: {
-//             width: '25%',
-//             height: '75%',
-//           },
-//           default: {
-//             width: '55%',
-//             height: '50%',
-//           }
-//       })
-//    },
- 
-//    username: {
-//        height: '18%',
-//        margin: '1%',
-//        width: '90%',
-//        borderWidth: 1,
-//        alignSelf: 'center',
-//        fontSize: 25, 
-//    },
-
-//    password: {
-//        height: '18%',
-//        margin: '1%',
-//        width: '90%',
-//        borderWidth: 1,
-//        alignSelf: 'center',
-//        fontSize: 25,
-//    },
-  
-//     buttonContainer: {
-//       flexDirection: 'row',
-//     },
-
-//     continueButton: {
-//       width: "100%",
-//       height: 70,
-//       justifyContent: "center",
-//       alignItems: "center",
-//     },
-
-//     buttonText: {
-//        fontSize: 20,
-//        lineHeight: 21,
-//         fontWeight: 'bold',
-//         letterSpacing: 0.25,
-//         color: 'white',
-//     },
- 
-//   headertext: {
-//        fontSize: 25, 
-//        marginBottom: '4%',
-//     },
-
-//     linkView: {
-//         alignItems: 'center',
-//         bottom: '10%',
-//         width: '100%'
-//     },
-//     linkText: {
-//         color: colors.blue,
-//         fontSize: 18,
-//         marginBottom: '2%',
-//     }
- 
-// });
- 
  
 
 

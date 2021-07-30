@@ -14,7 +14,7 @@ export default {
     lighter_grey : '#E0E0E0',
     white: "#fff",
     
-
+    hyperlink: "#428AF8",
     active_tab: "#ADD8E6",
     inactive_tab: "#428AF8",
     // Palette end
