@@ -8,11 +8,14 @@ export default {
     accent1: "#FCD681",
     accent2: "#EA8071",
 
+    black: "11111E",
+    white: "#fff",
+
     active_tab: "#ADD8E6",
     inactive_tab: "#428AF8",
+    // Palette end
 
-    black: "11111E", // Palette
-    white: "#fff",
+    // Don't use these color names (To be deleted later once components' colors are switched)
     red: "tomato",
     grey: "grey",
     light_grey: "#D3D3D3",
