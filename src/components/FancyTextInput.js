@@ -27,9 +27,9 @@ export default class FancyTextInput extends Component {
         const { onFocus, onBlur, ...otherProps } = this.props;
         return (
         <TextInput
-            selectionColor={colors.blue}
+            selectionColor={colors.primary}
             underlineColorAndroid={
-            isFocused ? colors.blue : colors.light_grey
+            isFocused ? colors.primary : colors.primary_light
             }
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}

@@ -15,12 +15,12 @@ export default {
     white: "#fff",
     
     hyperlink: "#428AF8",
+    red: "red",
     active_tab: "#ADD8E6",
     inactive_tab: "#428AF8",
     // Palette end
 
     // Don't use these color names anymore (To be deleted later once components' colors are switched)
-    red: "tomato",
     blue: "#428AF8",
     light_blue: "#ADD8E6",
     cream: "#FDFCDC",

@@ -77,7 +77,7 @@ export default function LoggedOutScreen({navigation}) {
             </View>
             <View style={styles.buttonContainer}>
                 <Pressable style={({pressed}) => [{
-                    backgroundColor: pressed ? colors.primary_light : colors.secondary,},
+                    backgroundColor: pressed ? colors.grey : colors.secondary,},
                     styles.signupButton,]}
                     onPress={() => handleSignupRoute()}>
 
@@ -85,7 +85,7 @@ export default function LoggedOutScreen({navigation}) {
                 </Pressable>
                 
                 <Pressable style={({pressed}) => [{
-                    backgroundColor: pressed ? colors.primary_light : colors.primary,},
+                    backgroundColor: pressed ? colors.grey : colors.primary,},
                     styles.loginButton,]}
                     onPress={() => handleLoginRoute()}>
 

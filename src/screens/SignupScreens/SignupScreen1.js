@@ -121,18 +121,6 @@ export default function SignupScreen1({navigation}) {
             navigation.navigate("Signup 2");
         }
     }
-    
-    // const keyboardInputMode = () => {
-    //     setStyles(StyleSheet.create( 
-    //         KeyboardViewStyles() 
-    //     ))
-    // }
-    // const outOfKeyboardInputMode = () => {
-    //     Keyboard.dismiss;
-    //     setStyles(StyleSheet.create( 
-    //         GetSignUp1Style(colors)
-    //     ))
-    // }
 
     return (
         <KeyboardAvoidingView style={styles.screenBackground}>
@@ -244,7 +232,7 @@ export default function SignupScreen1({navigation}) {
                 </SafeAreaView>
             </TouchableWithoutFeedback>
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.blue,},
+                backgroundColor: pressed ? colors.grey : colors.primary,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
                 <Text style={styles.buttonText}>Continue</Text>

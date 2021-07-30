@@ -124,7 +124,7 @@ export default function ProfileScreen({navigation}) {
             <TouchableOpacity  id= "editButton" onPress={() => {editing()} } title ="Edit "> 
                 <Image source= {require('../../../assets/editing.png')} style={{display: editMode? "none":'flex',color:editMode? "red":"blue", marginLeft: '86%',paddingTop:"5%", width: (Platform.OS!=='web')? 35 :60 , height: (Platform.OS!=='web')? 35 :60}}/>
                 <View style= {{textAlign: "center" ,alignItems: 'center',backgroundColor: colors.light_grey, borderRadius: 10, marginLeft: '80%',marginBottom: '4%',marginRight: '5%'}}>
-                            <Text style = {{display: editMode? "flex":'none',padding: '9%', color: colors.blue, fontWeight: '900'}}>Done</Text>
+                            <Text style = {{display: editMode? "flex":'none',padding: '9%', color: colors.primary, fontWeight: '900'}}>Done</Text>
                         </View> 
             </TouchableOpacity>
             </View>

@@ -59,7 +59,7 @@ export default function MapToolScreen() {
         filtersTitleText: {
             fontWeight: '700',
             fontSize: 25, 
-            color: colors.blue,
+            color: colors.primary,
             marginBottom: '2%',
           },
         filterTitleText: {

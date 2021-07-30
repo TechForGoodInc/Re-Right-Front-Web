@@ -147,7 +147,7 @@ export default function ReachOutScreen1({navigation}) {
 
             </SafeAreaView>
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.primary_light : colors.primary,},
+                backgroundColor: pressed ? colors.grey : colors.primary,},
                 styles.submitButton,]}
                 onPress={() => handleConnectPress()}>
                 <Text style={styles.buttonText}>Connect</Text>

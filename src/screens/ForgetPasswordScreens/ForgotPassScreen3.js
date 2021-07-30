@@ -43,7 +43,7 @@ export default function ForgotPassScreen3({navigation}) {
         headerTitle: {
             fontWeight: '800',
             fontSize: ( landscape|| width>height) ? viewConstants.headingFontSizeLandscape: viewConstants.headingFontSize,
-            color: colors.blue,
+            color: colors.primary,
             paddingVertical: ( landscape|| width>height) ? 0 : '3%',
             paddingTop: ( landscape|| width>height) ? '5%' : 0
         },
@@ -153,7 +153,7 @@ export default function ForgotPassScreen3({navigation}) {
             </TouchableWithoutFeedback>
 
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.blue,},
+                backgroundColor: pressed ? colors.grey : colors.primary,},
                 styles.continueButton,]}
                 onPress={() => handleContinueRoute()}>
 

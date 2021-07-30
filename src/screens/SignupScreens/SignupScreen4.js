@@ -40,7 +40,7 @@ const SignupScreen4 = ({navigation}) => {
         headerTitle: {
             fontWeight: '800',
             fontSize: ( landscape|| width>height) ? viewConstants.headingFontSizeLandscape: viewConstants.headingFontSize,
-            color: colors.blue,
+            color: colors.primary,
             paddingVertical: ( landscape|| width>height) ? 0 : '3%',
             paddingTop: ( landscape|| width>height) ? '5%' : 0
         },
@@ -101,7 +101,7 @@ const SignupScreen4 = ({navigation}) => {
             alignItems: "center",
         },
         linkText: {
-            color: colors.blue,
+            color: colors.hyperlink,
             fontSize: 18,
             marginBottom: '2%',
         },
@@ -137,7 +137,7 @@ const SignupScreen4 = ({navigation}) => {
             </SafeAreaView>
         </TouchableWithoutFeedback>
         <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.blue,},
+                backgroundColor: pressed ? colors.grey : colors.primary,},
                 styles.continueButton,]}
                 onPress={() => handleSubmitPress()}>
                 <Text style={styles.buttonText}>Submit</Text>
@@ -148,66 +148,3 @@ const SignupScreen4 = ({navigation}) => {
 }
  
 export default SignupScreen4;
-
-// const styles = StyleSheet.create( {
-//     container: {
-//         marginHorizontal: viewConstants.containerHorizontalMargins,
-//         flex: 1,
-//         justifyContent: 'center'
-//     },
-//     header: {
-//        marginBottom: viewConstants.headerBottomMargin
-//     },
-//     headerTitle: {
-//         fontWeight: '800',
-//         fontSize: viewConstants.headingFontSize,
-//         color: colors.blue,
-//         paddingVertical: '3%'
-//     },
-//     headerText: {
-//         fontSize: viewConstants.textSize,
-//     },
-//     linkText: {
-//         textDecorationLine: 'underline',
-//         paddingVertical: '3%',
-        
-//     },
-//     label: {
-//         fontSize: viewConstants.textSize,
-//         padding: 10
-//     },
-//     inputText: {
-//         borderWidth: 2,
-//         borderColor: colors.light_grey,
-//         borderRadius: 10,
-//         textAlign: 'center',
-//         padding: 10,
-//         fontSize: viewConstants.textSize,
-//     },
-//     lastInput:{
-//         paddingBottom: 20,
-//     },
-//     submitButton: {
-//         marginTop: 20
-//     },
-//     screenBackground: {
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'flex-end',
-//         backgroundColor: colors.white,
-        
-//     },
-//     buttonText: {
-//         fontSize: 16,
-//         lineHeight: 21,
-//         fontWeight: 'bold',
-//         letterSpacing: 0.25,
-//         color: 'white',
-//       },
-//     continueButton: {
-//         width: "100%",
-//         height: 70,
-//         justifyContent: "center",
-//         alignItems: "center",
-//     },
-// })

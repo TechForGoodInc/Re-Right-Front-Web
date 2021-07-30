@@ -88,7 +88,7 @@ const styles  = StyleSheet.create({
         padding: '6%'
     },
     button: {
-        backgroundColor: colors.blue,
+        backgroundColor: colors.primary,
         width: Platform.OS!='web' ? '80%' : 200,
         marginBottom: '6%',
         textAlign:'center',

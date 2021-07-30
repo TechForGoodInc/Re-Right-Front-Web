@@ -156,7 +156,7 @@ export default function ChangeUserNameScreen() {
                 </SafeAreaView>
             </TouchableWithoutFeedback>
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.blue,},
+                backgroundColor: pressed ? colors.grey : colors.primary,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
                 <Text style={styles.buttonText}>Continue</Text>

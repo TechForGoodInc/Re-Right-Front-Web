@@ -76,7 +76,7 @@ export default function ReportAbuseScreen2({ navigation }) {
             >
             </TextInput>
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.blue,},
+                backgroundColor: pressed ? colors.grey : colors.primary,},
                 styles.submitButton,]}
                 onPress={() => handleSubmitPress()}>
                 <Text style={styles.buttonText}>Submit</Text>
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     linkText: {
-        color: colors.blue,
+        color: colors.hyperlink,
         fontSize: 18,
         marginBottom: '2%',
         alignSelf: 'center',

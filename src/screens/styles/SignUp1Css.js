@@ -45,7 +45,7 @@ export default function GetSignUp1Style (landscape,width, height,colors, ) {
             headerTitle: {
                 fontWeight: viewConstants.headingWeight,
                 fontSize: ( landscape|| width>height) ? viewConstants.headingFontSizeLandscape: viewConstants.headingFontSize,
-                color: colors.blue,
+                color: colors.primary,
                 paddingVertical: ( landscape|| width>height) ? 0 : '3%',
                 paddingTop: ( landscape|| width>height) ? '5%' : 0
             },

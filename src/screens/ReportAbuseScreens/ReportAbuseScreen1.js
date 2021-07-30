@@ -17,7 +17,7 @@ export default function ReportAbuseScreen1({ navigation }) {
                 placeholder="Let us know your story..." 
             />
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.blue,},
+                backgroundColor: pressed ? colors.grey : colors.primary,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
                 <Text style={styles.buttonText}>Continue</Text>
