@@ -22,7 +22,7 @@ export default function LoggedOutScreen({navigation}) {
         },
         title: {
             fontWeight: '800',
-            color: colors.blue,
+            color: colors.primary,
             fontSize: 60,
         },
         screenBackground: {
@@ -34,19 +34,24 @@ export default function LoggedOutScreen({navigation}) {
         buttonContainer: {
             flexDirection: 'row',
             alignSelf: 'stretch',
-            backgroundColor: colors.black,
         },
         loginButton: {
             width: "50%",
             height: 70,
             justifyContent: "center",
             alignItems: "center",
+            borderColor: colors.black,
+            borderWidth: 2,
+            
         },
         signupButton: {
             width: "50%",
             height: 70,
             justifyContent: "center",
             alignItems: "center",
+            borderColor: colors.black,
+            borderWidth: 2,
+            borderRightWidth: 0,
         },
         text: {
           fontSize: 16,
@@ -72,14 +77,15 @@ export default function LoggedOutScreen({navigation}) {
             </View>
             <View style={styles.buttonContainer}>
                 <Pressable style={({pressed}) => [{
-                    backgroundColor: pressed ? colors.grey : colors.secondary,},
+                    backgroundColor: pressed ? colors.primary_light : colors.secondary,},
                     styles.signupButton,]}
                     onPress={() => handleSignupRoute()}>
 
                     <Text style={styles.text}>To Signup</Text>
                 </Pressable>
+                
                 <Pressable style={({pressed}) => [{
-                    backgroundColor: pressed ? colors.grey : colors.blue,},
+                    backgroundColor: pressed ? colors.primary_light : colors.primary,},
                     styles.loginButton,]}
                     onPress={() => handleLoginRoute()}>
 
