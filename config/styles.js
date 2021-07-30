@@ -4,14 +4,14 @@ import colors from './colors';
 
 export const AppStyles = StyleSheet.create({
     StackHeaderStyle: { // Currently used by all stack navs
-        backgroundColor: colors.blue,
+        backgroundColor: colors.primary,
         borderBottomColor: colors.black,
         borderBottomWidth: 1,
         shadowColor: colors.black,
         shadowRadius: 10,
     },
     ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
-        backgroundColor: colors.red,
+        backgroundColor: colors.primary,
     },
     StackTitleStyle: {
         fontWeight: 'bold',
