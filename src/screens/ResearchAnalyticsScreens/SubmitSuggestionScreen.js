@@ -129,7 +129,7 @@ export default function SignupScreen3({navigation}) {
         <Pressable style={({pressed}) => [{
                 backgroundColor: pressed ? colors.grey : colors.blue,},
                 styles.submitButton,]}
-                onPress={() => handleContinuePress()}>
+                onPress={() => handleSubmitPress()}>
                 <Text style={styles.buttonText}>Submit</Text>
             </Pressable>
         </View>

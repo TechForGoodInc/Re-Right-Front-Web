@@ -114,10 +114,10 @@ export default function ForgotPassScreen1({navigation}) {
                     <View styles = { styles.inputView }>
                         <View>
                             <Text style={styles.label}>
-                                Username or Email: 
+                                Enter Your Username or Email: 
                             </Text>
                             <TextInput style={styles.inputText} 
-                                placeholder="Enter Your Username or Email" 
+                                placeholder="Username or Email" 
                                 keyboardType = 'email-address' 
                                 textContentType = 'emailAddress' 
                                 autoCompleteType='email' 

@@ -165,11 +165,6 @@ export default function LoginScreen({navigation}) {
             <View style = {styles.linkView}>
                 <Text 
                     style={styles.linkText}
-                    onPress={() => handleSignUpRoute()}>
-                    Create Account
-                </Text>
-                <Text 
-                    style={styles.linkText}
                     onPress={() => handleForgotPassRoute()}>
                     Forgot Password
                 </Text>
