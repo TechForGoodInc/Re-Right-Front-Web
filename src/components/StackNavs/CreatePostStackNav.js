@@ -49,12 +49,12 @@ export default function CreatePostStackNav({navigation}) {
                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center'}}> 
                             <Text style= {{ fontSize: 17,paddingRight: 9, alignSelf: 'center', color: colors.black, paddingHorizontal: 2}}> 
                                 Next {'>'}
-                            </Text>  
+                            </Text> 
                         </View>
                     </TouchableOpacity>
                     )}}
             />       
-            <Stack.Screen name="Stylized Post Screen 2" component={StylizedPostScreen2}/>
+            <Stack.Screen name="Stylized Post Screen 2" component={StylizedPostScreen2} initialParams={{ backgroundType: 'solid', solidColor: 'white', textureLink: '', imageLink: '' }}/>
             <Stack.Screen name="Create Text-Only Post" component={TextPostScreen}/>
             <Stack.Screen name="Choose From Device" component={DevicePostScreen}/>
         </Stack.Navigator>

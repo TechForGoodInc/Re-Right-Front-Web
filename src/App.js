@@ -13,7 +13,9 @@ import ForgotPassScreen1 from './screens/ForgetPasswordScreens/ForgotPassScreen1
 import ForgotPassScreen2 from './screens/ForgetPasswordScreens/ForgotPassScreen2';
 import ForgotPassScreen3 from './screens/ForgetPasswordScreens/ForgotPassScreen3';
 import ForgotPassScreen4 from './screens/ForgetPasswordScreens/ForgotPassScreen4';
+import StylizedPostScreen from './screens/HomeScreens/StylizedPostScreen';
 import HomeDrawerNav from './components/HomeDrawerNav';
+import StylizedPostScreen2 from './screens/HomeScreens/StylizedPostScreen2';
 
 const Stack = createStackNavigator();
 export default function ReRightApp() {

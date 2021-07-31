@@ -8,7 +8,7 @@ export default {
     accent1: "#FCD681",
     accent2: "#EA8071",
 
-    black: "11111E",
+    black: "#11111E",
     grey: "grey",
     light_grey: "#D3D3D3",
     lighter_grey : '#E0E0E0',
