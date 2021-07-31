@@ -303,7 +303,7 @@ return (
           <Pressable
             style={({ pressed }) => [
               {
-                borderColor: pressed ? colors.dblue : colors.black,
+                backgroundColor: pressed ? colors.primary : colors.primary_light,
               },
               styles.answerOption,
             ]}
@@ -340,8 +340,7 @@ answerOption: {
   padding: 15,
   width: "90%",
   alignSelf: "center",
-  borderRadius: 10,
-  backgroundColor: colors.lightblue,
+  borderRadius: 30,
   justifyContent: "center",
 },
 optionText: {
