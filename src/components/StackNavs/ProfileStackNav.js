@@ -9,7 +9,7 @@ import AccountSettings from '../../screens/HomeScreens/AccountSettingsScreen';
 import ChangeUsernameScreen from '../../screens/HomeScreens/ChangeUsernameScreen';
 import ChangePasswordScreen from '../../screens/HomeScreens/ChangePasswordScreen';
 import ChangeEmailScreen from '../../screens/HomeScreens/ChangeEmailScreen';
-
+import SignupScreen4 from '../../screens/SignupScreens/SignupScreen4';
 import { AppStyles } from '../../../config/styles';
 import StackHeaderBackImage from '../StackHeaderBackImage';
 
@@ -49,6 +49,7 @@ export default function ProfileStackNav({navigation}) {
         <Stack.Screen name="ChangeUserName" component={ChangeUsernameScreen}/>
         <Stack.Screen name="ChangeEmail" component={ChangeEmailScreen}/>
         <Stack.Screen name="ChangePassword" component={ChangePasswordScreen}/>
+        <Stack.Screen name="Social Media Tracking" component={SignupScreen4}/>
         </Stack.Navigator>
     )
 }

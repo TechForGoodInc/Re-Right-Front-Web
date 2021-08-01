@@ -19,7 +19,8 @@ const viewConstants = {
     textBoxPadding: 10
 }
 
-const SignupScreen4 = ({navigation}) => {
+const SignupScreen4 = ({route, navigation}) => {
+    const {signedIn} = route.params;
     //getting the dimensions and the orientation
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
@@ -112,6 +113,9 @@ const SignupScreen4 = ({navigation}) => {
             routes: [{name: 'Logged Out'}, {name: 'Login'}],
           });
     }
+    const handleOkPress = () => {
+        navigation.navigate('Account Settings')
+    }
     return ( 
         <View style={styles.screenBackground}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -139,7 +143,7 @@ const SignupScreen4 = ({navigation}) => {
         <Pressable style={({pressed}) => [{
                 backgroundColor: pressed ? colors.grey : colors.primary,},
                 styles.continueButton,]}
-                onPress={() => handleSubmitPress()}>
+                onPress={() => signedIn ? handleOkPress() : handleSubmitPress()}>
                 <Text style={styles.buttonText}>Submit</Text>
             </Pressable>
         </View>

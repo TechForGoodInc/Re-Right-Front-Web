@@ -3,6 +3,7 @@ import colors from '../../../config/colors';
 import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
+
 const viewConstants = {
     containerTopMargin: '10%',
     containerBottomMargin: '16%',
@@ -110,7 +111,7 @@ const SignupScreen3 = ({navigation}) => {
     const [displayName,setDisplayName] = useState('');
 
     const handleContinuePress = () => {
-        navigation.navigate("Signup 4");
+        navigation.navigate("Signup 4",{signedIn:false});
     }
     const handleAddTagsPress = () => {
     }

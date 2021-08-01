@@ -27,7 +27,7 @@ export default function GetSignUp1Style (landscape,width, height,colors, ) {
         }
     return {
             screenBackground: {
-                flex: 1
+                flex: 1,
             },
             container: {
                 marginHorizontal: viewConstants.containerHorizontalMargins,

@@ -1,8 +1,9 @@
 import React, { useState ,useEffect}  from "react";
-import { StyleSheet, View, Text, Modal, Pressable, TouchableOpacity, Button, Platform, Image } from "react-native";
+import { StyleSheet, View, Text, Modal, Pressable, TouchableOpacity, Button, Platform, Image, ImageBackground } from "react-native";
 import colors from "../../../config/colors";
 import StylizedPostScreen2 from "./StylizedPostScreen2";
 import { Header } from 'react-navigation';
+import ImagePicker from 'react-native-image-picker';
 
 const colorBarColors = [ 
     {primaryColor: 'white',
@@ -171,15 +172,66 @@ const StylizedPostScreen = ({navigation}) => {
         );
     }
     // Editor for image backgrounds
+    const [filePath, setFilePath] = useState({});
+    const chooseFile = () => {
+    let options = {
+      title: 'Select Image',
+      customButtons: [
+        {
+          name: 'customOptionKey',
+          title: 'Choose Photo from Custom Option'
+        },
+      ],
+      storageOptions: {
+        skipBackup: true,
+        path: 'images',
+      },
+    };
+    ImagePicker.showImagePicker(options, (response) => {
+      console.log('Response = ', response);
+
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else if (response.customButton) {
+        console.log(
+          'User tapped custom button: ',
+          response.customButton
+        );
+        alert(response.customButton);
+      } else {
+        let source = response;
+        // You can also display the image using data:
+        // let source = {
+        //   uri: 'data:image/jpeg;base64,' + response.data
+        // };
+        setFilePath(source);
+          }
+       });
+    };
     const [imageEditorOn,setImageEditorOn] = useState(false)
     const enterImageMode = () => {setSolidEditorOn(false); setTextureEditorOn(false);setImageEditorOn(true)}
+
     const ImageBackgroundEditor = () => {
         return(
             <View style ={{ flex:1, display: imageEditorOn? 'flex' : 'none'}}>
                 <View style = {styles.editorContent}> 
                     <Text> Image Editor</Text>
-                </View>
-                <View style={styles.navigationDotsView}>
+                    <TouchableOpacity
+                        activeOpacity={0.5}
+                        style={styles.buttonStyle}
+                        onPress={()=> { setBackgroundType('image'); chooseFile}}>
+                        <Text style={styles.textStyle}>
+                        Choose Image
+                        </Text>
+                        <Text style={styles.textStyle}>
+          {filePath.uri}
+        </Text>
+        
+                        </TouchableOpacity>
+                        </View>
+                        <View style={styles.navigationDotsView}>
                         <Pressable onPress={enterSolidMode}> 
                         <View style= {styles.openDot}></View>
                         </Pressable>
@@ -196,6 +248,7 @@ const StylizedPostScreen = ({navigation}) => {
             
             {/* The post is Displayed Here */}
             <View style = {[{backgroundColor: backgroundType === 'solid'? solidBackground : 'black'},styles.postView]}>
+            <Image source = {{uri: backgroundType === "image" ? filePath.path : ''}}/>
             </View>
             {/* Background Type Chooser */}
             <View style ={styles.backgroundChooser}>
