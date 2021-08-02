@@ -191,12 +191,6 @@ const RecapRightsScreen1 = ({navigation}) => {
         <Text style = {styles.title}>Know your Rights!</Text>
         <Text style = {styles.subtitle}>The Universal Declaration of Human Rights is a historic document which outlined the rights and freedoms everyone is entitled to.</Text>
           {RecapArticleList()}
-        <Pressable style={({pressed}) => [{
-            backgroundColor: pressed ? colors.grey : colors.black},
-            styles.quizButton]} 
-            onPress={() => navigation.navigate("Human Rights Quiz")} >
-            <Text style={styles.quizText}>Take the Quiz Here!</Text>
-        </Pressable>
       </ScrollView>
     </SafeAreaView>
     
