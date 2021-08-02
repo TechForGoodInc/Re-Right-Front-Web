@@ -23,7 +23,7 @@ export default function HomeDrawerNav({navigation}) {
         <Drawer.Navigator initialRoute="Home"
             drawerType="slide"
             drawerStyle={{
-                backgroundColor: colors.light_grey,
+                backgroundColor: colors.background_drawer,
                 }}
             drawerContent={HomeDrawer}
             drawerContentOptions={{
@@ -31,8 +31,8 @@ export default function HomeDrawerNav({navigation}) {
                 inactiveBackgroundColor: colors.inactive_tab,
                 itemStyle: {
                     shadowRadius: 5,
-                    shadowColor: colors.black,
-                    borderColor: colors.black,
+                    shadowColor: colors.shadow,
+                    borderColor: colors.border,
                     borderWidth: 1,
                     borderRadius: 10,
                 },
@@ -41,7 +41,7 @@ export default function HomeDrawerNav({navigation}) {
                     alignContent: 'center',
                 },
                 style: {
-                    borderColor: colors.black,
+                    borderColor: colors.border,
                     borderRightWidth: 1,
                 },
                 

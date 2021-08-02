@@ -18,6 +18,20 @@ export default {
     red: "red",
     active_tab: "#ADD8E6",
     inactive_tab: "#428AF8",
+
+   
+    text_general: "black",
+    text_stack_title: "white",
+    text_stack_back_title: "black",
+    text_tab_label: "white",
+
+    border: "black",
+    shadow: "black",
+    
+    background_drawer: "grey",
+    background_stack_header: "black",
+    
+
     // Palette end
 
     // Don't use these color names anymore (To be deleted later once components' colors are switched)
