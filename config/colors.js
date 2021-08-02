@@ -20,16 +20,23 @@ export default {
     inactive_tab: "#428AF8",
 
    
+    text_screen_header: "",
     text_general: "black",
     text_stack_title: "white",
     text_stack_back_title: "black",
     text_tab_label: "white",
 
     border: "black",
-    shadow: "black",
+    border_input_text: "",
     
+    shadow: "black",
+
+    background_screen: "",
     background_drawer: "grey",
     background_stack_header: "black",
+
+    button_continue: "",
+    button_pressed: "",
     
 
     // Palette end
