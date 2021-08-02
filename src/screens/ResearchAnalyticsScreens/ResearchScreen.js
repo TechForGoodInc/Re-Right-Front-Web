@@ -19,14 +19,14 @@ export default function ResearchScreen({navigation}) {
     const styles = StyleSheet.create({
         background: {
           flex: 1,
-          backgroundColor: colors.white,
+          backgroundColor: colors.background_screen,
         },
         
         title: {
           fontSize: 25,
           alignSelf: 'center',
           fontWeight: 'bold',
-          color: colors.black,
+          color: colors.text_screen_header,
           
         },
       
@@ -37,7 +37,7 @@ export default function ResearchScreen({navigation}) {
           marginTop: 5,
           marginBottom: 10,
           alignSelf: 'center',
-          color: colors.grey,
+          color: colors.text_subtitle,
         },
       
         recapboxes: {
@@ -85,7 +85,7 @@ export default function ResearchScreen({navigation}) {
         
         buttonText: {
           alignSelf: 'center',
-          color: colors.white,
+          color: colors.text_general,
           
         },
       

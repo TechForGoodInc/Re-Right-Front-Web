@@ -7,6 +7,7 @@ export default {
     secondary_dark: "#144F4B",
     accent1: "#FCD681",
     accent2: "#EA8071",
+    // These color names are depricated, need to move to empty ones below
 
     black: "#11111E",
     grey: "grey",
