@@ -200,14 +200,14 @@ const RecapRightsScreen1 = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.background_screen,
   },
   
   title: {
     fontSize: 25,
     alignSelf: 'center',
     fontWeight: 'bold',
-    color: colors.black,
+    color: colors.text_screen_header,
     
   },
 
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 10,
     alignSelf: 'center',
-    color: colors.grey,
+    color: colors.text_subtitle,
   },
 
   recapboxes: {
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    borderColor: colors.dblue,
+    borderColor: colors.border,
     borderRadius:10,
     padding: 10,
     paddingRight: 20,
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
   
   quizText: {
     alignSelf: 'center',
-    color: colors.white,
+    color: colors.text_quiz,
     
   },
 

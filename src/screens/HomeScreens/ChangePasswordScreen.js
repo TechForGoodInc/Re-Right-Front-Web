@@ -141,7 +141,7 @@ export default function ChangePasswordScreen() {
                 </SafeAreaView>
             </TouchableWithoutFeedback>
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.primary,},
+                backgroundColor: pressed ? colors.button_pressed : colors.button_continue,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
                 <Text style={styles.buttonText}>Continue</Text>

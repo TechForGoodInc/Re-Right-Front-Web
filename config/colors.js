@@ -25,6 +25,9 @@ export default {
     text_stack_title: "white",
     text_stack_back_title: "black",
     text_tab_label: "white",
+    text_question_number: "",
+    text_subtitle: "",
+    text_quiz: "",
 
     border: "black",
     border_input_text: "",
@@ -36,7 +39,12 @@ export default {
     background_stack_header: "black",
 
     button_continue: "",
+    button_submit: "",
     button_pressed: "",
+    button_quiz: "",
+    button_quiz_pressed: "",
+    button_retry_quiz: "",
+    button_retry_quiz_pressed: "",
     
 
     // Palette end

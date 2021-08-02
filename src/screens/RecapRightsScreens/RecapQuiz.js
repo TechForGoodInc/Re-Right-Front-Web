@@ -283,7 +283,7 @@ return (
         <Text style={styles.scoreText}>You scored {score} out of 10!</Text>
         <Pressable style={({ pressed }) => [
               {
-                backgroundColor: pressed ? colors.dblue : colors.lightblue,
+                backgroundColor: pressed ? colors.button_retry_quiz_pressed : colors.button_retry_quiz,
               },
               styles.restartButton,
             ]}
@@ -303,7 +303,7 @@ return (
           <Pressable
             style={({ pressed }) => [
               {
-                backgroundColor: pressed ? colors.primary : colors.primary_light,
+                backgroundColor: pressed ? colors.button_quiz_pressed : colors.button_quiz,
               },
               styles.answerOption,
             ]}
@@ -321,13 +321,13 @@ const styles = StyleSheet.create({
 background: {
   flex: 1,
   justifyContent: "center",
-  backgroundColor: colors.white,
+  backgroundColor: colors.background_screen,
 },
 questionNumber: {
   fontSize: 30,
   alignSelf: "center",
   fontWeight: "bold",
-  color: colors.dblue,
+  color: colors.text_question_number,
 },
 question: {
   fontSize: 20,
