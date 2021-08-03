@@ -50,17 +50,20 @@ export default function ProfileScreen({route,navigation}) {
             justifyContent: 'center',
             borderWidth: 2,
             borderRadius: 10,
-            borderColor: colors.border,
+            borderColor: colors.text_general,
+            color: color.text_general,
             marginHorizontal:'2%'
         },
         allTags: {
             width: '100%',
+            color: colors.border
         },
         tagsGroup: {
             flexDirection: 'row',
             width: '60%',
             maxHeight: '70%',
-            marginTop: '4%'
+            marginTop: '4%',
+            color: colors.border
         }
     });
 
@@ -147,7 +150,7 @@ export default function ProfileScreen({route,navigation}) {
                 <View style = {styles.header}>
                     <Image style = {{ width: (Platform.OS!=='web') ? 100:130 , height: (Platform.OS!=='web') ? 110:150,}} source={require('./../../../assets/man.png')}/> 
                     <Text style = {{display: editMode? 'none':'flex',fontWeight:'700',paddingTop:'1.5%',fontSize: 20, color: colors.text_screen_header}}> {displayName} </Text>
-                    <TextInput style = {{display: editMode? 'flex':'none', borderColor: colors.text_screen_header, borderWidth: 2, borderRadius: 10, marginTop: '1.5%',padding: '1%', color: colors.text_general}}
+                    <TextInput style = {{display: editMode? 'flex':'none', borderColor: colors.border, borderWidth: 2, borderRadius: 10, marginTop: '1.5%',padding: '1%', color: colors.text_general}}
                             defaultValue = {displayName}
                             onChangeText = {name => setDisplayName(name)}
                             onSubmitEditing = {editing}
@@ -157,7 +160,7 @@ export default function ProfileScreen({route,navigation}) {
                     <Text style = {{fontWeight:'700',paddingBottom:'5%',fontSize: 18, color: colors.text_general}} > Bio: </Text>
                     <Text style = {{display: editMode? 'none':'flex',fontSize: 17, color: colors.text_general}}> {bio} </Text>
                     <TextInput numberOfLines = '4'
-                            style = {{display: editMode? 'flex':'none', borderWidth: 2, padding: '2%', borderRadius: 10,borderColor: colors.light_grey, maxWidth: 180, color: colors.text_general}}
+                            style = {{display: editMode? 'flex':'none', borderWidth: 2, padding: '2%', borderRadius: 10,borderColor: colors.border, maxWidth: 180, color: colors.text_general}}
                             defaultValue = {bio}
                             onChangeText = {bio => setBio(bio)}
                             onSubmitEditing = {editing}
