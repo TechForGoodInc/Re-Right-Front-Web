@@ -35,7 +35,7 @@ export default function LoggedOutScreen({navigation}) {
             justifyContent: 'flex-end',
             backgroundColor: colors.background_screen,
         },
-        buttonContainer: {
+        buttonContainer: {          
             flexDirection: 'row',
             alignSelf: 'stretch',
         },
@@ -44,8 +44,10 @@ export default function LoggedOutScreen({navigation}) {
             height: 70,
             justifyContent: "center",
             alignItems: "center",
-            borderColor: colors.border_button,
-            borderWidth: 2,
+            borderColor: colors.border,
+            borderWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10,  
             
         },
         signupButton: {
@@ -53,16 +55,18 @@ export default function LoggedOutScreen({navigation}) {
             height: 70,
             justifyContent: "center",
             alignItems: "center",
-            borderColor: colors.border_button,
-            borderWidth: 2,
+            borderColor: colors.border,
+            borderWidth: 1,
             borderRightWidth: 0,
+            shadowColor: colors.shadow,
+            shadowRadius: 10,  
         },
         buttonText: {
           fontSize: 16,
           lineHeight: 21,
           fontWeight: 'bold',
           letterSpacing: 0.25,
-          color: 'white',
+          color: colors.text_button,
         },
       });
 

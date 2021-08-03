@@ -86,6 +86,10 @@ export default function LoginScreen({navigation}) {
             height: 70,
             justifyContent: "center",
             alignItems: "center",
+            borderColor: colors.border,
+            borderWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10, 
           },
       
           buttonText: {

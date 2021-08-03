@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
 import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -95,6 +96,10 @@ const SignupScreen2 = ({navigation}) => {
             height: ( landscape|| width>height) ? 45 : 70,
             justifyContent: "center",
             alignItems: "center",
+            borderColor: colors.border,
+            borderWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10, 
         },
     })
     const handleContinuePress = () => {

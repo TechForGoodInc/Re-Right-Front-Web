@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import colors from '../../../config/colors';
 import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -20,6 +23,7 @@ const viewConstants = {
 }
 
 const SignupScreen4 = ({route, navigation}) => {
+    const colors = global.isDarkModeEnabled ? darkColors : color;
     const {signedIn} = route.params;
     //getting the dimensions and the orientation
     const { landscape, portrait } = useDeviceOrientation();
@@ -61,7 +65,8 @@ const SignupScreen4 = ({route, navigation}) => {
         label: {
             fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
             padding: viewConstants.labelPadding,
-            marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0
+            marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0,
+            color: colors.text_general,
         },
         inputText: {
             borderWidth: viewConstants.textBoxBorderWidth,
@@ -71,6 +76,7 @@ const SignupScreen4 = ({route, navigation}) => {
             padding: viewConstants.textBoxPadding,
             fontSize:  ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
             marginHorizontal: viewConstants.textBoxPadding,
+            color: colors.text_input,
         },
         inputParagraph: {
             borderWidth: viewConstants.textBoxBorderWidth,
@@ -100,6 +106,10 @@ const SignupScreen4 = ({route, navigation}) => {
             height: ( landscape|| width>height) ? 45 : 70,
             justifyContent: "center",
             alignItems: "center",
+            borderColor: colors.border,
+            borderWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10, 
         },
         linkText: {
             color: colors.hyperlink,

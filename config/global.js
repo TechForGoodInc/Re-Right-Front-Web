@@ -1,1 +1,1 @@
-global.isDarkModeEnabled = false;
+global.isDarkModeEnabled = true;

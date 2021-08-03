@@ -115,6 +115,10 @@ export default function GetSignUp1Style (landscape,width, height ) {
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: Colors.button_continue,
+                borderColor: Colors.border,
+                borderWidth: 1,
+                shadowColor: Colors.shadow,
+                shadowRadius: 10, 
             }, 
         }    
 }
