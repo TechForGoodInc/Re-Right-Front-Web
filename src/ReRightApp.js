@@ -15,6 +15,12 @@ import ForgotPassScreen4 from './screens/ForgetPasswordScreens/ForgotPassScreen4
 import StylizedPostScreen from './screens/HomeScreens/StylizedPostScreen';
 import HomeDrawerNav from './components/HomeDrawerNav';
 import StylizedPostScreen2 from './screens/HomeScreens/StylizedPostScreen2';
+import { AppStyles } from '../config/styles';
+import StackHeaderBackImage from './components/StackHeaderBackImage';
+
+const StackHeaderStyle = AppStyles.StackHeaderStyle;
+const StackTitleStyle = AppStyles.StackTitleStyle;
+const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
 import '../config/global';
 
 const Stack = createStackNavigator();
@@ -23,8 +29,13 @@ export default function ReRightApp() {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRoute="Logged Out" >
-                <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{title: "",}} />
+            <Stack.Navigator initialRoute="Logged Out" screenOptions={{
+                headerStyle: StackHeaderStyle,
+                headerTitleStyle: StackTitleStyle,
+                headerBackImage: StackHeaderBackImage,
+                headerBackTitleStyle: StackBackTitleStyle
+            }}>
+                <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{title: ""}} />
                 <Stack.Screen name="Login" component={LoginScreen} options={{title: "",}} />
                 <Stack.Screen name="Signup 1" component={SignupScreen1} options={{title: "",}} />
                 <Stack.Screen name="Signup 2" component={SignupScreen2} options={{title: "",}} />

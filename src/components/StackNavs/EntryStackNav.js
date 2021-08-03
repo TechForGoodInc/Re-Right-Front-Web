@@ -29,9 +29,9 @@ export default function EntryStack() {
             headerStyle: StackHeaderStyle,
             headerTitleStyle: StackTitleStyle,
             headerBackImage: StackHeaderBackImage,
-            headerBackTitleStyle: StackBackTitleStyle }}>
-            <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{title: "",}} />
-            <Stack.Screen name="Login" component={LoginScreen} options={{title: "",}} />
+            headerBackTitleStyle: StackBackTitleStyle}}>
+            <Stack.Screen name="Logged Out" component={LoggedOutScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Login" component={LoginScreen} options={{title: ""}} />
             <Stack.Screen name="Signup 1" component={SignupScreen1} options={{title: "",}} />
             <Stack.Screen name="Signup 2" component={SignupScreen2} options={{title: "",}} />
             <Stack.Screen name="Signup 3" component={SignupScreen3} options={{title: "",}} />

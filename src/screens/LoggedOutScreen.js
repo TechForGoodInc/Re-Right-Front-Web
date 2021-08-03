@@ -15,7 +15,7 @@ export default function LoggedOutScreen({navigation}) {
     const styles = StyleSheet.create({
         titleView: {
             flex: 1,
-            justifyContent: 'flex-start'
+            justifyContent: 'flex-start',
         },
         logo: {
             height: 20,
@@ -33,7 +33,7 @@ export default function LoggedOutScreen({navigation}) {
             flex: 1,
             alignItems: 'center',
             justifyContent: 'flex-end',
-            backgroundColor: colors.background_post_type,
+            backgroundColor: colors.background_screen,
         },
         buttonContainer: {
             flexDirection: 'row',
@@ -57,7 +57,7 @@ export default function LoggedOutScreen({navigation}) {
             borderWidth: 2,
             borderRightWidth: 0,
         },
-        text: {
+        buttonText: {
           fontSize: 16,
           lineHeight: 21,
           fontWeight: 'bold',
@@ -85,7 +85,7 @@ export default function LoggedOutScreen({navigation}) {
                     styles.signupButton,]}
                     onPress={() => handleSignupRoute()}>
 
-                    <Text style={styles.text}>To Signup</Text>
+                    <Text style={styles.buttonText}>To Signup</Text>
                 </Pressable>
                 
                 <Pressable style={({pressed}) => [{
@@ -93,7 +93,7 @@ export default function LoggedOutScreen({navigation}) {
                     styles.loginButton,]}
                     onPress={() => handleLoginRoute()}>
 
-                    <Text style={styles.text}>To Login</Text>
+                    <Text style={styles.buttonText}>To Login</Text>
                 </Pressable>
             </View>
         </SafeAreaView>

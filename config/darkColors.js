@@ -31,12 +31,13 @@ export default  {
         text_subtitle: "white",
         text_quiz: "white",
         text_input: "grey",
+        text_button: "white",
 
         border: "white",
         border_input_text: "black",
         border_button: "black",
 
-        shadow: "black",
+        shadow: "white",
 
         background_screen:  '#181818',
         background_drawer: "grey",

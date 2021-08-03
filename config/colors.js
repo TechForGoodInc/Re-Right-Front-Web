@@ -31,6 +31,7 @@ export default  {
         text_subtitle: "black",
         text_quiz: "black",
         text_input: "black",
+        text_button: "white",
 
         border: "black",
         border_input_text: "black",
