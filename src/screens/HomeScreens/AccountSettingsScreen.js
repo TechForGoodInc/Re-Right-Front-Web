@@ -13,6 +13,10 @@ const AccountSettings = ({navigation}) => {
     const toggledarkSwitch = () => {
         global.isDarkModeEnabled = !global.isDarkModeEnabled;
         setdarkIsEnabled(global.isDarkModeEnabled);
+        navigation.reset({
+            index: 0,
+            routes: [{name: 'Profile'}, {name: 'Account Settings'}],
+        })
     }
    
     const handleUserNamePress = () => {
