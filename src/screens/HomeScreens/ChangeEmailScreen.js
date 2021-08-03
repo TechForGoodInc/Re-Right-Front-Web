@@ -12,13 +12,13 @@ export default function SignupScreen1() {
 
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height, colors) 
+        GetSignUp1Style(landscape, width, height) 
     ));
 
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height, colors) 
+            GetSignUp1Style(landscape, width, height) 
         ))
     }} 
 

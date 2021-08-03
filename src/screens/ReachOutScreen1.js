@@ -3,6 +3,9 @@ import colors from '../../config/colors';
 import { Pressable, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 import CheckBoxHybrid from '../components/CheckBoxHybrid';
+import '../../config/global';
+import color from '../../config/colors';
+import darkColors from '../../config/darkColors';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -21,10 +24,11 @@ const viewConstants = {
 }
 
 export default function ReachOutScreen1({navigation}) {
+    const colors = global.isDarkModeEnabled? darkColors: color; 
     //getting the dimensions and the orientation
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
-    //styles are here
+    //styles are here sorry for the mess
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,
@@ -61,7 +65,8 @@ export default function ReachOutScreen1({navigation}) {
         label: {
             fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
             padding: viewConstants.labelPadding,
-            marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0
+            marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0,
+            color: colors.text_general
         },
         inputText: {
             borderWidth: viewConstants.textBoxBorderWidth,

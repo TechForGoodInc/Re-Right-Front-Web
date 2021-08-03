@@ -28,6 +28,7 @@ export default function HomeStackNav({route, navigation}) {
             initialParams={{isItDark: isItDark}}
             initialParams={{isItDark: isItDark}}
             screenOptions={{
+                unmountOnBlur: true,  
                 headerStyle: StackHeaderStyle,
                 headerTitleStyle: StackTitleStyle,
                 headerBackImage: StackHeaderBackImage,
@@ -37,7 +38,7 @@ export default function HomeStackNav({route, navigation}) {
                 component={HomeScreen}
                 initialParams={{ isItDark: isItDark}}
                 initialParams={{isItDark: isItDark}}
-                options={{title: "R E - R I G H T", headerLeft: () => (
+                options={{title: "R E - R I G H T", unmountOnBlur: true, headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>

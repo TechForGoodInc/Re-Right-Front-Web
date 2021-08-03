@@ -1,10 +1,10 @@
 
 import React, { useState } from 'react';
-import colors from '../../../config/colors';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-import '../../../config/global';
 
+import '../../../config/global';
 
 const usernames = ["@davidgross", "@hanyyacoub","@malavmevada", "@mariamatthews","@matthewdeangelo","@moisesvenouziou","@nathancook","@nicolasprate","@nyuneihlaing","@prachipatel","@shaylingzhao","@yacoubabulubad","@zeelpatel","@tarafishman","@abhinavgupta" ];
 const comments = ["Did you click that??","Terrific post!","WoW!!!","I admire you","You are inspirational","There's so much positivity on this app","Beautiful!","I'm so glad I met you on this app!","You're the best! Such a nice post :)","Stay strong! Your posts are the best!","Amazing picture","Please be my friend","Sending positive vibes to you","Never change! You're amazing", "This is the best thing I've seen all day!","Thanks for spreading positive energy","You made my day better","This post is what I needed today, Thank you so much", "I love Re-Right"]
@@ -31,6 +31,7 @@ const getImage = () => {
 }
 
 const SamplePost = () => {
+  const colors = global.isDarkModeEnabled? darkColors: color; 
   const [isItDark, setIsItDark] = useState(global.isDarkModeEnabled)
 
   const styles = StyleSheet.create({

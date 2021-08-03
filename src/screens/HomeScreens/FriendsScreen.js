@@ -1,7 +1,10 @@
 //Friends Page
 import React from 'react';
 import { View,StyleSheet, Text, Image, FlatList, TextInput} from 'react-native';
-import colors from '../../../config/colors';
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
+
 const data = [
     { id: '1', title: 'Abhinav Gupta', mutual: '25' },
     { id: '2', title: 'Nyun Ei Hlaing', mutual: '23' },
@@ -22,7 +25,64 @@ const data = [
 ]
 
 export default function FriendsScreen() {
-
+    const colors = global.isDarkModeEnabled? darkColors: color; 
+    //all the styles are here sorry for the mess but we need this for dark mode to work
+    const styles = StyleSheet.create({
+        container: {
+          flex: 1,
+          alignItems: 'center',
+          backgroundColor: colors.background_screen,
+        },
+        searchBar: {
+            flexDirection: 'row',
+            width: '90%',
+            marginTop: 30,
+            flex: 1,
+            borderRadius: 20,
+            borderWidth: 0.2,
+            borderColor: colors.border
+        },
+        searchIcon: {
+            position: 'absolute',
+            alignSelf: 'center',
+            marginLeft: 5,
+            tintColor: colors.tintColor
+        },
+        inputBar: {
+            flex: 1,
+            padding: 10,
+            paddingLeft: 30,  
+            color: colors.text_general   
+        },
+        friendsContainer: {
+            width: '100%',
+            marginTop: "5%",
+            flex: 20,
+            backgroundColor: colors.background_list_item,
+        },
+        friendsNum: {
+            alignSelf: 'flex-start',
+            fontSize: 20,
+            marginLeft: '5%',
+            color: colors.text_general,
+        },
+        listItem: {
+            borderBottomWidth: 0.5,
+            paddingTop: 30,
+            paddingBottom: 20,
+            width: '100%',
+            flexDirection: 'row',
+            flex: 1,
+        },
+        profilePic: {
+            width: '10%',
+            height: '200%',
+            resizeMode: 'contain',
+            borderRadius: 100,
+            marginLeft: '5%',
+            alignSelf: 'center',
+        },
+      });
     return (
         <View style={styles.container}>
                 <View style = {styles.searchBar}>
@@ -42,7 +102,7 @@ export default function FriendsScreen() {
                         <View style={styles.listItem}>
                             <Image style = {styles.profilePic} source = { require("../../../assets/userpfp.png") }/>
                             <View style = {{marginLeft:'3%'}}>
-                                <Text style= {{fontSize:15,}}>{item.title}</Text>
+                                <Text style= {{fontSize:15, color: colors.text_general, fontWeight: '700' }}>{item.title}</Text>
                                 <Text style={{paddingTop: 5, color: colors.text_subtitle}}>{item.mutual} mutual friends</Text>
                             </View>
                         </View>
@@ -52,58 +112,7 @@ export default function FriendsScreen() {
         
       </View>
     ); 
-                    }
+}
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      backgroundColor: colors.background_screen,
-    },
-    searchBar: {
-        flexDirection: 'row',
-        width: '90%',
-        marginTop: 30,
-        flex: 1,
-        borderRadius: 20,
-        borderWidth: 0.2,
-    },
-    searchIcon: {
-        position: 'absolute',
-        alignSelf: 'center',
-        marginLeft: 5,
-    },
-    inputBar: {
-        flex: 1,
-        padding: 10,
-        paddingLeft: 30,     
-    },
-    friendsContainer: {
-        width: '100%',
-        marginTop: "5%",
-        flex: 20,
-    },
-    friendsNum: {
-        alignSelf: 'flex-start',
-        fontSize: 20,
-        marginLeft: '5%',
-    },
-    listItem: {
-        borderBottomWidth: 0.5,
-        paddingTop: 30,
-        paddingBottom: 20,
-        width: '100%',
-        flexDirection: 'row',
-        flex: 1,
-    },
-    profilePic: {
-        width: '10%',
-        height: '200%',
-        resizeMode: 'contain',
-        borderRadius: 100,
-        marginLeft: '5%',
-        alignSelf: 'center',
-    },
-    
-  });
+
 

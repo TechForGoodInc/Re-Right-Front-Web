@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import colors from '../../../config/colors';
 import { Platform, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
 import GetSignUp1Style from '../styles/SignUp1Css';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+import colors from '../../../config/colors';
 
 export default function ChangeUserNameScreen() {
     
@@ -11,13 +11,13 @@ export default function ChangeUserNameScreen() {
 
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height, colors) 
+        GetSignUp1Style(landscape, width, height) 
     ));
 
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height, colors) 
+            GetSignUp1Style(landscape, width, height) 
         ))
     }} 
 

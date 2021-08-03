@@ -17,15 +17,16 @@ export default function RecapRightsTabNav({navigation}) {
         <BottomTabs.Navigator initialRoute="Recap Rights" tabBarOptions={{ 
             activeBackgroundColor: colors.active_tab,
             inactiveBackgroundColor: colors.inactive_tab,
+            unmountOnBlur: true, 
             keyboardHidesTabBar: true,
             tabStyle: TabStyle,
             labelStyle: TabLabelStyle
         }}>
             <BottomTabs.Screen name="Recap Rights" component={RecapRightsStackNav} options={{
-                tabBarIcon: () => <FontAwesome name="book" size={24} color="black" />
+                unmountOnBlur: true,  tabBarIcon: () => <FontAwesome name="book" size={24} color="black" />
             }}/>
             <BottomTabs.Screen name="Quiz" component={RecapQuiz} options={{
-                tabBarIcon: () => <MaterialCommunityIcons name="brain" size={24} color="black" />
+                 unmountOnBlur: true,   tabBarIcon: () => <MaterialCommunityIcons name="brain" size={24} color="black" />
             }}/>
         </BottomTabs.Navigator>
     )

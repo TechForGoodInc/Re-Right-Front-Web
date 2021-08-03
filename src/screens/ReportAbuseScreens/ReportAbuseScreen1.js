@@ -1,12 +1,51 @@
 import React from 'react';
 import {SafeAreaView, Text, TextInput, Pressable, StyleSheet} from 'react-native';
 
-import colors from '../../../config/colors';
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 export default function ReportAbuseScreen1({ navigation }) {
+    const colors = global.isDarkModeEnabled? darkColors: color; 
     const handleContinuePress = () => {
         navigation.navigate("Incident Info")
     }
+    const styles = StyleSheet.create({
+        textInput: {
+            backgroundColor: colors.background_post_type,
+            padding: '2%',
+            width: '90%',
+            height: '70%',
+            alignSelf: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom: '2%',
+            color: colors.text_general
+        },
+        prompt: {
+            padding: '5%',
+            color: colors.text_screen_header,
+            fontSize: 23,
+        },
+        screenBackground: {
+            justifyContent: 'space-between',
+            flex: 1,
+            backgroundColor: colors.background_screen,
+        },
+        buttonText: {
+            fontSize: 16,
+            lineHeight: 21,
+            fontWeight: 'bold',
+            letterSpacing: 0.25,
+            color: 'white',
+            },
+        continueButton: {
+            width: "100%",
+            height: 50,
+            justifyContent: "center",
+            alignItems: "center",
+        },
+    });
     return (
         <SafeAreaView style={styles.screenBackground}>        
             <Text style={styles.prompt}>
@@ -27,36 +66,3 @@ export default function ReportAbuseScreen1({ navigation }) {
     )
 }
 
-const styles = StyleSheet.create({
-    textInput: {
-        backgroundColor: 'white',
-        padding: '2%',
-        width: '90%',
-        height: '70%',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: '2%',
-    },
-    prompt: {
-        padding: '2%'
-    },
-    screenBackground: {
-        justifyContent: 'space-between',
-        flex: 1,
-        backgroundColor: colors.background_screen,
-    },
-    buttonText: {
-        fontSize: 16,
-        lineHeight: 21,
-        fontWeight: 'bold',
-        letterSpacing: 0.25,
-        color: 'white',
-        },
-    continueButton: {
-        width: "100%",
-        height: 50,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-});

@@ -1,11 +1,12 @@
 //Rename to App.js to run
 import React, { useState } from 'react';
-import colors from '../../../config/colors';
 import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable, Platform } from 'react-native';
 import SamplePost from './SamplePost';
 import { useEffect } from 'react';
 import { AppStyles } from '../../../config/styles';
 import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 const pad = 10;
 const feedflex = 6;
 
@@ -13,10 +14,9 @@ const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
-
-
 export default function HomeScreen({route,navigation}) {
     //getting the darkmode from the stackNav
+    const colors = global.isDarkModeEnabled? darkColors: color; 
     const [{isItDark},setIsItDark] = useState(route.params);
     useEffect(() => {
       setIsItDark(route.params);
@@ -42,7 +42,7 @@ export default function HomeScreen({route,navigation}) {
           justifyContent: "center",
           alignContent: 'center',
           alignItems: "center",
-          backgroundColor: isItDark ? "black" : colors.white
+          backgroundColor: colors.background_screen
         }}>
           <ScrollView 
           style={styles.feed}

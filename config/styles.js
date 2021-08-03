@@ -1,6 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import colors from './colors';
+import color from './colors';
+import darkColors from './darkColors';
+import './global'
+
+const colors = global.isDarkModeEnabled ? darkColors : color;
 
 export const AppStyles = StyleSheet.create({
     StackHeaderStyle: { // Currently used by all stack navs

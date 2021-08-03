@@ -19,14 +19,15 @@ export default function ResearchTabNav({navigation}) {
             activeBackgroundColor: colors.active_tab,
             inactiveBackgroundColor: colors.inactive_tab,
             keyboardHidesTabBar: true,
+            unmountOnBlur: true, 
             tabStyle: TabStyle,
             labelStyle: TabLabelStyle
         }}>
-            <BottomTabs.Screen name="Research Analytics" component={ResearchStackNav}/>
-            <BottomTabs.Screen name="Chat" component={ChatStackNav}/>
-            <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}/>
-            <BottomTabs.Screen name="Friends" component={FriendsStackNav}/>
-            <BottomTabs.Screen name="Profile" component={ProfileStackNav}/>
+            <BottomTabs.Screen name="Research Analytics" component={ResearchStackNav} options ={{ unmountOnBlur: true}}/>
+            <BottomTabs.Screen name="Chat" component={ChatStackNav} options ={{ unmountOnBlur: true}}/>
+            <BottomTabs.Screen name="Create Post" component={CreatePostStackNav} options ={{ unmountOnBlur: true}}/>
+            <BottomTabs.Screen name="Friends" component={FriendsStackNav} options ={{ unmountOnBlur: true}}/>
+            <BottomTabs.Screen name="Profile" component={ProfileStackNav} options ={{ unmountOnBlur: true}}/>
         </BottomTabs.Navigator>
     )
 }

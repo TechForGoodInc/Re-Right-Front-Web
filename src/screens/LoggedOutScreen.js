@@ -2,9 +2,12 @@ import { useDeviceOrientation, useDimensions } from '@react-native-community/hoo
 import React from 'react';
 import { Text, View, StyleSheet, Pressable, Image, SafeAreaView } from 'react-native';
 
-import colors from '../../config/colors';
+import color from "../../config/colors";
+import darkColors from "../../config/darkColors";
+import '../../config/global';
 
 export default function LoggedOutScreen({navigation}) {
+    const colors = global.isDarkModeEnabled ? darkColors : color;
     const {landscape} = useDeviceOrientation();
     const {width, height} = useDimensions()
     //styles are here
@@ -29,7 +32,7 @@ export default function LoggedOutScreen({navigation}) {
             flex: 1,
             alignItems: 'center',
             justifyContent: 'flex-end',
-            backgroundColor: colors.background_screen,
+            backgroundColor: colors.background_post_type,
         },
         buttonContainer: {
             flexDirection: 'row',

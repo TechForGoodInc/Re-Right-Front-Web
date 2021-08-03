@@ -1,9 +1,12 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, TextInput, Text, Pressable, Platform, Alert} from 'react-native';
 
-import colors from '../../../config/colors';
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 export default function ReportAbuseScreen2({ navigation }) {
+    const colors = global.isDarkModeEnabled? darkColors: color; 
     const handleSubmitPress = () => {
         if (Platform.OS === 'web') {
             alert("Report Successfully Submitted");
@@ -18,6 +21,44 @@ export default function ReportAbuseScreen2({ navigation }) {
         // Jumps to the Home page of the hamburger menu
         navigation.jumpTo("Home");
     }
+    //all styles are here sorry for the mess but we need this for dark mode to work
+    const styles = StyleSheet.create({
+        screenBackground: {
+            justifyContent: 'space-between',
+            flex: 1,
+            backgroundColor: colors.background_screen,
+        },
+        pretext:{
+            alignSelf: 'center',
+            color: colors.text_general,
+        },
+        textinput: {
+            width: '80%',
+            height: '15%',
+            alignSelf: 'center',
+            backgroundColor: colors.background_post_type,
+            color: colors.text_general,
+        },
+        buttonText: {
+            fontSize: 16,
+            lineHeight: 21,
+            fontWeight: 'bold',
+            letterSpacing: 0.25,
+            color: 'white',
+            },
+        submitButton: {
+            width: "100%",
+            height: 50,
+            justifyContent: "center",
+            alignItems: "center",
+        },
+        linkText: {
+            color: colors.hyperlink,
+            fontSize: 18,
+            marginBottom: '2%',
+            alignSelf: 'center',
+        },
+      });
     return (
         <SafeAreaView style={styles.screenBackground}>
             <Text
@@ -85,38 +126,4 @@ export default function ReportAbuseScreen2({ navigation }) {
 
     )
 }
-const styles = StyleSheet.create({
-    screenBackground: {
-        justifyContent: 'space-between',
-        flex: 1,
-        backgroundColor: colors.background_screen,
-    },
-    pretext:{
-        alignSelf: 'center',
-    },
-    textinput: {
-        backgroundColor: 'white',
-        width: '80%',
-        height: '15%',
-        alignSelf: 'center',
-    },
-    buttonText: {
-        fontSize: 16,
-        lineHeight: 21,
-        fontWeight: 'bold',
-        letterSpacing: 0.25,
-        color: 'white',
-        },
-    submitButton: {
-        width: "100%",
-        height: 50,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    linkText: {
-        color: colors.hyperlink,
-        fontSize: 18,
-        marginBottom: '2%',
-        alignSelf: 'center',
-    },
-  });
+

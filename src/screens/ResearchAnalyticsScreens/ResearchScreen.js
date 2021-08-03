@@ -10,10 +10,16 @@ import {
 } from "react-native";
 //import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
-import colors from "../../../config/colors"; 
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 const mapToolName = "HRV Report Map"
 export default function ResearchScreen({navigation}) {
+  const colors = global.isDarkModeEnabled? darkColors: color; 
+    //styles are here sorry for the mess but we need this for dark mode
+
+
     //const { landscape, portrait } = useDeviceOrientation();
     //const {width, height} = useDimensions().window;
     const styles = StyleSheet.create({
@@ -29,7 +35,7 @@ export default function ResearchScreen({navigation}) {
           color: colors.text_screen_header,
           
         },
-      
+
         subtitle: {
           fontSize: 15,
           marginLeft: 25,
@@ -38,6 +44,7 @@ export default function ResearchScreen({navigation}) {
           marginBottom: 10,
           alignSelf: 'center',
           color: colors.text_subtitle,
+          fontWeight: '600'
         },
       
         recapboxes: {
@@ -56,7 +63,7 @@ export default function ResearchScreen({navigation}) {
           borderWidth: 2,
           flexDirection: 'row',
           flex: 1,
-          
+
           
         },
       
@@ -64,13 +71,14 @@ export default function ResearchScreen({navigation}) {
           fontSize: 18,
           alignSelf: "flex-start",
           lineHeight: 25,
-          
+          color: colors.text_general
         },
         
         arrow: {
           width: 16,
           height: 16,
           alignSelf: 'center',
+          tintColor: colors.tintColor
         },
       
         suggestionButton: {

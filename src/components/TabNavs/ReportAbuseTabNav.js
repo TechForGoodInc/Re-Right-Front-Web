@@ -19,10 +19,11 @@ export default function ReportAbuseTabNav({navigation}) {
             inactiveBackgroundColor: colors.inactive_tab,
             keyboardHidesTabBar: true,
             tabStyle: TabStyle,
+            unmountOnBlur: true, 
             labelStyle: TabLabelStyle
         }}>
-            <BottomTabs.Screen name="Report Abuse" component={ReportAbuseStackNav}/>
-            <BottomTabs.Screen name="About" component={AboutReportAbuseScreen}/>
+            <BottomTabs.Screen name="Report Abuse" component={ReportAbuseStackNav} options ={{ unmountOnBlur: true}}/>
+            <BottomTabs.Screen name="About" component={AboutReportAbuseScreen} options ={{ unmountOnBlur: true}}/>
 
         </BottomTabs.Navigator>
     )

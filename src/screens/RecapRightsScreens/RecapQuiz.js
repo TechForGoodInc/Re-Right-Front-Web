@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
-import colors from "../../../config/colors";
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 export default function RecapQuiz({ navigation }) {
+const colors = global.isDarkModeEnabled? darkColors: color; 
 //sample questions
 const questions = [
   {
@@ -275,6 +278,60 @@ const handleRestartClick = () => {
  setQuestionNumber(0);
 };
  
+//all the styles are here sorry for the mess but we need this for dark mode to work
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: colors.background_screen,
+  },
+  questionNumber: {
+    fontSize: 30,
+    alignSelf: "center",
+    fontWeight: "bold",
+    color: colors.text_question_number,
+  },
+  question: {
+    fontSize: 20,
+    margin: 10,
+    alignSelf: "center",
+    textAlign: 'center',
+  },
+  answerOption: {
+    margin: 10,
+    padding: 15,
+    width: "90%",
+    alignSelf: "center",
+    borderRadius: 30,
+    justifyContent: "center",
+  },
+  optionText: {
+    fontSize: 18,
+    alignSelf: "center",
+    textAlign: 'center',
+  },
+  score:{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  scoreText: {
+    fontSize: 30,
+    margin: 10,
+  },
+  restartButton: {
+    width: '30%',
+    margin: 10,
+    padding: 10,
+    borderRadius: 20,
+   
+  },
+  restartText: {
+    fontSize: 15,
+    alignSelf: 'center',
+  }
+  });
+   
 //  if showScore = true, scores shown. showScore = false, quiz shown.
 return (
   <View style={styles.background}>
@@ -317,56 +374,4 @@ return (
   </View>
 );
 }
-const styles = StyleSheet.create({
-background: {
-  flex: 1,
-  justifyContent: "center",
-  backgroundColor: colors.background_screen,
-},
-questionNumber: {
-  fontSize: 30,
-  alignSelf: "center",
-  fontWeight: "bold",
-  color: colors.text_question_number,
-},
-question: {
-  fontSize: 20,
-  margin: 10,
-  alignSelf: "center",
-  textAlign: 'center',
-},
-answerOption: {
-  margin: 10,
-  padding: 15,
-  width: "90%",
-  alignSelf: "center",
-  borderRadius: 30,
-  justifyContent: "center",
-},
-optionText: {
-  fontSize: 18,
-  alignSelf: "center",
-  textAlign: 'center',
-},
-score:{
-  flex: 1,
-  alignItems: 'center',
-  justifyContent: 'center',
-},
-scoreText: {
-  fontSize: 30,
-  margin: 10,
-},
-restartButton: {
-  width: '30%',
-  margin: 10,
-  padding: 10,
-  borderRadius: 20,
- 
-},
-restartText: {
-  fontSize: 15,
-  alignSelf: 'center',
-}
-});
- 
+

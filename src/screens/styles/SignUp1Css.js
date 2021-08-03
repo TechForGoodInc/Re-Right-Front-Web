@@ -1,8 +1,10 @@
 //all the styles for Sign Up Screen 1 is here
-import colors from "../../../config/colors";
-const Colors = colors;
-export default function GetSignUp1Style (landscape,width, height,colors, ) {
+import color from "../../../config/colors";
+import darkColors from "../../../config/darkColors";
+import '../../../config/global';
+export default function GetSignUp1Style (landscape,width, height ) {
     //numerical values to be used for styling
+    const Colors = global.isDarkModeEnabled ? darkColors : color;
     const viewConstants = {
         containerTopMargin: '10%',
         containerBottomMargin: '16%',
@@ -28,6 +30,7 @@ export default function GetSignUp1Style (landscape,width, height,colors, ) {
     return {
             screenBackground: {
                 flex: 1,
+                backgroundColor: Colors.background_screen
             },
             container: {
                 marginHorizontal: viewConstants.containerHorizontalMargins,
@@ -47,20 +50,25 @@ export default function GetSignUp1Style (landscape,width, height,colors, ) {
                 fontSize: ( landscape|| width>height) ? viewConstants.headingFontSizeLandscape: viewConstants.headingFontSize,
                 color: Colors.text_screen_header,
                 paddingVertical: ( landscape|| width>height) ? 0 : '3%',
-                paddingTop: ( landscape|| width>height) ? '5%' : 0
+                paddingTop: ( landscape|| width>height) ? '5%' : 0,
+
             },
             headerText: {
                 fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
                 marginEnd: ( landscape|| width>height) ? viewConstants.headerTextLandscapePadding: 0,
                 paddingTop: ( landscape|| width>height) ? '5%' : 0,
+                color: Colors.text_general,
             },
             linkText: {
                 textDecorationLine: 'underline',
                 paddingVertical: '3%',
+                color: Colors.text_general,
                 fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
+                
             },
             signUpForm:{
                 flex: 1,
+                color: Colors.text_general,
             },
             details: {
                 flexDirection: 'column',
@@ -75,16 +83,19 @@ export default function GetSignUp1Style (landscape,width, height,colors, ) {
             label: {
                 fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
                 padding: viewConstants.labelPadding,
-                marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0
+                color: Colors.text_general,
+                marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0,
+                
             },
             inputText: {
                 borderWidth: viewConstants.textBoxBorderWidth,
-                borderColor: colors.light_grey,
+                borderColor: Colors.light_grey,
                 borderRadius: viewConstants.textBoxBorderRadius,
                 textAlign: 'center',
                 padding: viewConstants.textBoxPadding,
                 fontSize:  ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
                 marginHorizontal: viewConstants.textBoxPadding,
+                color: Colors.text_general,
             },
             screenBackground: {
                 flex: 1,

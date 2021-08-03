@@ -17,17 +17,18 @@ const TabLabelStyle = AppStyles.TabLabelStyle;
 export default function ReachOutTabNav({navigation}) {
     return (
         <BottomTabs.Navigator initialRoute="Reach Out" tabBarOptions={{ 
+            unmountOnBlur: true,
             activeBackgroundColor: colors.active_tab,
             inactiveBackgroundColor: colors.inactive_tab,
             keyboardHidesTabBar: true,
             tabStyle: TabStyle,
             labelStyle: TabLabelStyle
         }}>
-            <BottomTabs.Screen name="Reach Out" component={ReachOutStackNav}/>
-            <BottomTabs.Screen name="Chat" component={ChatStackNav}/>
-            <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}/>
-            <BottomTabs.Screen name="Friends" component={FriendsStackNav}/>
-            <BottomTabs.Screen name="Profile" component={ProfileStackNav}/>
+            <BottomTabs.Screen name="Reach Out" component={ReachOutStackNav}  options={{ unmountOnBlur: true}}/>
+            <BottomTabs.Screen name="Chat" component={ChatStackNav} options={{ unmountOnBlur: true}}/>
+            <BottomTabs.Screen name="Create Post" component={CreatePostStackNav} options={{ unmountOnBlur: true}}/>
+            <BottomTabs.Screen name="Friends" component={FriendsStackNav} options={{ unmountOnBlur: true}}/>
+            <BottomTabs.Screen name="Profile" component={ProfileStackNav} options={{ unmountOnBlur: true}}/>
         </BottomTabs.Navigator>
     )
 }

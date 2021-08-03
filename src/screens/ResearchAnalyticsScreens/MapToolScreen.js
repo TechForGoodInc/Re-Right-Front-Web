@@ -3,7 +3,9 @@ import { StyleSheet, Text, View, Dimensions, Platform } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 import MapView from 'react-native-maps';
 import DropDownPicker from 'react-native-dropdown-picker';
-import colors from '../../../config/colors';
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -24,6 +26,7 @@ const viewConstants = {
 export default function MapToolScreen() {
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
+    const colors = global.isDarkModeEnabled? darkColors: color; 
     const styles = StyleSheet.create({
         mapContainer: {
             height: height / 2 + 25,

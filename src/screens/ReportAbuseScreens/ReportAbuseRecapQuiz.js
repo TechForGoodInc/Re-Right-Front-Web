@@ -4,19 +4,23 @@ import {
      Text,
      StyleSheet,
 } from "react-native";
-import colors from '../../../config/colors';
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 export default function ReportAbuseRecapQuiz() {
+    const colors = global.isDarkModeEnabled? darkColors: color; 
+    const styles = StyleSheet.create({
+        background: {
+            backgroundColor: colors.background_screen,
+        }
+    })
     return (
         <View style={styles.background}>
-            <Text>
+            <Text style = {{color: colors.text_general}}>
                 Test your Knowledge!
             </Text>
         </View>
     )
 }
-const styles = StyleSheet.create({
-    background: {
-        backgroundColor: colors.background_screen,
-    }
-})
+

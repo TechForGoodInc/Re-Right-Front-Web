@@ -9,10 +9,12 @@ import {
   Pressable,
 } from "react-native";
 
-import colors from "../../../config/colors"; 
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 const RecapRightsScreen1 = ({navigation}) => {
-
+  const colors = global.isDarkModeEnabled? darkColors: color; 
   const ArticleFacts = [
     {
       title: 'Article 1: Free and equal',
@@ -165,6 +167,84 @@ const RecapRightsScreen1 = ({navigation}) => {
     },
   
   ];
+  //all the styles are here sorry for the mess but we need this for dark mode to work
+  const styles = StyleSheet.create({
+    background: {
+      flex: 1,
+      backgroundColor: colors.background_screen,
+    },
+    
+    title: {
+      fontSize: 25,
+      alignSelf: 'center',
+      fontWeight: 'bold',
+      color: colors.text_screen_header,
+      
+    },
+  
+    subtitle: {
+      fontSize: 15,
+      marginLeft: 25,
+      marginRight: 20,
+      marginTop: 5,
+      marginBottom: 10,
+      alignSelf: 'center',
+      color: colors.text_general,
+    },
+  
+    recapboxes: {
+      marginTop: 20,
+      
+    },
+  
+    button: {
+      borderColor: colors.border,
+      borderRadius:10,
+      padding: 10,
+      paddingRight: 20,
+      alignSelf: "center",
+      justifyContent: 'flex-start',
+      width: "90%",
+      margin: 15,
+      borderWidth: 2,
+      flexDirection: 'row',
+      flex: 1,
+      
+      
+    },
+  
+    buttonText: {
+      fontSize: 18,
+      alignSelf: "flex-start",
+      lineHeight: 25,
+      color: colors.text_general,
+    },
+    
+    arrow: {
+      width: 16,
+      height: 16,
+      alignSelf: 'center',
+      tintColor: colors.tintColor,
+    },
+  
+    quizButton: {
+      borderWidth: 0,
+      width: '40%',
+      borderRadius: 10,
+      alignSelf: 'center',
+      padding: 10,
+      margin: 10,
+      borderColor: colors.border
+      
+    },
+    
+    quizText: {
+      alignSelf: 'center',
+      color: colors.text_quiz,
+      
+    },
+  
+  });
 // create button and page for each element in ArticleFacts 
   const RecapArticleList = () => { 
     return ArticleFacts.map((element) => {
@@ -197,81 +277,6 @@ const RecapRightsScreen1 = ({navigation}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    backgroundColor: colors.background_screen,
-  },
-  
-  title: {
-    fontSize: 25,
-    alignSelf: 'center',
-    fontWeight: 'bold',
-    color: colors.text_screen_header,
-    
-  },
 
-  subtitle: {
-    fontSize: 15,
-    marginLeft: 25,
-    marginRight: 20,
-    marginTop: 5,
-    marginBottom: 10,
-    alignSelf: 'center',
-    color: colors.text_general,
-  },
-
-  recapboxes: {
-    marginTop: 20,
-    
-  },
-
-  button: {
-    borderColor: colors.border,
-    borderRadius:10,
-    padding: 10,
-    paddingRight: 20,
-    alignSelf: "center",
-    justifyContent: 'flex-start',
-    width: "90%",
-    margin: 15,
-    borderWidth: 2,
-    flexDirection: 'row',
-    flex: 1,
-    
-    
-  },
-
-  buttonText: {
-    fontSize: 18,
-    alignSelf: "flex-start",
-    lineHeight: 25,
-    color: colors.text_general,
-  },
-  
-  arrow: {
-    width: 16,
-    height: 16,
-    alignSelf: 'center',
-  },
-
-  quizButton: {
-    borderWidth: 0,
-    width: '40%',
-    borderRadius: 10,
-    alignSelf: 'center',
-    padding: 10,
-    margin: 10,
-    borderColor: colors.border
-    
-  },
-  
-  quizText: {
-    alignSelf: 'center',
-    color: colors.text_quiz,
-    
-  },
-
-});
 
 export default RecapRightsScreen1;

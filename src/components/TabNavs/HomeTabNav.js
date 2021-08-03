@@ -32,9 +32,11 @@ export default function HomeTabNav() {
     } Can use a different color import based on a conditional (need to link up dark mode state)*/
     return (
         <BottomTabs.Navigator initialRoute="Home" 
+            unmountOnBlur= {true}
             initialParams={{isItDark: isDarkModeEnabled}}
             params = {{ isItDark: isDarkModeEnabled }}
             tabBarOptions={{ 
+            unmountOnBlur: true,
             activeBackgroundColor: colors.active_tab,
             inactiveBackgroundColor: colors.inactive_tab,
             keyboardHidesTabBar: true,
@@ -47,18 +49,23 @@ export default function HomeTabNav() {
                 initialParams={{isItDark: isDarkModeEnabled}}
                 params = {{ isItDark: isDarkModeEnabled }}
                 options={{   
+                unmountOnBlur: true,
                 tabBarIcon: () => <AntDesign name="home" size={24} color="black"/>
             }}/>
             <BottomTabs.Screen name="Chat" component={ChatStackNav} options={{
+                unmountOnBlur: true,
                 tabBarIcon: () => <AntDesign name="wechat" size={24} color="black" />
             }}/>
             <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}
                 options={{title: "Create Post",
+                    unmountOnBlur: true,
                     tabBarIcon: () => <AntDesign name="pluscircleo" size={24} color="black" />}}/>
             <BottomTabs.Screen name="Friends" component={FriendsStackNav} options={{
+                unmountOnBlur: true,
                 tabBarIcon: () => <FontAwesome5 name="user-friends" size={24} color="black" />
             }}/>
             <BottomTabs.Screen name="Profile" component={ProfileStackNav} options={{
+                unmountOnBlur: true,
                 tabBarIcon: () => <FontAwesome5 name="user" size={24} color="black" />
             }}/>
         </BottomTabs.Navigator>

@@ -2,10 +2,13 @@ import { useDeviceOrientation, useDimensions } from '@react-native-community/hoo
 import React from 'react';
 import { Platform, View, Text, Button, StyleSheet, Pressable, Image, TextInput } from 'react-native';
 
-import colors from '../../config/colors';
+import color from "../../config/colors";
+import darkColors from "../../config/darkColors";
+import '../../config/global';
 
 export default function LoginScreen({navigation}) {
     //getting the dimensions and the orientation
+    const colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are here
@@ -70,6 +73,7 @@ export default function LoginScreen({navigation}) {
              fontSize: 16, 
              borderRadius: 10,
              padding: 20,
+             color: colors.text_general
          },
       
         
@@ -108,8 +112,10 @@ export default function LoginScreen({navigation}) {
               color: colors.hyperlink,
               fontSize: 18,
               marginBottom: '2%',
-          }
-       
+          },
+          labels:{
+            color: colors.text_general
+          }       
       });
   const handleForgotPassRoute = () => {
       navigation.navigate("Forgot Password 1");

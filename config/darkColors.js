@@ -22,28 +22,28 @@ export default  {
         red: "red",
         active_tab: "#ADD8E6",
         inactive_tab: "#428AF8",
-        text_screen_header: "black",
-        text_general:  "black",
+        text_screen_header: "white",
+        text_general:  "white",
         text_stack_title: "white",
         text_stack_back_title: "black",
         text_tab_label: "white",
         text_question_number: "#3987CE",
-        text_subtitle: "black",
-        text_quiz: "black",
+        text_subtitle: "white",
+        text_quiz: "white",
 
-        border: "black",
+        border: "white",
         border_input_text: "black",
         border_button: "black",
 
         shadow: "black",
 
-        background_screen:  "rgb(239,239,239)",
+        background_screen:  '#181818',
         background_drawer: "grey",
         background_stack_header: "#3987CE",
         background_scrollview: "#3987CE",
-        background_list_item: 'white',
         background_friend: "#3987CE",
-        background_post_type: "white",
+        background_list_item: '#212121',
+        background_post_type: '#212121',
 
         button_signup: "#FCD681",
         button_login: "#3987CE",
@@ -55,8 +55,7 @@ export default  {
         button_retry_quiz: "#3987CE",
         button_retry_quiz_pressed: "grey",
         button_connect: "#3987CE",
-        tintColor: 'black',
-
+        tintColor: 'white',
 
         // Palette end
         // Don't use these color names anymore 
