@@ -64,7 +64,8 @@ export default function MapToolScreen() {
             marginBottom: '2%',
           },
         filterTitleText: {
-            alignSelf: 'center'
+            alignSelf: 'center',
+            color: colors.text_screen_header,
         }
     });
     const [rightsOpen, setRightsOpen] = useState(false);
@@ -114,6 +115,7 @@ export default function MapToolScreen() {
                             Right Violated
                         </Text>
                         <DropDownPicker
+                            style = {{backgroundColor: global.isDarkModeEnabled? colors.light_grey : colors.white, borderColor: colors.grey}}
                             multiple={true}
                             min={0}
                             max={5}
@@ -129,6 +131,7 @@ export default function MapToolScreen() {
                             Year
                         </Text>
                         <DropDownPicker
+                            style = {{backgroundColor: global.isDarkModeEnabled? colors.light_grey : colors.white,  borderColor: colors.grey}}
                             multiple={true}
                             min={0}
                             max={5}
