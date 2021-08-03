@@ -34,8 +34,8 @@ export default  {
         text_button: "white",
 
         border: "white",
-        border_input_text: "black",
-        border_button: "black",
+        border_input_text: "white",
+        border_button: "white",
 
         shadow: "white",
 

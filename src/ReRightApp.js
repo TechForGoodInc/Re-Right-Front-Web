@@ -1,5 +1,7 @@
 import 'react-native-gesture-handler';
 import React, {useEffect, useState} from 'react';
+import { StyleSheet } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoggedOutScreen from './screens/LoggedOutScreen';
@@ -12,20 +14,60 @@ import ForgotPassScreen1 from './screens/ForgetPasswordScreens/ForgotPassScreen1
 import ForgotPassScreen2 from './screens/ForgetPasswordScreens/ForgotPassScreen2';
 import ForgotPassScreen3 from './screens/ForgetPasswordScreens/ForgotPassScreen3';
 import ForgotPassScreen4 from './screens/ForgetPasswordScreens/ForgotPassScreen4';
-import StylizedPostScreen from './screens/HomeScreens/StylizedPostScreen';
 import HomeDrawerNav from './components/HomeDrawerNav';
-import StylizedPostScreen2 from './screens/HomeScreens/StylizedPostScreen2';
 import { AppStyles } from '../config/styles';
 import StackHeaderBackImage from './components/StackHeaderBackImage';
 
-const StackHeaderStyle = AppStyles.StackHeaderStyle;
-const StackTitleStyle = AppStyles.StackTitleStyle;
-const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
+import color from "../config/colors";
+import darkColors from "../config/darkColors";
 import '../config/global';
 
 const Stack = createStackNavigator();
 
 export default function ReRightApp() {
+    const colors = global.isDarkModeEnabled ? darkColors : color;
+    const AppStyles = StyleSheet.create({
+        StackHeaderStyle: { // Currently used by all stack navs
+            backgroundColor: colors.background_stack_header,
+            borderBottomColor: colors.border,
+            borderBottomWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10,
+            height: 50,
+        },
+        ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
+            backgroundColor: colors.primary,
+        },
+        StackTitleStyle: {
+            fontWeight: 'bold',
+            letterSpacing: 0.25,
+            fontSize: 20,
+            color: colors.text_stack_title,
+        },
+        StackBackTitleStyle: {
+            color: colors.text_stack_back_title,
+        },
+        TabStyle: {
+            borderColor: colors.border,
+            borderWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10,
+        },
+        TabLabelStyle: {
+            fontWeight: 'bold',
+            letterSpacing: 0.25,
+            fontSize: 16,
+            color: colors.text_tab_label, 
+        },
+        ScreenBackground: {
+            backgroundColor: colors.background_screen,
+            flex: 1,
+            alignItems: 'center',
+        }
+    });
+    const StackHeaderStyle = AppStyles.StackHeaderStyle;
+    const StackTitleStyle = AppStyles.StackTitleStyle;
+    const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
 
     return (
         <NavigationContainer>
