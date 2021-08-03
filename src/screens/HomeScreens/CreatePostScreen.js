@@ -74,7 +74,8 @@ const styles  = StyleSheet.create({
         fontSize: 15,
         marginTop: 5,
         marginBottom: 10,
-        color: colors.text_subtitle,
+        fontWeight: '500',
+        color: colors.text_general,
       },
     postTypeView: {
         backgroundColor: colors.background_post_type,
@@ -86,7 +87,8 @@ const styles  = StyleSheet.create({
 
     },
     description: {
-        padding: '6%'
+        padding: '6%',
+        color: colors.text_general
     },
     button: {
         backgroundColor: colors.button_continue,

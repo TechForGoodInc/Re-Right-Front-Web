@@ -122,7 +122,7 @@ export default function LoginScreen({navigation}) {
     // be able to go back to login/signup/forgot password pages once they log in)
     navigation.reset({
         index: 0,
-        routes: [{name: 'Home'}],
+        routes: [{name: 'Home',}],
       });
         // Need to check if username/email and password are correct
         // Display error messages and don't navigate if info is incorrect / user not found   

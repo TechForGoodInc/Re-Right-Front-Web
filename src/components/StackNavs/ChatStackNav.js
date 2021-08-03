@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ChatScreen from '../../screens/HomeScreens/ChatScreen';
-
 import { AppStyles } from '../../../config/styles';
 import StackHeaderBackImage from '../StackHeaderBackImage';
+import '../../../config/global';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const StackTitleStyle = AppStyles.StackTitleStyle;

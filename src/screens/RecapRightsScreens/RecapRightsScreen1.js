@@ -218,11 +218,12 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 10,
     alignSelf: 'center',
-    color: colors.text_subtitle,
+    color: colors.text_general,
   },
 
   recapboxes: {
     marginTop: 20,
+    
   },
 
   button: {
@@ -245,7 +246,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     alignSelf: "flex-start",
     lineHeight: 25,
-    
+    color: colors.text_general,
   },
   
   arrow: {
@@ -261,6 +262,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 10,
     margin: 10,
+    borderColor: colors.border
     
   },
   

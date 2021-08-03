@@ -2,15 +2,19 @@ import React, {useState} from "react";
 import { Button, Image, Pressable, ScrollView, SwitchComponent, Text, View,Switch, StyleSheet } from 'react-native'
 import colors from "../../../config/colors";
 import colorsTest from "../../../config/colorsTest";
+import "../../../config/global.js";
+
 const AccountSettings = ({navigation}) => {
     const [bioIsEnabled, setbioIsEnabled] = useState(false);
     const togglebioSwitch = () => setbioIsEnabled(previousState => !previousState);
     const [discoverIsEnabled, setdiscoverIsEnabled] = useState(false);
     const togglediscoverSwitch = () => setdiscoverIsEnabled(previousState => !previousState);
-    const [darkIsEnabled, setdarkIsEnabled] = useState(false);
+    const [darkIsEnabled, setdarkIsEnabled] = useState(global.isDarkModeEnabled);
     const toggledarkSwitch = () => {
-        setdarkIsEnabled(previousState => !previousState);
+        global.isDarkModeEnabled = !global.isDarkModeEnabled;
+        setdarkIsEnabled(global.isDarkModeEnabled);
     }
+   
     const handleUserNamePress = () => {
         navigation.navigate("ChangeUserName")
     }

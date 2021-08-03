@@ -1,8 +1,6 @@
 import React, { useState ,useEffect}  from "react";
 import { StyleSheet, View, Text, Modal, Pressable, TouchableOpacity, Button, Platform, Image, ImageBackground } from "react-native";
-import colors from "../../../config/colors";
-import StylizedPostScreen2 from "./StylizedPostScreen2";
-import { Header } from 'react-navigation';
+import colors from '../../../config/colors';
 import ImagePicker from 'react-native-image-picker';
 
 const colorBarColors = [ 
@@ -61,7 +59,7 @@ const StylizedPostScreen = ({navigation}) => {
             headerRight: () => (
                 <TouchableOpacity activeOpacity = { .5 } onPress={ handleStylizedNextPress }>
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center'}}> 
-                        <Text style= {{ fontSize: 17,paddingRight: 9, alignSelf: 'center', color: colors.black, paddingHorizontal: 2}}> 
+                        <Text style= {{ fontSize: 17,paddingRight: 9, alignSelf: 'center', color: colors.text_general, paddingHorizontal: 2}}> 
                             Next {'>'}
                         </Text> 
                     </View>

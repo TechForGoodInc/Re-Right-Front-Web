@@ -45,7 +45,6 @@ export default function FriendsScreen() {
                                 <Text style= {{fontSize:15,}}>{item.title}</Text>
                                 <Text style={{paddingTop: 5, color: colors.text_subtitle}}>{item.mutual} mutual friends</Text>
                             </View>
-                        
                         </View>
                     )}
                 />

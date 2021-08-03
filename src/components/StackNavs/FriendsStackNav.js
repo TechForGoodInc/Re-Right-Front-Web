@@ -7,7 +7,7 @@ import FriendsScreen from '../../screens/HomeScreens/FriendsScreen';
 import { AppStyles } from '../../../config/styles';
 import StackHeaderBackImage from '../StackHeaderBackImage';
 import FriendProfileScreen from '../../screens/HomeScreens/FriendProfileScreen';
-
+import '../../../config/global';
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const StackTitleStyle = AppStyles.StackTitleStyle;
 const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
