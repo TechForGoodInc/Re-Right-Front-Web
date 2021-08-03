@@ -87,7 +87,7 @@ export default function LoginScreen({navigation}) {
             justifyContent: "center",
             alignItems: "center",
             borderColor: colors.border,
-            borderWidth: 1,
+            borderTopWidth: 1,
             shadowColor: colors.shadow,
             shadowRadius: 10, 
           },
