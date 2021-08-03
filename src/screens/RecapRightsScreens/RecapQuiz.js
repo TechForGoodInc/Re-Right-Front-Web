@@ -296,6 +296,7 @@ const styles = StyleSheet.create({
     margin: 10,
     alignSelf: "center",
     textAlign: 'center',
+    color: colors.text_quiz,
   },
   answerOption: {
     margin: 10,
@@ -314,10 +315,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    color: colors.text_quiz,
+
   },
   scoreText: {
     fontSize: 30,
     margin: 10,
+    color: colors.text_quiz,
+
   },
   restartButton: {
     width: '30%',
