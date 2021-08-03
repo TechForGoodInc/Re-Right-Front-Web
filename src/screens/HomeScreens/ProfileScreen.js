@@ -9,6 +9,14 @@ import SamplePost from './SamplePost';
 
 
 export default function ProfileScreen({route,navigation}) {
+    var {isItDark} =  global.isDarkModeEnabled ;
+    React.useEffect(() => {
+        if (route.params?.isItDark) {
+            isItDark = route.params?.isItDark
+        } else {
+            isItDark = route.params?.isItDark
+        }
+      }, [route.params?.isItDark]);
     const [editMode,setEditMode] = useState(false);
     const [displayName, setDisplayName] = useState('Display Name');
     const [bio, setBio] = useState('Bio from database');
