@@ -83,7 +83,7 @@ export default function LoginScreen({navigation}) {
       
           continueButton: {
             width: "100%",
-            height: 70,
+            height: 50,
             justifyContent: "center",
             alignItems: "center",
             borderColor: colors.border,

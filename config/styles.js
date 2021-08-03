@@ -13,6 +13,7 @@ export const AppStyles = StyleSheet.create({
         borderBottomWidth: 1,
         shadowColor: colors.shadow,
         shadowRadius: 10,
+        height: 50,
     },
     ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
         backgroundColor: colors.primary,

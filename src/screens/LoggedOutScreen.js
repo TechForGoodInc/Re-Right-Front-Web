@@ -6,7 +6,6 @@ import darkColors from "../../config/darkColors";
 import '../../config/global';
 
 export default function LoggedOutScreen({navigation}) {
-
     const {landscape} = useDeviceOrientation();
     const {width, height} = useDimensions();
     var colors = global.isDarkModeEnabled ? darkColors : color;
@@ -41,7 +40,7 @@ export default function LoggedOutScreen({navigation}) {
         },
         loginButton: {
             width: "50%",
-            height: 70,
+            height: 50,
             justifyContent: "center",
             alignItems: "center",
             borderColor: colors.border,
@@ -52,7 +51,7 @@ export default function LoggedOutScreen({navigation}) {
         },
         signupButton: {
             width: "50%",
-            height: 70,
+            height: 50,
             justifyContent: "center",
             alignItems: "center",
             borderColor: colors.border,

@@ -1,6 +1,6 @@
 import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { StyleSheet } from 'react-native';
+import { createDrawerNavigator, DrawerItem } from '@react-navigation/drawer';
+import { Button, StyleSheet } from 'react-native';
 import { AntDesign, MaterialIcons, FontAwesome, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
 
 import HomeTabNav from './TabNavs/HomeTabNav';
@@ -14,6 +14,7 @@ import HomeDrawer from './HomeDrawer';
 
 import LoggedOutScreen from '../screens/LoggedOutScreen';
 import colors from '../../config/colors';
+import ReRightApp from '../ReRightApp';
 
 const Drawer = createDrawerNavigator();
 
