@@ -57,7 +57,9 @@ export default {
 
     // Palette end
 
-    // Don't use these color names anymore (To be deleted later once components' colors are switched)
+    // Don't use these color names anymore 
+    //(To be deleted later once components' colors are switched)
+    // EDIT -- Most if not all components have been switched to using colors above, might be safe to delete
     blue: "#428AF8",
     light_blue: "#ADD8E6",
     cream: "#FDFCDC",
