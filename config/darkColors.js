@@ -30,6 +30,7 @@ export default  {
         text_question_number: "#3987CE",
         text_subtitle: "white",
         text_quiz: "white",
+        text_input: "grey",
 
         border: "white",
         border_input_text: "black",

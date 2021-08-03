@@ -11,16 +11,24 @@ export default function ReportAbuseScreen1({ navigation }) {
         navigation.navigate("Incident Info")
     }
     const styles = StyleSheet.create({
+        title: {
+            fontSize: 25,
+            alignSelf: 'center',
+            fontWeight: 'bold',
+            color: colors.text_screen_header,
+            
+          },
         textInput: {
             backgroundColor: colors.background_post_type,
-            padding: '2%',
+            padding: '1%',
             width: '90%',
             height: '70%',
             alignSelf: 'center',
             justifyContent: 'center',
             alignItems: 'center',
             marginBottom: '2%',
-            color: colors.text_general
+            color: colors.text_input,
+            borderRadius: 15,
         },
         prompt: {
             padding: '5%',
@@ -48,7 +56,7 @@ export default function ReportAbuseScreen1({ navigation }) {
     });
     return (
         <SafeAreaView style={styles.screenBackground}>        
-            <Text style={styles.prompt}>
+            <Text style={styles.title}>
             Please Explain What Happened: 
             </Text>
             <TextInput style={styles.textInput}
