@@ -76,7 +76,7 @@ export default function ReportAbuseScreen2({ navigation }) {
             >
             </TextInput>
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.primary,},
+                backgroundColor: pressed ? colors.button_pressed : colors.button_submit,},
                 styles.submitButton,]}
                 onPress={() => handleSubmitPress()}>
                 <Text style={styles.buttonText}>Submit</Text>
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     screenBackground: {
         justifyContent: 'space-between',
         flex: 1,
+        backgroundColor: colors.background_screen,
     },
     pretext:{
         alignSelf: 'center',

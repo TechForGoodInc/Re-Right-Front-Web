@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
+import { AppStyles } from "../../../config/styles";
 
 const TextPostScreen = ({navigation}) => {
     return ( 
-        <Text> Create a Text Post </Text>
+        <View style={AppStyles.ScreenBackground}>
+            <Text>Create a Text Post</Text>
+        </View>
      );
 }
  

@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 
     background:{
         alignItems: 'center',
-        backgroundColor: colors.white,
+        backgroundColor: colors.background_screen,
         flex:1,
     }, 
 

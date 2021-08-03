@@ -47,7 +47,7 @@ export default function CreatePostStackNav({navigation}) {
                     ), headerRight: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleStylizedNextPress }>
                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center'}}> 
-                            <Text style= {{ fontSize: 17,paddingRight: 9, alignSelf: 'center', color: colors.black, paddingHorizontal: 2}}> 
+                            <Text style= {{ fontSize: 17,paddingRight: 9, alignSelf: 'center', color: colors.text_general, paddingHorizontal: 2}}> 
                                 Next {'>'}
                             </Text> 
                         </View>

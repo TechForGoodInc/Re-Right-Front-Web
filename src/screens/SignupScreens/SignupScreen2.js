@@ -40,7 +40,7 @@ const SignupScreen2 = ({navigation}) => {
         headerTitle: {
             fontWeight: '800',
             fontSize: ( landscape|| width>height) ? viewConstants.headingFontSizeLandscape: viewConstants.headingFontSize,
-            color: colors.primary,
+            color: colors.text_screen_header,
             paddingVertical: ( landscape|| width>height) ? 0 : '3%',
             paddingTop: ( landscape|| width>height) ? '5%' : 0
         },
@@ -64,7 +64,7 @@ const SignupScreen2 = ({navigation}) => {
         },
         inputText: {
             borderWidth: viewConstants.textBoxBorderWidth,
-            borderColor: colors.light_grey,
+            borderColor: colors.border_input_text,
             borderRadius: viewConstants.textBoxBorderRadius,
             textAlign: 'center',
             padding: viewConstants.textBoxPadding,
@@ -75,7 +75,7 @@ const SignupScreen2 = ({navigation}) => {
             flex: 1,
             alignItems: 'center',
             justifyContent: 'flex-end',
-            backgroundColor: colors.white,
+            backgroundColor: colors.background_screen,
         },
         buttonText: {
             fontSize: 16,
@@ -123,7 +123,7 @@ const SignupScreen2 = ({navigation}) => {
         </TouchableWithoutFeedback>
 
         <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.primary,},
+                backgroundColor: pressed ? colors.button_pressed : colors.button_continue,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
 

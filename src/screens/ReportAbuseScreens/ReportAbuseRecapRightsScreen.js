@@ -192,7 +192,7 @@ const ReportAbuseRecapRightsScreen = ({navigation}) => {
         <Text style = {styles.subtitle}>The Universal Declaration of Human Rights is a historic document which outlined the rights and freedoms everyone is entitled to.</Text>
           {ReportAbuseRecapArticleList()}
         <Pressable style={({pressed}) => [{
-            backgroundColor: pressed ? colors.grey : colors.black},
+            backgroundColor: pressed ? colors.button_quiz_pressed : colors.button_quiz},
             styles.quizButton]} 
             onPress={() => navigation.navigate("Report Human Rights Quiz")} >
             <Text style={styles.quizText}>Take the Quiz Here!</Text>
@@ -206,14 +206,14 @@ const ReportAbuseRecapRightsScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.background_screen,
   },
   
   title: {
     fontSize: 25,
     alignSelf: 'center',
     fontWeight: 'bold',
-    color: colors.black,
+    color: colors.text_screen_header,
     
   },
 
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 10,
     alignSelf: 'center',
-    color: colors.grey,
+    color: colors.text_subtitle,
   },
 
   recapboxes: {
@@ -272,7 +272,7 @@ const styles = StyleSheet.create({
   
   quizText: {
     alignSelf: 'center',
-    color: colors.white,
+    color: colors.text_quiz,
     
   },
 

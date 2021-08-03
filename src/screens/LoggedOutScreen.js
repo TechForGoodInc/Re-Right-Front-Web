@@ -22,14 +22,14 @@ export default function LoggedOutScreen({navigation}) {
         },
         title: {
             fontWeight: '800',
-            color: colors.primary,
+            color: colors.text_screen_header,
             fontSize: 60,
         },
         screenBackground: {
             flex: 1,
             alignItems: 'center',
             justifyContent: 'flex-end',
-            backgroundColor: colors.white,
+            backgroundColor: colors.background_screen,
         },
         buttonContainer: {
             flexDirection: 'row',
@@ -40,7 +40,7 @@ export default function LoggedOutScreen({navigation}) {
             height: 70,
             justifyContent: "center",
             alignItems: "center",
-            borderColor: colors.black,
+            borderColor: colors.border_button,
             borderWidth: 2,
             
         },
@@ -49,7 +49,7 @@ export default function LoggedOutScreen({navigation}) {
             height: 70,
             justifyContent: "center",
             alignItems: "center",
-            borderColor: colors.black,
+            borderColor: colors.border_button,
             borderWidth: 2,
             borderRightWidth: 0,
         },
@@ -77,7 +77,7 @@ export default function LoggedOutScreen({navigation}) {
             </View>
             <View style={styles.buttonContainer}>
                 <Pressable style={({pressed}) => [{
-                    backgroundColor: pressed ? colors.grey : colors.secondary,},
+                    backgroundColor: pressed ? colors.button_pressed : colors.button_signup,},
                     styles.signupButton,]}
                     onPress={() => handleSignupRoute()}>
 
@@ -85,7 +85,7 @@ export default function LoggedOutScreen({navigation}) {
                 </Pressable>
                 
                 <Pressable style={({pressed}) => [{
-                    backgroundColor: pressed ? colors.grey : colors.primary,},
+                    backgroundColor: pressed ? colors.button_pressed : colors.button_login,},
                     styles.loginButton,]}
                     onPress={() => handleLoginRoute()}>
 

@@ -41,7 +41,7 @@ const SignupScreen3 = ({navigation}) => {
         headerTitle: {
             fontWeight: '800',
             fontSize: ( landscape|| width>height) ? viewConstants.headingFontSizeLandscape: viewConstants.headingFontSize,
-            color: colors.primary,
+            color: colors.text_screen_header,
             paddingVertical: ( landscape|| width>height) ? 0 : '3%',
             paddingTop: ( landscape|| width>height) ? '5%' : 0
         },
@@ -86,7 +86,7 @@ const SignupScreen3 = ({navigation}) => {
             flex: 1,
             alignItems: 'center',
             justifyContent: 'flex-end',
-            backgroundColor: colors.white,
+            backgroundColor: colors.background_screen,
         },
         buttonText: {
             fontSize: 16,
@@ -143,7 +143,7 @@ const SignupScreen3 = ({navigation}) => {
             </SafeAreaView>
         </TouchableWithoutFeedback>
         <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.primary,},
+                backgroundColor: pressed ? colors.button_pressed : colors.button_continue,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
                 <Text style={styles.buttonText}>Continue</Text>

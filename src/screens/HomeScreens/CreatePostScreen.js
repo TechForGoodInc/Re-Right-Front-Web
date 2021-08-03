@@ -54,6 +54,7 @@ const styles  = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         height: '100%',
+        backgroundColor: colors.background_screen,
     },
     desciptionView: {
         marginHorizontal: 25,
@@ -65,7 +66,7 @@ const styles  = StyleSheet.create({
     title: {
         fontSize: 21,
         alignSelf: 'flex-start',
-        color: colors.black,
+        color: colors.text_screen_header,
         fontWeight: '800',
         padding: 10
     },
@@ -73,10 +74,10 @@ const styles  = StyleSheet.create({
         fontSize: 15,
         marginTop: 5,
         marginBottom: 10,
-        color: colors.black,
+        color: colors.text_subtitle,
       },
     postTypeView: {
-        backgroundColor: colors.white,
+        backgroundColor: colors.background_post_type,
         width: Platform.OS!='web' ? '95%' : 400,
         
         borderRadius: 20,
@@ -88,20 +89,19 @@ const styles  = StyleSheet.create({
         padding: '6%'
     },
     button: {
-        backgroundColor: colors.primary,
+        backgroundColor: colors.button_continue,
         width: Platform.OS!='web' ? '80%' : 200,
         marginBottom: '6%',
         textAlign:'center',
         padding: 10,
         borderRadius: 10,
-        color: colors.white,
         alignSelf: 'center'
     },
     selecterView:{
         position: 'absolute',
         bottom: 0,
         height: '85%',
-        backgroundColor: colors.white,
+        backgroundColor: colors.background_screen,
         borderTopEndRadius: 24,
         borderTopStartRadius: 24,
         width:'100%'
@@ -114,8 +114,8 @@ const styles  = StyleSheet.create({
         alignContent: 'center',
         justifyContent: 'center',
         borderBottomWidth: 1,
-        borderColor: colors.light_grey,
-        shadowColor: colors.light_grey,
+        borderColor: colors.border_input_text,
+        shadowColor: colors.shadow,
         shadowOpacity: 0.9,
         shadowOffset: {
             width: 2,

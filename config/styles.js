@@ -4,10 +4,10 @@ import colors from './colors';
 
 export const AppStyles = StyleSheet.create({
     StackHeaderStyle: { // Currently used by all stack navs
-        backgroundColor: colors.primary,
-        borderBottomColor: colors.black,
+        backgroundColor: colors.background_stack_header,
+        borderBottomColor: colors.border,
         borderBottomWidth: 1,
-        shadowColor: colors.black,
+        shadowColor: colors.shadow,
         shadowRadius: 10,
     },
     ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
@@ -17,22 +17,27 @@ export const AppStyles = StyleSheet.create({
         fontWeight: 'bold',
         letterSpacing: 0.25,
         fontSize: 20,
-        color: colors.white,
+        color: colors.text_stack_title,
     },
     StackBackTitleStyle: {
-        color: colors.black,
+        color: colors.text_stack_back_title,
     },
     TabStyle: {
-        borderColor: colors.black,
+        borderColor: colors.border,
         borderWidth: 1,
-        shadowColor: colors.black,
+        shadowColor: colors.shadow,
         shadowRadius: 10,
     },
     TabLabelStyle: {
         fontWeight: 'bold',
         letterSpacing: 0.25,
         fontSize: 16,
-        color: colors.white, 
+        color: colors.text_tab_label, 
     },
+    ScreenBackground: {
+        backgroundColor: colors.background_screen,
+        flex: 1,
+        alignItems: 'center',
+    }
 
 })

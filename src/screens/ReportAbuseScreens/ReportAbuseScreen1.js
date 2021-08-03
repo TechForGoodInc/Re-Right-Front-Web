@@ -17,7 +17,7 @@ export default function ReportAbuseScreen1({ navigation }) {
                 placeholder="Let us know your story..." 
             />
             <Pressable style={({pressed}) => [{
-                backgroundColor: pressed ? colors.grey : colors.primary,},
+                backgroundColor: pressed ? colors.button_pressed : colors.button_continue,},
                 styles.continueButton,]}
                 onPress={() => handleContinuePress()}>
                 <Text style={styles.buttonText}>Continue</Text>
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     screenBackground: {
         justifyContent: 'space-between',
         flex: 1,
+        backgroundColor: colors.background_screen,
     },
     buttonText: {
         fontSize: 16,

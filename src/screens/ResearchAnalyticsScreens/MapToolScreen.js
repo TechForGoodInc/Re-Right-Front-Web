@@ -37,11 +37,10 @@ export default function MapToolScreen() {
             flex: 1,
             alignItems: 'center',
             justifyContent: 'flex-end',
-            backgroundColor: colors.white,
+            backgroundColor: colors.background_screen,
         },
         filtersContainer: {
             flex: 1,
-            backgroundColor: colors.white,
             alignItems: 'center',
             padding: 10,
         },
@@ -53,13 +52,12 @@ export default function MapToolScreen() {
         },
         filtersTitleContainer: {
             //flex: 0.5,
-            backgroundColor: colors.white,
             alignItems: 'center'
         },
         filtersTitleText: {
             fontWeight: '700',
             fontSize: 25, 
-            color: colors.primary,
+            color: colors.text_screen_header,
             marginBottom: '2%',
           },
         filterTitleText: {

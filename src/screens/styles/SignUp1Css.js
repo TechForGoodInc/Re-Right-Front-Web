@@ -1,6 +1,6 @@
-
 //all the styles for Sign Up Screen 1 is here
-
+import colors from "../../../config/colors";
+const Colors = colors;
 export default function GetSignUp1Style (landscape,width, height,colors, ) {
     //numerical values to be used for styling
     const viewConstants = {
@@ -37,15 +37,15 @@ export default function GetSignUp1Style (landscape,width, height,colors, ) {
                 flexDirection: ( landscape|| width>height)? 'row' : null,
             },
             header: {
-            marginBottom: viewConstants.headerBottomMargin,
-            flex: (landscape|| width>height) ? 1 : 0,
-            flexDirection: 'column',
-            width: ( landscape|| width>height) ? '50%' : '100%',
+                marginBottom: viewConstants.headerBottomMargin,
+                flex: (landscape|| width>height) ? 1 : 0,
+                flexDirection: 'column',
+                width: ( landscape|| width>height) ? '50%' : '100%',
             },
             headerTitle: {
                 fontWeight: viewConstants.headingWeight,
                 fontSize: ( landscape|| width>height) ? viewConstants.headingFontSizeLandscape: viewConstants.headingFontSize,
-                color: colors.primary,
+                color: Colors.text_screen_header,
                 paddingVertical: ( landscape|| width>height) ? 0 : '3%',
                 paddingTop: ( landscape|| width>height) ? '5%' : 0
             },
@@ -90,19 +90,20 @@ export default function GetSignUp1Style (landscape,width, height,colors, ) {
                 flex: 1,
                 alignItems: 'center',
                 justifyContent: 'flex-end',
-                backgroundColor: colors.white,
+                backgroundColor: Colors.background_screen,
             },
             buttonText: {
                 fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
                 lineHeight: ( landscape|| width>height) ? viewConstants.buttonTextLineHeightLandscape : viewConstants.buttonTextLineHeight,
                 fontWeight: 'bold',
-                color: 'white',
+                color: Colors.text_tab_label,
             },
             continueButton: {
                 width: "100%",
                 height: ( landscape|| width>height) ? viewConstants.buttonHeightLandscape : viewConstants.buttonHeight,
                 justifyContent: "center",
                 alignItems: "center",
+                backgroundColor: Colors.button_continue,
             }, 
         }    
 }

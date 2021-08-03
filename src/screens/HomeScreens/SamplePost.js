@@ -135,12 +135,13 @@ const styles = StyleSheet.create({
       textAlign: 'right'
     },
     postContainer: {
-      borderColor: colors.light_grey,
+      borderColor: colors.border,
       marginVertical: 20,
       borderWidth: 1,
       padding: 20,
       flexDirection: 'column',
       width: '95%',
+      backgroundColor: colors.background_screen,
     },
     likeBar: {
       paddingTop: 10,

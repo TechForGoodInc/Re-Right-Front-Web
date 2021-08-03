@@ -6,6 +6,7 @@ import FriendsScreen from '../../screens/HomeScreens/FriendsScreen';
 
 import { AppStyles } from '../../../config/styles';
 import StackHeaderBackImage from '../StackHeaderBackImage';
+import FriendProfileScreen from '../../screens/HomeScreens/FriendProfileScreen';
 
 const StackHeaderStyle = AppStyles.StackHeaderStyle;
 const StackTitleStyle = AppStyles.StackTitleStyle;
@@ -29,6 +30,8 @@ export default function FriendsStackNav({navigation}) {
                         <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
+            <Stack.Screen name="Friend Profile" component={FriendProfileScreen}
+                options={{title: "Friends Name"}}/>
         </Stack.Navigator>
     )
 }

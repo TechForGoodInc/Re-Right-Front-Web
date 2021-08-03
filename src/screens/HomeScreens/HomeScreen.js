@@ -35,10 +35,10 @@ export default function HomeScreen() {
           alignSelf: "center",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: 'white'
+          backgroundColor: colors.background_screen,
         }}>
           <ScrollView 
-          style={{backgroundColor: 'white'}}
+          style={{backgroundColor: colors.background_scrollview}}
           direction alLockEnabled = 'true'
           refreshControl={
           <RefreshControl
