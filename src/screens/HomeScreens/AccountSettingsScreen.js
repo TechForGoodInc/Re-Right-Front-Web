@@ -15,7 +15,7 @@ const AccountSettings = ({navigation}) => {
         setdarkIsEnabled(global.isDarkModeEnabled);
         navigation.reset({
             index: 0,
-            routes: [{name: 'Profile'}, {name: 'Account Settings'}],
+            routes: [{name: 'Profile'}],
         })
     }
    

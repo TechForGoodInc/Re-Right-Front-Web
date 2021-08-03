@@ -24,17 +24,16 @@ export default function ProfileStackNav({navigation}) {
         navigation.openDrawer();
     }
     const handleSettingsPress = () => {
-        navigation.navigate('Account Settings')
+        navigation.navigate('Account Settings');
     }
     return (
-        <Stack.Navigator initialRoute="Profile" screenOptions={{
+        <Stack.Navigator detachPreviousScreen= {true} initialRoute="Profile" screenOptions={{
             headerStyle: StackHeaderStyle,
             headerTitleStyle: StackTitleStyle,
             headerBackImage: StackHeaderBackImage,
             headerBackTitleStyle: StackBackTitleStyle }}>
-
-            <Stack.Screen name="Profile" component={ProfileScreen}
-                options={{title: "Profile", headerLeft: () => (
+        <Stack.Screen name="Profile" component={ProfileScreen}
+                options={{title: "Profile",headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
@@ -43,9 +42,8 @@ export default function ProfileStackNav({navigation}) {
                         <Image source={require('../../../assets/settings.png')} style = {styles.settingsicon} />
                     </TouchableOpacity>
                     )}} />
-        <Stack.Screen name="Account Settings" component={AccountSettings}/>
+        <Stack.Screen detachInactiveScreens = { true} detachPreviousScreen= {true}  options={{detachPreviousScreen: true}} name="Account Settings" component={AccountSettings}/>
         <Stack.Screen name="Post" component={PostPreview}/>
-
         <Stack.Screen name="ChangeUserName" component={ChangeUsernameScreen}/>
         <Stack.Screen name="ChangeEmail" component={ChangeEmailScreen}/>
         <Stack.Screen name="ChangePassword" component={ChangePasswordScreen}/>

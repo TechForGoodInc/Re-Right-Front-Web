@@ -8,8 +8,7 @@ import darkColors from '../../../config/darkColors';
 import SamplePost from './SamplePost';
 
 
-
-export default function ProfileScreen({navigation}) {
+export default function ProfileScreen({route,navigation}) {
     const [editMode,setEditMode] = useState(false);
     const [displayName, setDisplayName] = useState('Display Name');
     const [bio, setBio] = useState('Bio from database');
