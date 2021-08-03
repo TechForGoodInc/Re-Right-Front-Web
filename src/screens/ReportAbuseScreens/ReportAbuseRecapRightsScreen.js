@@ -196,7 +196,7 @@ const ReportAbuseRecapRightsScreen = ({navigation}) => {
     },
   
     button: {
-      borderColor: "#77ACF1",
+      borderColor: colors.border,
       borderRadius:10,
       padding: 10,
       paddingRight: 20,
@@ -215,13 +215,15 @@ const ReportAbuseRecapRightsScreen = ({navigation}) => {
       fontSize: 18,
       alignSelf: "flex-start",
       lineHeight: 25,
-      
+      color: colors.text_general,
     },
     
     arrow: {
       width: 16,
       height: 16,
       alignSelf: 'center',
+      tintColor: colors.tintColor,
+
     },
   
     quizButton: {
@@ -231,7 +233,7 @@ const ReportAbuseRecapRightsScreen = ({navigation}) => {
       alignSelf: 'center',
       padding: 10,
       margin: 10,
-      
+      borderColor: colors.border
     },
     
     quizText: {
