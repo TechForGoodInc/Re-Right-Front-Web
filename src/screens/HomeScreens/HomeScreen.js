@@ -18,9 +18,6 @@ export default function HomeScreen({route,navigation}) {
     //getting the darkmode from the stackNav
     const colors = global.isDarkModeEnabled? darkColors: color; 
     const [{isItDark},setIsItDark] = useState(route.params);
-    useEffect(() => {
-      setIsItDark(route.params);
-      }, []);
     const [refreshing, setRefreshing] = React.useState(false);
     const onRefresh = React.useCallback(() => {
       setRefreshing(true);

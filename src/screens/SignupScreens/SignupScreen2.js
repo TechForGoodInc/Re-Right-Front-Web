@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import colors from '../../../config/colors';
+import color from "../../../config/colors";
+import darkColors from "../../../config/darkColors";
+import '../../../config/global';
 import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
@@ -20,6 +22,7 @@ const viewConstants = {
 }
 
 const SignupScreen2 = ({navigation}) => {
+    const colors = global.isDarkModeEnabled ? darkColors : color;
     //getting the dimensions and the orientation
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
@@ -48,6 +51,7 @@ const SignupScreen2 = ({navigation}) => {
             fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
             marginEnd: ( landscape|| width>height) ? viewConstants.headerTextLandscapePadding: 0,
             paddingTop: ( landscape|| width>height) ? '5%' : 0,
+            color: colors.text_general
         },
         linkText: {
             textDecorationLine: 'underline',
@@ -60,7 +64,8 @@ const SignupScreen2 = ({navigation}) => {
         label: {
             fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
             padding: viewConstants.labelPadding,
-            marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0
+            marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0,
+            color: colors.text_general
         },
         inputText: {
             borderWidth: viewConstants.textBoxBorderWidth,
@@ -70,6 +75,7 @@ const SignupScreen2 = ({navigation}) => {
             padding: viewConstants.textBoxPadding,
             fontSize:  ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
             marginHorizontal: viewConstants.textBoxPadding,
+            color: colors.text_general
         },
         screenBackground: {
             flex: 1,

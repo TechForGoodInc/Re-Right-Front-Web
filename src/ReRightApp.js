@@ -1,8 +1,7 @@
 import 'react-native-gesture-handler';
-import React, {Button} from 'react';
+import React, {useEffect, useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import LoggedOutScreen from './screens/LoggedOutScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen1 from './screens/SignupScreens/SignupScreen1';
@@ -16,9 +15,12 @@ import ForgotPassScreen4 from './screens/ForgetPasswordScreens/ForgotPassScreen4
 import StylizedPostScreen from './screens/HomeScreens/StylizedPostScreen';
 import HomeDrawerNav from './components/HomeDrawerNav';
 import StylizedPostScreen2 from './screens/HomeScreens/StylizedPostScreen2';
+import '../config/global';
 
 const Stack = createStackNavigator();
+
 export default function ReRightApp() {
+
     return (
         <NavigationContainer>
             <Stack.Navigator initialRoute="Logged Out" >
