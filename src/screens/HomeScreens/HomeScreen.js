@@ -16,7 +16,8 @@ const wait = (timeout) => {
 
 
 export default function HomeScreen({route,navigation}) {
-    const [{isItDark}, setIsItDark] = useState(route.params)
+    //getting the darkmode from the stackNav
+    var {isItDark} = route.params;
     const [refreshing, setRefreshing] = React.useState(false);
     const onRefresh = React.useCallback(() => {
       setRefreshing(true);

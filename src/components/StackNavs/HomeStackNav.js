@@ -15,13 +15,14 @@ const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
 const Stack = createStackNavigator();
 
 export default function HomeStackNav({route, navigation}) {
-    const [{isItDark}, setIsItDark] = useState(route.params)
+    var {isItDark} = route.params;
     const handleHamburgerPress = () => {
         navigation.openDrawer();
     }
     return (
         <Stack.Navigator initialRoute="Home" 
-            initialParams={isItDark}
+            //passing the parameters to the home screen
+            initialParams={{isItDark: isItDark}}
             screenOptions={{
                 headerStyle: StackHeaderStyle,
                 headerTitleStyle: StackTitleStyle,
@@ -30,7 +31,7 @@ export default function HomeStackNav({route, navigation}) {
             <Stack.Screen 
                 name="Home" 
                 component={HomeScreen}
-                initialParams={isItDark}
+                initialParams={{ isItDark: isItDark}}
                 options={{title: "R E - R I G H T", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />

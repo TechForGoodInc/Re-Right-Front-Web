@@ -10,6 +10,7 @@ import { Platform, StyleSheet } from 'react-native';
 import colors from '../../../config/colors';
 import colorsTest from '../../../config/colorsTest';
 import { AppStyles } from '../../../config/styles';
+//this global file has the dark mode value
 import '../../../config/global';
 import { useEffect } from 'react';
 
@@ -33,7 +34,7 @@ export default function HomeTabNav() {
     } Can use a different color import based on a conditional (need to link up dark mode state)*/
     return (
         <BottomTabs.Navigator initialRoute="Home" 
-            initialParams={isDarkModeEnabled}
+            initialParams={{isItDark: isDarkModeEnabled}}
             tabBarOptions={{ 
             activeBackgroundColor: colors.active_tab,
             inactiveBackgroundColor: colors.inactive_tab,
@@ -44,7 +45,7 @@ export default function HomeTabNav() {
             showLabel: Platform.OS === 'web' ? true: false,
         }}>
             <BottomTabs.Screen name="Home" component={HomeStackNav} 
-                initialParams={isDarkModeEnabled}
+                initialParams={{isItDark: isDarkModeEnabled}}
                 options={{   
                 tabBarIcon: () => <AntDesign name="home" size={24} color="black"/>
             }}/>
