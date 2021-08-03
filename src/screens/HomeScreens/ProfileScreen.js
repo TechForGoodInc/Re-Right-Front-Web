@@ -29,7 +29,7 @@ var styles = StyleSheet.create({
         justifyContent: 'center',
         borderWidth: 2,
         borderRadius: 10,
-        borderColor: colors.light_grey,
+        borderColor: colors.border,
         marginHorizontal:'2%'
     },
     allTags: {
@@ -116,7 +116,7 @@ export default function ProfileScreen({navigation}) {
         <ScrollView style={{
             flex: 1,
             padding: '2%',
-            backgroundColor: "white",
+            backgroundColor: colors.background_screen,
             flexDirection: "column",
             width: '100%',
         }}>
@@ -124,7 +124,7 @@ export default function ProfileScreen({navigation}) {
             <TouchableOpacity  id= "editButton" onPress={() => {editing()} } title ="Edit "> 
                 <Image source= {require('../../../assets/editing.png')} style={{display: editMode? "none":'flex',color:editMode? "red":"blue", marginLeft: '86%',paddingTop:"5%", width: (Platform.OS!=='web')? 35 :60 , height: (Platform.OS!=='web')? 35 :60}}/>
                 <View style= {{textAlign: "center" ,alignItems: 'center',backgroundColor: colors.light_grey, borderRadius: 10, marginLeft: '80%',marginBottom: '4%',marginRight: '5%'}}>
-                            <Text style = {{display: editMode? "flex":'none',padding: '9%', color: colors.primary, fontWeight: '900'}}>Done</Text>
+                            <Text style = {{display: editMode? "flex":'none',padding: '9%', color: colors.text_screen_header, fontWeight: '900'}}>Done</Text>
                         </View> 
             </TouchableOpacity>
             </View>
@@ -132,7 +132,7 @@ export default function ProfileScreen({navigation}) {
                 <View style = {styles.header}>
                     <Image style = {{ width: (Platform.OS!=='web') ? 100:130 , height: (Platform.OS!=='web') ? 110:150,}} source={require('./../../../assets/man.png')}/> 
                     <Text style = {{display: editMode? 'none':'flex',fontWeight:'700',paddingTop:'1.5%',fontSize: 20, color: colors.black}}> {displayName} </Text>
-                    <TextInput style = {{display: editMode? 'flex':'none', borderColor: colors.light_grey, borderWidth: 2, borderRadius: 10, marginTop: '1.5%',padding: '1%'}}
+                    <TextInput style = {{display: editMode? 'flex':'none', borderColor: colors.text_screen_header, borderWidth: 2, borderRadius: 10, marginTop: '1.5%',padding: '1%'}}
                             defaultValue = {displayName}
                             onChangeText = {name => setDisplayName(name)}
                             onSubmitEditing = {editing}
@@ -175,8 +175,8 @@ export default function ProfileScreen({navigation}) {
                         </View>
                     </TouchableOpacity>
                 </View>
-                <View style={{flex:1,flexDirection: 'column', borderWidth: 1,borderColor: colors.black, width:'100%'}}>
-                    <View style={{flex:1,flexDirection: 'row',borderColor: colors.black, width:'100%'}}>
+                <View style={{flex:1,flexDirection: 'column', borderWidth: 1,borderColor: colors.border, width:'100%'}}>
+                    <View style={{flex:1,flexDirection: 'row',borderColor: colors.border, width:'100%'}}>
                         <View style = {{display: (postType === 'myPosts')? 'flex':'none',width: '50%'}}>  
                         <TouchableOpacity onPress = {()=> navigation.navigate("Post")}style = {{flex:1,flexDirection: 'column',display: (postType === 'myPosts')? 'flex':'none'}}>
                         <Image style = {{margin: 2 }} source = { { 
@@ -197,7 +197,7 @@ export default function ProfileScreen({navigation}) {
                         </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={{flex:1,flexDirection: 'row',borderColor: colors.black, width:'100%'}}>
+                    <View style={{flex:1,flexDirection: 'row',borderColor: colors.border, width:'100%'}}>
                         <View style = {{display: (postType === 'myPosts')? 'flex':'none',width: '50%'}}>  
                         <TouchableOpacity onPress = {()=> navigation.navigate("Post")}style = {{flex:1,flexDirection: 'column',display: (postType === 'myPosts')? 'flex':'none'}}>
                         <Image style = {{margin: 2 }} source = { { 
@@ -218,7 +218,7 @@ export default function ProfileScreen({navigation}) {
                         </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={{flex:1,flexDirection: 'row',borderColor: colors.black, width:'100%'}}>
+                    <View style={{flex:1,flexDirection: 'row',borderColor: colors.border, width:'100%'}}>
                         <View style = {{display: (postType === 'myPosts')? 'flex':'none',width: '50%'}}>  
                         <TouchableOpacity onPress = {()=> navigation.navigate("Post")}style = {{flex:1,flexDirection: 'column',display: (postType === 'myPosts')? 'flex':'none'}}>
                         <Image style = {{margin: 2 }} source = { { 

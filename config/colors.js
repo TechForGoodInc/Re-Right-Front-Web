@@ -21,31 +21,38 @@ export default {
     inactive_tab: "#428AF8",
 
    
-    text_screen_header: "",
+    text_screen_header: "white",
     text_general: "black",
     text_stack_title: "white",
     text_stack_back_title: "black",
     text_tab_label: "white",
-    text_question_number: "",
-    text_subtitle: "",
-    text_quiz: "",
+    text_question_number: "#3987CE",
+    text_subtitle: "black",
+    text_quiz: "black",
 
     border: "black",
-    border_input_text: "",
+    border_input_text: "black",
+    border_button: "black",
     
     shadow: "black",
 
-    background_screen: "",
+    background_screen: "#D3D3D3",
     background_drawer: "grey",
-    background_stack_header: "black",
+    background_stack_header: "#3987CE",
+    background_scrollview: "#3987CE",
+    background_friend: "#3987CE",
+    background_post_type: "white",
 
-    button_continue: "",
-    button_submit: "",
-    button_pressed: "",
-    button_quiz: "",
-    button_quiz_pressed: "",
-    button_retry_quiz: "",
-    button_retry_quiz_pressed: "",
+    button_signup: "#FCD681",
+    button_login: "#3987CE",
+    button_continue: "#3987CE",
+    button_submit: "#3987CE",
+    button_pressed: "grey",
+    button_quiz: "#3987CE",
+    button_quiz_pressed: "grey",
+    button_retry_quiz: "#3987CE",
+    button_retry_quiz_pressed: "grey",
+    button_connect: "#3987CE",
     
 
     // Palette end

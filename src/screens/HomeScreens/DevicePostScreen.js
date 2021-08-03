@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
+import { AppStyles } from '../../../config/styles';
+
 
 const DevicePostScreen = ({navigation}) => {
     return ( 
-        <Text>Device Post</Text>
+        <View style={AppStyles.ScreenBackground}>
+            <Text>Device Post</Text>
+        </View>
      );
 }
  

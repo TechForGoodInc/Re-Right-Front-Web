@@ -206,7 +206,7 @@ const ReportAbuseRecapRightsScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.background_screen,
   },
   
   title: {

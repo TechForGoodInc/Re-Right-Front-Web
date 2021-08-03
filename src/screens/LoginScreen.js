@@ -13,7 +13,7 @@ export default function LoginScreen({navigation}) {
 
         background: {
             flex: 1,
-            backgroundColor: colors.white,
+            backgroundColor: colors.background_screen,
             flexDirection: 'column',
         },
        
@@ -65,7 +65,7 @@ export default function LoginScreen({navigation}) {
              margin: '1%',
              width: '90%',
              borderWidth: 2,
-             borderColor: colors.light_grey,
+             borderColor: colors.border_input_text,
              alignSelf: 'center',
              fontSize: 16, 
              borderRadius: 10,
@@ -95,7 +95,7 @@ export default function LoginScreen({navigation}) {
         headertext: {
             fontWeight: '700',
             fontSize: 25, 
-            color: colors.primary,
+            color: colors.text_screen_header,
             marginBottom: '4%',
           },
       
@@ -171,7 +171,7 @@ export default function LoginScreen({navigation}) {
             </View>
         </View>
         <Pressable style={({pressed}) => [{
-            backgroundColor: pressed ? colors.grey : colors.primary,},
+            backgroundColor: pressed ? colors.button_pressed : colors.button_login,},
             styles.continueButton,]}
             onPress={() => handleLoginRoute()}>
             <Text style={styles.buttonText}>Log In</Text>

@@ -1,10 +1,14 @@
 //Chat Page
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
+import { AppStyles } from '../../../config/styles';
 
 export default function ChatScreen() {
     return (
-        <Text>Chat Screen</Text>
+        <View style={AppStyles.ScreenBackground}>
+            <Text>Chat Screen</Text>
+        </View>
+        
     );
 }

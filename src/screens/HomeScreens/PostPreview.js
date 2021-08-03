@@ -1,11 +1,12 @@
 import SamplePost from './SamplePost';
 import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
+import colors from '../../../config/colors';
 
 export default function PostPreview({navigation}) {
 return (<SafeAreaView style={{
           flex: 6,
-          backgroundColor: "white",
+          backgroundColor: colors.background_screen,
           flexDirection: "column",
           width: '100%',
           height: '100%',

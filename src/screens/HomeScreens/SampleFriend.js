@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
+import colors from '../../../config/colors';
 
 export default function SampleFriend ({navigation}) {
     return ( 
@@ -22,7 +23,8 @@ const styles = StyleSheet.create({
         paddingLeft: '1%',
         paddingBottom: '4%',
         borderBottomWidth: 1,
-        borderColor: 'gray',
+        borderColor: colors.border,
+        backgrounColor: colors.background_friend,
     },
     friendpfp:{ 
         flexDirection: 'row',

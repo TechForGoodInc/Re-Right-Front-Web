@@ -34,5 +34,10 @@ export const AppStyles = StyleSheet.create({
         fontSize: 16,
         color: colors.text_tab_label, 
     },
+    ScreenBackground: {
+        backgroundColor: colors.background_screen,
+        flex: 1,
+        alignItems: 'center',
+    }
 
 })

@@ -43,7 +43,7 @@ export default function FriendsScreen() {
                             <Image style = {styles.profilePic} source = { require("../../../assets/userpfp.png") }/>
                             <View style = {{marginLeft:'3%'}}>
                                 <Text style= {{fontSize:15,}}>{item.title}</Text>
-                                <Text style={{paddingTop: 5, color: colors.grey}}>{item.mutual} mutual friends</Text>
+                                <Text style={{paddingTop: 5, color: colors.text_subtitle}}>{item.mutual} mutual friends</Text>
                             </View>
                         
                         </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
-      backgroundColor: colors.white,
+      backgroundColor: colors.background_screen,
     },
     searchBar: {
         flexDirection: 'row',

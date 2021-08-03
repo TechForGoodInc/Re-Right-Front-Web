@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     screenBackground: {
         justifyContent: 'space-between',
         flex: 1,
+        backgroundColor: colors.background_screen,
     },
     pretext:{
         alignSelf: 'center',

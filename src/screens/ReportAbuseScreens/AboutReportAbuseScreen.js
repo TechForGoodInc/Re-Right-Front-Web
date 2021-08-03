@@ -1,8 +1,16 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { SafeAreaView, Text, StyleSheet } from 'react-native';
+import colors from '../../../config/colors';
 
 export default function AboutReportAbuseScreen() {
     return (
-        <Text>About report abuse.</Text> 
+        <SafeAreaView style={styles.background}>
+
+        </SafeAreaView>
     )
 }
+const styles = StyleSheet.create({
+    background: {
+        backgroundColor: colors.background_screen,
+    }
+})
