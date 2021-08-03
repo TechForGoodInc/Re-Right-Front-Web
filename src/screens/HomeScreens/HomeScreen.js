@@ -17,7 +17,10 @@ const wait = (timeout) => {
 
 export default function HomeScreen({route,navigation}) {
     //getting the darkmode from the stackNav
-    var {isItDark} = route.params;
+    const [{isItDark},setIsItDark] = useState(route.params);
+    useEffect(() => {
+      setIsItDark(route.params);
+      }, []);
     const [refreshing, setRefreshing] = React.useState(false);
     const onRefresh = React.useCallback(() => {
       setRefreshing(true);
@@ -26,7 +29,6 @@ export default function HomeScreen({route,navigation}) {
     useEffect(() => {
       setRefreshing(true);
       wait(2000).then(() => setRefreshing(false));
-
       }, []);
     return (
         <SafeAreaView style={{
@@ -40,7 +42,7 @@ export default function HomeScreen({route,navigation}) {
           justifyContent: "center",
           alignContent: 'center',
           alignItems: "center",
-          backgroundColor: isItDark ? "black" : colors(isItDark).white
+          backgroundColor: isItDark ? "black" : colors.white
         }}>
           <ScrollView 
           style={styles.feed}

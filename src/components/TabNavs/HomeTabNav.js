@@ -17,9 +17,7 @@ import { useEffect } from 'react';
 const BottomTabs = createBottomTabNavigator();
 const TabStyle = AppStyles.TabStyle;
 const TabLabelStyle = AppStyles.TabLabelStyle;
-const closeCreatePost = () => {
-    navigation.navigate('Home');
-}
+
 export default function HomeTabNav() {
     const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(global.isDarkModeEnabled);
     useEffect(() => {
@@ -35,6 +33,7 @@ export default function HomeTabNav() {
     return (
         <BottomTabs.Navigator initialRoute="Home" 
             initialParams={{isItDark: isDarkModeEnabled}}
+            params = {{ isItDark: isDarkModeEnabled }}
             tabBarOptions={{ 
             activeBackgroundColor: colors.active_tab,
             inactiveBackgroundColor: colors.inactive_tab,
@@ -46,6 +45,7 @@ export default function HomeTabNav() {
         }}>
             <BottomTabs.Screen name="Home" component={HomeStackNav} 
                 initialParams={{isItDark: isDarkModeEnabled}}
+                params = {{ isItDark: isDarkModeEnabled }}
                 options={{   
                 tabBarIcon: () => <AntDesign name="home" size={24} color="black"/>
             }}/>
@@ -54,10 +54,6 @@ export default function HomeTabNav() {
             }}/>
             <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}
                 options={{title: "Create Post",
-                    headerLeft : () => (
-                    <TouchableOpacity activeOpacity = { .5 } onPress={ closeCreatePost }>
-                        <Image source={require('../../../assets/delete-button.png')} style = {{width:45, height: 45,resizeMode: "contain"}} />
-                    </TouchableOpacity>),
                     tabBarIcon: () => <AntDesign name="pluscircleo" size={24} color="black" />}}/>
             <BottomTabs.Screen name="Friends" component={FriendsStackNav} options={{
                 tabBarIcon: () => <FontAwesome5 name="user-friends" size={24} color="black" />

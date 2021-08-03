@@ -32,7 +32,7 @@ const getImage = () => {
 
 const SamplePost = () => {
   const [isItDark, setIsItDark] = useState(global.isDarkModeEnabled)
-  
+
   const styles = StyleSheet.create({
     menuicon: {
       width: 75,
@@ -56,12 +56,12 @@ const SamplePost = () => {
       flexDirection: 'row',
       width: '90%',
       textAlign: 'right',
-      color: colors(isItDark).text_general
+      color: colors.text_general
     },
     postUsername: {
       flexDirection: 'column',
       alignSelf:'flex-start',
-      color: colors(isItDark).text_general
+      color: colors.text_general
     },
     postDots: {
       flexDirection: 'column',
@@ -75,7 +75,7 @@ const SamplePost = () => {
       padding: 20,
       flexDirection: 'column',
       width: '95%',
-      backgroundColor: colors(isItDark).background_post_type,
+      backgroundColor: colors.background_post_type,
     },
     likeBar: {
       paddingTop: 10,
@@ -84,7 +84,7 @@ const SamplePost = () => {
       alignContent: 'flex-start'
     },
     likeCount : {
-      color: colors(isItDark).text_general
+      color: colors.text_general
     },
     CommentBar: {
         width: '100%'
@@ -96,7 +96,7 @@ const SamplePost = () => {
     name: {
       fontWeight: '700',
       flexDirection: 'column',
-      color: colors(isItDark).text_general
+      color: colors.text_general
     },
     comment: {
       flexDirection: 'column',
@@ -108,7 +108,7 @@ const SamplePost = () => {
       width: '12%',
       height: 39,
       flexDirection: 'column',
-      tintColor: colors(isItDark).text_general
+      tintColor: colors.text_general
     },
   });
 
@@ -127,15 +127,15 @@ const SamplePost = () => {
                   />
             <View style={styles.likeBar}>
                   <Pressable>
-                    <Image tintColor= {colors(isItDark).text_general}  style = {styles.likeHeartComment} source= {require('../../../assets/like.png')}
+                    <Image tintColor= {colors.text_general}  style = {styles.likeHeartComment} source= {require('../../../assets/like.png')}
                   />
                   </Pressable>
                   <Pressable >
-                  <Image tintColor= {colors(isItDark).text_general}  style = {styles.likeHeartComment} source= {require('../../../assets/heart.png')}
+                  <Image tintColor= {colors.text_general}  style = {styles.likeHeartComment} source= {require('../../../assets/heart.png')}
                   />
                   </Pressable>
                   <Pressable>
-                    <Image tintColor= {colors(isItDark).text_general} style = {styles.likeHeartComment} source = { { 
+                    <Image tintColor= {colors.text_general} style = {styles.likeHeartComment} source = { { 
                     uri: 'https://static.thenounproject.com/png/638755-200.png' ,
                     width: '16%',
                     height: 60,} }

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './global';
-const colors  =  () => {
-    
-    return ({
+
+export default  {
 
     // Palette start
         primary: "#3987CE",
@@ -66,6 +65,4 @@ const colors  =  () => {
         cream: "#FDFCDC",
         dblue: "#0081A7",
     
-})};
-
-export default colors;
+}
