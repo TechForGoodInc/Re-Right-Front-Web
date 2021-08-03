@@ -24,7 +24,7 @@ export default function SignupScreen1() {
 
     //setting up the user input variables
     const [email, setEmail] = useState('');
-    const [confirmEmail, setConfirmEmail] = useState('')
+    const [confirmEmail, setConfirmEmail] = useState('');
     const [password, confirmPassword] = useState('');
 
     //checking if user exists and showing an error if it does
