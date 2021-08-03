@@ -9,11 +9,10 @@ export default function ReportOutScreen2({navigation}) {
     const colors = global.isDarkModeEnabled? darkColors: color; 
     const styles = StyleSheet.create({
         container: {
-            top: '1%',
             paddingTop: '1%',
             paddingBottom: '10%',
             paddingLeft: '1%',
-            backgroundColor: colors.background_screen
+            backgroundColor: colors.background_screen,
         },
     
         textInput: {
