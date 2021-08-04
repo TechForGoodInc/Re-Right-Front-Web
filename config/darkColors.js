@@ -57,6 +57,9 @@ export default  {
         button_retry_quiz: "#3987CE",
         button_retry_quiz_pressed: "grey",
         button_connect: "#3987CE",
+        button_recommended_friends: "#3987CE",
+
+
         tintColor: 'white',
 
         // Palette end

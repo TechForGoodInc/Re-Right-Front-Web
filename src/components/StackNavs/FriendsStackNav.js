@@ -10,6 +10,7 @@ import FriendProfileScreen from '../../screens/HomeScreens/FriendProfileScreen';
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
+import FriendsScreenNavWrapper from '../FriendsScreenNavWrapper';
 
 const Stack = createStackNavigator();
 
@@ -67,14 +68,17 @@ export default function FriendsStackNav({navigation}) {
             headerTitleStyle: StackTitleStyle,
             headerBackImage: StackHeaderBackImage,
             headerBackTitleStyle: StackBackTitleStyle }}>
-            <Stack.Screen name="Friends" component={FriendsScreen}
+            <Stack.Screen name="Friends" component={FriendsScreenNavWrapper} props={{navigation: navigation}}
                 options={{title: "Friends", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
+            <Stack.Screen name="Recommended Friends" component={FriendProfileScreen}
+                options={{title: "Recommended Friends"}}/>
             <Stack.Screen name="Friend Profile" component={FriendProfileScreen}
                 options={{title: "Friends Name"}}/>
+            
         </Stack.Navigator>
     )
 }

@@ -1,6 +1,6 @@
 //Friends Page
 import React, {Component, useState} from 'react';
-import { View,StyleSheet, Text, Image, FlatList, TextInput, TouchableOpacity, Pressable} from 'react-native';
+import { View,StyleSheet, Text, Image, FlatList, TextInput, TouchableOpacity} from 'react-native';
 
 import '../../../config/global';
 import color from '../../../config/colors';
@@ -25,7 +25,7 @@ const data = [
     { id: '15', title: 'Nathan Cook', mutual: '30' },
 ]
 
-export default class FriendsScreen extends Component {
+export default class RecommondedFriendsScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {friendsList: data};
@@ -34,12 +34,12 @@ export default class FriendsScreen extends Component {
         const colors = global.isDarkModeEnabled? darkColors: color; 
         //all the styles are here sorry for the mess but we need this for dark mode to work
         const styles = StyleSheet.create({
-            container: {
+            screenContainer: {
               flex: 1,
               alignItems: 'center',
               backgroundColor: colors.background_screen,
             },
-            searchBar: {
+            headerContainer: {
                 flexDirection: 'row',
                 width: '90%',
                 marginTop: 30,
@@ -54,7 +54,7 @@ export default class FriendsScreen extends Component {
                 marginLeft: 5,
                 tintColor: colors.tintColor
             },
-            inputBar: {
+            headerText: {
                 flex: 1,
                 padding: 10,
                 paddingLeft: 30,  
@@ -93,30 +93,13 @@ export default class FriendsScreen extends Component {
                 margin: 20,
                 height: '60%',
                 width: '20%',
-                backgroundColor: colors.primary,
+                backgroundColor:colors.primary,
                 alignSelf: 'center',
                 alignItems: 'center',
                 position: 'absolute',
                 right: 0,
             },
-            buttonText: {
-                fontSize: 16,
-                lineHeight: 21,
-                fontWeight: 'bold',
-                letterSpacing: 0.25,
-                color: 'white',
-            },
-            recommendedButton: {
-                width: "15%",
-                height: 50,
-                justifyContent: "flex-end",
-                padding: '1%',
-                alignItems: "center",
-                borderTopColor: colors.border,
-                borderTopWidth: 1,
-                shadowColor: colors.shadow,
-                shadowRadius: 10, 
-            },
+
           });
         const handleRemoveFriend = (id) => {
             var newFriendsList = this.state.friendsList;
@@ -131,25 +114,13 @@ export default class FriendsScreen extends Component {
             console.log(JSON.stringify(this.state.friendsList));
             console.log(id);
         }
-        const handleRecommendedPress = () => {
-            console.log("Handling press");
-            this.props.navigation.navigate("Recommended Friends");
-        }
         return (
-            <View style={styles.container}>
-                <View style = {styles.searchBar}>
-                    <Image style={styles.searchIcon} source={require('../../../assets/search.png')}/>
-                    <TextInput 
-                        style= {styles.inputBar}
-                        placeholder = "Search Friends">
-                    </TextInput>
+            <View style={styles.screenContainer}>
+                <View style = {styles.headerContainer}>
+                    <Text style={styles.headerText}>
+                        Recommended Friends
+                    </Text>
                 </View>
-                <Pressable style={({pressed}) => [{
-                    backgroundColor: pressed ? colors.button_pressed : colors.button_recommended_friends,},
-                    styles.recommendedButton,]}
-                    onPress={() => handleRecommendedPress()}>
-                    <Text style={styles.buttonText}>Recommended Friends</Text>
-                </Pressable>
                 
                 <View style ={styles.friendsContainer}>
                     <Text style = {styles.friendsNum}>{this.state.friendsList.length} Friends</Text>
