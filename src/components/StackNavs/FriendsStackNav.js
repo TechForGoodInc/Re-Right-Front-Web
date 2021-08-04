@@ -11,6 +11,7 @@ import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
 import FriendsScreenNavWrapper from '../FriendsScreenNavWrapper';
+import RecommondedFriendsScreen from '../../screens/HomeScreens/RecommendedFriendsScreen';
 
 const Stack = createStackNavigator();
 
@@ -74,7 +75,7 @@ export default function FriendsStackNav({navigation}) {
                         <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
-            <Stack.Screen name="Recommended Friends" component={FriendProfileScreen}
+            <Stack.Screen name="Recommended Friends" component={RecommondedFriendsScreen}
                 options={{title: "Recommended Friends"}}/>
             <Stack.Screen name="Friend Profile" component={FriendProfileScreen}
                 options={{title: "Friends Name"}}/>
