@@ -1,6 +1,6 @@
 //Friends Page
 import React, {Component, useState} from 'react';
-import { View,StyleSheet, Text, Image, FlatList, TextInput, TouchableOpacity, Pressable} from 'react-native';
+import { View,StyleSheet, Text, Image, FlatList, TextInput, TouchableOpacity, Pressable, Alert, Platform} from 'react-native';
 
 import '../../../config/global';
 import color from '../../../config/colors';
@@ -154,6 +154,30 @@ export default class FriendsScreen extends Component {
                 color: colors.text_subtitle,
             }
           });
+
+        const removeFriendAlert = (id,name) => {
+            if (Platform.OS === 'web') {
+                const confirmed = window.confirm("Unfriend "+name+"?\n"+
+                    "This action is irreversable and will remove you from "+name+"'s friend list as well.");
+                if (confirmed) {
+                    handleRemoveFriend(id);
+                }
+                
+            } else {
+                Alert.alert(
+                    "Unfriend "+name+"?",
+                    "This action is irreversable and will remove you from "+name+"'s friend list as well.",
+                    [
+                      { text: "Cancel"},
+                      {
+                        text: "Confirm",
+                        onPress: () => {handleRemoveFriend(id)},
+                      },
+                    ]
+                );
+            }
+            
+        }
         const handleRemoveFriend = (id) => {
             var newFriendsList = this.state.friendsList;
             var indexToRemove = 0;
@@ -209,7 +233,7 @@ export default class FriendsScreen extends Component {
                             </View>
                             
                             <TouchableOpacity
-                                onPress={()=> handleRemoveFriend(item.id)}
+                                onPress={()=> removeFriendAlert(item.id, item.title)}
                                 style={styles.removeButton}>
                                 <Text style={styles.buttonText}>Remove Friend</Text>
                             </TouchableOpacity>
