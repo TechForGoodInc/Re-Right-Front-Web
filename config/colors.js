@@ -61,6 +61,7 @@ export default  {
         button_delete: "red",
         button_new_recommendations: "#3987CE",
         button_change_criteria: "#3987CE",
+        button_request_friend: "green",
 
         tintColor: 'black',
 

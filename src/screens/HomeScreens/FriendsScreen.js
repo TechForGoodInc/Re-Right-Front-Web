@@ -89,10 +89,8 @@ export default class FriendsScreen extends Component {
                 alignSelf: 'center',
             },
             removeButton : {
-                padding: 5,
+                flex: 1,
                 margin: 20,
-                height: '30%',
-                width: '10%',
                 backgroundColor: colors.button_delete,
                 borderRadius: 10,
                 alignSelf: 'center',
@@ -100,17 +98,17 @@ export default class FriendsScreen extends Component {
                 justifyContent: 'center',
                 position: 'absolute',
                 right: 0,
+                padding: '1%',
             },
             buttonText: {
                 fontSize: 16,
                 fontWeight: 'bold',
                 letterSpacing: 0.25,
-                color: 'white',
+                color: colors.text_button,
             },
             recommendedButton: {
+                flex: 1,
                 backgroundColor: colors.button_recommended_friends,
-                width: "20%",
-                height: 50,
                 marginTop: '2%',
                 alignSelf: 'center',
                 alignItems: 'center',
@@ -120,6 +118,7 @@ export default class FriendsScreen extends Component {
                 borderRadius: 10,
                 shadowColor: colors.shadow,
                 shadowRadius: 10, 
+                padding: '1%',
             },
           });
         const handleRemoveFriend = (id) => {
@@ -170,7 +169,7 @@ export default class FriendsScreen extends Component {
                                 <TouchableOpacity
                                     onPress={()=> handleRemoveFriend(item.id)}
                                     style={styles.removeButton}>
-                                    <Text style = {{color: colors.text_button, fontSize: 10, fontWeight: 'bold'}}>Remove Friend</Text>
+                                    <Text style={styles.buttonText}>Remove Friend</Text>
                                 </TouchableOpacity>
     
                             </View>

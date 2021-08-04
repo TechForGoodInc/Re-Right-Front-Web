@@ -1,6 +1,6 @@
 //Friends Page
 import React, {Component, useState} from 'react';
-import { View,StyleSheet, Text, Image, FlatList, TextInput, TouchableOpacity} from 'react-native';
+import { View,StyleSheet, Text, Image, FlatList, TextInput, TouchableOpacity, Pressable} from 'react-native';
 
 import '../../../config/global';
 import color from '../../../config/colors';
@@ -85,20 +85,20 @@ export default class RecommendedFriendsScreen extends Component {
                 alignSelf: 'center',
             },
             friendButton : {
-                padding: 5,
+                flex: 1,
                 margin: 20,
-                height: '60%',
-                width: '20%',
-                backgroundColor:colors.primary,
+                backgroundColor: colors.button_request_friend,
+                borderRadius: 10,
                 alignSelf: 'center',
                 alignItems: 'center',
+                justifyContent: 'center',
                 position: 'absolute',
+                right: 0,
+                padding: '1%',
             },
             newRecommendationsButton: {
+                width: "25%",
                 backgroundColor: colors.button_new_recommendations,
-                width: "20%",
-                height: 50,
-                marginTop: '2%',
                 alignSelf: 'center',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -107,12 +107,11 @@ export default class RecommendedFriendsScreen extends Component {
                 borderRadius: 10,
                 shadowColor: colors.shadow,
                 shadowRadius: 10, 
+                padding: '1%',
             },
             changeCriteriaButton: {
+                width: "25%",
                 backgroundColor: colors.button_change_criteria,
-                width: "20%",
-                height: 50,
-                marginTop: '2%',
                 alignSelf: 'center',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -120,16 +119,22 @@ export default class RecommendedFriendsScreen extends Component {
                 borderWidth: 1,
                 borderRadius: 10,
                 shadowColor: colors.shadow,
-                shadowRadius: 10, 
+                shadowRadius: 10,
+                padding: '1%',
             },
             buttonContainer: {
-                flex: 1,
+                width: '100%',
                 flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: 'space-evenly',
                 marginTop: '2%',
             },
-
+            buttonText: {
+                flexDirection: 'row',
+                fontSize: 16,
+                fontWeight: 'bold',
+                letterSpacing: 0.25,
+                color: colors.text_button,
+            },
           });
         const handleRemoveFriend = (id) => {
             var newFriendsList = this.state.friendsList;
@@ -152,11 +157,22 @@ export default class RecommendedFriendsScreen extends Component {
                     </Text>
                 </View>
                 <View style={styles.buttonContainer}>
-
+                    <Pressable style={({pressed}) => [{
+                        backgroundColor: pressed ? colors.button_pressed : colors.button_new_recommendations,},
+                        styles.newRecommendationsButton,]}
+                        onPress={() => handleRecommendedPress()}>
+                        <Text style={styles.buttonText}>See New Users</Text>
+                    </Pressable>
+                    <Pressable style={({pressed}) => [{
+                        backgroundColor: pressed ? colors.button_pressed : colors.button_change_criteria,},
+                        styles.changeCriteriaButton,]}
+                        onPress={() => handleRecommendedPress()}>
+                        <Text style={styles.buttonText}>Change Criteria</Text>
+                    </Pressable>
                 </View>
                 
                 <View style ={styles.friendsContainer}>
-                    <Text style = {styles.friendsNum}>{this.state.friendsList.length} Friends</Text>
+                    <Text style = {styles.friendsNum}>{this.state.friendsList.length} Recommended Friends</Text>
                     <FlatList
                         data={this.state.friendsList}
                         keyExtractor={item => item.id}
@@ -169,8 +185,8 @@ export default class RecommendedFriendsScreen extends Component {
                                 </View>
                                 <TouchableOpacity
                                     onPress={()=> handleRemoveFriend(item.id)}
-                                    style={styles.removeButton}>
-                                    <Text style = {{color: colors.white, fontSize: 10, fontWeight: 'bold'}}>Remove Friend</Text>
+                                    style={styles.friendButton}>
+                                    <Text style = {styles.buttonText}>Request Friend</Text>
                                 </TouchableOpacity>
     
                             </View>
