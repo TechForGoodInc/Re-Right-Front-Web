@@ -7,22 +7,22 @@ import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
 
 const data = [
-    { id: '0', title: 'Abhinav Gupta', mutual: '25' },
-    { id: '1', title: 'Nyun Ei Hlaing', mutual: '23' },
-    { id: '2', title: 'Nicolas Prate', mutual: '12' },
-    { id: '3', title: 'Nathan Cook', mutual: '30' },
-    { id: '4', title: 'Abhinav Gupta', mutual: '25' },
-    { id: '5', title: 'Nyun Ei Hlaing', mutual: '23' },
-    { id: '6', title: 'Nicolas Prate', mutual: '12' },
-    { id: '7', title: 'Nathan Cook', mutual: '30' },
-    { id: '8', title: 'Abhinav Gupta', mutual: '25' },
-    { id: '9', title: 'Nyun Ei Hlaing', mutual: '23' },
-    { id: '10', title: 'Nicolas Prate', mutual: '12' },
-    { id: '11', title: 'Nathan Cook', mutual: '30' },
-    { id: '12', title: 'Abhinav Gupta', mutual: '25' },
-    { id: '13', title: 'Nyun Ei Hlaing', mutual: '23' },
-    { id: '14', title: 'Nicolas Prate', mutual: '12' },
-    { id: '15', title: 'Nathan Cook', mutual: '30' },
+    { id: '0', title: 'Abhinav Gupta', mutual: '25', bio: "I love food. I enjoy breathing. And human rights are cool!" },
+    { id: '1', title: 'Nyun Ei Hlaing', mutual: '23', bio: "I hate food, don't mind breathing, and hope to learn more about human rights!"},
+    { id: '2', title: 'Nicolas Prate', mutual: '12', bio: "I am mysterious. Ask me a question and I will respond with two."},
+    { id: '3', title: 'Nathan Cook', mutual: '30', bio: "I have so much to say that my biography is super duper uber luber long. I like to flex my wordcount and don't write ANYTHING that can fit on a single line. HAHHAHAHAHA I hope your code can handle my impecable wordy strings! Oh, I almost forgot ... HELLO WORLD! :)"},
+    { id: '4', title: 'Abhinav Gupta', mutual: '25', bio: "I am mysterious. Ask me a question and I will respond with two."},
+    { id: '5', title: 'Nyun Ei Hlaing', mutual: '23', bio: "I love food. I enjoy breathing. And human rights are cool!" },
+    { id: '6', title: 'Nicolas Prate', mutual: '12', bio: "I have so much to say that my biography is super duper uber luber long. I like to flex my wordcount and don't write ANYTHING that can fit on a single line. HAHHAHAHAHA I hope your code can handle my impecable wordy strings! Oh, I almost forgot ... HELLO WORLD! :)" },
+    { id: '7', title: 'Nathan Cook', mutual: '30', bio: "I am mysterious. Ask me a question and I will respond with two."},
+    { id: '8', title: 'Abhinav Gupta', mutual: '25', bio: "I love food. I enjoy breathing. And human rights are cool!" },
+    { id: '9', title: 'Nyun Ei Hlaing', mutual: '23', bio: "I hate food, don't mind breathing, and hope to learn more about human rights!" },
+    { id: '10', title: 'Nicolas Prate', mutual: '12', bio: "I am mysterious. Ask me a question and I will respond with two."},
+    { id: '11', title: 'Nathan Cook', mutual: '30', bio: "I love food. I enjoy breathing. And human rights are cool!" },
+    { id: '12', title: 'Abhinav Gupta', mutual: '25', bio: "I am mysterious. Ask me a question and I will respond with two."},
+    { id: '13', title: 'Nyun Ei Hlaing', mutual: '23', bio: "I have so much to say that my biography is super duper uber luber long. I like to flex my wordcount and don't write ANYTHING that can fit on a single line. HAHHAHAHAHA I hope your code can handle my impecable wordy strings! Oh, I almost forgot ... HELLO WORLD! :)" },
+    { id: '14', title: 'Nicolas Prate', mutual: '12', bio: "I love food. I enjoy breathing. And human rights are cool!" },
+    { id: '15', title: 'Nathan Cook', mutual: '30', bio: "I am mysterious. Ask me a question and I will respond with two."},
 ]
 
 export default class FriendsScreen extends Component {
@@ -76,29 +76,29 @@ export default class FriendsScreen extends Component {
                 borderBottomWidth: 0.5,
                 paddingTop: 30,
                 paddingBottom: 20,
+                paddingRight: '5%',
                 width: '100%',
                 flexDirection: 'row',
                 flex: 1,
+                justifyContent: 'space-between',
             },
             profilePic: {
-                width: '10%',
-                height: '200%',
+                width: '50%',
+                height: '100%',
                 resizeMode: 'contain',
                 borderRadius: 100,
-                marginLeft: '5%',
-                alignSelf: 'center',
+                marginLeft: '2%',
+                alignSelf: 'flex-start',
             },
             removeButton : {
-                flex: 1,
-                margin: 20,
+                width: '20%',
                 backgroundColor: colors.button_delete,
                 borderRadius: 10,
                 alignSelf: 'center',
                 alignItems: 'center',
                 justifyContent: 'center',
-                position: 'absolute',
-                right: 0,
                 padding: '1%',
+                //margin: '%',
             },
             buttonText: {
                 fontSize: 16,
@@ -119,7 +119,40 @@ export default class FriendsScreen extends Component {
                 shadowColor: colors.shadow,
                 shadowRadius: 10, 
                 padding: '1%',
+                margin: '1%',
             },
+            profilePicNameContainer: {
+                width: '30%',
+                flexDirection: 'row',
+                justifyContent: 'flex-start',
+                margin: '1%',
+            },
+            profileNameContainer: {
+                width: '50%',
+                justifyContent: 'center',
+            },
+            profileNameText: {
+                color: colors.text_general,
+                fontWeight: '700',
+                alignSelf: 'flex-start',
+            },
+            mutualFriendsText: {
+                fontSize:15,
+                color: colors.text_general,
+                fontWeight: '700',
+                alignSelf: 'flex-start',
+                paddingTop: '5%',
+            },
+            bioContainer: {
+                width: '50%',
+                alignItems: 'center',
+                margin: '1%',
+            },
+            bioText: {
+                fontSize: 12,
+                letterSpacing: 0.25,
+                color: colors.text_subtitle,
+            }
           });
         const handleRemoveFriend = (id) => {
             var newFriendsList = this.state.friendsList;
@@ -160,23 +193,29 @@ export default class FriendsScreen extends Component {
                         data={this.state.friendsList}
                         keyExtractor={item => item.id}
                         renderItem={({ item }) => (
-                            <View style={styles.listItem}>
+                            
+                        <View style={styles.listItem}>
+
+                            <View style={styles.profilePicNameContainer}>
                                 <Image style = {styles.profilePic} source = { require("../../../assets/userpfp.png") }/>
-                                <View style = {{marginLeft:'3%'}}>
-                                    <Text style= {{fontSize:15, color: colors.text_general, fontWeight: '700' }}>{item.title}</Text>
-                                    <Text style={{paddingTop: 5, color: colors.text_subtitle}}>{item.mutual} mutual friends</Text>
+                                <View style = {styles.profileNameContainer}>
+                                    <Text style= {styles.profileNameText}>{item.title}</Text>
+                                    <Text style={styles.mutualFriendsText}>{item.mutual} mutual friends</Text>
                                 </View>
-                                <TouchableOpacity
-                                    onPress={()=> handleRemoveFriend(item.id)}
-                                    style={styles.removeButton}>
-                                    <Text style={styles.buttonText}>Remove Friend</Text>
-                                </TouchableOpacity>
-    
                             </View>
-                        )}
-                    />
+
+                            <View style={styles.bioContainer}>
+                                <Text style={styles.bioText} numberOfLines={4}>{item.bio}</Text>
+                            </View>
+                            
+                            <TouchableOpacity
+                                onPress={()=> handleRemoveFriend(item.id)}
+                                style={styles.removeButton}>
+                                <Text style={styles.buttonText}>Remove Friend</Text>
+                            </TouchableOpacity>
+                        </View>
+                    )}/>
                 </View> 
-            
           </View>
         ); 
     }
