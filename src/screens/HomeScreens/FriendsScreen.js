@@ -42,7 +42,7 @@ export default class FriendsScreen extends Component {
             searchBar: {
                 flexDirection: 'row',
                 width: '90%',
-                marginTop: 30,
+                marginTop: '2%',
                 flex: 1,
                 borderRadius: 20,
                 borderWidth: 0.2,
@@ -62,7 +62,7 @@ export default class FriendsScreen extends Component {
             },
             friendsContainer: {
                 width: '100%',
-                marginTop: "5%",
+                marginTop: '2%',
                 flex: 20,
                 backgroundColor: colors.background_list_item,
             },
@@ -91,29 +91,33 @@ export default class FriendsScreen extends Component {
             removeButton : {
                 padding: 5,
                 margin: 20,
-                height: '60%',
-                width: '20%',
-                backgroundColor: colors.primary,
+                height: '30%',
+                width: '10%',
+                backgroundColor: colors.button_delete,
+                borderRadius: 10,
                 alignSelf: 'center',
                 alignItems: 'center',
+                justifyContent: 'center',
                 position: 'absolute',
                 right: 0,
             },
             buttonText: {
                 fontSize: 16,
-                lineHeight: 21,
                 fontWeight: 'bold',
                 letterSpacing: 0.25,
                 color: 'white',
             },
             recommendedButton: {
-                width: "15%",
+                backgroundColor: colors.button_recommended_friends,
+                width: "20%",
                 height: 50,
-                justifyContent: "flex-end",
-                padding: '1%',
-                alignItems: "center",
-                borderTopColor: colors.border,
-                borderTopWidth: 1,
+                marginTop: '2%',
+                alignSelf: 'center',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderColor: colors.border,
+                borderWidth: 1,
+                borderRadius: 10,
                 shadowColor: colors.shadow,
                 shadowRadius: 10, 
             },
@@ -137,6 +141,12 @@ export default class FriendsScreen extends Component {
         }
         return (
             <View style={styles.container}>
+                <Pressable style={({pressed}) => [{
+                    backgroundColor: pressed ? colors.button_pressed : colors.button_recommended_friends,},
+                    styles.recommendedButton,]}
+                    onPress={() => handleRecommendedPress()}>
+                    <Text style={styles.buttonText}>Recommended Friends</Text>
+                </Pressable>
                 <View style = {styles.searchBar}>
                     <Image style={styles.searchIcon} source={require('../../../assets/search.png')}/>
                     <TextInput 
@@ -144,12 +154,6 @@ export default class FriendsScreen extends Component {
                         placeholder = "Search Friends">
                     </TextInput>
                 </View>
-                <Pressable style={({pressed}) => [{
-                    backgroundColor: pressed ? colors.button_pressed : colors.button_recommended_friends,},
-                    styles.recommendedButton,]}
-                    onPress={() => handleRecommendedPress()}>
-                    <Text style={styles.buttonText}>Recommended Friends</Text>
-                </Pressable>
                 
                 <View style ={styles.friendsContainer}>
                     <Text style = {styles.friendsNum}>{this.state.friendsList.length} Friends</Text>
@@ -166,7 +170,7 @@ export default class FriendsScreen extends Component {
                                 <TouchableOpacity
                                     onPress={()=> handleRemoveFriend(item.id)}
                                     style={styles.removeButton}>
-                                    <Text style = {{color: colors.white, fontSize: 10, fontWeight: 'bold'}}>Remove Friend</Text>
+                                    <Text style = {{color: colors.text_button, fontSize: 10, fontWeight: 'bold'}}>Remove Friend</Text>
                                 </TouchableOpacity>
     
                             </View>

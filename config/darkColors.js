@@ -58,6 +58,9 @@ export default  {
         button_retry_quiz_pressed: "grey",
         button_connect: "#3987CE",
         button_recommended_friends: "#3987CE",
+        button_delete: "red",
+        button_new_recommendations: "#3987CE",
+        button_change_criteria: "#3987CE",
 
 
         tintColor: 'white',

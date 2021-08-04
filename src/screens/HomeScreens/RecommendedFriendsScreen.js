@@ -25,7 +25,7 @@ const data = [
     { id: '15', title: 'Nathan Cook', mutual: '30' },
 ]
 
-export default class RecommondedFriendsScreen extends Component {
+export default class RecommendedFriendsScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {friendsList: data};
@@ -40,13 +40,10 @@ export default class RecommondedFriendsScreen extends Component {
               backgroundColor: colors.background_screen,
             },
             headerContainer: {
-                flexDirection: 'row',
-                width: '90%',
-                marginTop: 30,
+                marginTop: '2%',
                 flex: 1,
-                borderRadius: 20,
-                borderWidth: 0.2,
-                borderColor: colors.border
+                justifyContent: 'center',
+                alignItems: 'center',
             },
             searchIcon: {
                 position: 'absolute',
@@ -55,14 +52,13 @@ export default class RecommondedFriendsScreen extends Component {
                 tintColor: colors.tintColor
             },
             headerText: {
-                flex: 1,
-                padding: 10,
-                paddingLeft: 30,  
-                color: colors.text_general   
+                fontSize: 18,
+                fontWeight: 'bold',
+                color: colors.text_screen_header,
             },
             friendsContainer: {
                 width: '100%',
-                marginTop: "5%",
+                marginTop: "2%",
                 flex: 20,
                 backgroundColor: colors.background_list_item,
             },
@@ -88,7 +84,7 @@ export default class RecommondedFriendsScreen extends Component {
                 marginLeft: '5%',
                 alignSelf: 'center',
             },
-            removeButton : {
+            friendButton : {
                 padding: 5,
                 margin: 20,
                 height: '60%',
@@ -97,7 +93,41 @@ export default class RecommondedFriendsScreen extends Component {
                 alignSelf: 'center',
                 alignItems: 'center',
                 position: 'absolute',
-                right: 0,
+            },
+            newRecommendationsButton: {
+                backgroundColor: colors.button_new_recommendations,
+                width: "20%",
+                height: 50,
+                marginTop: '2%',
+                alignSelf: 'center',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderColor: colors.border,
+                borderWidth: 1,
+                borderRadius: 10,
+                shadowColor: colors.shadow,
+                shadowRadius: 10, 
+            },
+            changeCriteriaButton: {
+                backgroundColor: colors.button_change_criteria,
+                width: "20%",
+                height: 50,
+                marginTop: '2%',
+                alignSelf: 'center',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderColor: colors.border,
+                borderWidth: 1,
+                borderRadius: 10,
+                shadowColor: colors.shadow,
+                shadowRadius: 10, 
+            },
+            buttonContainer: {
+                flex: 1,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '2%',
             },
 
           });
@@ -120,6 +150,9 @@ export default class RecommondedFriendsScreen extends Component {
                     <Text style={styles.headerText}>
                         Recommended Friends
                     </Text>
+                </View>
+                <View style={styles.buttonContainer}>
+
                 </View>
                 
                 <View style ={styles.friendsContainer}>
