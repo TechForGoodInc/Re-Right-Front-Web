@@ -1,6 +1,6 @@
 //Friends Page
 import React, {Component, useState} from 'react';
-import { View,StyleSheet, Text, Image, FlatList, TextInput, TouchableOpacity, Pressable} from 'react-native';
+import { View,StyleSheet, Text, Image, FlatList, TextInput, TouchableOpacity, Pressable, Alert} from 'react-native';
 
 import '../../../config/global';
 import color from '../../../config/colors';
@@ -121,6 +121,20 @@ export default class FriendsScreen extends Component {
                 padding: '1%',
             },
           });
+
+        const removeFriendAlert = (id,name) => {
+            Alert.alert(
+                "Unfriend " + name,
+                "Are you sure you want to remove \n" + name + " as your friend?",
+                [
+                  { text: "Cancel"},
+                  {
+                    text: "Confirm",
+                    onPress: () => {handleRemoveFriend(id)},
+                  },
+                ]
+              );
+        }
         const handleRemoveFriend = (id) => {
             var newFriendsList = this.state.friendsList;
             var indexToRemove = 0;
@@ -167,7 +181,7 @@ export default class FriendsScreen extends Component {
                                     <Text style={{paddingTop: 5, color: colors.text_subtitle}}>{item.mutual} mutual friends</Text>
                                 </View>
                                 <TouchableOpacity
-                                    onPress={()=> handleRemoveFriend(item.id)}
+                                    onPress={()=> removeFriendAlert(item.id, item.title)}
                                     style={styles.removeButton}>
                                     <Text style={styles.buttonText}>Remove Friend</Text>
                                 </TouchableOpacity>
