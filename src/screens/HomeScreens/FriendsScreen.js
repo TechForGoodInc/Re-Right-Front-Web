@@ -97,7 +97,13 @@ export default function FriendsScreen() {
     const [list, setList] = useState(data);
     const handleRemoveFriend = (id) => {
         var newList = list;
-        newList.splice(id,1);
+        var indexToRemove = 0;
+        for (var i = 0; i < list.length; i++) {
+            if (list[i].id === id) {
+                indexToRemove = i;
+            }
+        }
+        newList.splice(indexToRemove,1);
         setList(newList);
         console.log(JSON.stringify(list));
         console.log(id);
