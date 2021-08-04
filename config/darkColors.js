@@ -46,6 +46,7 @@ export default  {
         background_friend: "#3987CE",
         background_list_item: '#212121',
         background_post_type: '#212121',
+        background_friends_list_item: "#212121",
 
         button_signup: "#FCD681",
         button_login: "#3987CE",
