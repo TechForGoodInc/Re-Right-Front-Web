@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import colors from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
-import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
+import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput,Platform } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 const viewConstants = {
@@ -109,8 +109,11 @@ export default function SignupScreen3({navigation}) {
         },
     })
     const handleSubmitPress = () => {
-        // Submit suggestion to a suggestion database ?
-        navigation.navigate("Research Analytics");
+        if (Platform.OS === 'web') {
+            alert("Report Successfully Submitted");
+        } else {
+            Alert.alert("Success!", "Report Submitted");
+        }
     }
 
     return ( 
