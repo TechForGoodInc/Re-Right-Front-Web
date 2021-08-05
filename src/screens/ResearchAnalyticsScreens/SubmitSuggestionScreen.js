@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import colors from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
@@ -21,6 +22,7 @@ const viewConstants = {
 
 export default function SignupScreen3({navigation}) {
     //getting the dimensions and the orientation
+    const colors = global.isDarkModeEnabled? darkColors: color; 
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are here
