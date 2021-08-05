@@ -30,12 +30,18 @@ export default  {
         text_question_number: "#3987CE",
         text_subtitle: "white",
         text_quiz: "white",
+        text_input: "grey",
+        text_button: "white",
 
         border: "white",
         border_input_text: "black",
         border_button: "black",
         tab_background: 'black',
         shadow: "black",
+        border_input_text: "white",
+        border_button: "white",
+
+        shadow: "white",
 
         header_border: '#181829',
         header_shadow: "#242424",
@@ -46,6 +52,7 @@ export default  {
         background_friend: "#3987CE",
         background_list_item: '#212121',
         background_post_type: '#212121',
+        background_friends_list_item: "#212121",
 
         button_signup: "#FCD681",
         button_login: "#3987CE",
@@ -57,6 +64,13 @@ export default  {
         button_retry_quiz: "#3987CE",
         button_retry_quiz_pressed: "grey",
         button_connect: "#3987CE",
+        button_recommended_friends: "#3987CE",
+        button_delete: "red",
+        button_new_recommendations: "#3987CE",
+        button_change_criteria: "#3987CE",
+        button_request_friend: "green",
+
+
         tintColor: 'white',
 
         // Palette end

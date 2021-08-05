@@ -15,6 +15,7 @@ import HomeDrawer from './HomeDrawer';
 
 import LoggedOutScreen from '../screens/LoggedOutScreen';
 import colors from '../../config/colors';
+import ReRightApp from '../ReRightApp';
 
 const Drawer = createDrawerNavigator();
 

@@ -3,8 +3,9 @@ import { Text, TouchableWithoutFeedback, View, StyleSheet, Pressable, Alert, Key
 import { KeycodeInput } from 'react-native-keycode';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
-
-import colors from '../../../config/colors';
+import color from "../../../config/colors";
+import darkColors from "../../../config/darkColors";
+import '../../../config/global';
 
 const viewConstants = {
     containerTopMargin: '10%',
@@ -25,6 +26,7 @@ const viewConstants = {
 const CODE_LENGTH = 6;
 
 export default function ForgotPassScreen2({navigation}) {
+    var colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are here
@@ -67,7 +69,8 @@ export default function ForgotPassScreen2({navigation}) {
         label: {
             fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
             padding: viewConstants.labelPadding,
-            marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0
+            marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0,
+            color: colors.text_general,
         },
         inputText: {
             borderWidth: viewConstants.textBoxBorderWidth,
@@ -77,6 +80,7 @@ export default function ForgotPassScreen2({navigation}) {
             padding: viewConstants.textBoxPadding,
             fontSize:  ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
             marginHorizontal: viewConstants.textBoxPadding,
+            color: colors.text_input,
         },
         screenBackground: {
             flex: 1,
@@ -93,9 +97,13 @@ export default function ForgotPassScreen2({navigation}) {
             },
         continueButton: {
             width: "100%",
-            height: 70,
+            height: 50,
             justifyContent: "center",
             alignItems: "center",
+            borderTopColor: colors.border,
+            borderTopWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10, 
         },
     })
     const handleContinuePress = () => {

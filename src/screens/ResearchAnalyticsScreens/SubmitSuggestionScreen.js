@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import colors from '../../../config/colors';
-import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
+import darkColors from '../../../config/darkColors';
+import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput,Platform } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 const viewConstants = {
@@ -21,6 +22,7 @@ const viewConstants = {
 
 export default function SignupScreen3({navigation}) {
     //getting the dimensions and the orientation
+    const colors = global.isDarkModeEnabled? darkColors: color; 
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are here
@@ -107,8 +109,17 @@ export default function SignupScreen3({navigation}) {
         },
     })
     const handleSubmitPress = () => {
-        // Submit suggestion to a suggestion database ?
-        navigation.navigate("Research Analytics");
+        if (Platform.OS === 'web') {
+            alert("Report Successfully Submitted");
+        } else {
+            Alert.alert("Success!", "Report Submitted");
+        }
+        navigation.reset({
+            index: 0,
+            routes: [{name: 'Research Anayltics'}],
+          });
+        // Jumps to the Home page of the hamburger menu
+        navigation.jumpTo("Home");
     }
 
     return ( 

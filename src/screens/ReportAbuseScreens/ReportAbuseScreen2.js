@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, TextInput, Text, Pressable, Platform, Alert} from 'react-native';
+import {SafeAreaView, StyleSheet, TextInput, Text, Pressable, Platform, Alert, View} from 'react-native';
 
 import '../../../config/global';
 import color from '../../../config/colors';
@@ -29,15 +29,18 @@ export default function ReportAbuseScreen2({ navigation }) {
             backgroundColor: colors.background_screen,
         },
         pretext:{
-            alignSelf: 'center',
+            fontSize: 18,
             color: colors.text_general,
+            alignSelf: 'center',
         },
         textinput: {
             width: '80%',
             height: '15%',
             alignSelf: 'center',
             backgroundColor: colors.background_post_type,
-            color: colors.text_general,
+            color: colors.text_input,
+            borderRadius: 15,
+            padding: '1%'
         },
         buttonText: {
             fontSize: 16,
@@ -55,66 +58,51 @@ export default function ReportAbuseScreen2({ navigation }) {
         linkText: {
             color: colors.hyperlink,
             fontSize: 18,
-            marginBottom: '2%',
+            marginTop: '2%',
+            marginBottom: '1%',
             alignSelf: 'center',
         },
       });
     return (
         <SafeAreaView style={styles.screenBackground}>
-            <Text
-                style = {styles.pretext}
-            >
+            <Text style={styles.linkText}
+                onPress ={() => navigation.navigate('Recap Rights')}>
+                    Recap Your Rights?
+            </Text>
+            <Text style = {styles.pretext}>
                 Human Right Violated
             </Text>        
             <TextInput
-            style = {styles.textinput}
-            placeholder=" Enter the Human Right Violated"
-            multiline={true} 
-            >
+                style = {styles.textinput}
+                placeholder=" Enter the Human Right Violated"
+                multiline={true} >
             </TextInput>
 
-            <Text style={styles.linkText}
-                onPress ={() => navigation.navigate('Recap Rights')}>
-                    Don't Know?
-            </Text>
 
-            <Text
-                style = {styles.pretext}
-            >
+            <Text style = {styles.pretext}>
                 Location
             </Text>     
-            <TextInput
-            style = {styles.textinput}
-            placeholder=" Enter the Location of the Violation"
-            multiline={true} 
-            >
+            <TextInput style = {styles.textinput}
+                placeholder=" Enter the Location of the Violation"
+                multiline={true} >
             </TextInput>
 
 
-            <Text
-                style = {styles.pretext}
-            >
+            <Text style = {styles.pretext} >
                 Date of Occurence
             </Text>   
-            <TextInput
-            style = {styles.textinput}
-            placeholder=" Enter the Date of the Violation" 
-            multiline={true}
-            >
+            <TextInput style = {styles.textinput}
+                placeholder=" Enter the Date of the Violation" 
+                multiline={true} >
             </TextInput>
 
 
-            <Text
-                style = {styles.pretext}
-            >
+            <Text style = {styles.pretext} >
                 Offender?
             </Text>   
-            <TextInput
-            style = {styles.textinput}
-            placeholder=" Describe the Person Who Committed the Crime"
-            multiline={true}
- 
-            >
+            <TextInput style = {styles.textinput}
+                placeholder=" Describe the Person Who Committed the Crime"
+                multiline={true}>
             </TextInput>
             <Pressable style={({pressed}) => [{
                 backgroundColor: pressed ? colors.button_pressed : colors.button_submit,},

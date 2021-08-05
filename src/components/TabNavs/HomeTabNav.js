@@ -17,23 +17,57 @@ import '../../../config/global';
 import { useEffect } from 'react';
 import {Image} from 'react-native';
 
-const BottomTabs = createBottomTabNavigator();
-const TabStyle = AppStyles.TabStyle;
-const TabLabelStyle = AppStyles.TabLabelStyle;
+import { useEffect } from 'react';
 
 export default function HomeTabNav() {
     const colors = global.isDarkModeEnabled? darkColors: color; 
     const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(global.isDarkModeEnabled);
+    const colors = global.isDarkModeEnabled ? darkColors : color;
+    const AppStyles = StyleSheet.create({
+        StackHeaderStyle: { // Currently used by all stack navs
+            backgroundColor: colors.background_stack_header,
+            borderBottomColor: colors.border,
+            borderBottomWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10,
+            height: 50,
+        },
+        ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
+            backgroundColor: colors.primary,
+        },
+        StackTitleStyle: {
+            fontWeight: 'bold',
+            letterSpacing: 0.25,
+            fontSize: 20,
+            color: colors.text_stack_title,
+        },
+        StackBackTitleStyle: {
+            color: colors.text_stack_back_title,
+        },
+        TabStyle: {
+            borderColor: colors.border,
+            borderWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10,
+        },
+        TabLabelStyle: {
+            fontWeight: 'bold',
+            letterSpacing: 0.25,
+            fontSize: 16,
+            color: colors.text_tab_label, 
+        },
+        ScreenBackground: {
+            backgroundColor: colors.background_screen,
+            flex: 1,
+            alignItems: 'center',
+        }
+    });
+    const BottomTabs = createBottomTabNavigator();
+    const TabStyle = AppStyles.TabStyle;
+    const TabLabelStyle = AppStyles.TabLabelStyle;
     useEffect(() => {
         setIsDarkModeEnabled(global.isDarkModeEnabled);
         }, []);
-    let Colors = colors;
-    /*let Colors = {};
-    if (Platform.OS === 'web') {
-        Colors = colors;
-    } else {
-        Colors = colorsTest;
-    } Can use a different color import based on a conditional (need to link up dark mode state)*/
     return (
         <BottomTabs.Navigator initialRoute="Home" 
             unmountOnBlur= {true}

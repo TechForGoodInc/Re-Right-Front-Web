@@ -30,6 +30,8 @@ export default  {
         text_question_number: "#3987CE",
         text_subtitle: "black",
         text_quiz: "black",
+        text_input: "black",
+        text_button: "white",
 
         border: "black",
         border_input_text: "black",
@@ -44,6 +46,7 @@ export default  {
         background_list_item: 'white',
         background_friend: "#3987CE",
         background_post_type: "white",
+        background_friends_list_item: "white",
 
         button_signup: "#FCD681",
         button_login: "#3987CE",
@@ -55,6 +58,12 @@ export default  {
         button_retry_quiz: "#3987CE",
         button_retry_quiz_pressed: "grey",
         button_connect: "#3987CE",
+        button_recommended_friends: "#3987CE",
+        button_delete: "red",
+        button_new_recommendations: "#3987CE",
+        button_change_criteria: "#3987CE",
+        button_request_friend: "green",
+
         tintColor: 'black',
 
 

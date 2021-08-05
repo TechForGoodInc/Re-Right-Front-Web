@@ -7,12 +7,15 @@ import darkColors from "../../config/darkColors";
 import '../../config/global';
 
 export default function LoggedOutScreen({navigation}) {
+<<<<<<< HEAD
     const colorScheme = useColorScheme();
     const [isDark, setIsDark] = useState(colorScheme === "dark");
     useEffect(() => {
       setIsDark(colorScheme==="dark");
       global.isDarkModeEnabled = isDark? true : false;
         }, [colorScheme]);
+=======
+>>>>>>> ecc4405b0e908e0cf770a3adf04d7e3cdd791fda
     const {landscape} = useDeviceOrientation();
     const {width, height} = useDimensions();
     var colors = global.isDarkModeEnabled ? darkColors : color;
@@ -21,7 +24,7 @@ export default function LoggedOutScreen({navigation}) {
     const styles = StyleSheet.create({
         titleView: {
             flex: 1,
-            justifyContent: 'flex-start'
+            justifyContent: 'flex-start',
         },
         logo: {
             height: 20,
@@ -39,36 +42,40 @@ export default function LoggedOutScreen({navigation}) {
             flex: 1,
             alignItems: 'center',
             justifyContent: 'flex-end',
-            backgroundColor: colors.background_post_type,
+            backgroundColor: colors.background_screen,
         },
-        buttonContainer: {
+        buttonContainer: {          
             flexDirection: 'row',
             alignSelf: 'stretch',
         },
         loginButton: {
             width: "50%",
-            height: 70,
+            height: 50,
             justifyContent: "center",
             alignItems: "center",
-            borderColor: colors.border_button,
-            borderWidth: 2,
+            borderTopColor: colors.border,
+            borderLeftColor: colors.border,
+            borderTopWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10,  
             
         },
         signupButton: {
             width: "50%",
-            height: 70,
+            height: 50,
             justifyContent: "center",
             alignItems: "center",
-            borderColor: colors.border_button,
-            borderWidth: 2,
-            borderRightWidth: 0,
+            borderColor: colors.border,
+            borderTopWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10,  
         },
-        text: {
+        buttonText: {
           fontSize: 16,
           lineHeight: 21,
           fontWeight: 'bold',
           letterSpacing: 0.25,
-          color: 'white',
+          color: colors.text_button,
         },
       });
 
@@ -91,7 +98,7 @@ export default function LoggedOutScreen({navigation}) {
                     styles.signupButton,]}
                     onPress={() => handleSignupRoute()}>
 
-                    <Text style={styles.text}>To Signup</Text>
+                    <Text style={styles.buttonText}>To Signup</Text>
                 </Pressable>
                 
                 <Pressable style={({pressed}) => [{
@@ -99,7 +106,7 @@ export default function LoggedOutScreen({navigation}) {
                     styles.loginButton,]}
                     onPress={() => handleLoginRoute()}>
 
-                    <Text style={styles.text}>To Login</Text>
+                    <Text style={styles.buttonText}>To Login</Text>
                 </Pressable>
             </View>
         </SafeAreaView>

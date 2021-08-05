@@ -1,7 +1,10 @@
 import React, { Component, useState } from 'react';
-import colors from '../../../config/colors';
 import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 
 const viewConstants = {
@@ -21,6 +24,7 @@ const viewConstants = {
 }
 
 const SignupScreen3 = ({navigation}) => {
+    const colors = global.isDarkModeEnabled ? darkColors : color;
     //getting the dimensions and the orientation
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
@@ -100,6 +104,10 @@ const SignupScreen3 = ({navigation}) => {
             height: ( landscape|| width>height) ? 45 : 70,
             justifyContent: "center",
             alignItems: "center",
+            borderTopColor: colors.border,
+            borderTopWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10, 
         },
         linkText: {
             color: colors.hyperlink,

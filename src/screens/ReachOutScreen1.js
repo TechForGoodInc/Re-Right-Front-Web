@@ -3,6 +3,7 @@ import colors from '../../config/colors';
 import { Pressable, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 import CheckBoxHybrid from '../components/CheckBoxHybrid';
+
 import '../../config/global';
 import color from '../../config/colors';
 import darkColors from '../../config/darkColors';
@@ -105,6 +106,10 @@ export default function ReachOutScreen1({navigation}) {
             height: ( landscape|| width>height) ? 45 : 70,
             justifyContent: "center",
             alignItems: "center",
+            borderColor: colors.border,
+            borderWidth: 1,
+            shadowColor: colors.shadow,
+            shadowRadius: 10, 
         },
         linkText: {
             color: colors.hyperlink,
