@@ -7,18 +7,22 @@ import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
 import { AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import { Platform, StyleSheet } from 'react-native';
-import colors from '../../../config/colors';
+  import '../../../config/global';
+  import color from '../../../config/colors';
+  import darkColors from '../../../config/darkColors';
 import colorsTest from '../../../config/colorsTest';
 import { AppStyles } from '../../../config/styles';
 //this global file has the dark mode value
 import '../../../config/global';
 import { useEffect } from 'react';
+import {Image} from 'react-native';
 
 const BottomTabs = createBottomTabNavigator();
 const TabStyle = AppStyles.TabStyle;
 const TabLabelStyle = AppStyles.TabLabelStyle;
 
 export default function HomeTabNav() {
+    const colors = global.isDarkModeEnabled? darkColors: color; 
     const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(global.isDarkModeEnabled);
     useEffect(() => {
         setIsDarkModeEnabled(global.isDarkModeEnabled);
@@ -37,8 +41,6 @@ export default function HomeTabNav() {
             params = {{ isItDark: isDarkModeEnabled }}
             tabBarOptions={{ 
             unmountOnBlur: true,
-            activeBackgroundColor: colors.active_tab,
-            inactiveBackgroundColor: colors.inactive_tab,
             keyboardHidesTabBar: true,
             tabStyle: TabStyle,
             labelStyle: TabLabelStyle,
@@ -49,24 +51,35 @@ export default function HomeTabNav() {
                 initialParams={{isItDark: isDarkModeEnabled}}
                 params = {{ isItDark: isDarkModeEnabled }}
                 options={{   
+                activeTintColor: colors.active_tab,
+                inactiveTintColor: colors.background_screen, 
                 unmountOnBlur: true,
-                tabBarIcon: () => <AntDesign name="home" size={24} color="black"/>
+                tabBarIcon: () => <Image style={{ tintColor: colors.inactive_tab, height: 28, width: 28}} source = {require('../../../assets/home.png')} />
             }}/>
             <BottomTabs.Screen name="Chat" component={ChatStackNav} options={{
                 unmountOnBlur: true,
-                tabBarIcon: () => <AntDesign name="wechat" size={24} color="black" />
+                activeTintColor: colors.active_tab,
+                inactiveTintColor: colors.background_screen, 
+
+                tabBarIcon: () => <AntDesign name="wechat" size = {28} />
             }}/>
             <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}
                 options={{title: "Create Post",
+                    activeTintColor: colors.active_tab,
+                    inactiveTintColor: colors.background_screen, 
                     unmountOnBlur: true,
-                    tabBarIcon: () => <AntDesign name="pluscircleo" size={24} color="black" />}}/>
+                    tabBarIcon: () => <AntDesign name="pluscircleo"  size = {28}/>}}/>
             <BottomTabs.Screen name="Friends" component={FriendsStackNav} options={{
                 unmountOnBlur: true,
-                tabBarIcon: () => <FontAwesome5 name="user-friends" size={24} color="black" />
+                activeTintColor: colors.active_tab,
+                inactiveTintColor: colors.background_screen, 
+                tabBarIcon: () => <FontAwesome5 name="user-friends" size = {28} />
             }}/>
             <BottomTabs.Screen name="Profile" component={ProfileStackNav} options={{
                 unmountOnBlur: true,
-                tabBarIcon: () => <FontAwesome5 name="user" size={24} color="black" />
+                activeTintColor: colors.active_tab,
+                inactiveTintColor: colors.background_screen, 
+                tabBarIcon: () => <FontAwesome5 name="user" size = {28} />
             }}/>
         </BottomTabs.Navigator>
     )

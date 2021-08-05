@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import { useColorScheme} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StyleSheet } from 'react-native';
 import { AntDesign, MaterialIcons, FontAwesome, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
@@ -19,6 +20,12 @@ const Drawer = createDrawerNavigator();
 
 
 export default function HomeDrawerNav({navigation}) {
+    const colorScheme = useColorScheme();
+    const [isDark, setIsDark] = useState(colorScheme === "dark");
+    useEffect(() => {
+      setIsDark(colorScheme==="dark");
+      global.isDarkModeEnabled = isDark? true : false;
+        }, [colorScheme]);
     return (
         <Drawer.Navigator initialRoute="Home"
             drawerType="slide"
@@ -27,9 +34,10 @@ export default function HomeDrawerNav({navigation}) {
                 }}
             drawerContent={HomeDrawer}
             drawerContentOptions={{
-                unmountOnBlur: true, 
-                activeBackgroundColor: colors.active_tab,
-                inactiveBackgroundColor: colors.inactive_tab,
+                // activeBackgroundColor: colors.active_tab,
+                activeBackgroundColor: colors.background_list_item,
+                // inactiveBackgroundColor: colors.inactive_tab,
+                inactiveBackgroundColor: colors.background_screen,
                 itemStyle: {
                     shadowRadius: 5,
                     shadowColor: colors.shadow,

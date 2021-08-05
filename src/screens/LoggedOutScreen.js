@@ -1,12 +1,18 @@
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-import React, { useEffect,useState } from 'react';
-import { Text, View, StyleSheet, Pressable, Image, SafeAreaView, useColorScheme } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { useColorScheme} from 'react-native';
+import { Text, View, StyleSheet, Pressable, Image, SafeAreaView } from 'react-native';
 import color from "../../config/colors";
 import darkColors from "../../config/darkColors";
 import '../../config/global';
 
 export default function LoggedOutScreen({navigation}) {
-
+    const colorScheme = useColorScheme();
+    const [isDark, setIsDark] = useState(colorScheme === "dark");
+    useEffect(() => {
+      setIsDark(colorScheme==="dark");
+      global.isDarkModeEnabled = isDark? true : false;
+        }, [colorScheme]);
     const {landscape} = useDeviceOrientation();
     const {width, height} = useDimensions();
     var colors = global.isDarkModeEnabled ? darkColors : color;

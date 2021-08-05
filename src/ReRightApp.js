@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React, {useEffect, useState} from 'react';
+import { useColorScheme} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoggedOutScreen from './screens/LoggedOutScreen';
@@ -20,7 +21,12 @@ import '../config/global';
 const Stack = createStackNavigator();
 
 export default function ReRightApp() {
-
+    const colorScheme = useColorScheme();
+    const [isDark, setIsDark] = useState(colorScheme === "dark");
+    useEffect(() => {
+      setIsDark(colorScheme==="dark");
+      global.isDarkModeEnabled = isDark? true : false;
+        }, [colorScheme]);
     return (
         <NavigationContainer>
             <Stack.Navigator initialRoute="Logged Out" >

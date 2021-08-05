@@ -9,9 +9,9 @@ const colors = global.isDarkModeEnabled ? darkColors : color;
 export const AppStyles = StyleSheet.create({
     StackHeaderStyle: { // Currently used by all stack navs
         backgroundColor: colors.background_stack_header,
-        borderBottomColor: colors.border,
+        borderBottomColor: colors.header_border,
         borderBottomWidth: 1,
-        shadowColor: colors.shadow,
+        shadowColor: colors.header_shadow,
         shadowRadius: 10,
     },
     ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
@@ -20,17 +20,18 @@ export const AppStyles = StyleSheet.create({
     StackTitleStyle: {
         fontWeight: 'bold',
         letterSpacing: 0.25,
-        fontSize: 20,
+        fontSize: 19,
         color: colors.text_stack_title,
     },
     StackBackTitleStyle: {
         color: colors.text_stack_back_title,
     },
     TabStyle: {
-        borderColor: colors.border,
-        borderWidth: 1,
+        // borderColor: colors.border,
+        // borderWidth: 1,
         shadowColor: colors.shadow,
         shadowRadius: 10,
+        // backgroundColor: colors.tab_background
     },
     TabLabelStyle: {
         fontWeight: 'bold',

@@ -43,7 +43,7 @@ export default function HomeScreen({route,navigation}) {
         }}>
           <ScrollView 
           style={styles.feed}
-          direction alLockEnabled = 'true'
+          directionalLockEnabled = 'true'
           refreshControl={
           <RefreshControl
             refreshing={refreshing}

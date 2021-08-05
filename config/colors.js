@@ -24,7 +24,7 @@ export default  {
         inactive_tab: "#428AF8",
         text_screen_header: "black",
         text_general:  "black",
-        text_stack_title: "white",
+        text_stack_title: "black",
         text_stack_back_title: "black",
         text_tab_label: "white",
         text_question_number: "#3987CE",
@@ -36,10 +36,10 @@ export default  {
         border_button: "black",
 
         shadow: "black",
-
+        tab_background: 'white',
         background_screen:  "rgb(239,239,239)",
         background_drawer: "grey",
-        background_stack_header: "#3987CE",
+        background_stack_header: "white",
         background_scrollview: "#3987CE",
         background_list_item: 'white',
         background_friend: "#3987CE",
