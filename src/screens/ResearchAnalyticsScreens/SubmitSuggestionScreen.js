@@ -114,6 +114,12 @@ export default function SignupScreen3({navigation}) {
         } else {
             Alert.alert("Success!", "Report Submitted");
         }
+        navigation.reset({
+            index: 0,
+            routes: [{name: 'Research Anayltics'}],
+          });
+        // Jumps to the Home page of the hamburger menu
+        navigation.jumpTo("Home");
     }
 
     return ( 
