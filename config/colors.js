@@ -20,8 +20,7 @@ export default  {
 
         hyperlink: "#428AF8",
         red: "red",
-        active_tab: "#ADD8E6",
-        inactive_tab: "#428AF8",
+        active_tab: "#428AF8",
         text_screen_header: "black",
         text_general:  "black",
         text_stack_title: "black",

@@ -42,7 +42,7 @@ export default function HomeTabNav() {
             tabBarOptions={{ 
             unmountOnBlur: true,
             keyboardHidesTabBar: true,
-            tabBarActiveTintColor: colors.active_tab,
+            activeTintColor: colors.active_tab,
             tabStyle: TabStyle,
             labelStyle: TabLabelStyle,
             showIcon: true,
