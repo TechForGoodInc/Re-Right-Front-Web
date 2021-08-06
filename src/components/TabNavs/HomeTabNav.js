@@ -12,7 +12,7 @@ import darkColors from "../../../config/darkColors";
 import '../../../config/global';
 import GetSignUp1Style from '../../../config/SignUp1Css';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 export default function HomeTabNav() {
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape } = useDeviceOrientation();
@@ -42,44 +42,40 @@ export default function HomeTabNav() {
             tabBarOptions={{ 
             unmountOnBlur: true,
             keyboardHidesTabBar: true,
+            tabBarActiveTintColor: colors.active_tab,
             tabStyle: TabStyle,
             labelStyle: TabLabelStyle,
             showIcon: true,
-            showLabel: Platform.OS === 'web' ? true: false,
+            showLabel: Platform.OS === 'web' ? true: true,
         }}>
             <BottomTabs.Screen name="Home" component={HomeStackNav} 
                 initialParams={{isItDark: isDarkModeEnabled}}
                 params = {{ isItDark: isDarkModeEnabled }}
                 options={{   
-                activeTintColor: colors.active_tab,
-                inactiveTintColor: colors.background_screen, 
                 unmountOnBlur: true,
-                tabBarIcon: () => <Image style={{ tintColor: colors.inactive_tab, height: 28, width: 28}} source = {require('../../../assets/home.png')} />
+                tabBarLabel: 'Home',
+                tabBarIcon: ({color, size}) => (<MaterialCommunityIcons name = "home" size={size} color = {color} />),
             }}/>
             <BottomTabs.Screen name="Chat" component={ChatStackNav} options={{
                 unmountOnBlur: true,
-                activeTintColor: colors.active_tab,
-                inactiveTintColor: colors.background_screen, 
-
-                tabBarIcon: () => <AntDesign name="wechat" size = {28} />
+                tabBarLabel: 'Chat',
+                tabBarIcon: ({color, size}) => <MaterialCommunityIcons name = "chat" size={size} color = {color} />
             }}/>
             <BottomTabs.Screen name="Create Post" component={CreatePostStackNav}
                 options={{title: "Create Post",
-                    activeTintColor: colors.active_tab,
-                    inactiveTintColor: colors.background_screen, 
                     unmountOnBlur: true,
-                    tabBarIcon: () => <AntDesign name="pluscircleo"  size = {28}/>}}/>
+                    tabBarLabel: 'Post',
+                    tabBarIcon: ({color, size}) => <MaterialCommunityIcons name = "plus-circle" size={size} color = {color} />
+            }}/>
             <BottomTabs.Screen name="Friends" component={FriendsStackNav} options={{
                 unmountOnBlur: true,
-                activeTintColor: colors.active_tab,
-                inactiveTintColor: colors.background_screen, 
-                tabBarIcon: () => <FontAwesome5 name="user-friends" size = {28} />
+                tabBarLabel: 'Friends',
+                tabBarIcon: ({color, size}) => <MaterialCommunityIcons name = "account-group" size={size} color = {color} />
             }}/>
             <BottomTabs.Screen name="Profile" component={ProfileStackNav} options={{
                 unmountOnBlur: true,
-                activeTintColor: colors.active_tab,
-                inactiveTintColor: colors.background_screen, 
-                tabBarIcon: () => <FontAwesome5 name="user" size = {28} />
+                tabBarLabel: 'Profile',
+                tabBarIcon: ({color, size}) => <MaterialCommunityIcons name = "account" size={size} color = {color} />
             }}/>
         </BottomTabs.Navigator>
     )

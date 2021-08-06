@@ -1,10 +1,11 @@
 import { useDeviceOrientation, useDimensions } from "@react-native-community/hooks";
 import React, {useState} from "react";
-import { Button, Image, Pressable, ScrollView, SwitchComponent, Text, View,Switch, StyleSheet } from 'react-native'
+import { Button, Image, Pressable, ScrollView, SwitchComponent, Text, View,Switch, StyleSheet, TextInput } from 'react-native'
 import colors from "../../../config/colors";
 import colorsTest from "../../../config/colorsTest";
 import "../../../config/global.js";
 import GetSignUp1Style from "../../../config/SignUp1Css";
+import SearchBar from "./UsableSearchBar";
 
 const AccountSettings = ({navigation}) => {
     const [bioIsEnabled, setbioIsEnabled] = useState(false);
@@ -27,8 +28,18 @@ const AccountSettings = ({navigation}) => {
     const handlePasswordPress = () => {
         navigation.navigate("ChangePassword")
     }
+    const [searchedSetting, setSearchedSetting] = useState('');
+
     return ( 
+        <View> 
         <ScrollView style= {{backgroundColor: darkIsEnabled? '#181818' : 'rgb(239,239,239)'}}>
+            <View style = {styles.searchBar}>
+                        <Image style={styles.searchIcon} source={require('../../../assets/search.png')}/>
+                        <TextInput style = {styles.searchInput}
+                                    placeholder= "Search Settings"
+                                    onChangeText = {(text) => setSearchedSetting(text)}
+                                     /> 
+            </View>
             <View style={{marginBottom: 20,width: '100%',padding:'2%'}}>
             <Text style={{color: darkIsEnabled? 'white' : colors.black, marginTop: 20, marginLeft:'5%', fontSize: 20, fontWeight: '600'}}> Account Details </Text>
                 <View style={{ height: '21%', marginTop: 10, width: '92%', flexDirection: 'column', alignContent: 'center',backgroundColor:colors.white, alignSelf: 'center', borderRadius: 20}}>
@@ -117,6 +128,7 @@ const AccountSettings = ({navigation}) => {
                 </View>
             </View>
         </ScrollView>
+        </View>
      );
 }
  
@@ -124,6 +136,28 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: 18,
         fontWeight: '500',
+    },
+    searchBar: {
+        flexDirection: 'row',
+        width: '90%',
+        marginTop: '4%',
+        marginLeft: '5%',
+        height: 1,
+        flex: 1,
+        borderRadius: 10,
+        borderWidth: 0.2,
+        borderColor: colors.border,
+        backgroundColor: colors.lighter_grey
+    },
+    searchIcon: {
+        position: 'absolute',
+        alignSelf: 'center',
+        marginLeft: 5,
+        tintColor: colors.tintColor,
+        paddingRight: 10,
+    },
+    searchInput: {
+        paddingLeft: 40
     }
 })
 export default AccountSettings;

@@ -162,10 +162,7 @@ export default function GetSignUp1Style (landscape,width, height) {
                 // backgroundColor: colors.tab_background
             },
             TabLabelStyle: {
-                fontWeight: 'bold',
                 letterSpacing: 0.25,
-                fontSize: 16,
-                color: Colors.text_tab_label, 
             },
             ScreenBackground: {
                 backgroundColor: Colors.background_screen,
