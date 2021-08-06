@@ -7,7 +7,6 @@ import TextPostScreen from '../../screens/HomeScreens/TextPostScreen';
 import StylizedPostScreen from '../../screens/HomeScreens/StylizedPostScreen';
 import StylizedPostScreen2 from '../../screens/HomeScreens/StylizedPostScreen2';
 import StackHeaderBackImage from '../StackHeaderBackImage';
-import { AppStyles } from '../../../config/Styles';
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';

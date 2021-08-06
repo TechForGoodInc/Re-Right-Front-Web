@@ -2,7 +2,6 @@ import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, View, Text, Modal, Pressable, TouchableOpacity, Button, Platform, Image, TextInput, Alert } from "react-native";
 import colors from "../../../config/colors";
-import { AppStyles } from "../../../config/Styles";
 
 
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import ChatScreen from '../../screens/HomeScreens/ChatScreen';
 
 import StackHeaderBackImage from '../StackHeaderBackImage';
 import color from "../../../config/colors";

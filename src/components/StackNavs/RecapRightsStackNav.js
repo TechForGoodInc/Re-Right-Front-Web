@@ -7,7 +7,6 @@ import RecapRightScreen1 from '../../screens/RecapRightsScreens/RecapRightsScree
 import RecapArticle from '../../screens/RecapRightsScreens/RecapArticle';
 import RecapQuiz from '../../screens/RecapRightsScreens/RecapQuiz';
 import StackHeaderBackImage from '../StackHeaderBackImage';
-import AppStyles from '../../../config/Styles';
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';

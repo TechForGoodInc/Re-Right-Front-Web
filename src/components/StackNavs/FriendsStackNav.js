@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Image, TouchableOpacity } from 'react-native';
-import FriendsScreen from '../../screens/HomeScreens/FriendsScreen';
 import StackHeaderBackImage from '../StackHeaderBackImage';
 import FriendProfileScreen from '../../screens/HomeScreens/FriendProfileScreen';
-import { AppStyles } from '../../../config/Styles';
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';

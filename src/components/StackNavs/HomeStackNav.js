@@ -4,7 +4,6 @@ import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 import HomeScreen from '../../screens/HomeScreens/HomeScreen';
 
-import { AppStyles } from '../../../config/Styles';
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';

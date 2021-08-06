@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Image, TouchableOpacity, Platform } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import PostPreview from '../../screens/HomeScreens/PostPreview';
 import ProfileScreen from '../../screens/HomeScreens/ProfileScreen';
 import AccountSettings from '../../screens/HomeScreens/AccountSettingsScreen';
@@ -10,7 +9,6 @@ import ChangePasswordScreen from '../../screens/HomeScreens/ChangePasswordScreen
 import ChangeEmailScreen from '../../screens/HomeScreens/ChangeEmailScreen';
 import SignupScreen4 from '../../screens/SignupScreens/SignupScreen4';
 import StackHeaderBackImage from '../StackHeaderBackImage';
-import { AppStyles } from '../../../config/Styles';
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
