@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Image, TouchableOpacity, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-
 import PostPreview from '../../screens/HomeScreens/PostPreview';
 import ProfileScreen from '../../screens/HomeScreens/ProfileScreen';
 import AccountSettings from '../../screens/HomeScreens/AccountSettingsScreen';
@@ -24,16 +23,19 @@ export default function ProfileStackNav({navigation}) {
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
+    const [isItDark, setIsItDark] = useState(global.isDarkModeEnabled);
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
         GetSignUp1Style(landscape, width, height) 
     ));
+    
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
             GetSignUp1Style(landscape, width, height) 
         ))
     }} 
+    
     const StackHeaderStyle = styles.StackHeaderStyle;
     const StackTitleStyle = styles.StackTitleStyle;
     const StackBackTitleStyle = styles.StackBackTitleStyle;

@@ -1,8 +1,10 @@
+import { useDeviceOrientation, useDimensions } from "@react-native-community/hooks";
 import React, {useState} from "react";
 import { Button, Image, Pressable, ScrollView, SwitchComponent, Text, View,Switch, StyleSheet } from 'react-native'
 import colors from "../../../config/colors";
 import colorsTest from "../../../config/colorsTest";
 import "../../../config/global.js";
+import GetSignUp1Style from "../../../config/SignUp1Css";
 
 const AccountSettings = ({navigation}) => {
     const [bioIsEnabled, setbioIsEnabled] = useState(false);

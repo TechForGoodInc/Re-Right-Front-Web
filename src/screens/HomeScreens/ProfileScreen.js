@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Platform, Button, Text, View, StyleSheet, Image, SafeAreaView, ScrollView, Pressable, TouchableOpacity, TextInput, Alert } from 'react-native'
 import { Prompt } from 'react-router-dom';
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
-
+import GetSignUp1Style from '../../../config/SignUp1Css';
 import SamplePost from './SamplePost';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 
 export default function ProfileScreen({route,navigation}) {
@@ -59,6 +60,48 @@ export default function ProfileScreen({route,navigation}) {
             color: colors.border
         }
     });
+    //styling for the header 
+    const { landscape } = useDeviceOrientation();
+    const {width, height} = useDimensions().window;
+    //header styles are in a sperate folder 
+    const [headerStyles,setHeaderStyles] = useState(StyleSheet.create( 
+        GetSignUp1Style(landscape, width, height) 
+    ));
+    //navigation from header
+    const handleHamburgerPress = () => {
+        navigation.openDrawer();
+    }
+    const handleSettingsPress = () => {
+        navigation.navigate('Account Settings');
+    }
+    //changing header color on dark mode/ un dark mode
+    useEffect(() => { 
+        navigation.setOptions({ 
+            headerStyle: {
+                backgroundColor: colors.background_stack_header,
+                borderBottomColor: colors.border,
+                borderBottomWidth: 0.4,
+                shadowColor: colors.shadow,
+                shadowRadius: 5,
+                color: colors.text_screen_header
+            },
+            headerTitleStyle: {
+                fontWeight: 'bold',
+                letterSpacing: 0.25,
+                fontSize: 19,
+                color: colors.text_stack_title,
+            },
+            headerLeft: () => (
+                <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
+                    <Image source={require('../../../assets/HMIcon.png')} style = {{height: 40, width: 40, tintColor: colors.menu_icon}} />
+                </TouchableOpacity>), 
+            headerRight: () => (
+                    <TouchableOpacity activeOpacity = { .5 } onPress={ handleSettingsPress }>
+                    <Image source={require('../../../assets/settings.png')} style = {{height: 30, width: 30, tintColor: colors.menu_icon, margin: 9}} />
+                </TouchableOpacity>
+            )
+        }) 
+    }, [global.isDarkModeEnabled])
 
     const [tagList, setTagList] = useState((editMode) => {
         return tags.map( (tag) => {

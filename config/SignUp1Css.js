@@ -6,9 +6,6 @@ import './global';
 export default function GetSignUp1Style (landscape,width, height) {
     //numerical values to be used for styling
     var Colors = global.isDarkModeEnabled ? darkColors : color;
-    useEffect(() => {
-      Colors = global.isDarkModeEnabled ? darkColors : color;
-        }, [global.isDarkModeEnabled]);
     const viewConstants = {
         containerTopMargin: '10%',
         containerBottomMargin: '16%',

@@ -58,7 +58,7 @@ export default function CreatePostStackNav({navigation}) {
             <Stack.Screen name="Create Stylized Post" component={StylizedPostScreen}
                 options= {{title: "Choose Background",headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleCrossPress }>
-                        <Image source={require('../../../assets/cross-round.png')} style = {{height:30, width: 30, margin :8}} />
+                        <Image source={require('../../../assets/cross-round.png')} style = {{ tintColor: colors.menu_icon, height:30, width: 30, margin :8}} />
                     </TouchableOpacity>
                     ), headerRight: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleStylizedNextPress }>

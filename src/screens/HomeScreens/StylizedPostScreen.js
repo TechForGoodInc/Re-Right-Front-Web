@@ -151,15 +151,6 @@ const StylizedPostScreen = ({navigation}) => {
     const [textureBackground, setTextureBackground] = useState('none');
     const [imageBackground, setImageBackground] = useState('none');
     //Setting up the next button in header 
-    const MyCustomRightComponent = () => {
-        <TouchableOpacity activeOpacity = { .5 } onPress={ handleStylizedNextPress }>
-                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center'}}> 
-                             <Text style= {{ fontSize: 17,paddingRight: 9, alignSelf: 'center', color: colors.black, paddingHorizontal: 2}}> 
-                                 Next {'>'}
-                             </Text> 
-                         </View>
-         </TouchableOpacity>
-     }
     
     const handleStylizedNextPress = () => {
         navigation.navigate('Stylized Post Screen 2',{backgroundType: backgroundType, solidColor: solidBackground, textureLink: textureBackground, imageLink: imageBackground })
