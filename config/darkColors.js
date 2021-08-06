@@ -45,7 +45,7 @@ export default  {
         header_border: '#181829',
         header_shadow: "#242424",
         background_screen:  '#181818',
-        background_drawer: "grey",
+        background_drawer: "#181818",
         background_stack_header: "#181819",
         background_scrollview: "#3987CE",
         background_friend: "#3987CE",

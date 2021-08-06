@@ -1,6 +1,6 @@
 import { useDeviceOrientation, useDimensions } from "@react-native-community/hooks";
 import React, {useState} from "react";
-import { Button, Image, Pressable, ScrollView, SwitchComponent, Text, View,Switch, StyleSheet, TextInput } from 'react-native'
+import { Button, Image, Pressable, ScrollView, SwitchComponent, Text, View,Switch, StyleSheet, TextInput, SafeAreaView } from 'react-native'
 import colors from "../../../config/colors";
 import colorsTest from "../../../config/colorsTest";
 import "../../../config/global.js";
@@ -31,7 +31,7 @@ const AccountSettings = ({navigation}) => {
     const [searchedSetting, setSearchedSetting] = useState('');
 
     return ( 
-        <View> 
+        <SafeAreaView> 
         <ScrollView style= {{backgroundColor: darkIsEnabled? '#181818' : 'rgb(239,239,239)'}}>
             <View style = {styles.searchBar}>
                         <Image style={styles.searchIcon} source={require('../../../assets/search.png')}/>
@@ -128,7 +128,7 @@ const AccountSettings = ({navigation}) => {
                 </View>
             </View>
         </ScrollView>
-        </View>
+        </SafeAreaView>
      );
 }
  
