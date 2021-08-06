@@ -20,7 +20,7 @@ export default function HomeStackNav({route, navigation}) {
             borderBottomWidth: 1,
             shadowColor: colors.shadow,
             shadowRadius: 10,
-            height: 50,
+            height: 70,
         },
         ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
             backgroundColor: colors.primary,
