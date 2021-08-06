@@ -3,59 +3,34 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 import HomeScreen from '../../screens/HomeScreens/HomeScreen';
-import StackHeaderBackImage from '../StackHeaderBackImage';
 
+import { AppStyles } from '../../../config/Styles';
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
+import GetSignUp1Style from '../../../config/SignUp1Css';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+import StackHeaderBackImage from '../StackHeaderBackImage';
 
 const Stack = createStackNavigator();
 
 export default function HomeStackNav({route, navigation}) {
     const colors = global.isDarkModeEnabled ? darkColors : color;
-    const AppStyles = StyleSheet.create({
-        StackHeaderStyle: { // Currently used by all stack navs
-            backgroundColor: colors.background_stack_header,
-            borderBottomColor: colors.border,
-            borderBottomWidth: 1,
-            shadowColor: colors.shadow,
-            shadowRadius: 10,
-            height: 70,
-        },
-        ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
-            backgroundColor: colors.primary,
-        },
-        StackTitleStyle: {
-            fontWeight: 'bold',
-            letterSpacing: 0.25,
-            fontSize: 20,
-            color: colors.text_stack_title,
-        },
-        StackBackTitleStyle: {
-            color: colors.text_stack_back_title,
-        },
-        TabStyle: {
-            borderColor: colors.border,
-            borderWidth: 1,
-            shadowColor: colors.shadow,
-            shadowRadius: 10,
-        },
-        TabLabelStyle: {
-            fontWeight: 'bold',
-            letterSpacing: 0.25,
-            fontSize: 16,
-            color: colors.text_tab_label, 
-        },
-        ScreenBackground: {
-            backgroundColor: colors.background_screen,
-            flex: 1,
-            alignItems: 'center',
-        }
-    });
-    const StackHeaderStyle = AppStyles.StackHeaderStyle;
-    const StackTitleStyle = AppStyles.StackTitleStyle;
-    const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
-    
+    const { landscape } = useDeviceOrientation();
+    const {width, height} = useDimensions().window;
+    //styles are in a sperate folder 
+    const [styles,setStyles] = useState(StyleSheet.create( 
+        GetSignUp1Style(landscape, width, height) 
+    ));
+    if (landscape || width > height ){
+        () => {
+        setStyles(StyleSheet.create( 
+            GetSignUp1Style(landscape, width, height) 
+        ))
+    }} 
+    const StackHeaderStyle = styles.StackHeaderStyle;
+    const StackTitleStyle = styles.StackTitleStyle;
+    const StackBackTitleStyle = styles.StackBackTitleStyle;
     const [{isItDark} , setIsItDark] = useState(route.params)
     useEffect(() => {
         setIsItDark(route.params);

@@ -20,12 +20,11 @@ export default  {
 
         hyperlink: "#428AF8",
         red: "red",
-        active_tab: "#ADD8E6",
-        inactive_tab: "#428AF8",
+        active_tab: "white",
         text_screen_header: "white",
         text_general:  "white",
         text_stack_title: "white",
-        text_stack_back_title: "black",
+        text_stack_back_title: "white",
         text_tab_label: "white",
         text_question_number: "#3987CE",
         text_subtitle: "white",
@@ -34,20 +33,25 @@ export default  {
         text_button: "white",
 
         border: "white",
+        border_input_text: "black",
+        border_button: "black",
+        tab_background: 'black',
+        shadow: "black",
         border_input_text: "white",
         border_button: "white",
 
-        shadow: "white",
+        shadow: "#242424",
 
+        header_border: '#181829',
+        header_shadow: "#242424",
         background_screen:  '#181818',
-        background_drawer: "grey",
-        background_stack_header: "#3987CE",
+        background_drawer: "#181818",
+        background_stack_header: "#181819",
         background_scrollview: "#3987CE",
         background_friend: "#3987CE",
         background_list_item: '#212121',
         background_post_type: '#212121',
         background_friends_list_item: "#212121",
-
         button_signup: "#FCD681",
         button_login: "#3987CE",
         button_continue: "#3987CE",
@@ -63,9 +67,8 @@ export default  {
         button_new_recommendations: "#3987CE",
         button_change_criteria: "#3987CE",
         button_request_friend: "green",
-
-
-        tintColor: 'white',
+        menu_icon: '#E0E0E9',
+        tintColor: 'grey',
 
         // Palette end
         // Don't use these color names anymore 

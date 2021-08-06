@@ -2,7 +2,7 @@ import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, View, Text, Modal, Pressable, TouchableOpacity, Button, Platform, Image, TextInput, Alert } from "react-native";
 import colors from "../../../config/colors";
-import { AppStyles } from "../../../config/styles";
+import { AppStyles } from "../../../config/Styles";
 
 
 
@@ -43,8 +43,8 @@ const StylizedPostScreen2 = ({route, navigation}) => {
                 numberOfLines = {5}
                 style = {{alignSelf:'center', width: '80%',height: '20%', padding:'2%',}}
                 onChangeText = {(text) => setPostText(text)}
-                placeholder ="Enter Text Here"/>
-                <View style = {{flexDirection:'row'}}>
+                placeholder ="Your Text "/>
+            <View style = {{flexDirection:'row'}}>
             <Pressable style = {{borderWidth:1, width:'8%', borderColor:'black',marginLeft: '5%'}}>
                 <Text> A </Text>
             </Pressable>

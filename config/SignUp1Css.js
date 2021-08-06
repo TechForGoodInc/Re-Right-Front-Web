@@ -1,10 +1,11 @@
 //all the styles for Sign Up Screen 1 is here
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-export default function GetSignUp1Style (landscape,width, height ) {
+import { useEffect } from "react";
+import color from "./colors";
+import darkColors from "./darkColors";
+import './global';
+export default function GetSignUp1Style (landscape,width, height) {
     //numerical values to be used for styling
-    const Colors = global.isDarkModeEnabled ? darkColors : color;
+    var Colors = global.isDarkModeEnabled ? darkColors : color;
     const viewConstants = {
         containerTopMargin: '10%',
         containerBottomMargin: '16%',
@@ -26,7 +27,7 @@ export default function GetSignUp1Style (landscape,width, height ) {
         buttonTextLineHeightLandscape: 21,
         buttonHeight: 70,
         buttonHeightLandscape: 45,
-        }
+    }
     return {
             screenBackground: {
                 flex: 1,
@@ -120,5 +121,53 @@ export default function GetSignUp1Style (landscape,width, height ) {
                 shadowColor: Colors.shadow,
                 shadowRadius: 10, 
             }, 
+ 
+            //Overall App Styles are Here (For Stacks and Tabs)
+
+            menuicon: {
+                height: 40,
+                width: 40,
+                tintColor: Colors.menu_icon,
+            },
+            settingsicon: {
+                height: 30,
+                width: 30,
+                margin: 4,
+                tintColor: Colors.menu_icon
+            }, 
+            StackHeaderStyle: { // Currently used by all stack navs
+                backgroundColor: Colors.background_stack_header,
+                borderBottomColor: Colors.border,
+                borderBottomWidth: 0.4,
+                shadowColor: Colors.shadow,
+                shadowRadius: 5,
+            },
+            ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
+                backgroundColor: Colors.primary,
+            },
+            StackTitleStyle: {
+                fontWeight: 'bold',
+                letterSpacing: 0.25,
+                fontSize: 19,
+                color: Colors.text_stack_title,
+            },
+            StackBackTitleStyle: {
+                color: Colors.text_stack_back_title,
+            },
+            TabStyle: {
+                // borderColor: colors.border,
+                // borderWidth: 1,
+                shadowColor: Colors.shadow,
+                shadowRadius: 10,
+                // backgroundColor: colors.tab_background
+            },
+            TabLabelStyle: {
+                letterSpacing: 0.25,
+            },
+            ScreenBackground: {
+                backgroundColor: Colors.background_screen,
+                flex: 1,
+                alignItems: 'center',
+            }
         }    
 }

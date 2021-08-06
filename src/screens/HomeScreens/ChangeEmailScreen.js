@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import colors from '../../../config/colors';
 import { Platform, Form, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
-import GetSignUp1Style from '../styles/SignUp1Css';
+import GetSignUp1Style from '../../../config/SignUp1Css';
 import KeyboardViewStyles from '../styles/KeyboardViewStyles';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 

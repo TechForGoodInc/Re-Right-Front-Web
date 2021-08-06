@@ -21,7 +21,7 @@ export default function SearchBar(){
     return(
         <TextInput 
             style= {styles.inputBar}
-            placeholder = "Search Friends"
+            placeholder = "Search"
             onChangeText = { searchTerm => setSearchTerm(searchTerm) }
             onChange = {() => handleSearchBar()}>
         </TextInput>

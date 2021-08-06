@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
-import { AppStyles } from '../../../config/styles';
+import { AppStyles } from '../../../config/Styles';
 
 
 const DevicePostScreen = ({navigation}) => {

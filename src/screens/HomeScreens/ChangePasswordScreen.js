@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import colors from '../../../config/colors';
 import { Platform, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
-import GetSignUp1Style from '../styles/SignUp1Css';
+import GetSignUp1Style from '../../../config/SignUp1Css';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 export default function ChangePasswordScreen() {
