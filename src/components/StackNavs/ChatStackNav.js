@@ -10,6 +10,7 @@ import '../../../config/global';
 import { useState } from 'react';
 import GetSignUp1Style from '../../../config/SignUp1Css';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+import ReachOutScreen2 from '../../screens/ReachOutScreen2';
 
 const Stack = createStackNavigator();
 
@@ -40,7 +41,7 @@ export default function ChatStackNav({navigation}) {
             headerTitleStyle: StackTitleStyle,
             headerBackImage: StackHeaderBackImage,
             headerBackTitleStyle: StackBackTitleStyle }}>
-            <Stack.Screen name="Chat" component={ChatScreen}
+            <Stack.Screen name="Chat" component={ReachOutScreen2}
                 options={{title: "Chat", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
                         <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
