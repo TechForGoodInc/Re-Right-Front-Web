@@ -9,14 +9,6 @@ import SamplePost from './SamplePost';
 
 
 export default function ProfileScreen({route,navigation}) {
-    var {isItDark} =  global.isDarkModeEnabled ;
-    React.useEffect(() => {
-        if (route.params?.isItDark) {
-            isItDark = route.params?.isItDark
-        } else {
-            isItDark = route.params?.isItDark
-        }
-      }, [route.params?.isItDark]);
     const [editMode,setEditMode] = useState(false);
     const [displayName, setDisplayName] = useState('Display Name');
     const [bio, setBio] = useState('Bio from database');
@@ -25,7 +17,8 @@ export default function ProfileScreen({route,navigation}) {
     const colors = global.isDarkModeEnabled? darkColors: color; 
     var styles = StyleSheet.create({
         container:{
-            backgroundColor: colors.background_screen
+            backgroundColor: colors.background_screen,
+            height: '100%'
         },
         header: {
             alignContent: 'center',
@@ -82,27 +75,27 @@ export default function ProfileScreen({route,navigation}) {
     
     const [postType,setPostType] = useState('myPosts');
     //query for deleting a tag from db
-    const deleteTag = (tag) => {
-        function checkTag(searchedTag){
-            return searchedTag===tag;
-        }
-        const index = tags.findIndex(checkTag);
-        const temporaryTags = tags;
-        temporaryTags.splice(index,1);
-        setTags(temporaryTags);
-        setTagList((editMode) => {
-            return tags.map( (tag) => {
-                return (
-                    <View style = {styles.tagView}> 
-                    <Text> {tag} </Text>
-                    <Pressable onPress = {() => {deleteTag(tag)}}> 
-                        <Text style = {{display: editMode? 'flex':'none'}} > X </Text>
-                    </Pressable>
-                    </View>
-                );
-            });
-        });
-    }
+    // const deleteTag = (tag) => {
+    //     function checkTag(searchedTag){
+    //         return searchedTag===tag;
+    //     }
+    //     const index = tags.findIndex(checkTag);
+    //     const temporaryTags = tags;
+    //     temporaryTags.splice(index,1);
+    //     setTags(temporaryTags);
+    //     setTagList((editMode) => {
+    //         return tags.map( (tag) => {
+    //             return (
+    //                 <View style = {styles.tagView}> 
+    //                 <Text> {tag} </Text>
+    //                 <Pressable onPress = {() => {deleteTag(tag)}}> 
+    //                     <Text style = {{display: editMode? 'flex':'none'}} > X </Text>
+    //                 </Pressable>
+    //                 </View>
+    //             );
+    //         });
+    //     });
+    // }
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
       }
@@ -131,11 +124,11 @@ export default function ProfileScreen({route,navigation}) {
         }
     }
     return (
-        <View>
-
+        
             <ScrollView style={{
                 flex: 1,
                 padding: '2%',
+                height: '100%',
                 backgroundColor: colors.background_screen,
                 flexDirection: "column",
                 width: '100%',
@@ -268,6 +261,5 @@ export default function ProfileScreen({route,navigation}) {
                     </View>
                 </View>
             </ScrollView>
-        </View>
     );
 }

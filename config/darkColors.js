@@ -25,7 +25,7 @@ export default  {
         text_screen_header: "white",
         text_general:  "white",
         text_stack_title: "white",
-        text_stack_back_title: "black",
+        text_stack_back_title: "white",
         text_tab_label: "white",
         text_question_number: "#3987CE",
         text_subtitle: "white",
@@ -53,7 +53,6 @@ export default  {
         background_list_item: '#212121',
         background_post_type: '#212121',
         background_friends_list_item: "#212121",
-
         button_signup: "#FCD681",
         button_login: "#3987CE",
         button_continue: "#3987CE",
@@ -69,9 +68,8 @@ export default  {
         button_new_recommendations: "#3987CE",
         button_change_criteria: "#3987CE",
         button_request_friend: "green",
-
-
-        tintColor: 'white',
+        menu_icon: '#E0E0E9',
+        tintColor: 'grey',
 
         // Palette end
         // Don't use these color names anymore 

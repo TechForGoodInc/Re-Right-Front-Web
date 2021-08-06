@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable, Platform } from 'react-native';
 import SamplePost from './SamplePost';
 import { useEffect } from 'react';
-import { AppStyles } from '../../../config/styles';
+import { AppStyles } from '../../../config/Styles';
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';

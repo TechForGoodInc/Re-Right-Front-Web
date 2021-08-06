@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import colors from '../../../config/colors';
 import { Platform, Form, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
-import GetSignUp1Style from '../styles/SignUp1Css';
+import GetSignUp1Style from '../../../config/SignUp1Css';
 import KeyboardViewStyles from '../styles/KeyboardViewStyles';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
@@ -11,12 +11,13 @@ export default function SignupScreen1({navigation}) {
     const {width, height} = useDimensions().window;
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height, colors) 
+        GetSignUp1Style(landscape, width, height) 
     ));
+
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height, colors) 
+            GetSignUp1Style(landscape, width, height) 
         ))
     }} 
     //setting up the user input variables

@@ -97,7 +97,7 @@ export default class RecommendedFriendsScreen extends Component {
                 padding: '1%',
             },
             newRecommendationsButton: {
-                width: "25%",
+                width: "40%",
                 backgroundColor: colors.button_new_recommendations,
                 alignSelf: 'center',
                 alignItems: 'center',
@@ -110,7 +110,7 @@ export default class RecommendedFriendsScreen extends Component {
                 padding: '1%',
             },
             changeCriteriaButton: {
-                width: "25%",
+                width: "40%",
                 backgroundColor: colors.button_change_criteria,
                 alignSelf: 'center',
                 alignItems: 'center',
@@ -151,11 +151,11 @@ export default class RecommendedFriendsScreen extends Component {
         }
         return (
             <View style={styles.screenContainer}>
-                <View style = {styles.headerContainer}>
+                {/* <View style = {styles.headerContainer}>
                     <Text style={styles.headerText}>
                         Recommended Friends
                     </Text>
-                </View>
+                </View> */}
                 <View style={styles.buttonContainer}>
                     <Pressable style={({pressed}) => [{
                         backgroundColor: pressed ? colors.button_pressed : colors.button_new_recommendations,},

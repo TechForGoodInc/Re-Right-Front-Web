@@ -63,7 +63,7 @@ export default  {
         button_new_recommendations: "#3987CE",
         button_change_criteria: "#3987CE",
         button_request_friend: "green",
-
+        menu_icon: 'black',
         tintColor: 'black',
 
 
@@ -71,7 +71,8 @@ export default  {
         // Don't use these color names anymore 
         //(To be deleted later once components' colors are switched)
         // EDIT -- Most if not all components have been switched to using colors above, might be safe to delete
-        blue: "#428AF8",
+        // Being used in some places where the colors need to be explicitly blue/other pallete colors
+        blue: "#3987CE",
         light_blue: "#ADD8E6",
         cream: "#FDFCDC",
         dblue: "#0081A7",

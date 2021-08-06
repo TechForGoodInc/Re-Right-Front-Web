@@ -7,15 +7,12 @@ import darkColors from "../../config/darkColors";
 import '../../config/global';
 
 export default function LoggedOutScreen({navigation}) {
-<<<<<<< HEAD
     const colorScheme = useColorScheme();
     const [isDark, setIsDark] = useState(colorScheme === "dark");
     useEffect(() => {
       setIsDark(colorScheme==="dark");
       global.isDarkModeEnabled = isDark? true : false;
         }, [colorScheme]);
-=======
->>>>>>> ecc4405b0e908e0cf770a3adf04d7e3cdd791fda
     const {landscape} = useDeviceOrientation();
     const {width, height} = useDimensions();
     var colors = global.isDarkModeEnabled ? darkColors : color;

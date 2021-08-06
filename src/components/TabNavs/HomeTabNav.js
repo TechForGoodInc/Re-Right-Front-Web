@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeStackNav from '../StackNavs/HomeStackNav';
 import ProfileStackNav from '../StackNavs/ProfileStackNav';
@@ -6,65 +6,31 @@ import FriendsStackNav from '../StackNavs/FriendsStackNav';
 import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
 import { AntDesign, FontAwesome5 } from '@expo/vector-icons';
-import { Platform, StyleSheet } from 'react-native';
-  import '../../../config/global';
-  import color from '../../../config/colors';
-  import darkColors from '../../../config/darkColors';
-import colorsTest from '../../../config/colorsTest';
-import { AppStyles } from '../../../config/styles';
-//this global file has the dark mode value
+import { Platform, StyleSheet,Image } from 'react-native';
+import color from "../../../config/colors";
+import darkColors from "../../../config/darkColors";
 import '../../../config/global';
-import { useEffect } from 'react';
-import {Image} from 'react-native';
-
-import { useEffect } from 'react';
+import GetSignUp1Style from '../../../config/SignUp1Css';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 export default function HomeTabNav() {
-    const colors = global.isDarkModeEnabled? darkColors: color; 
-    const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(global.isDarkModeEnabled);
     const colors = global.isDarkModeEnabled ? darkColors : color;
-    const AppStyles = StyleSheet.create({
-        StackHeaderStyle: { // Currently used by all stack navs
-            backgroundColor: colors.background_stack_header,
-            borderBottomColor: colors.border,
-            borderBottomWidth: 1,
-            shadowColor: colors.shadow,
-            shadowRadius: 10,
-            height: 50,
-        },
-        ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
-            backgroundColor: colors.primary,
-        },
-        StackTitleStyle: {
-            fontWeight: 'bold',
-            letterSpacing: 0.25,
-            fontSize: 20,
-            color: colors.text_stack_title,
-        },
-        StackBackTitleStyle: {
-            color: colors.text_stack_back_title,
-        },
-        TabStyle: {
-            borderColor: colors.border,
-            borderWidth: 1,
-            shadowColor: colors.shadow,
-            shadowRadius: 10,
-        },
-        TabLabelStyle: {
-            fontWeight: 'bold',
-            letterSpacing: 0.25,
-            fontSize: 16,
-            color: colors.text_tab_label, 
-        },
-        ScreenBackground: {
-            backgroundColor: colors.background_screen,
-            flex: 1,
-            alignItems: 'center',
-        }
-    });
+    const { landscape } = useDeviceOrientation();
+    const {width, height} = useDimensions().window;
+    //styles are in a sperate folder 
+    const [styles,setStyles] = useState(StyleSheet.create( 
+        GetSignUp1Style(landscape, width, height) 
+    ));
+    if (landscape || width > height ){
+        () => {
+        setStyles(StyleSheet.create( 
+            GetSignUp1Style(landscape, width, height) 
+        ))
+    }} 
+    const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(global.isDarkModeEnabled);
     const BottomTabs = createBottomTabNavigator();
-    const TabStyle = AppStyles.TabStyle;
-    const TabLabelStyle = AppStyles.TabLabelStyle;
+    const TabStyle = styles.TabStyle;
+    const TabLabelStyle = styles.TabLabelStyle;
     useEffect(() => {
         setIsDarkModeEnabled(global.isDarkModeEnabled);
         }, []);

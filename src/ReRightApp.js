@@ -1,11 +1,8 @@
 import 'react-native-gesture-handler';
 import React, {useEffect, useState} from 'react';
-<<<<<<< HEAD
 import { useColorScheme} from 'react-native';
-=======
 import { StyleSheet } from 'react-native';
 
->>>>>>> ecc4405b0e908e0cf770a3adf04d7e3cdd791fda
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoggedOutScreen from './screens/LoggedOutScreen';
@@ -19,7 +16,6 @@ import ForgotPassScreen2 from './screens/ForgetPasswordScreens/ForgotPassScreen2
 import ForgotPassScreen3 from './screens/ForgetPasswordScreens/ForgotPassScreen3';
 import ForgotPassScreen4 from './screens/ForgetPasswordScreens/ForgotPassScreen4';
 import HomeDrawerNav from './components/HomeDrawerNav';
-import { AppStyles } from '../config/styles';
 import StackHeaderBackImage from './components/StackHeaderBackImage';
 
 import color from "../config/colors";
@@ -29,14 +25,12 @@ import '../config/global';
 const Stack = createStackNavigator();
 
 export default function ReRightApp() {
-<<<<<<< HEAD
     const colorScheme = useColorScheme();
     const [isDark, setIsDark] = useState(colorScheme === "dark");
     useEffect(() => {
       setIsDark(colorScheme==="dark");
       global.isDarkModeEnabled = isDark? true : false;
         }, [colorScheme]);
-=======
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const AppStyles = StyleSheet.create({
         StackHeaderStyle: { // Currently used by all stack navs
@@ -81,7 +75,6 @@ export default function ReRightApp() {
     const StackTitleStyle = AppStyles.StackTitleStyle;
     const StackBackTitleStyle = AppStyles.StackBackTitleStyle;
 
->>>>>>> ecc4405b0e908e0cf770a3adf04d7e3cdd791fda
     return (
         <NavigationContainer>
             <Stack.Navigator initialRoute="Logged Out" screenOptions={{
