@@ -30,18 +30,20 @@ export default function RecapRightsTabNav({navigation}) {
     const TabLabelStyle = styles.TabLabelStyle;
     return (
         <BottomTabs.Navigator initialRoute="Recap Rights" tabBarOptions={{ 
-            activeBackgroundColor: colors.active_tab,
-            inactiveBackgroundColor: colors.inactive_tab,
+            style: {
+                backgroundColor: colors.background_stack_header
+            },
+            activeTintColor: colors.active_tab,
             unmountOnBlur: true, 
             keyboardHidesTabBar: true,
             tabStyle: TabStyle,
             labelStyle: TabLabelStyle
         }}>
             <BottomTabs.Screen name="Recap Rights" component={RecapRightsStackNav} options={{
-                unmountOnBlur: true,  tabBarIcon: () => <FontAwesome name="book" size={24} color="black" />
+                unmountOnBlur: true,  tabBarIcon: ({color, size}) => <FontAwesome name="book" size={size} color={color} />
             }}/>
             <BottomTabs.Screen name="Quiz" component={RecapQuiz} options={{
-                 unmountOnBlur: true,   tabBarIcon: () => <MaterialCommunityIcons name="brain" size={24} color="black" />
+                 unmountOnBlur: true,   tabBarIcon: ({color,size}) => <MaterialCommunityIcons name="brain" size={size} color={color} />
             }}/>
         </BottomTabs.Navigator>
     )
