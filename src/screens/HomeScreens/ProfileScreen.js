@@ -83,7 +83,6 @@ export default function ProfileScreen({route,navigation}) {
                 borderBottomWidth: 0.4,
                 shadowColor: colors.shadow,
                 shadowRadius: 5,
-                color: colors.text_screen_header
             },
             headerTitleStyle: {
                 fontWeight: 'bold',

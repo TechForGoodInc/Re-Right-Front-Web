@@ -39,7 +39,11 @@ export default function HomeTabNav() {
             unmountOnBlur= {true}
             initialParams={{isItDark: isDarkModeEnabled}}
             params = {{ isItDark: isDarkModeEnabled }}
+            barStyle= {{ backgroundColor: 'black' }}
             tabBarOptions={{ 
+            style :{
+                backgroundColor: colors.background_stack_header
+            },
             unmountOnBlur: true,
             keyboardHidesTabBar: true,
             activeTintColor: colors.active_tab,

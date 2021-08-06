@@ -45,21 +45,21 @@ const AccountSettings = ({navigation}) => {
                 <View style={{ height: '21%', marginTop: 10, width: '92%', flexDirection: 'column', alignContent: 'center',backgroundColor:colors.white, alignSelf: 'center', borderRadius: 20}}>
                 <Pressable onPress={() => handleUserNamePress()} style={ ({pressed}) => [ {  height: '140%',backgroundColor: darkIsEnabled===false?(pressed? colors.light_grey: 'white'):(pressed? colors.grey: '#212121'), paddingVertical: 0, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 1,borderTopStartRadius:15, paddingTop: 15,borderTopEndRadius:15, borderColor: colors.light_grey}]}>
                     <View style= {{ marginTop: '2%',marginBottom: '2%', flex:1, flexDirection: 'row', textAlignVertical: 'center'}}>
-                        <Image style={{ tintColor: darkIsEnabled? '#73C7FF': colors.blue, alignItems: "flex-start", width: 24, height: 24,marginRight: 2}} source={require('../../../assets/user.png')} />
+                        <Image style={{ tintColor: darkIsEnabled? colors.blue: "#1E3473", alignItems: "flex-start", width: 24, height: 24,marginRight: 2}} source={require('../../../assets/user.png')} />
                         <Text style = {[{ paddingLeft: '3%' ,textAlignVertical: 'center', color: darkIsEnabled? 'white' : colors.black, flex: 1, fontWeight: "400"},styles.subtitle]}> Change Username </Text>
                         <Image style={{tintColor: darkIsEnabled? 'grey': 'grey', width: 12, height: 12, marginTop:0,marginRight: 20}} source={require('../../../assets/right-arrow.png')} />
                     </View>
                 </Pressable>
                 <Pressable onPress={() => handleEmailPress()} style={ ({pressed}) => [ { height: '140%',backgroundColor: darkIsEnabled===false?(pressed? colors.light_grey: 'white'):(pressed? colors.grey: '#212121'), paddingVertical: 0, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 1,borderTopStartRadius:0, paddingTop: 15,borderTopEndRadius:0, borderColor: colors.light_grey}]}>
                     <View style= {{ marginTop: '2%',marginBottom: '2%',flex:1, flexDirection: 'row', textAlignVertical: 'center'}}>
-                        <Image style={{ tintColor: darkIsEnabled? '#73C7FF': colors.blue,alignItems: "flex-start", width: 24, height: 24,marginRight: 2}} source={require('../../../assets/email.png')} />
+                        <Image style={{ tintColor: darkIsEnabled? colors.blue: "#1E3473",alignItems: "flex-start", width: 24, height: 24,marginRight: 2}} source={require('../../../assets/email.png')} />
                         <Text style = {[{ paddingLeft: '3%' ,color: darkIsEnabled? 'white' : colors.black,textAlignVertical:'center', flex: 1, alignItems: "flex-start", fontWeight: "400"},styles.subtitle]}> Change Email </Text>
                         <Image style={{tintColor: darkIsEnabled? 'grey': 'grey',alignItems: "flex-end", width: 12, height: 12, marginTop:0,marginRight: 20}} source={require('../../../assets/right-arrow.png')} />
                     </View>
                 </Pressable>
                 <Pressable onPress={() => handlePasswordPress()} style={ ({pressed}) => [ { height: '140%',backgroundColor: darkIsEnabled===false?(pressed? colors.grey: 'white'):(pressed? colors.grey: '#212121'), paddingVertical: 0, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 0,borderBottomStartRadius:15, paddingTop: 15,borderBottomEndRadius:15,  borderColor: colors.light_grey}]}>
                     <View style= {{ marginTop: '2%', marginBottom: '2%',flex:1, flexDirection: 'row', textAlignVertical: 'center'}}>
-                        <Image style={{ tintColor: darkIsEnabled? '#73C7FF': colors.blue,alignItems: "flex-start", width: 24, height: 24,marginRight: 2}} source={require('../../../assets/padlock.png')} />
+                        <Image style={{ tintColor: darkIsEnabled? colors.blue: "#1E3473",alignItems: "flex-start", width: 24, height: 24,marginRight: 2}} source={require('../../../assets/padlock.png')} />
                         <Text style = {[{ paddingLeft: '3%' , color: darkIsEnabled? 'white' : colors.black,textAlignVertical:'center', flex: 1, alignItems: "flex-start", fontWeight: "400"},styles.subtitle]}> Change Password </Text>
                         <Image style={{tintColor: darkIsEnabled? 'grey': 'grey',alignItems: "flex-end", width: 12, height: 12, marginTop:0,marginRight: 20}} source={require('../../../assets/right-arrow.png')} />
                     </View>
