@@ -1,7 +1,7 @@
 //Friends Page
-import React, {Component, useState} from 'react';
-import { View,StyleSheet, Text, Image, FlatList, TextInput, TouchableOpacity, Pressable, Alert, Platform} from 'react-native';
-
+import React, {Component} from 'react';
+import { View,StyleSheet, Text, Image, FlatList, TouchableOpacity, Pressable, Alert, Platform} from 'react-native';
+import SearchBar from './UsableSearchBar';
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
@@ -198,6 +198,7 @@ export default class FriendsScreen extends Component {
             console.log("Handling press");
             this.props.navigation.navigate("Recommended Friends");
         }
+
         return (
             <View style={styles.container}>
                 <Pressable style={({pressed}) => [{
@@ -208,12 +209,9 @@ export default class FriendsScreen extends Component {
                 </Pressable>
                 <View style = {styles.searchBar}>
                     <Image style={styles.searchIcon} source={require('../../../assets/search.png')}/>
-                    <TextInput 
-                        style= {styles.inputBar}
-                        placeholder = "Search Friends">
-                    </TextInput>
+                    <SearchBar/>
                 </View>
-                
+
                 <View style ={styles.friendsContainer}>
                     <Text style = {styles.friendsNum}>{this.state.friendsList.length} Friends</Text>
                     <FlatList
@@ -241,7 +239,8 @@ export default class FriendsScreen extends Component {
                                 <Text style={styles.buttonText}>Unfriend</Text>
                             </TouchableOpacity>
                         </View>
-                    )}/>
+                        )}
+                    />
                 </View> 
           </View>
         ); 

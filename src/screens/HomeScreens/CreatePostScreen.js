@@ -97,7 +97,7 @@ export default function CreatePostScreen({navigation}) {
         }
     });
     return (
-        <SafeAreaView forceInset={{bottom: 'always'}} style={styles.container}>
+        <ScrollView forceInset={{bottom: 'always'}} style={styles.container}>
         {/* Description of different types of posts */}
         
             <View style={styles.desciptionView}> 
@@ -135,7 +135,7 @@ export default function CreatePostScreen({navigation}) {
                     </TouchableOpacity>
                 </View>
             </View>   
-        </SafeAreaView>
+        </ScrollView>
     );
 }
 

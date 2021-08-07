@@ -1,22 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Platform, Button, Text, View, StyleSheet, Image, SafeAreaView, ScrollView, Pressable, TouchableOpacity, TextInput, Alert } from 'react-native'
 import { Prompt } from 'react-router-dom';
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
-
+import GetSignUp1Style from '../../../config/SignUp1Css';
 import SamplePost from './SamplePost';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 
 export default function ProfileScreen({route,navigation}) {
-    var {isItDark} =  global.isDarkModeEnabled ;
-    React.useEffect(() => {
-        if (route.params?.isItDark) {
-            isItDark = route.params?.isItDark
-        } else {
-            isItDark = route.params?.isItDark
-        }
-      }, [route.params?.isItDark]);
     const [editMode,setEditMode] = useState(false);
     const [displayName, setDisplayName] = useState('Display Name');
     const [bio, setBio] = useState('Bio from database');
@@ -25,7 +18,8 @@ export default function ProfileScreen({route,navigation}) {
     const colors = global.isDarkModeEnabled? darkColors: color; 
     var styles = StyleSheet.create({
         container:{
-            backgroundColor: colors.background_screen
+            backgroundColor: colors.background_screen,
+            height: '100%'
         },
         header: {
             alignContent: 'center',
@@ -66,6 +60,47 @@ export default function ProfileScreen({route,navigation}) {
             color: colors.border
         }
     });
+    //styling for the header 
+    const { landscape } = useDeviceOrientation();
+    const {width, height} = useDimensions().window;
+    //header styles are in a sperate folder 
+    const [headerStyles,setHeaderStyles] = useState(StyleSheet.create( 
+        GetSignUp1Style(landscape, width, height) 
+    ));
+    //navigation from header
+    const handleHamburgerPress = () => {
+        navigation.openDrawer();
+    }
+    const handleSettingsPress = () => {
+        navigation.navigate('Account Settings');
+    }
+    //changing header color on dark mode/ un dark mode
+    useEffect(() => { 
+        navigation.setOptions({ 
+            headerStyle: {
+                backgroundColor: colors.background_stack_header,
+                borderBottomColor: colors.border,
+                borderBottomWidth: 0.4,
+                shadowColor: colors.shadow,
+                shadowRadius: 5,
+            },
+            headerTitleStyle: {
+                fontWeight: 'bold',
+                letterSpacing: 0.25,
+                fontSize: 19,
+                color: colors.text_stack_title,
+            },
+            headerLeft: () => (
+                <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
+                    <Image source={require('../../../assets/HMIcon.png')} style = {{height: 40, width: 40, tintColor: colors.menu_icon}} />
+                </TouchableOpacity>), 
+            headerRight: () => (
+                    <TouchableOpacity activeOpacity = { .5 } onPress={ handleSettingsPress }>
+                    <Image source={require('../../../assets/settings.png')} style = {{height: 30, width: 30, tintColor: colors.menu_icon, margin: 9}} />
+                </TouchableOpacity>
+            )
+        }) 
+    }, [global.isDarkModeEnabled])
 
     const [tagList, setTagList] = useState((editMode) => {
         return tags.map( (tag) => {
@@ -82,27 +117,27 @@ export default function ProfileScreen({route,navigation}) {
     
     const [postType,setPostType] = useState('myPosts');
     //query for deleting a tag from db
-    const deleteTag = (tag) => {
-        function checkTag(searchedTag){
-            return searchedTag===tag;
-        }
-        const index = tags.findIndex(checkTag);
-        const temporaryTags = tags;
-        temporaryTags.splice(index,1);
-        setTags(temporaryTags);
-        setTagList((editMode) => {
-            return tags.map( (tag) => {
-                return (
-                    <View style = {styles.tagView}> 
-                    <Text> {tag} </Text>
-                    <Pressable onPress = {() => {deleteTag(tag)}}> 
-                        <Text style = {{display: editMode? 'flex':'none'}} > X </Text>
-                    </Pressable>
-                    </View>
-                );
-            });
-        });
-    }
+    // const deleteTag = (tag) => {
+    //     function checkTag(searchedTag){
+    //         return searchedTag===tag;
+    //     }
+    //     const index = tags.findIndex(checkTag);
+    //     const temporaryTags = tags;
+    //     temporaryTags.splice(index,1);
+    //     setTags(temporaryTags);
+    //     setTagList((editMode) => {
+    //         return tags.map( (tag) => {
+    //             return (
+    //                 <View style = {styles.tagView}> 
+    //                 <Text> {tag} </Text>
+    //                 <Pressable onPress = {() => {deleteTag(tag)}}> 
+    //                     <Text style = {{display: editMode? 'flex':'none'}} > X </Text>
+    //                 </Pressable>
+    //                 </View>
+    //             );
+    //         });
+    //     });
+    // }
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
       }
@@ -131,11 +166,11 @@ export default function ProfileScreen({route,navigation}) {
         }
     }
     return (
-        <View>
-
+        
             <ScrollView style={{
                 flex: 1,
                 padding: '2%',
+                height: '100%',
                 backgroundColor: colors.background_screen,
                 flexDirection: "column",
                 width: '100%',
@@ -268,6 +303,5 @@ export default function ProfileScreen({route,navigation}) {
                     </View>
                 </View>
             </ScrollView>
-        </View>
     );
 }

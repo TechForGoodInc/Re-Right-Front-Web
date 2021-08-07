@@ -3,12 +3,13 @@ import React, {useEffect, useState} from 'react';
 import './config/global';
 import { useColorScheme} from 'react-native';
 
+
 const App = () => {
-  const colorScheme= useColorScheme();
-    const [isDark, setIsDark] = useState(colorScheme==="dark");
+    const colorScheme = useColorScheme();
+    const [isDark, setIsDark] = useState(colorScheme === "dark");
     useEffect(() => {
-        global.isDarkModeEnabled = true;
-           
+      setIsDark(colorScheme==="dark");
+      global.isDarkModeEnabled = isDark? true : false;
         }, [colorScheme]);
   return (
     <ReRightApp />
