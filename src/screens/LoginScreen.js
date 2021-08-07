@@ -10,7 +10,7 @@ import '../../config/global';
 export default function LoginScreen({navigation}) {
     //getting the dimensions and the orientation
     const colorScheme = useColorScheme();
-    const [isDark, setIsDark] = useState(colorScheme === "dark");
+    const [isDark, setIsDark] = useState(colorScheme === global.default_color_scheme);
     useEffect(() => {
       setIsDark(colorScheme==="dark");
       global.isDarkModeEnabled = isDark? true : false;
