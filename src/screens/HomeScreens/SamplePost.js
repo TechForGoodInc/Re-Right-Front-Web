@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
+import { View, StyleSheet, Text, Image, Pressable } from 'react-native';
+
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
-import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable } from 'react-native';
-
 import '../../../config/global';
 
 const usernames = ["@davidgross", "@hanyyacoub","@malavmevada", "@mariamatthews","@matthewdeangelo","@moisesvenouziou","@nathancook","@nicolasprate","@nyuneihlaing","@prachipatel","@shaylingzhao","@yacoubabulubad","@zeelpatel","@tarafishman","@abhinavgupta" ];

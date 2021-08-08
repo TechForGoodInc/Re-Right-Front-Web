@@ -1,7 +1,10 @@
 import SamplePost from './SamplePost';
 import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
+
 import colors from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
 
 export default function PostPreview({navigation}) {
 return (<SafeAreaView style={{

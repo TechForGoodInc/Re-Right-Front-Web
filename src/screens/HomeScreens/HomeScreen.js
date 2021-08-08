@@ -1,11 +1,13 @@
 //Rename to App.js to run
-import React, { useState } from 'react';
-import { RefreshControl, View, StyleSheet, Text, Image, SafeAreaView, ScrollView, Pressable, Touchable, Platform } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { RefreshControl, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+
 import SamplePost from './SamplePost';
-import { useEffect } from 'react';
+
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
+
 const pad = 10;
 const feedflex = 6;
 

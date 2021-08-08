@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {TextInput, StyleSheet} from 'react-native';
+
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
 
 export default function SearchBar(){
     const colors = global.isDarkModeEnabled? darkColors: color; 

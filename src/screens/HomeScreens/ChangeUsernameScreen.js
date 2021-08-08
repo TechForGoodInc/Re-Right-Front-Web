@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Platform, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
+import { Platform, Pressable, TouchableWithoutFeedback, Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 import colors from '../../../config/colors';
-
 import GetGlobalStyles from '../../../config/GetGlobalStyles';
 
 export default function ChangeUserNameScreen() {
