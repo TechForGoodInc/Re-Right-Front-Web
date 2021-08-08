@@ -1,29 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Platform, StyleSheet } from 'react-native';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 import HomeStackNav from '../StackNavs/HomeStackNav';
 import ProfileStackNav from '../StackNavs/ProfileStackNav';
 import FriendsStackNav from '../StackNavs/FriendsStackNav';
 import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
-import { Platform, StyleSheet } from 'react-native';
+
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
-import GetSignUp1Style from '../../../config/SignUp1Css';
-import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
+
 export default function HomeTabNav() {
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height) 
+        GetGlobalStyles(landscape, width, height) 
     ));
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height) 
+            GetGlobalStyles(landscape, width, height) 
         ))
     }} 
     const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(global.isDarkModeEnabled);

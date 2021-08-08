@@ -25,12 +25,12 @@ import '../config/global';
 const Stack = createStackNavigator();
 
 export default function ReRightApp() {
-    const colorScheme = useColorScheme();
-    const [isDark, setIsDark] = useState(colorScheme === "dark");
-    useEffect(() => {
-      setIsDark(colorScheme==="dark");
-      global.isDarkModeEnabled = isDark? true : false;
-        }, [colorScheme]);
+    //const colorScheme = useColorScheme();
+    //const [isDark, setIsDark] = useState(colorScheme === "dark");
+    //useEffect(() => {
+    //  setIsDark(colorScheme==="dark");
+    //  global.isDarkModeEnabled = isDark? true : false;
+    //    }, [colorScheme]);
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const AppStyles = StyleSheet.create({
         StackHeaderStyle: { // Currently used by all stack navs

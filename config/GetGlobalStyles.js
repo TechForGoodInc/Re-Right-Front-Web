@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import color from "./colors";
 import darkColors from "./darkColors";
 import './global';
-export default function GetSignUp1Style (landscape,width, height) {
+export default function GetGlobalStyles (landscape,width, height) {
     //numerical values to be used for styling
     var Colors = global.isDarkModeEnabled ? darkColors : color;
     const viewConstants = {

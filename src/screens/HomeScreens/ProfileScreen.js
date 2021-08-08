@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Platform, Button, Text, View, StyleSheet, Image, SafeAreaView, ScrollView, Pressable, TouchableOpacity, TextInput, Alert } from 'react-native'
 import { Prompt } from 'react-router-dom';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
-import GetSignUp1Style from '../../../config/SignUp1Css';
-import SamplePost from './SamplePost';
-import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import GetSignUp1Style from '../../../config/GetGlobalStyles';
 
 
 export default function ProfileScreen({route,navigation}) {

@@ -1,15 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
+import ReachOutScreen2 from '../../screens/ReachOutScreen2';
 import StackHeaderBackImage from '../StackHeaderBackImage';
+
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
-import { useState } from 'react';
-import GetSignUp1Style from '../../../config/SignUp1Css';
-import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-import ReachOutScreen2 from '../../screens/ReachOutScreen2';
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
 
 const Stack = createStackNavigator();
 
@@ -19,12 +19,12 @@ export default function ChatStackNav({navigation}) {
     const {width, height} = useDimensions().window;
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height) 
+        GetGlobalStyles(landscape, width, height) 
     ));
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height) 
+            GetGlobalStyles(landscape, width, height) 
         ))
     }} 
     const StackHeaderStyle = styles.StackHeaderStyle;

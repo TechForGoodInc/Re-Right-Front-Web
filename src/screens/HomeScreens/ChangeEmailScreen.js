@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import colors from '../../../config/colors';
 import { Platform, Form, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
-import GetSignUp1Style from '../../../config/SignUp1Css';
-import KeyboardViewStyles from '../styles/KeyboardViewStyles';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import colors from '../../../config/colors';
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
 
 export default function SignupScreen1() {
     
@@ -12,13 +12,13 @@ export default function SignupScreen1() {
 
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height) 
+        GetGlobalStyles(landscape, width, height) 
     ));
 
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height) 
+            GetGlobalStyles(landscape, width, height) 
         ))
     }} 
 
