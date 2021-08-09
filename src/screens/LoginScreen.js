@@ -147,14 +147,14 @@ export default function LoginScreen({navigation}) {
         <View style = {styles.inputbar}>
             <Text style = {styles.headertext}> Login in with your account: </Text>
             <Text style={styles.labels}> Username/Email:  </Text>
-            <TextInput
-             style={styles.inputFields}
-             onChangeText={onChangeUsername}
-             value={username}
-             placeholder = ' Username/Email'
-             textContentType='username'
-             autoCompleteType='email' 
-             autoCapitalize='none'
+            <TextInput 
+            style={styles.inputFields}
+            onChangeText={onChangeUsername}
+            value={username}
+            placeholder = ' Username/Email'
+            textContentType='username'
+            autoCompleteType='email' 
+            autoCapitalize='none'
              />
             <Text style={styles.labels} > Password:  </Text>
             <TextInput 
