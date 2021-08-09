@@ -2,10 +2,10 @@ import { useDeviceOrientation, useDimensions } from '@react-native-community/hoo
 import React, {useEffect, useState} from 'react';
 import { useColorScheme} from 'react-native';
 import { Platform, View, Text, Button, StyleSheet, Pressable, Image, TextInput } from 'react-native';
-
 import color from "../../config/colors";
 import darkColors from "../../config/darkColors";
 import '../../config/global';
+import GetGlobalStyles from '../../config/GetGlobalStyles';
 
 export default function LoginScreen({navigation}) {
     //getting the dimensions and the orientation
@@ -18,6 +18,15 @@ export default function LoginScreen({navigation}) {
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
+    const [globalStyles, setGlobalStyles] = useState(StyleSheet.create( 
+        GetGlobalStyles(landscape, width, height) 
+    ));
+    if (landscape || width > height ){
+        () => {
+          setGlobalStyles(StyleSheet.create( 
+            GetGlobalStyles(landscape, width, height) 
+        ))
+    }} 
     //styles are here
     const styles = StyleSheet.create({
 
@@ -155,7 +164,7 @@ export default function LoginScreen({navigation}) {
             <Text style = {styles.headertext}> Login in with your account: </Text>
             <Text style={styles.labels}> Username/Email:  </Text>
             <TextInput
-             style={styles.inputFields}
+             style={globalStyles.inputText}
              onChangeText={onChangeUsername}
              value={username}
              placeholder = ' Username/Email'
@@ -165,7 +174,7 @@ export default function LoginScreen({navigation}) {
              />
             <Text style={styles.labels} > Password:  </Text>
             <TextInput 
-             style={styles.inputFields}
+             style={globalStyles.inputText}
              onChangeText={onChangePassword}
              value={password}
              secureTextEntry={true} 
