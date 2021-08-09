@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, Text, StyleSheet } from "react-native";
-  
-  import '../../../config/global';
-  import color from '../../../config/colors';
-  import darkColors from '../../../config/darkColors';
+// External imports above, internal imports below
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 export default function ReportAbuseRecapArticle({route}) {
     const colors = global.isDarkModeEnabled? darkColors: color; 

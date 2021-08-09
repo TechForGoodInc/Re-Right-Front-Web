@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, TextInput, ScrollView} from 'react-native';
-
+// External imports above, internal imports below
 import SampleChats from './SampleChats';
 
 import '../../../config/global';

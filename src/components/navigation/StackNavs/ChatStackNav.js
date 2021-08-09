@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import ReachOutScreen2 from '../../../screens/ReachOutScreens/ReachOutScreen2';
 import StackHeaderBackImage from '../StackHeaderBackImage';
 

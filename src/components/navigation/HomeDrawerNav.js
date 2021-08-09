@@ -3,7 +3,7 @@ import { useColorScheme} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StyleSheet } from 'react-native';
 import { AntDesign, MaterialIcons, FontAwesome, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
-
+// External imports above, internal imports below
 import HomeTabNav from './TabNavs/HomeTabNav';
 import RecapRightsTabNav from './TabNavs/RecapRightsTabNav';
 import ReportAbuseStackNav from './StackNavs/ReportAbuseStackNav';

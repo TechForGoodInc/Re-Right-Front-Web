@@ -1,8 +1,9 @@
 import React from 'react';
-import color from '../../../config/colors';
-import darkColors from '../../../config/darkColors';
 import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput,Platform } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+// External imports above, internal imports below
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 const viewConstants = {
     containerTopMargin: '10%',

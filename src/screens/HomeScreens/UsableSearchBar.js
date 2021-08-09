@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {TextInput, StyleSheet} from 'react-native';
-
+// External imports above, internal imports below
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
 import GetGlobalStyles from '../../../config/GetGlobalStyles';

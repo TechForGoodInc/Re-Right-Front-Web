@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, Text, StyleSheet} from "react-native";
-
+// External imports above, internal imports below
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';

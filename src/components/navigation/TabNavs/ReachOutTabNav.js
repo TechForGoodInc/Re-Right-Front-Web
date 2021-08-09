@@ -2,18 +2,17 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// React imports above, internal imports below
 import ReachOutStackNav from '../StackNavs/ReachOutStackNav';
 import ProfileStackNav from '../StackNavs/ProfileStackNav';
 import FriendsStackNav from '../StackNavs/FriendsStackNav';
 import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
 
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
 import color from "../../../../config/colors";
 import darkColors from "../../../../config/darkColors";
 import '../../../../config/global';
-
-import GetSignUp1Style from '../../../config/SignUp1Css';
 
 export default function ReachOutTabNav({navigation}) {
     const colors = global.isDarkModeEnabled ? darkColors : color;

@@ -4,7 +4,7 @@ import { useColorScheme} from 'react-native';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+// External imports above, internal imports below
 import LoggedOutScreen from './screens/LoggedOutScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen1 from './screens/SignupScreens/SignupScreen1';

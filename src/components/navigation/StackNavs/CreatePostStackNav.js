@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Image, TouchableOpacity, Text, View } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import CreatePostScreen from '../../../screens/HomeScreens/CreatePostScreen';
 import DevicePostScreen from '../../../screens/HomeScreens/DevicePostScreen';
 import TextPostScreen from '../../../screens/HomeScreens/TextPostScreen';

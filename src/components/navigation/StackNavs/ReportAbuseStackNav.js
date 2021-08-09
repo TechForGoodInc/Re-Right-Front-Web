@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import StackHeaderBackImage from '../StackHeaderBackImage';
 import ReportAbuseScreen1 from '../../../screens/ReportAbuseScreens/ReportAbuseScreen1';
 import ReportAbuseScreen2 from '../../../screens/ReportAbuseScreens/ReportAbuseScreen2';

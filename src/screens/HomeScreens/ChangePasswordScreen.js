@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Platform, Pressable, TouchableWithoutFeedback, Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import colors from '../../../config/colors';
 import GetGlobalStyles from '../../../config/GetGlobalStyles';
 

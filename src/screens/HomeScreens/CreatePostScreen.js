@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
+// External imports above, internal imports below
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
@@ -148,20 +148,7 @@ export default function CreatePostScreen({navigation}) {
         );
     } else {
         return (
-            <ScrollView forceInset={{bottom: 'always'}} style={styles.container}>
-            {/* Description of different types of posts */}
-            
-                <View style={styles.desciptionView}> 
-                    <Text style={styles.title}>
-                        Post Types
-                    </Text>
-                    <Text 
-                        numberOfLines='5' 
-                        style={styles.subtitle}> 
-                        You can create a post that spreads a positive message or just share your thoughts or upload any custom post from your device.
-
-    return (
-        <ScrollView forceInset={{bottom: 'always'}} style={styles.container}>
+        <View forceInset={{bottom: 'always'}} style={styles.container}>
         {/* Description of different types of posts */}
         
             <View style={styles.desciptionView}> 
@@ -220,7 +207,8 @@ export default function CreatePostScreen({navigation}) {
                         </TouchableOpacity>
                     </View>
                 </View>   
-            </ScrollView>
+            </View>
+        </View>
         );
     }
     

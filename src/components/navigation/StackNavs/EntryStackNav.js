@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-
+// External imports above, internal imports below
 import LoggedOutScreen from '../../../screens/LoggedOutScreen';
 import LoginScreen from '../../../screens/LoginScreen';
 import SignupScreen1 from '../../../screens/SignupScreen1';
@@ -15,6 +15,7 @@ import HomeDrawerNav from '../HomeDrawerNav'
 
 import StackHeaderBackImage from '../StackHeaderBackImage';
 
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
 import color from "../../../../config/colors";
 import darkColors from "../../../../config/darkColors";
 import '../../../../config/global';

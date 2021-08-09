@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import StackHeaderBackImage from '../StackHeaderBackImage';
 import ReachOutScreen1 from '../../../screens/ReachOutScreens/ReachOutScreen1';
 import ReachOutScreen2 from '../../../screens/ReachOutScreens/ReachOutScreen2';
 
-import GetSignUp1Style from '../../../../config/GetGlobalStyles';
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
 import color from '../../../../config/colors';
 import darkColors from '../../../../config/darkColors';
 import '../../../../config/global';

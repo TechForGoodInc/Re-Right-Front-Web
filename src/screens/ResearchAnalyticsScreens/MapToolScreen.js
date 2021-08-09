@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Platform } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 import MapView from 'react-native-maps';
 import DropDownPicker from 'react-native-dropdown-picker';
-
+// External imports above, internal imports below
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';

@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, Text, TextInput, Pressable, StyleSheet} from 'react-native';
-
+// External imports above, internal imports below
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';

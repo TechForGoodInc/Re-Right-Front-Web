@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable, TouchableWithoutFeedback, Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';

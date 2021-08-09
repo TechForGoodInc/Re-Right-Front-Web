@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, Text, StyleSheet, SafeAreaView, TouchableOpacity, ScrollView, Pressable} from "react-native";
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';

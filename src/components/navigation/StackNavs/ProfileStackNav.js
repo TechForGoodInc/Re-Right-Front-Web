@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Image, TouchableOpacity, Platform } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import StackHeaderBackImage from '../StackHeaderBackImage';
 import PostPreview from '../../../screens/HomeScreens/PostPreview';
 import ProfileScreen from '../../../screens/HomeScreens/ProfileScreen';
@@ -13,7 +13,7 @@ import ChangeEmailScreen from '../../../screens/HomeScreens/ChangeEmailScreen';
 import SignupScreen4 from '../../../screens/SignupScreens/SignupScreen4';
 
 import GetGlobalStyles from '../../../../config/GetGlobalStyles';
-import colors from '../../../../config/colors';
+import color from '../../../../config/colors';
 import darkColors from "../../../../config/darkColors";
 import '../../../../config/global';
 

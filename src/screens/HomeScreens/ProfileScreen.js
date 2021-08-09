@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Platform, Button, Text, View, StyleSheet, Image, SafeAreaView, ScrollView, Pressable, TouchableOpacity, TextInput, Alert } from 'react-native'
-import '../../../config/global';
 import { Prompt } from 'react-router-dom';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+// External imports above, internal imports below
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
-import GetSignUp1Style from '../../../config/GetGlobalStyles';
-
+import '../../../config/global';
 
 export default function ProfileScreen({route,navigation}) {
     const [editMode,setEditMode] = useState(false);
@@ -44,7 +44,7 @@ export default function ProfileScreen({route,navigation}) {
             borderWidth: 2,
             borderRadius: 10,
             borderColor: colors.text_general,
-            color: color.text_general,
+            color: colors.text_general,
             marginHorizontal:'2%'
         },
         allTags: {
@@ -64,7 +64,7 @@ export default function ProfileScreen({route,navigation}) {
     const {width, height} = useDimensions().window;
     //header styles are in a sperate folder 
     const [headerStyles,setHeaderStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height) 
+        GetGlobalStyles(landscape, width, height) 
     ));
     //navigation from header
     const handleHamburgerPress = () => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TextInput, StyleSheet } from 'react-native';
-
+// External imports above, internal imports below
 import colors from '../../config/colors';
 
 export default class FancyTextInput extends Component {
