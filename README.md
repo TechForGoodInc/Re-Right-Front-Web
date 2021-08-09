@@ -2,6 +2,8 @@
 <html>
    <body>
       <h1>Markdown README</h1>
+      <h1>What is Re-Right?</h1>
+         Re-Right is a platform aiming to support and provide a safe space for victims of human rights violations (HRVs), simultaneously providing data analytics useful in the study, prediction, and hopefully prevention of HRVs throughout the US, and eventually, the globe. Re-Right contains five major components, all highly focused around user anonymity: Home, Recap Rights, Report Abuse, Reach Out, and Research Analytics.
       <h2> Glossary: </h2>
       <ul>
          <li> App.js</h3> </li>
