@@ -49,6 +49,32 @@
 <h3>package.json</h3>
 <h3>README</h3>
 <h3>src</h3>
+  > components
+    > CheckBoxHybrid.js
+    > FancyTextInput.js
+    > navigation
+      > FriendsScreenNavWrapper.js
+      > HomeDrawerNav.js
+      > StackHeaderBackImage.js
+      > StackNavs
+        > ChatStackNav.js
+        > CreatePostStackNav.js
+        > EntryStackNav.js
+        > FriendsStackNav.js
+        > HomeStackNav.js
+        > ProfileStackNav.js
+        > ReachOutStackNav.js
+        > RecapRightsStackNav.js
+        > ReportAbuseStackNav.js
+        > ReasearchStackNav.js
+      > TabNavs
+        > HomeTabNav.js
+        > ReachOutTabNav.js
+        > RecapRightsTabNav.js
+        > ReportAbuseTabNav.js
+        > ResearchTabNav.js
+  > ReRightApp.js
+  > screens
 
 <h4>Header 4</h4>
 <h5>Header 5</h5>
