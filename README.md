@@ -33,23 +33,23 @@ Analytical tools utilizing our HRV report database
       <li>
          <h4>assets</h4>
          <ul>
-            <li>adaptive-icon.png </li>
-            <li>chat.png </li>
-            <li>ChatIcon.png </li>
-            <li>cross-round.png </li>
-            <li>cross.png </li>
-            <li>delete-button.png </li>
-            <li>download.png </li>
-            <li>editing.png </li>
-            <li>email.png </li>
-            <li>favicon.ong </li>
-            <li>FriendsIcon.png </li>
-            <li>heart.png </li>
-            <li>HMIcon.png </li>
-            <li>home.png </li>
-            <li>icon.png </li>
-            <li>like.png </li>
-            <li>logo_icon.png </li>
+            <li>adaptive-icon.png --> A default image for Expo </li>
+            <li>chat.png --> Picture of two text bubbles overlapping</li>
+            <li>ChatIcon.png --> Picture of one rectangular text bubble</li>
+            <li>cross-round.png --> Picture of a transparent "X" in a black circle </li>
+            <li>cross.png --> Picture of a rectangular "X </li>
+            <li>delete-button.png --> Picture of a rectangular "X" with rounded-off edges</li>
+            <li>download.png --> Picture of a block arrow pointing down</li>
+            <li>editing.png --> Picture of a transparent pad and pencil overlapping </li>
+            <li>email.png --> Picture of a transparent envelope outline on a black circle  </li>
+            <li>favicon.ong --> A default image for Expo </li>
+            <li>FriendsIcon.png --> A picture of three person icons, with the center one being in front of the other two</li>
+            <li>heart.png --> A picture of a transparent heart with a black outline</li>
+            <li>HMIcon.png --> A picture of three black ovals arranged as a Hamburger Menu</li>
+            <li>home.png --> A picture of a house icon</li>
+            <li>icon.png --> A default image for Expo</li>
+            <li>like.png --> A picture of a transparent right hand, with a black outline, giving a thumbs up</li>
+            <li>logo_icon.png --> A picture of three arms of different tones interlocking to form the letter "R"</li>
             <li>logo_text.png </li>
             <li>man.png </li>
             <li>padlock.png </li>
