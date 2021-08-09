@@ -49,28 +49,29 @@ Analytical tools utilizing our HRV report database
             <li>home.png --> A picture of a house icon</li>
             <li>icon.png --> A default image for Expo</li>
             <li>like.png --> A picture of a transparent right hand, with a black outline, giving a thumbs up</li>
-            <li>logo_icon.png --> A picture of three arms of different tones interlocking to form the letter "R"</li>
-            <li>logo_text.png </li>
-            <li>man.png </li>
-            <li>padlock.png </li>
-            <li>PostIcon.png </li>
-            <li>private.png </li>
-            <li>ProfileIcon.png </li>
-            <li>rerightlogo.png </li>
-            <li>research.png </li>
-            <li>right-arrow.png </li>
-            <li>search.png </li>
-            <li>settings.png </li>
-            <li>stylizedPost.png </li>
+            <li>logo_icon.png --> A picture of three blue arms of different tones interlocking to form the letter "R"</li>
+            <li>logo_text.png --> A picture of the word "RE-RIGHT" in blue </li>
+            <li>man.png --> A picture of a person icon with black hair, tan skin, a red shirt, and a white empty oval on their left chest </li>
+            <li>padlock.png --> A picture of a black padlock with a transparent cutout of a keyhole in the center</li>
+            <li>PostIcon.png --> A picture of a transparent and rounded "+" in a black circle</li>
+            <li>private.png --> A picture of a transparent padlock with a black outline and a black outline of a keyhole in its center</li>
+            <li>ProfileIcon.png --> A picture of a face icon: one transparent circle with a black outline with black hair parted on the left and two black circles for eyes </li>
+            <li>rerightlogo.png --> A picture of the combination of logo_icon.png and logo_text.png with the former being on top of the latter</li>
+            <li>research.png --> A picture of a white piece of paper with grey parallel lines running horizontally across with a dog-ear on its top-left corner, being covered by a magnifying glass that has blue glass and an orange handle, all in a grey circle</li>
+            <li>right-arrow.png --> A picture of a rounded black">" </li>
+            <li>search.png  --> A picture of an out of focus black outline of a magnifying glass</li>
+            <li>settings.png --> A picture of an black wrench facing the top right of the image on top of a 8-toothed gear (with on of the teeth being covered by the wrench</li>
+            <li>splash.png --> A default image for Expo</li>
+            <li>stylizedPost.png --> A picture of a blue background that contains a white rectangle in the foreground containing the word "Positive" on top of the word "Vibes" in black ink and script</li>
             <li>
                <h4>textures</h4>
                <ul>
-                  <li>brick_wall.png </li>
-                  <li>stone_wall.png </li>
+                  <li>brick_wall.png --> A picture of a part of a walll with light grey/tan bricks</li>
+                  <li>stone_wall.png  --> A picture of a part of a walll with tan bricks that seem to have pieces vut out of their tops</li>
                </ul>
             </li>
-            <li> user.png </li>
-            <li> userpfp.png </li>
+            <li> user.png  --> A picture of a transparent circle with a black outline containing a person icon that is also transparent and oiutlined in black</li>
+            <li> userpfp.png  --> A picture of user.png but no outline and the circle is white and the person icon is grey</li>
          </ul>
       </li>
       <li>babel.config.js</li>
