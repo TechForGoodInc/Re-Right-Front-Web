@@ -1,21 +1,20 @@
 <h1>What is Re-Right?</h1>
-<h4>Blurb Blurb</h4>
+About
 
-<h2>Home</h2>
+<h4>Home</h4>
 Blurb Blurb
-<h4>Blurb Blurb</h4>
 
-<h2>Recap Rights</h2>
-<h4>Blurb Blurb</h4>
+<h4>Recap Rights</h4>
+Blurb Blurb
 
-<h2>Report Abuse</h2>
-<h4>Blurb Blurb</h4>
+<h4>Report Abuse</h4>
+Blurb Blurb
 
-<h2>Reach Out</h2>
-<h4>Blurb Blurb</h4>
+<h4>Reach Out</h4>
+Blurb Blurb
 
-<h2>Research Analytics</h2>
-<h4>Blurb Blurb</h4>
+<h4>Research Analytics</h4>
+Blurb Blurb
 
 <h3>App.js</h3>
 <h3>app.json</h3>
