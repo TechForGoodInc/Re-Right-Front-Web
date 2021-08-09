@@ -11,12 +11,11 @@ import ResearchStackNav from './StackNavs/ResearchStackNav';
 import ProfileStackNav from './StackNavs/ProfileStackNav';
 import ReachOutStackNav from './StackNavs/ReachOutStackNav';
 
-//import HomeDrawer from './HomeDrawer';
+import LoginScreen from '../../screens/LoginScreen';
+
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
 import '../../../config/global';
-import LoggedOutScreen from '../../screens/LoggedOutScreen';
-import ReRightApp from '../../ReRightApp';
 
 const Drawer = createDrawerNavigator();
 
@@ -77,7 +76,7 @@ export default function HomeDrawerNav({navigation}) {
             <Drawer.Screen name="Profile" component={ProfileStackNav} options={{
                 unmountOnBlur: true, drawerIcon: () => <FontAwesome5 name="user" size={24} color={colors.tintColor} />
             }}/>
-            <Drawer.Screen name="Log Out" component={LoggedOutScreen} labelStyle={styles.logoutLabelStyle} options={{
+            <Drawer.Screen name="Log Out" component={LoginScreen} labelStyle={styles.logoutLabelStyle} options={{
                 unmountOnBlur: true, drawerIcon: () => <MaterialCommunityIcons name="exit-run" size={24} color={colors.tintColor} />
             }}/>
         </Drawer.Navigator>

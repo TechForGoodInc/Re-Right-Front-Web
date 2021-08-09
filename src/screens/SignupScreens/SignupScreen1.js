@@ -12,7 +12,6 @@ export default function SignupScreen1({navigation}) {
     const [styles, setStyles] = useState(StyleSheet.create( 
         GetGlobalStyles(landscape, width, height) 
     ));
-
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 

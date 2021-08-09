@@ -148,7 +148,7 @@ export default function CreatePostScreen({navigation}) {
         );
     } else {
         return (
-        <View forceInset={{bottom: 'always'}} style={styles.container}>
+        <ScrollView forceInset={{bottom: 'always'}} style={styles.container}>
         {/* Description of different types of posts */}
         
             <View style={styles.desciptionView}> 
@@ -206,9 +206,9 @@ export default function CreatePostScreen({navigation}) {
                             <Text style= {{color: colors.white, fontWeight: '900'}}> + Choose From Device </Text>
                         </TouchableOpacity>
                     </View>
-                </View>   
-            </View>
-        </View>
+                </View> 
+                </View>  
+            </ScrollView>
         );
     }
     
