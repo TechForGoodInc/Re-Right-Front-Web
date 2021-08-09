@@ -32,11 +32,9 @@ export default function LoginScreen({navigation}) {
              alignItems: 'center',
              justifyContent: 'center',
          },
-       
          inputbar: {
              flex: 1,
              justifyContent: 'center',
-             
              ...Platform.select({
                 web: {
                     marginLeft: '30%',
@@ -48,12 +46,10 @@ export default function LoginScreen({navigation}) {
                 },
              }),
          },
-       
          links: {
              justifyContent: 'flex-end',
              alignItems: 'center',
-             flex: 0.5, 
-             
+             flex: 0.5,   
          },
        
          logo: {
@@ -64,6 +60,7 @@ export default function LoginScreen({navigation}) {
                   height: '75%',
                 },
                 default: {
+                  marginTop: '40%',
                   width: (landscape || width > height) ? '100%' : '55%',
                   height: (landscape || width > height) ? '100%': '50%',
                 }
@@ -90,7 +87,7 @@ export default function LoginScreen({navigation}) {
       
           continueButton: {
             width: "100%",
-            height: 50,
+            height: '8%',
             justifyContent: "center",
             alignItems: "center",
             borderColor: colors.border,
