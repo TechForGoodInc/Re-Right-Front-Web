@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import colors from '../../../config/colors';
+import React from 'react';
+import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
-import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput,Platform } from 'react-native';
+import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput,Platform } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 const viewConstants = {

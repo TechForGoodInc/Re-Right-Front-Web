@@ -1,6 +1,8 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, TextInput, Text, Image, Platform, Alert, View, ScrollView} from 'react-native';
+import {SafeAreaView, StyleSheet, TextInput, ScrollView} from 'react-native';
+
 import SampleChats from './SampleChats';
+
 import '../../config/global';
 import color from '../../config/colors';
 import darkColors from '../../config/darkColors';

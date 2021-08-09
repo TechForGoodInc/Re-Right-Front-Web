@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
+
 import '../../config/global';
 import color from '../../config/colors';
 import darkColors from '../../config/darkColors';

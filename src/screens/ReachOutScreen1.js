@@ -1,7 +1,7 @@
 import React from 'react';
-import colors from '../../config/colors';
 import { Pressable, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
 import CheckBoxHybrid from '../components/CheckBoxHybrid';
 
 import '../../config/global';

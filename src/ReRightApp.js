@@ -2,9 +2,9 @@ import 'react-native-gesture-handler';
 import React, {useEffect, useState} from 'react';
 import { useColorScheme} from 'react-native';
 import { StyleSheet } from 'react-native';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import LoggedOutScreen from './screens/LoggedOutScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen1 from './screens/SignupScreens/SignupScreen1';

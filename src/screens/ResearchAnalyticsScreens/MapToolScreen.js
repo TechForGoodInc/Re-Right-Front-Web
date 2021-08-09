@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Dimensions, Platform } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 import MapView from 'react-native-maps';
 import DropDownPicker from 'react-native-dropdown-picker';
+
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';

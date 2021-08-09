@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import colors from '../../../config/colors';
-import { Platform, Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
-import GetSignUp1Style from '../styles/SignUp1Css';
+import { Platform, Pressable, TouchableWithoutFeedback, Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import color from '../../../config/colors';
+import darkColors from '../../config/darkColors';
+import GetSignUp1Style from '../styles/SignUp1Css';
 
 export default function ChangeUserNameScreen() {
     
