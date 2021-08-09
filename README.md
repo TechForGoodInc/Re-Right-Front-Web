@@ -75,6 +75,38 @@
         > ResearchTabNav.js
   > ReRightApp.js
   > screens
+    > ForgetPasswordScreens
+      > ForgotPassScreen1.js
+      > ForgotPassScreen2.js
+      > ForgotPassScreen3.js
+      > ForgotPassScreen4.js
+    > HomeScreens
+      > AccountSettingsScreen.js
+      > ChangeEmailScreen.js
+      > ChangePasswordScreen.js
+      > ChangeUsernameScreen.js
+      > ChatScreen.js
+      > CreatePostScreen.js
+      > DevicePostScreen.js
+      > FriendProfileScreen.js
+      > FriendsScreen.js
+      > HomeScreen.js
+      > PostPreview.js
+      > ProfileScreen.js
+      > RecommendedFriendsScreen.js
+      > SampleFriend.js
+      > SamplePost.js
+      > StylizedPostScreen.js
+      > StylizedPostScreen2.js
+      > TextPostScreen.js
+      > UsableSearchBar.js
+    > LoggetOutScreen.js
+    > LoginScreen.js
+    > ReachOutScreens
+    > RecapRightScreens
+    > ReportAbuseScreens
+    > ResearchAnalyticsScreens
+    > SignupScreens
 
 <h4>Header 4</h4>
 <h5>Header 5</h5>
