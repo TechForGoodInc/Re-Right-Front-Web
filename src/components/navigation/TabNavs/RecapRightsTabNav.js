@@ -5,13 +5,13 @@ import { StyleSheet } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 import RecapRightsStackNav from '../StackNavs/RecapRightsStackNav';
-import RecapQuiz from '../../screens/RecapRightsScreens/RecapQuiz';
+import RecapQuiz from '../../../screens/RecapRightsScreens/RecapQuiz';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
-import GetGlobalStyles from '../../../config/GetGlobalStyles';
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
 
 export default function RecapRightsTabNav({navigation}) {
     const colors = global.isDarkModeEnabled ? darkColors : color;

@@ -1,23 +1,23 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import '../../../config/global';
-import LoggedOutScreen from '../../screens/LoggedOutScreen';
-import LoginScreen from '../../screens/LoginScreen';
-import SignupScreen1 from '../../screens/SignupScreen1';
-import SignupScreen2 from '../../screens/SignupScreen2';
-import SignupScreen3 from '../../screens/SignupScreen3';
-import SignupScreen4 from '../../screens/SignupScreen4';
-import ForgotPassScreen1 from '../../screens/ForgotPassScreen1';
-import ForgotPassScreen2 from '../../screens/ForgotPassScreen2';
-import ForgotPassScreen3 from '../../screens/ForgotPassScreen3';
-import ForgotPassScreen4 from '../../screens/ForgotPassScreen4';
+
+import LoggedOutScreen from '../../../screens/LoggedOutScreen';
+import LoginScreen from '../../../screens/LoginScreen';
+import SignupScreen1 from '../../../screens/SignupScreen1';
+import SignupScreen2 from '../../../screens/SignupScreen2';
+import SignupScreen3 from '../../../screens/SignupScreen3';
+import SignupScreen4 from '../../../screens/SignupScreen4';
+import ForgotPassScreen1 from '../../../screens/ForgotPassScreen1';
+import ForgotPassScreen2 from '../../../screens/ForgotPassScreen2';
+import ForgotPassScreen3 from '../../../screens/ForgotPassScreen3';
+import ForgotPassScreen4 from '../../../screens/ForgotPassScreen4';
 import HomeDrawerNav from '../HomeDrawerNav'
 
 import StackHeaderBackImage from '../StackHeaderBackImage';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
 const Stack = createStackNavigator();
 

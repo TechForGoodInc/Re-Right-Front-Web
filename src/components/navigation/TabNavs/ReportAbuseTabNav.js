@@ -1,14 +1,16 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from 'react-native';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 import ReportAbuseStackNav from '../StackNavs/ReportAbuseStackNav';
 import AboutReportAbuseScreen from '../../screens/ReportAbuseScreens/AboutReportAbuseScreen';
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-import GetSignUp1Style from '../../../config/SignUp1Css';
-import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
+
+import GetSignUp1Style from '../../../../config/SignUp1Css';
 
 export default function ReportAbuseTabNav({navigation}) {
     const colors = global.isDarkModeEnabled ? darkColors : color;

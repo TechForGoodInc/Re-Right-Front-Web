@@ -3,19 +3,19 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
-import ReportAbuseScreen1 from '../../screens/ReportAbuseScreens/ReportAbuseScreen1';
-import ReportAbuseScreen2 from '../../screens/ReportAbuseScreens/ReportAbuseScreen2';
-import ReportRecapRightsScreen from '../../screens/ReportAbuseScreens/ReportAbuseRecapRightsScreen';
-import ReportRecapArticle from '../../screens/ReportAbuseScreens/ReportAbuseRecapArticle';
-import ReportRecapQuiz from '../../screens/ReportAbuseScreens/ReportAbuseRecapQuiz';
-import AboutReportAbuseScreen from '../../screens/ReportAbuseScreens/AboutReportAbuseScreen';
 import StackHeaderBackImage from '../StackHeaderBackImage';
+import ReportAbuseScreen1 from '../../../screens/ReportAbuseScreens/ReportAbuseScreen1';
+import ReportAbuseScreen2 from '../../../screens/ReportAbuseScreens/ReportAbuseScreen2';
+import ReportRecapRightsScreen from '../../../screens/ReportAbuseScreens/ReportAbuseRecapRightsScreen';
+import ReportRecapArticle from '../../../screens/ReportAbuseScreens/ReportAbuseRecapArticle';
+import ReportRecapQuiz from '../../../screens/ReportAbuseScreens/ReportAbuseRecapQuiz';
+import AboutReportAbuseScreen from '../../../screens/ReportAbuseScreens/AboutReportAbuseScreen';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
-import GetGlobalStyles from '../../../config/GetGlobalStyles';
 const Stack = createStackNavigator();
 
 export default function ReportAbuseStackNav({navigation}) {
@@ -48,7 +48,7 @@ export default function ReportAbuseStackNav({navigation}) {
             <Stack.Screen name="Report Abuse" component={ReportAbuseScreen1}
                 options={{title: "Report Abuse", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
             <Stack.Screen name="Incident Info" component={ReportAbuseScreen2} />

@@ -7,7 +7,7 @@ export default function CheckBoxHybrid() {
     if (Platform.OS === 'web') {
         return (
             <input type="CheckBox"/>
-            )
+        )
     }
     if (Platform.OS === 'ios') {
         return (

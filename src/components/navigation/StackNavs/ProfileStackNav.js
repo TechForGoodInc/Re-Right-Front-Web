@@ -3,20 +3,19 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Image, TouchableOpacity, Platform } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
-import PostPreview from '../../screens/HomeScreens/PostPreview';
-import ProfileScreen from '../../screens/HomeScreens/ProfileScreen';
-import AccountSettings from '../../screens/HomeScreens/AccountSettingsScreen';
-import ChangeUsernameScreen from '../../screens/HomeScreens/ChangeUsernameScreen';
-import ChangePasswordScreen from '../../screens/HomeScreens/ChangePasswordScreen';
-import ChangeEmailScreen from '../../screens/HomeScreens/ChangeEmailScreen';
-import SignupScreen4 from '../../screens/SignupScreens/SignupScreen4';
 import StackHeaderBackImage from '../StackHeaderBackImage';
+import PostPreview from '../../../screens/HomeScreens/PostPreview';
+import ProfileScreen from '../../../screens/HomeScreens/ProfileScreen';
+import AccountSettings from '../../../screens/HomeScreens/AccountSettingsScreen';
+import ChangeUsernameScreen from '../../../screens/HomeScreens/ChangeUsernameScreen';
+import ChangePasswordScreen from '../../../screens/HomeScreens/ChangePasswordScreen';
+import ChangeEmailScreen from '../../../screens/HomeScreens/ChangeEmailScreen';
+import SignupScreen4 from '../../../screens/SignupScreens/SignupScreen4';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-
-import GetGlobalStyles from '../../../config/GetGlobalStyles';
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
+import colors from '../../../../config/colors';
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
 const Stack = createStackNavigator();
 
@@ -56,11 +55,11 @@ export default function ProfileStackNav({navigation}) {
         <Stack.Screen name="Profile" component={ProfileScreen}
                 options={{title: "Profile",headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     ), headerRight: () => (
                         <TouchableOpacity activeOpacity = { .5 } onPress={ handleSettingsPress }>
-                        <Image source={require('../../../assets/settings.png')} style = {styles.settingsicon} />
+                        <Image source={require('../../../../assets/settings.png')} style = {styles.settingsicon} />
                     </TouchableOpacity>
                     )}} />
         <Stack.Screen detachInactiveScreens = { true} detachPreviousScreen= {true}  options={{detachPreviousScreen: true}} name="Account Settings" component={AccountSettings}/>

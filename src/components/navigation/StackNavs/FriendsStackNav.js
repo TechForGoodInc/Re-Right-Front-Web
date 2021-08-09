@@ -4,15 +4,14 @@ import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 import StackHeaderBackImage from '../StackHeaderBackImage';
-import FriendProfileScreen from '../../screens/HomeScreens/FriendProfileScreen';
-import RecommendedFriendsScreen from '../../screens/HomeScreens/RecommendedFriendsScreen';
 import FriendsScreenNavWrapper from '../FriendsScreenNavWrapper';
+import FriendProfileScreen from '../../../screens/HomeScreens/FriendProfileScreen';
+import RecommendedFriendsScreen from '../../../screens/HomeScreens/RecommendedFriendsScreen';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-
-import GetGlobalStyles from '../../../config/GetGlobalStyles';
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
 const Stack = createStackNavigator();
 
@@ -45,7 +44,7 @@ export default function FriendsStackNav({navigation}) {
             <Stack.Screen name="Friends" component={FriendsScreenNavWrapper} props={{navigation: navigation}}
                 options={{title: "Friends", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
             <Stack.Screen name="Recommended Friends" component={RecommendedFriendsScreen}

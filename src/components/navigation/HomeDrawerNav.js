@@ -11,12 +11,12 @@ import ResearchStackNav from './StackNavs/ResearchStackNav';
 import ProfileStackNav from './StackNavs/ProfileStackNav';
 import ReachOutStackNav from './StackNavs/ReachOutStackNav';
 
-import HomeDrawer from './HomeDrawer';
-import color from '../../config/colors';
-import darkColors from '../../config/darkColors';
-import '../../config/global';
-import LoggedOutScreen from '../screens/LoggedOutScreen';
-import ReRightApp from '../ReRightApp';
+//import HomeDrawer from './HomeDrawer';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
+import '../../../config/global';
+import LoggedOutScreen from '../../screens/LoggedOutScreen';
+import ReRightApp from '../../ReRightApp';
 
 const Drawer = createDrawerNavigator();
 
@@ -29,7 +29,7 @@ export default function HomeDrawerNav({navigation}) {
             drawerStyle={{
                 backgroundColor: colors.background_drawer,
                 }}
-            drawerContent={HomeDrawer}
+            //drawerContent={HomeDrawer}
             drawerContentOptions={{
                 // activeBackgroundColor: colors.active_tab,
                 activeBackgroundColor: colors.background_list_item,

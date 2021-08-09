@@ -3,13 +3,13 @@ import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
-import ReachOutScreen2 from '../../screens/ReachOutScreens/ReachOutScreen2';
+import ReachOutScreen2 from '../../../screens/ReachOutScreens/ReachOutScreen2';
 import StackHeaderBackImage from '../StackHeaderBackImage';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-import GetGlobalStyles from '../../../config/GetGlobalStyles';
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
 const Stack = createStackNavigator();
 
@@ -43,7 +43,7 @@ export default function ChatStackNav({navigation}) {
             <Stack.Screen name="Chat" component={ReachOutScreen2}
                 options={{title: "Chat", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
         </Stack.Navigator>

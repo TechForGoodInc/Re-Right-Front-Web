@@ -3,17 +3,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
-import RecapRightScreen1 from '../../screens/RecapRightsScreens/RecapRightsScreen1';
-import RecapArticle from '../../screens/RecapRightsScreens/RecapArticle';
-import RecapQuiz from '../../screens/RecapRightsScreens/RecapQuiz';
 import StackHeaderBackImage from '../StackHeaderBackImage';
+import RecapRightScreen1 from '../../../screens/RecapRightsScreens/RecapRightsScreen1';
+import RecapArticle from '../../../screens/RecapRightsScreens/RecapArticle';
+import RecapQuiz from '../../../screens/RecapRightsScreens/RecapQuiz';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-
-import GetGlobalStyles from '../../../config/GetGlobalStyles';
-
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
 const Stack = createStackNavigator();
 
@@ -47,7 +45,7 @@ export default function RecapRightsStackNav({navigation}) {
             <Stack.Screen name="Recap Rights" component={RecapRightScreen1}
                 options={{title: "Recap Rights", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
             <Stack.Screen name="RecapArticle" component={RecapArticle} options = { ({route}) => ({title: route.params.title})} />  

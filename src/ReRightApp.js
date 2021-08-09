@@ -15,8 +15,9 @@ import ForgotPassScreen1 from './screens/ForgetPasswordScreens/ForgotPassScreen1
 import ForgotPassScreen2 from './screens/ForgetPasswordScreens/ForgotPassScreen2';
 import ForgotPassScreen3 from './screens/ForgetPasswordScreens/ForgotPassScreen3';
 import ForgotPassScreen4 from './screens/ForgetPasswordScreens/ForgotPassScreen4';
-import HomeDrawerNav from './components/HomeDrawerNav';
-import StackHeaderBackImage from './components/StackHeaderBackImage';
+
+import HomeDrawerNav from './components/navigation/HomeDrawerNav';
+import StackHeaderBackImage from './components/navigation/StackHeaderBackImage';
 
 import color from "../config/colors";
 import darkColors from "../config/darkColors";
