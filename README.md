@@ -2,6 +2,7 @@
 <h4>Blurb Blurb</h4>
 
 <h2>Home</h2>
+Blurb Blurb
 <h4>Blurb Blurb</h4>
 
 <h2>Recap Rights</h2>
