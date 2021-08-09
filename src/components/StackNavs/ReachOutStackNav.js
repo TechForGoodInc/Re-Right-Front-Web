@@ -4,8 +4,8 @@ import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 
-import ReachOutScreen1 from '../../screens/ReachOutScreen1';
-import ReachOutScreen2 from '../../screens/ReachOutScreen2';
+import ReachOutScreen1 from '../../screens/ReachOutScreens/ReachOutScreen1';
+import ReachOutScreen2 from '../../screens/ReachOutScreens/ReachOutScreen2';
 import StackHeaderBackImage from '../StackHeaderBackImage';
 
 import color from '../../../config/colors';

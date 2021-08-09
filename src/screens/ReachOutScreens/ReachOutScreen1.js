@@ -2,11 +2,11 @@ import React from 'react';
 import { Pressable, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
-import CheckBoxHybrid from '../components/CheckBoxHybrid';
+import CheckBoxHybrid from '../../components/CheckBoxHybrid';
 
-import '../../config/global';
-import color from '../../config/colors';
-import darkColors from '../../config/darkColors';
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 const viewConstants = {
     containerTopMargin: '10%',

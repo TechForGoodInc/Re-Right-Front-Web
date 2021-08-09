@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
-import ReachOutScreen2 from '../../screens/ReachOutScreen2';
+import ReachOutScreen2 from '../../screens/ReachOutScreens/ReachOutScreen2';
 import StackHeaderBackImage from '../StackHeaderBackImage';
 
 import color from "../../../config/colors";
