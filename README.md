@@ -40,6 +40,10 @@
   > userpfp.png
 <h3>babel.config.js</h3>
 <h3>config</h3>
+  > colors.js
+  > darkColors.js
+  > GetGlobalStyles.js
+  > global.js
 <h3>metro.config.js</h3>
 <h3>package-lock.json</h3>
 <h3>package.json</h3>
