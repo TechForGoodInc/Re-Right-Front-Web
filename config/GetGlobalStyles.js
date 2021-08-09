@@ -4,6 +4,7 @@ By storing these styles globally, we can alter the layout and styles of
 components app wide just by editing this file.
 */
 import { useEffect } from "react";
+import { Platform } from "react-native";
 
 import color from "./colors";
 import darkColors from "./darkColors";
@@ -128,6 +129,23 @@ export default function GetGlobalStyles (landscape, width, height) {
                 shadowColor: colors.shadow,
                 shadowRadius: 10, 
             }, 
+            loginInputView: {
+                inputbar: {
+                    flex: 1,
+                    justifyContent: 'center',
+                    
+                    ...Platform.select({
+                       web: {
+                           marginLeft: '30%',
+                           marginRight: '30%',
+                       },
+                       default: {
+                           marginLeft: '5%',
+                           marginRight: '5%',
+                       },
+                    }),
+                },
+            },
  
             // Navigation Styles (For Stacks and Tabs)
 
