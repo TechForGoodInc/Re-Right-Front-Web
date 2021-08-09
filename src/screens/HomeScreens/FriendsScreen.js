@@ -1,7 +1,9 @@
 //Friends Page
 import React, {Component} from 'react';
 import { View,StyleSheet, Text, Image, FlatList, TouchableOpacity, Pressable, Alert, Platform} from 'react-native';
+
 import SearchBar from './UsableSearchBar';
+
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';

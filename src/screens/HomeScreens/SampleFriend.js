@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
+
 import colors from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
 
 export default function SampleFriend ({navigation}) {
     return ( 

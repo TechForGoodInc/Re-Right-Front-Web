@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
+
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
+
 export default function RecapQuiz({ navigation }) {
 const colors = global.isDarkModeEnabled? darkColors: color; 
 //sample questions

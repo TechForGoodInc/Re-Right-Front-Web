@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 import HomeScreen from '../../screens/HomeScreens/HomeScreen';
+import StackHeaderBackImage from '../StackHeaderBackImage';
 
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
-import GetSignUp1Style from '../../../config/SignUp1Css';
-import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-import StackHeaderBackImage from '../StackHeaderBackImage';
+
+import GetSignUp1Style from '../../../config/GetGlobalStyles';
 
 const Stack = createStackNavigator();
 

@@ -1,11 +1,12 @@
 import { useDeviceOrientation, useDimensions } from "@react-native-community/hooks";
 import React, {useState} from "react";
-import { Button, Image, Pressable, ScrollView, SwitchComponent, Text, View,Switch, StyleSheet, TextInput, SafeAreaView } from 'react-native'
-import colors from "../../../config/colors";
-import colorsTest from "../../../config/colorsTest";
-import "../../../config/global.js";
-import GetSignUp1Style from "../../../config/SignUp1Css";
+import { Image, Pressable, ScrollView, Text, View,Switch, StyleSheet, TextInput, SafeAreaView } from 'react-native'
+
 import SearchBar from "./UsableSearchBar";
+
+import colors from "../../../config/colors";
+import "../../../config/global.js";
+import GetGlobalStyles from "../../../config/GetGlobalStyles";
 
 const AccountSettings = ({navigation}) => {
     const [bioIsEnabled, setbioIsEnabled] = useState(false);
@@ -31,7 +32,6 @@ const AccountSettings = ({navigation}) => {
     const [searchedSetting, setSearchedSetting] = useState('');
 
     return ( 
-        <SafeAreaView> 
         <ScrollView style= {{backgroundColor: darkIsEnabled? '#181818' : 'rgb(239,239,239)'}}>
             <View style = {styles.searchBar}>
                         <Image style={styles.searchIcon} source={require('../../../assets/search.png')}/>
@@ -120,7 +120,7 @@ const AccountSettings = ({navigation}) => {
                             onValueChange={toggledarkSwitch}
                             value={darkIsEnabled} />
                 </Pressable>
-                <Pressable style={ ({pressed}) => [ { backgroundColor: darkIsEnabled===false?(pressed? colorsTest.light_grey: 'white'):(pressed? colors.grey: '#212121'), paddingVertical: 15, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 0,borderBottomStartRadius:15, paddingTop: 15,borderBottomEndRadius:15,  borderColor: colors.light_grey}]}>
+                <Pressable style={ ({pressed}) => [ { backgroundColor: darkIsEnabled===false?(pressed? colors.light_grey: 'white'):(pressed? colors.grey: '#212121'), paddingVertical: 15, width: '100%', textAlignVertical: 'center',flexDirection: 'row',paddingLeft: 10, borderBottomWidth: 0,borderBottomStartRadius:15, paddingTop: 15,borderBottomEndRadius:15,  borderColor: colors.light_grey}]}>
                      <Image style={{ tintColor: darkIsEnabled? 'white': 'black',alignItems: "flex-start", width: 24, height: 24,marginRight: 2}} source={require('../../../assets/private.png')} />
                      <Text style = {[{ paddingLeft: '3%' , color: darkIsEnabled? 'white' : colors.black,textAlignVertical:'center', flex: 1, alignItems: "flex-start", fontWeight: "400", paddingRight: 4},styles.subtitle]}> Custom Modes</Text>                   
                     <Image style={{tintColor: darkIsEnabled? 'white': 'black',alignItems: "flex-end",alignContent: "flex-end",alignSelf: "flex-end", width: 12, height: 12, marginTop:0,marginRight: 20}} source={require('../../../assets/right-arrow.png')} />
@@ -128,7 +128,6 @@ const AccountSettings = ({navigation}) => {
                 </View>
             </View>
         </ScrollView>
-        </SafeAreaView>
      );
 }
  

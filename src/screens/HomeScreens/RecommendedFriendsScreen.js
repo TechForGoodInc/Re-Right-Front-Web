@@ -1,4 +1,3 @@
-//Friends Page
 import React, {Component, useState} from 'react';
 import { View,StyleSheet, Text, Image, FlatList, TextInput, TouchableOpacity, Pressable} from 'react-native';
 

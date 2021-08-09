@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 import ReportAbuseScreen1 from '../../screens/ReportAbuseScreens/ReportAbuseScreen1';
 import ReportAbuseScreen2 from '../../screens/ReportAbuseScreens/ReportAbuseScreen2';
@@ -9,11 +10,12 @@ import ReportRecapArticle from '../../screens/ReportAbuseScreens/ReportAbuseReca
 import ReportRecapQuiz from '../../screens/ReportAbuseScreens/ReportAbuseRecapQuiz';
 import AboutReportAbuseScreen from '../../screens/ReportAbuseScreens/AboutReportAbuseScreen';
 import StackHeaderBackImage from '../StackHeaderBackImage';
+
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
-import GetSignUp1Style from '../../../config/SignUp1Css';
-import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
 const Stack = createStackNavigator();
 
 export default function ReportAbuseStackNav({navigation}) {
@@ -22,12 +24,12 @@ export default function ReportAbuseStackNav({navigation}) {
     const {width, height} = useDimensions().window;
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height) 
+        GetGlobalStyles(landscape, width, height) 
     ));
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height) 
+            GetGlobalStyles(landscape, width, height) 
         ))
     }} 
     const StackHeaderStyle = styles.StackHeaderStyle;

@@ -1,61 +1,36 @@
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 import React, {useEffect, useState} from 'react';
-import { useColorScheme} from 'react-native';
-import { Platform, View, Text, Button, StyleSheet, Pressable, Image, TextInput } from 'react-native';
+import { Platform, View, Text, StyleSheet, Pressable, Image, TextInput } from 'react-native';
 
 import color from "../../config/colors";
 import darkColors from "../../config/darkColors";
 import '../../config/global';
+import GetGlobalStyles from '../../config/GetGlobalStyles';
 
 export default function LoginScreen({navigation}) {
     //getting the dimensions and the orientation
-    const colorScheme = useColorScheme();
-    const [isDark, setIsDark] = useState(colorScheme === global.default_color_scheme);
-    useEffect(() => {
-      setIsDark(colorScheme==="dark");
-      global.isDarkModeEnabled = isDark? true : false;
-        }, [colorScheme]);
-    const colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
-    //styles are here
-    const styles = StyleSheet.create({
+    // Dynamic global styles
+    const [styles, setStyles] = useState(StyleSheet.create( 
+        GetGlobalStyles(landscape, width, height) 
+    ));
+    if (landscape || width > height ){
+        () => {
+        setStyles(StyleSheet.create( 
+            GetGlobalStyles(landscape, width, height) 
+        ))
+    }} 
 
-        background: {
-            flex: 1,
-            backgroundColor: colors.background_screen,
-            flexDirection: 'column',
-        },
-       
-         header: {
-             flex: 0.5,
-             alignItems: 'center',
-             justifyContent: 'center',
-         },
-       
-         inputbar: {
-             flex: 1,
-             justifyContent: 'center',
-             
-             ...Platform.select({
-                web: {
-                    marginLeft: '30%',
-                    marginRight: '30%',
-                },
-                default: {
-                    marginLeft: '5%',
-                    marginRight: '5%',
-                },
-             }),
-         },
-       
+    const colors = global.isDarkModeEnabled ? darkColors : color;
+
+    const localStyles = StyleSheet.create({
          links: {
              justifyContent: 'flex-end',
              alignItems: 'center',
              flex: 0.5, 
              
          },
-       
          logo: {
             resizeMode: 'contain', 
             ...Platform.select({
@@ -69,7 +44,6 @@ export default function LoginScreen({navigation}) {
                 }
             })
          },
-       
          inputFields: {
              height: '18%',
              margin: '1%',
@@ -82,58 +56,18 @@ export default function LoginScreen({navigation}) {
              padding: 20,
              color: colors.text_general
          },
-      
-        
           buttonContainer: {
             flexDirection: 'row',
-          },
-      
-          continueButton: {
-            width: "100%",
-            height: 50,
-            justifyContent: "center",
-            alignItems: "center",
-            borderColor: colors.border,
-            borderTopWidth: 1,
-            shadowColor: colors.shadow,
-            shadowRadius: 10, 
-          },
-      
-          buttonText: {
-            fontSize: 20,
-            lineHeight: 21,
-            fontWeight: 'bold',
-            letterSpacing: 0.25,
-            color: 'white',
-          },
-       
-        headertext: {
-            fontWeight: '700',
-            fontSize: 25, 
-            color: colors.text_screen_header,
-            marginBottom: '4%',
-          },
-      
+          },      
           linkView: {
               alignItems: 'center',
               bottom: '10%',
               width: '100%'
-          },
-          linkText: {
-              color: colors.hyperlink,
-              fontSize: 18,
-              marginBottom: '2%',
-          },
-          labels:{
-            color: colors.text_general
-          }       
+          }, 
       });
   const handleForgotPassRoute = () => {
       navigation.navigate("Forgot Password 1");
   }
-  const handleSignUpRoute = () => {
-   navigation.navigate("Signup 1");
-}
   const handleLoginRoute = () => {
     // When a user logs in, clear the stack and place the Home page on the stack (users shouldn't
     // be able to go back to login/signup/forgot password pages once they log in)
@@ -149,26 +83,26 @@ export default function LoginScreen({navigation}) {
      
   return (
     
-    <View style = {styles.background}>
+    <View style = {styles.screenBackground}>
         <View style={styles.header}>
-            <Image source={require("../../assets/rerightlogo.png")} style = {styles.logo}/>
+            <Image source={require("../../assets/rerightlogo.png")} style = {localStyles.logo}/>
         </View>
 
-        <View style = {styles.inputbar}>
-            <Text style = {styles.headertext}> Login in with your account: </Text>
-            <Text style={styles.labels}> Username/Email:  </Text>
-            <TextInput
-             style={styles.inputFields}
-             onChangeText={onChangeUsername}
-             value={username}
-             placeholder = ' Username/Email'
-             textContentType='username'
-             autoCompleteType='email' 
-             autoCapitalize='none'
-             />
-            <Text style={styles.labels} > Password:  </Text>
+        <View style = {styles.loginInputView}>
+            <Text style = {styles.headerText}> Login in with your account: </Text>
+            <Text style={styles.label}> Username/Email:  </Text>
             <TextInput 
-             style={styles.inputFields}
+            style={styles.inputText}
+            onChangeText={onChangeUsername}
+            value={username}
+            placeholder = ' Username/Email'
+            textContentType='username'
+            autoCompleteType='email' 
+            autoCapitalize='none'
+             />
+            <Text style={styles.label} > Password:  </Text>
+            <TextInput 
+             style={styles.inputText}
              onChangeText={onChangePassword}
              value={password}
              secureTextEntry={true} 
@@ -178,10 +112,10 @@ export default function LoginScreen({navigation}) {
              placeholder = ' Password'/>
         </View>
 
-        <View style = {styles.links}>
-            <View style = {styles.linkView}>
+        <View style = {localStyles.links}>
+            <View style = {localStyles.linkView}>
                 <Text 
-                    style={styles.linkText}
+                    style={styles.hyperlink}
                     onPress={() => handleForgotPassRoute()}>
                     Forgot Password
                 </Text>
