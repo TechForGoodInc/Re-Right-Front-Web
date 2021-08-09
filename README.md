@@ -1,25 +1,43 @@
-<h1>What is Re-Right?</h1>
-About
+<h1>Markdown README</h1>
 
-<h4>Home</h4>
-Blurb Blurb
-
-<h4>Recap Rights</h4>
-Blurb Blurb
-
-<h4>Report Abuse</h4>
-Blurb Blurb
-
-<h4>Reach Out</h4>
-Blurb Blurb
-
-<h4>Research Analytics</h4>
-Blurb Blurb
-
-<h1>What is the App structure?</h1>
+<h2> Glossary: </h2>
 <h3>App.js</h3>
 <h3>app.json</h3>
 <h3>assets</h3>
+  > adaptive-icon.png
+  > chat.png
+  > ChatIcon.png
+  > cross-round.png
+  > cross.png
+  > delete-button.pn
+  > download.png
+  > editing.png
+  > email.png
+  > favicon.ong
+  > FriendsIcon.png
+  > heart.png
+  > HMIcon.png
+  > home.png
+  > icon.png
+  > like.png
+  > logo_icon.png
+  > logo_text.png
+  > man.png
+  > padlock.png
+  > PostIcon.png
+  > private.png
+  > ProfileIcon.png
+  > rerightlogo.png
+  > research.png
+  > right-arrow.png
+  > search.png
+  > settings.png
+  > stylizedPost.png
+  > textures
+    > brick_wall.jpg
+    > stone_wall.jpg
+  > user.png
+  > userpfp.png
 <h3>babel.config.js</h3>
 <h3>config</h3>
 <h3>metro.config.js</h3>
