@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-    View,
-    Text,
-    StyleSheet,
-  } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
   
   import '../../../config/global';
   import color from '../../../config/colors';

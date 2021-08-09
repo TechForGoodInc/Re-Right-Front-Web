@@ -2,14 +2,16 @@ import React, {useState} from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 import RecapRightsStackNav from '../StackNavs/RecapRightsStackNav';
 import RecapQuiz from '../../screens/RecapRightsScreens/RecapQuiz';
+
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
-import GetSignUp1Style from '../../../config/SignUp1Css';
-import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
 
 export default function RecapRightsTabNav({navigation}) {
     const colors = global.isDarkModeEnabled ? darkColors : color;
@@ -17,12 +19,12 @@ export default function RecapRightsTabNav({navigation}) {
     const {width, height} = useDimensions().window;
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height) 
+        GetGlobalStyles(landscape, width, height) 
     ));
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height) 
+            GetGlobalStyles(landscape, width, height) 
         ))
     }} 
     const BottomTabs = createBottomTabNavigator();

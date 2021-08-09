@@ -1,11 +1,19 @@
-//all the styles for Sign Up Screen 1 is here
+/*
+This file contains styles that are used multiple times throughout the application.
+By storing these styles globally, we can alter the layout and styles of
+components app wide just by editing this file.
+*/
 import { useEffect } from "react";
+import { Platform } from "react-native";
+
 import color from "./colors";
 import darkColors from "./darkColors";
 import './global';
-export default function GetSignUp1Style (landscape,width, height) {
+
+export default function GetGlobalStyles (landscape, width, height) {
+    // Determine if light or dark colors should be used (based on state of theme toggle in account settings)
+    var colors = global.isDarkModeEnabled ? darkColors : color;
     //numerical values to be used for styling
-    var Colors = global.isDarkModeEnabled ? darkColors : color;
     const viewConstants = {
         containerTopMargin: '10%',
         containerBottomMargin: '16%',
@@ -31,7 +39,7 @@ export default function GetSignUp1Style (landscape,width, height) {
     return {
             screenBackground: {
                 flex: 1,
-                backgroundColor: Colors.background_screen
+                backgroundColor: colors.background_screen
             },
             container: {
                 marginHorizontal: viewConstants.containerHorizontalMargins,
@@ -49,7 +57,7 @@ export default function GetSignUp1Style (landscape,width, height) {
             headerTitle: {
                 fontWeight: viewConstants.headingWeight,
                 fontSize: ( landscape|| width>height) ? viewConstants.headingFontSizeLandscape: viewConstants.headingFontSize,
-                color: Colors.text_screen_header,
+                color: colors.text_screen_header,
                 paddingVertical: ( landscape|| width>height) ? 0 : '3%',
                 paddingTop: ( landscape|| width>height) ? '5%' : 0,
 
@@ -58,18 +66,18 @@ export default function GetSignUp1Style (landscape,width, height) {
                 fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
                 marginEnd: ( landscape|| width>height) ? viewConstants.headerTextLandscapePadding: 0,
                 paddingTop: ( landscape|| width>height) ? '5%' : 0,
-                color: Colors.text_general,
+                color: colors.text_general,
             },
             linkText: {
                 textDecorationLine: 'underline',
                 paddingVertical: '3%',
-                color: Colors.text_general,
+                color: colors.text_general,
                 fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
                 
             },
             signUpForm:{
                 flex: 1,
-                color: Colors.text_general,
+                color: colors.text_general,
             },
             details: {
                 flexDirection: 'column',
@@ -84,80 +92,97 @@ export default function GetSignUp1Style (landscape,width, height) {
             label: {
                 fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
                 padding: viewConstants.labelPadding,
-                color: Colors.text_general,
+                color: colors.text_general,
                 marginHorizontal: ( landscape|| width>height)? viewConstants.labelPadding : 0,
                 
             },
             inputText: {
                 borderWidth: viewConstants.textBoxBorderWidth,
-                borderColor: Colors.light_grey,
+                borderColor: colors.light_grey,
                 borderRadius: viewConstants.textBoxBorderRadius,
                 textAlign: 'center',
                 padding: viewConstants.textBoxPadding,
                 fontSize:  ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
                 marginHorizontal: viewConstants.textBoxPadding,
-                color: Colors.text_general,
+                color: colors.text_general,
             },
             screenBackground: {
                 flex: 1,
                 alignItems: 'center',
                 justifyContent: 'flex-end',
-                backgroundColor: Colors.background_screen,
+                backgroundColor: colors.background_screen,
             },
             buttonText: {
                 fontSize: ( landscape|| width>height) ? viewConstants.textSizeLandscape : viewConstants.textSize,
                 lineHeight: ( landscape|| width>height) ? viewConstants.buttonTextLineHeightLandscape : viewConstants.buttonTextLineHeight,
                 fontWeight: 'bold',
-                color: Colors.text_tab_label,
+                color: colors.text_tab_label,
             },
             continueButton: {
                 width: "100%",
                 height: ( landscape|| width>height) ? viewConstants.buttonHeightLandscape : viewConstants.buttonHeight,
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: Colors.button_continue,
-                borderTopColor: Colors.border,
+                backgroundColor: colors.button_continue,
+                borderTopColor: colors.border,
                 borderTopWidth: 1,
-                shadowColor: Colors.shadow,
+                shadowColor: colors.shadow,
                 shadowRadius: 10, 
             }, 
+            loginInputView: {
+                inputbar: {
+                    flex: 1,
+                    justifyContent: 'center',
+                    
+                    ...Platform.select({
+                       web: {
+                           marginLeft: '30%',
+                           marginRight: '30%',
+                       },
+                       default: {
+                           marginLeft: '5%',
+                           marginRight: '5%',
+                       },
+                    }),
+                },
+            },
  
-            //Overall App Styles are Here (For Stacks and Tabs)
+            // Navigation Styles (For Stacks and Tabs)
 
             menuicon: {
                 height: 40,
                 width: 40,
-                tintColor: Colors.menu_icon,
+                tintColor: colors.menu_icon,
             },
             settingsicon: {
                 height: 30,
                 width: 30,
                 margin: 4,
-                tintColor: Colors.menu_icon
+                tintColor: colors.menu_icon
             }, 
             StackHeaderStyle: { // Currently used by all stack navs
-                backgroundColor: Colors.background_stack_header,
-                borderBottomColor: Colors.border,
+                backgroundColor: colors.background_stack_header,
+                borderBottomColor: colors.border,
                 borderBottomWidth: 0.4,
-                shadowColor: Colors.shadow,
+                shadowColor: colors.shadow,
                 shadowRadius: 5,
             },
             ProfileStackHeaderStyle: { // Not used currently, but we can customize individual stacks like this
-                backgroundColor: Colors.primary,
+                backgroundColor: colors.primary,
             },
             StackTitleStyle: {
                 fontWeight: 'bold',
                 letterSpacing: 0.25,
                 fontSize: 19,
-                color: Colors.text_stack_title,
+                color: colors.text_stack_title,
             },
             StackBackTitleStyle: {
-                color: Colors.text_stack_back_title,
+                color: colors.text_stack_back_title,
             },
             TabStyle: {
                 // borderColor: colors.border,
                 // borderWidth: 1,
-                shadowColor: Colors.shadow,
+                shadowColor: colors.shadow,
                 shadowRadius: 10,
                 // backgroundColor: colors.tab_background
             },
@@ -165,7 +190,7 @@ export default function GetSignUp1Style (landscape,width, height) {
                 letterSpacing: 0.25,
             },
             ScreenBackground: {
-                backgroundColor: Colors.background_screen,
+                backgroundColor: colors.background_screen,
                 flex: 1,
                 alignItems: 'center',
             }

@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import { Pressable, TouchableWithoutFeedback,Keyboard, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Pressable, TouchableWithoutFeedback, Keyboard, View, StyleSheet, Text, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 import '../../../config/global';

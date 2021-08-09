@@ -2,9 +2,9 @@ import 'react-native-gesture-handler';
 import React, {useEffect, useState} from 'react';
 import { useColorScheme} from 'react-native';
 import { StyleSheet } from 'react-native';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import LoggedOutScreen from './screens/LoggedOutScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen1 from './screens/SignupScreens/SignupScreen1';
@@ -25,12 +25,12 @@ import '../config/global';
 const Stack = createStackNavigator();
 
 export default function ReRightApp() {
-    const colorScheme = useColorScheme();
-    const [isDark, setIsDark] = useState(colorScheme === "dark");
-    useEffect(() => {
-      setIsDark(colorScheme==="dark");
-      global.isDarkModeEnabled = isDark? true : false;
-        }, [colorScheme]);
+    //const colorScheme = useColorScheme();
+    //const [isDark, setIsDark] = useState(colorScheme === "dark");
+    //useEffect(() => {
+    //  setIsDark(colorScheme==="dark");
+    //  global.isDarkModeEnabled = isDark? true : false;
+    //    }, [colorScheme]);
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const AppStyles = StyleSheet.create({
         StackHeaderStyle: { // Currently used by all stack navs

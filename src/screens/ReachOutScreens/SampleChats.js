@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
-import '../../config/global';
-import color from '../../config/colors';
-import darkColors from '../../config/darkColors';
+
+import '../../../config/global';
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
 
 export default function SampleChats ({navigation}) {
     const colors = global.isDarkModeEnabled? darkColors: color; 
@@ -51,7 +52,7 @@ export default function SampleChats ({navigation}) {
         <TouchableOpacity 
         style = {styles.people}
         onPress={() => navigation.navigate("Texting")}> 
-                <Image style = {styles.friendpfp} source = { require("./../../assets/man.png") }
+                <Image style = {styles.friendpfp} source = { require("./../../../assets/man.png") }
                 />
                 <View style = {styles.textmessage}>
                     <Text style = {styles.names}>
@@ -61,7 +62,7 @@ export default function SampleChats ({navigation}) {
                         Hi!
                     </Text>
                 </View>
-                <Image style={styles.arrow} source={require('./../../assets/right-arrow.png')}
+                <Image style={styles.arrow} source={require('./../../../assets/right-arrow.png')}
       />
         </TouchableOpacity>  
      );

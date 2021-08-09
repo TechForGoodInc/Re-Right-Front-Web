@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Image,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  TouchableOpacity,
-  ScrollView,
-  Pressable,
-} from "react-native";
+import { Image, Text, StyleSheet, SafeAreaView, TouchableOpacity, ScrollView, Pressable} from "react-native";
 
 import '../../../config/global';
 import color from '../../../config/colors';

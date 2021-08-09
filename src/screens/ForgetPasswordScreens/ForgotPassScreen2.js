@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableWithoutFeedback, View, StyleSheet, Pressable, Alert, Keyboard, SafeAreaView } from 'react-native';
+import { Text, TouchableWithoutFeedback, View, StyleSheet, Pressable, Keyboard, SafeAreaView } from 'react-native';
 import { KeycodeInput } from 'react-native-keycode';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 

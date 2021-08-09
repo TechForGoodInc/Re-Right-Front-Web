@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Button, Modal, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
-import SafeAreaView from 'react-native-safe-area-view'
+import React from 'react';
+import { Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
@@ -12,15 +12,22 @@ export default function CreatePostScreen({navigation}) {
     const styles  = StyleSheet.create({
         container:{
             flex: 1,
-            flexDirection: 'column',
             backgroundColor: colors.background_screen,
+        },
+        desciptionViewWeb: {
+            flex: 1,
+            flexDirection: 'row',
+            marginHorizontal: 25,
+            paddingTop: 20,
+            height: '100%',
+            alignItems: 'center',
+            justifyContent: 'space-between',
         },
         desciptionView: {
             marginHorizontal: 25,
             paddingTop: 20,
             height: '100%',
             alignItems: 'center',
-            justifyContent: 'center',
         },
         title: {
             fontSize: 21,
@@ -96,7 +103,51 @@ export default function CreatePostScreen({navigation}) {
             fontSize: 16
         }
     });
-    return (
+
+    if (Platform.OS === 'web') {
+        return (
+            <View forceInset={{bottom: 'always'}} style={styles.container}>
+            {/* Description of different types of posts */}
+            
+                <View style={styles.desciptionViewWeb}> 
+                    <Text style={styles.title}>
+                        Post Types
+                    </Text>
+                    <Text 
+                        numberOfLines='5' 
+                        style={styles.subtitle}> 
+                        You can create a post that spreads a positive message or just share your thoughts or upload any custom post from your device.
+                    </Text>
+                    {/* Boxes for each type of Post */}
+                    <View style={styles.postTypeView}>
+                        <Text style = {styles.description} numberOfLines='5'> 
+                            Create a custom post that makes an impact. Choose a background from our range of amazing backgrounds and add stylized text to make an inspiring or motivating post.
+                        </Text>
+                        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('Create Stylized Post')}}>
+                            <Text style= {{color: colors.white, fontWeight: '900'}}> + Choose Stylized Post Type </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.postTypeView}>
+                        <Text style = {styles.description} numberOfLines='5'> 
+                            Create a text-only post. Share your opinions, thoughts, or your own story in a brief paragraph. Don't worry, we won't show this post to anyone but your friends unless you choose otherwise.
+                        </Text>
+                        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('Create Text-Only Post')}}>
+                            <Text style= {{color: colors.white, fontWeight: '900'}}> + Choose Text Post Type </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.postTypeView}>
+                        <Text style = {styles.description} numberOfLines='5'> 
+                            Share art, images, or videos from your device. Make sure you don't post a picture with your face in it if you wish to remain anonymous on this platform.
+                        </Text>
+                        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('Choose From Device')}}>
+                            <Text style= {{color: colors.white, fontWeight: '900'}}> + Choose From Device </Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>   
+            </View>
+        );
+    } else {
+        return (
         <ScrollView forceInset={{bottom: 'always'}} style={styles.container}>
         {/* Description of different types of posts */}
         
@@ -128,14 +179,39 @@ export default function CreatePostScreen({navigation}) {
                 <View style={styles.postTypeView}>
                     <Text style = {styles.description} > 
                         Share art, images, or videos from your device. Make sure you don't post a picture with your face in it if you wish to remain anonymous on this platform.
+
                     </Text>
-                    <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('Choose From Device')}}>
-                        <Text style= {{color: colors.white, fontWeight: '900'}}> + Choose From Device </Text>
-                    </TouchableOpacity>
-                </View>
-            </View>   
-        </ScrollView>
-    );
+                    {/* Boxes for each type of Post */}
+                    <View style={styles.postTypeView}>
+                        <Text style = {styles.description} numberOfLines='5'> 
+                            Create a custom post that makes an impact. Choose a background from our range of amazing backgrounds and add stylized text to make an inspiring or motivating post.
+                        </Text>
+                        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('Create Stylized Post')}}>
+                            <Text style= {{color: colors.white, fontWeight: '900'}}> + Choose Stylized Post Type </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.postTypeView}>
+                        <Text style = {styles.description} numberOfLines='5'> 
+                            Create a text-only post. Share your opinions, thoughts, or your own story in a brief paragraph. Don't worry, we won't show this post to anyone but your friends unless you choose otherwise.
+                        </Text>
+                        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('Create Text-Only Post')}}>
+                            <Text style= {{color: colors.white, fontWeight: '900'}}> + Choose Text Post Type </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.postTypeView}>
+                        <Text style = {styles.description} numberOfLines='5'> 
+                            Share art, images, or videos from your device. Make sure you don't post a picture with your face in it if you wish to remain anonymous on this platform.
+                        </Text>
+                        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('Choose From Device')}}>
+                            <Text style= {{color: colors.white, fontWeight: '900'}}> + Choose From Device </Text>
+                        </TouchableOpacity>
+                    </View>
+                </View> 
+                </View>  
+            </ScrollView>
+        );
+    }
+    
 }
 
 

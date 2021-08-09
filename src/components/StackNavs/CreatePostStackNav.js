@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Image, TouchableOpacity, Text, View } from 'react-native';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
 import CreatePostScreen from '../../screens/HomeScreens/CreatePostScreen';
 import DevicePostScreen from '../../screens/HomeScreens/DevicePostScreen';
 import TextPostScreen from '../../screens/HomeScreens/TextPostScreen';
 import StylizedPostScreen from '../../screens/HomeScreens/StylizedPostScreen';
 import StylizedPostScreen2 from '../../screens/HomeScreens/StylizedPostScreen2';
 import StackHeaderBackImage from '../StackHeaderBackImage';
+
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
-import GetSignUp1Style from '../../../config/SignUp1Css';
-import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
 
 const Stack = createStackNavigator();
 
@@ -21,12 +24,12 @@ export default function CreatePostStackNav({navigation}) {
     const {width, height} = useDimensions().window;
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height) 
+        GetGlobalStyles(landscape, width, height) 
     ));
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height) 
+            GetGlobalStyles(landscape, width, height) 
         ))
     }} 
     const StackHeaderStyle = styles.StackHeaderStyle;

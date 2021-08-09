@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  Image,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  TouchableOpacity,
-  ScrollView,
-  Pressable,
-} from "react-native";
-//import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+import { Image, Text, StyleSheet, SafeAreaView, TouchableOpacity, ScrollView, Pressable} from "react-native";
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 
 import '../../../config/global';
 import color from '../../../config/colors';

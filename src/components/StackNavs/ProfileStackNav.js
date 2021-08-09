@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Image, TouchableOpacity, Platform } from 'react-native';
+import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
 import PostPreview from '../../screens/HomeScreens/PostPreview';
 import ProfileScreen from '../../screens/HomeScreens/ProfileScreen';
 import AccountSettings from '../../screens/HomeScreens/AccountSettingsScreen';
@@ -9,11 +11,12 @@ import ChangePasswordScreen from '../../screens/HomeScreens/ChangePasswordScreen
 import ChangeEmailScreen from '../../screens/HomeScreens/ChangeEmailScreen';
 import SignupScreen4 from '../../screens/SignupScreens/SignupScreen4';
 import StackHeaderBackImage from '../StackHeaderBackImage';
+
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
-import GetSignUp1Style from '../../../config/SignUp1Css';
-import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
+
+import GetGlobalStyles from '../../../config/GetGlobalStyles';
 
 const Stack = createStackNavigator();
 
@@ -24,13 +27,13 @@ export default function ProfileStackNav({navigation}) {
     const [isItDark, setIsItDark] = useState(global.isDarkModeEnabled);
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height) 
+        GetGlobalStyles(landscape, width, height) 
     ));
     
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height) 
+            GetGlobalStyles(landscape, width, height) 
         ))
     }} 
     
