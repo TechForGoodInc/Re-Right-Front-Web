@@ -16,6 +16,7 @@ Blurb Blurb
 <h4>Research Analytics</h4>
 Blurb Blurb
 
+<h1>What is the App structure?</h1>
 <h3>App.js</h3>
 <h3>app.json</h3>
 <h3>assets</h3>
