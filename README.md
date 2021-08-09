@@ -33,7 +33,7 @@
   > search.png
   > settings.png
   > stylizedPost.png
-  > textures
+  <h4> > textures </h4>
     > brick_wall.jpg
     > stone_wall.jpg
   > user.png
