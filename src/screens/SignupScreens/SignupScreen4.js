@@ -121,8 +121,8 @@ const SignupScreen4 = ({route, navigation}) => {
     })
     const handleSubmitPress = () => {
         navigation.reset({
-            index: 1,
-            routes: [{name: 'Logged Out'}, {name: 'Login'}],
+            index: 0,
+            routes: [{name: 'Login'}],
           });
     }
     const handleOkPress = () => {

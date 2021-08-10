@@ -9,15 +9,16 @@ import GetGlobalStyles from '../../config/GetGlobalStyles';
 
 export default function LoginScreen({navigation}) {
     //getting the dimensions and the orientation
-    const colorScheme = useColorScheme();
-    const [isDark, setIsDark] = useState(colorScheme === global.default_color_scheme);
-    useEffect(() => {
-      setIsDark(colorScheme==="dark");
-      global.isDarkModeEnabled = isDark? true : false;
-        }, [colorScheme]);
+    //const colorScheme = useColorScheme();
+    //const [isDark, setIsDark] = useState(colorScheme === global.default_color_scheme);
+    //useEffect(() => {
+    //  setIsDark(colorScheme==="dark");
+    //  global.isDarkModeEnabled = isDark? true : false;
+    //    }, [colorScheme]);
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
+
     const [globalStyles, setGlobalStyles] = useState(StyleSheet.create( 
         GetGlobalStyles(landscape, width, height) 
     ));
@@ -130,7 +131,7 @@ export default function LoginScreen({navigation}) {
   const handleForgotPassRoute = () => {
       navigation.navigate("Forgot Password 1");
   }
-  const handleSignUpRoute = () => {
+  const handleSignupRoute = () => {
    navigation.navigate("Signup 1");
 }
   const handleLoginRoute = () => {
@@ -179,6 +180,11 @@ export default function LoginScreen({navigation}) {
 
         <View style = {styles.links}>
             <View style = {styles.linkView}>
+                <Text 
+                    style={styles.linkText}
+                    onPress={() => handleSignupRoute()}>
+                    Create Account
+                </Text>
                 <Text 
                     style={styles.linkText}
                     onPress={() => handleForgotPassRoute()}>
