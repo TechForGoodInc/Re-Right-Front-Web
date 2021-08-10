@@ -78,8 +78,8 @@ Analytical tools utilizing our HRV report database
       <li>
          <h4>config</h4>
          <ul>
-            <li>colors.js </li>
-            <li>darkColors.js </li>
+            <li>colors.js --> A centralized style pallet of all colors used for the whole app</li>
+            <li>darkColors.js --> A centralized style pallet of all darkcolors used for the whole app</li>
             <li>GetGlobalStyles.js </li>
             <li>global.js </li>
          </ul>
@@ -103,16 +103,16 @@ Analytical tools utilizing our HRV report database
                   <li>
                      <h4>StackNavs</h4>
                      <ul>
-                        <li>ChatStackNav.js </li>
-                        <li>CreatePostStackNav.js </li>
-                        <li>EntryStackNav.js </li>
-                        <li>FriendsStackNav.js </li>
-                        <li>HomeStackNav.js </li>
-                        <li>ProfileStackNav.js </li>
-                        <li>ReachOutStackNav.js </li>
-                        <li>RecapRightsStackNav.js </li>
-                        <li>ReportAbuseStackNav.js </li>
-                        <li>ReasearchStackNav.js </li>
+                        <li>ChatStackNav.js --> The Stack for the Chat Screens and their navigation </li>
+                        <li>CreatePostStackNav.js --> The Stack for the Creating a Post and their navigation</li>
+                        <li>EntryStackNav.js --> The Stack for the start of the application</li>
+                        <li>FriendsStackNav.js --> The Stack for the Friends page navigation</li>
+                        <li>HomeStackNav.js --> The Stack for the Home page navigation (hamburger menu, bottom tabs, profile) </li>
+                        <li>ProfileStackNav.js --> The Stack for the Profile page their navigation</li>
+                        <li>ReachOutStackNav.js --> The Stack for the Reach Out and its navigation</li>
+                        <li>RecapRightsStackNav.js --> The Stack for the Recap Rights and its navigation (quiz, article, more descriptive explanations of rights)</li>
+                        <li>ReportAbuseStackNav.js --> The Stack for the Reportin Abuse and its navigation (going to RecapRights, submitting story, and other factors)</li>
+                        <li>ReasearchStackNav.js --> The Stack for the Research Analytics and its navigation (page with map, submit suggestion)</li>
                      </ul>
                   </li>
                   <li>
