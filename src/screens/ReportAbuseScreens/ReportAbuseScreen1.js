@@ -10,6 +10,9 @@ export default function ReportAbuseScreen1({ navigation }) {
     const handleContinuePress = () => {
         navigation.navigate("Incident Info")
     }
+    // Screen styles exist inside function declaration rather than externally or imported
+    // to allow toggling between light and dark mode colors dynamically. Styles could be
+    // refactored into an extenal function call (see SignupScreen1 for example).
     const styles = StyleSheet.create({
         title: {
             fontSize: 25,
