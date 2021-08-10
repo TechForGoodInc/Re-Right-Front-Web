@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, Image, Pressable } from 'react-native';
-// External imports above, internal imports below
+import { Platform, View, StyleSheet, Text, Image, Pressable } from 'react-native';
+
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
 import '../../../config/global';
@@ -85,10 +85,11 @@ const SamplePost = () => {
       alignContent: 'flex-start'
     },
     likeCount : {
-      color: colors.text_general
+      color: colors.text_general,
+      marginTop: Platform.OS === 'web' ? '5%' : '2%',
     },
     CommentBar: {
-        width: '100%'
+        width: '100%',
     },
     wholeComment: {
       flexDirection: 'row',
