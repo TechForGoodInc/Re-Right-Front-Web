@@ -18,7 +18,6 @@
       Chatroom and user matching service to connect people with similar or different experiences
       <h4>Research Analytics</h4>
       Analytical tools utilizing our HRV report database
-      
       <h1>Glossary</h1>
       <ul>
          <li> App.js --> The file that runs the whole app </li>
