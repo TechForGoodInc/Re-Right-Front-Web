@@ -7,7 +7,11 @@
       <h4>Home</h4>
       Feed of posts from user and their friends. User can access profile, settings, new post, and friends features from this page. Hamburger menu drops down the following four additional options.
       <h4>Recap Rights</h4>
-      Cache of information about various human rights. It is vital everybody understands their rights
+      Cache of information about human rights as outlined in the Universal Declaration of Human Rights:
+      https://www.un.org/en/about-us/universal-declaration-of-human-rights. It is vital that everybody
+      understands their rights.
+      Recap Rights also contains a "test your knowledge" experience: questions spanning important
+      takeaways from the Universal Declaration of Human Rights.
       <h4>Report Abuse</h4>
       Allows users to submit reports of HRVs committed against them. ML team also working on an autonomous abuse detection and reporting service for external social media platforms
       <h4>Reach Out</h4>
