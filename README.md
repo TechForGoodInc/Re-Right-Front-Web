@@ -122,6 +122,7 @@
                                  <li>ResearchTabNav.js --> Formats research analytics screen's bottom bar of tabs</li>
                               </ul>
                            </li>
+                           <li> WebNavMenu.js --> A placehold file for testing</li>
                         </ul>
                      </li>
                   </ul>
