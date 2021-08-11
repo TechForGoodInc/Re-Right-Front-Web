@@ -150,20 +150,19 @@
                            <li>ChatScreen.js --> same as ReachOutScreen2.js </li>
                            <li>CreatePostScreen.js --> Prompts user to select one of three possible ways to post: stylized post type, text post type, or a post from the device. Each type is a blue button that the user can press in order to make their selection</li>
                            <li>DevicePostScreen.js --> The screen pressing on "from device" selection from CreatePostScreen.js will bring you. Just a placeholder white screen</li>
-                           <li>FriendProfileScreen.js --> </li>
-                           <li>FriendsScreen.js </li>
-                           <li>HomeScreen.js </li>
-                           <li>PostPreview.js </li>
-                           <li>ProfileScreen.js </li>
-                           <li>RecommendedFriendsScreen.js </li>
-                           <li>SampleFriend.js </li>
-                           <li>SamplePost.js </li>
+                           <li>FriendProfileScreen.js --> A placeholder file for future development for when the user selects a friend and wants to view their profile </li>
+                           <li>FriendsScreen.js --> Presents the user with a list of users that are the user's friends. Each friends has a red button labeled "Unfriend" that will remove that user from the list of friends once pushed. The screen itself has a searchbar and one more button, "Recommended Friends", that will take the user to RecommendedFriendsScreen.js if pressed.
+                           <li>PostPreview.js -> A placeholder file for future development for when the user wants to see the post they have created will look like before they post it </li>
+                           <li>ProfileScreen.js --> The screen that displays the user's information as well as their previous posts, tags, and posts they have liked. There is settings.png in the top right of the screen that the user can press on to take them to AccountSettingsScreen.js </li>
+                           <li>RecommendedFriendsScreen.js --> Presents the user with a list of users that relate to the user because of their tags. Each friends has a green button labeled "Request Friend" and the screen itself has two more buttons: "See New Changes" and "Change Criteria" </li>
+                           <li>SampleFriend.js --> Code used for each friend in the sample list of friends in ChatScreen.js </li>
+                           <li>SamplePost.js </li> --> Code used for each post in the sample feed in HomeScreen.js
                            <li>StylizedPostScreen.js  --> The screen pressing on "Choose Stylized Post Type" selection from CreatePostScreen.js will bring the user. Presents the user the option of selecting the background color (by providing numerous colors/shades), typing the text they want, and the image they want for the post.
                            <li>StylizedPostScreen2.js --> The screen pressing on "Next" in StylizedPostScreen.js will bring the user. Allows for more editing and text editing. </li>
                            <li>TextPostScreen.js -> The screen pressing on "Choose Stylized Text Type" selection from CreatePostScreen.js will bring you. Just a placeholder white screen</li></li>
                            <li>UsableSearchBar.js --> Code for the searchbar that appears in ChatScreen.js for organizational purposes but also so that extra attributes can be added and expanded with ease</li>
-                           <li>LoggetOutScreen.js --> Displays rerightlogo.png above two fields that prompt the user to enter their username/email and their password. Below these fields are clickable blue text: "Create Account"(takes the user to SignupScreen1.js) and "Forgot Password" (takes the user to ForgotPassScreen1.js). Below the blue text is a "continue" button that takes the user to HomeScreen.js </li>
-                           <li>LoginScreen.js </li>
+                           <li>LoggetOutScreen.js --> Used to be landing page for whole application. Prompted the user to either to contimue to the sign up or to login.</li>
+                           <li>LoginScreen.js --> Displays rerightlogo.png above two fields that prompt the user to enter their username/email and their password. Below these fields are clickable blue text: "Create Account"(takes the user to SignupScreen1.js) and "Forgot Password" (takes the user to ForgotPassScreen1.js). Below the blue text is a "continue" button that takes the user to HomeScreen.js </li>
                         </ul>
                      </li>
                      <li>
@@ -215,8 +214,5 @@
             </ul>
          </li>
       </ul>
-      <h4>Header 4</h4>
-      <h5>Header 5</h5>
-      <h6>Header 6</h6>
    </body>
 </html>
