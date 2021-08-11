@@ -134,10 +134,10 @@
                      <li>
                         <h4>ForgetPasswordScreens</h4>
                         <ul>
-                           <li>ForgotPassScreen1.js </li>
-                           <li>ForgotPassScreen2.js </li>
-                           <li>ForgotPassScreen3.js </li>
-                           <li>ForgotPassScreen4.js </li>
+                           <li>ForgotPassScreen1.js --> Promtps user to enter in their username or email with a "continue" button to submit the entry</li>
+                           <li>ForgotPassScreen2.js --> Promtps user to enter in the code they received by email with a "continue" button to submit the entry</li>
+                           <li>ForgotPassScreen3.js --> Promtps user to answer three security questions with a "continue" button to submit the entries </li>
+                           <li>ForgotPassScreen4.js --> Promtps user to enter a new password in one field and to confirm the password in the field below it with a "submit" button to save the change</li>
                         </ul>
                      </li>
                      <li>
@@ -204,10 +204,10 @@
                      <li>
                         <h4>SignupScreens</h4>
                         <ul>
-                           <li>SignupScreen1.js </li>
-                           <li>SignupScreen2.js </li>
-                           <li>SignupScreen3.js </li>
-                           <li>SignupScreen4.js </li>
+                           <li>SignupScreen1.js --> Promtps user with five entries: Email, Username, Date of Birth, Password, and confirm password with a "continue" button to submit the entries </li>
+                           <li>SignupScreen2.js --> Promtps user to answer three security questions with a "continue" button to submit the entries </li>
+                           <li>SignupScreen3.js --> Promtps user to set up their public profile with two fields: one asks for a fake name and another where the user can add tags to let people know what best describes the user</li>
+                           <li>SignupScreen4.js --> Promtps user to check or not check which social media platforms they want the app to connect with for social media abuse tracking</li>
                         </ul>
                      </li>
                   </ul>
