@@ -94,9 +94,9 @@
                      <li>
                         <h4>navigation</h4>
                         <ul>
-                           <li>FriendsScreenNavWrapper.js </li>
-                           <li>HomeDrawerNav.js </li>
-                           <li>StackHeaderBackImage.js </li>
+                           <li>FriendsScreenNavWrapper.js --> used to render the FriendsScreen file and pass {navigation} to it as props.</li>
+                           <li>HomeDrawerNav.js --> the navigation component (a <Drawer>) that creates the hamburger menu funcitonality. It is nested inside of the ReRightApp.js stack navigation</li>
+                           <li>StackHeaderBackImage.js --> the file that determines what icon to display in the header (it displays different icon based on ios vs web/android </li>
                            <li>
                               <h4>StackNavs</h4>
                               <ul>
