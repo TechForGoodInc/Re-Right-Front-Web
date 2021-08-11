@@ -7,6 +7,7 @@ import SamplePost from './SamplePost';
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
+import WebNavMenu from '../../components/WebNavMenu';
 
 const pad = 10;
 const feedflex = 6;

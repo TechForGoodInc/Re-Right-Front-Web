@@ -88,7 +88,7 @@ export default function ResearchScreen({navigation}) {
         
         buttonText: {
           alignSelf: 'center',
-          color: colors.text_general,
+          color: colors.text_button,
           
         },
       
