@@ -18,10 +18,11 @@
       Chatroom and user matching service to connect people with similar or different experiences
       <h4>Research Analytics</h4>
       Analytical tools utilizing our HRV report database
+      
       <h1>Glossary</h1>
       <ul>
-         <li> App.js</h3> </li>
-         <li> app.json</h3> </li>
+         <li> App.js --> The file that runs the whole app </li>
+         <li> app.json --> A file that is automatically created for expo</li>
          <li>
             <h4>assets</h4>
             <ul>
@@ -66,7 +67,7 @@
                <li> userpfp.png  --> A picture of user.png but no outline and the circle is white and the person icon is grey</li>
             </ul>
          </li>
-         <li>babel.config.js</li>
+         <li>babel.config.js --> Automatically created file for expo (download if it isn't)</li>
          <li>
             <h4>config</h4>
             <ul>
@@ -79,9 +80,9 @@
                <li>global.js --> A way to toggle darkMode between off and on and have the rest of the code be aware of the change</li>
             </ul>
          </li>
-         <li>metro.config.js</li>
-         <li>package-lock.json</li>
-         <li>package.json</li>
+         <li>metro.config.js --> Automatically created file for expo (download if it isn't)</li>
+         <li>package-lock.json --> Automatically created to run app (download if it isn't) </li>
+         <li>package.json --> Automatically created to run app (download if it isn't)</li>
          <li>README --> This file</li>
          <li>
             <h4>src</h4>
