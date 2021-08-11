@@ -161,10 +161,10 @@
                            <li>StylizedPostScreen2.js --> The screen pressing on "Next" in StylizedPostScreen.js will bring the user. Allows for more editing and text editing. </li>
                            <li>TextPostScreen.js -> The screen pressing on "Choose Stylized Text Type" selection from CreatePostScreen.js will bring you. Just a placeholder white screen</li></li>
                            <li>UsableSearchBar.js --> Code for the searchbar that appears in ChatScreen.js for organizational purposes but also so that extra attributes can be added and expanded with ease</li>
-                           <li>LoggetOutScreen.js --> Used to be landing page for whole application. Prompted the user to either to contimue to the sign up or to login.</li>
-                           <li>LoginScreen.js --> Displays rerightlogo.png above two fields that prompt the user to enter their username/email and their password. Below these fields are clickable blue text: "Create Account"(takes the user to SignupScreen1.js) and "Forgot Password" (takes the user to ForgotPassScreen1.js). Below the blue text is a "continue" button that takes the user to HomeScreen.js </li>
                         </ul>
                      </li>
+                     <li>LoggetOutScreen.js --> Used to be landing page for whole application. Prompted the user to either to contimue to the sign up or to login.</li>
+                     <li>LoginScreen.js --> Displays rerightlogo.png above two fields that prompt the user to enter their username/email and their password. Below these fields are clickable blue text: "Create Account"(takes the user to SignupScreen1.js) and "Forgot Password" (takes the user to ForgotPassScreen1.js). Below the blue text is a "continue" button that takes the user to HomeScreen.js </li>
                      <li>
                         <h4>ReachOutScreens</h4>
                         <ul>
