@@ -29,7 +29,7 @@
                <li>chat.png --> Picture of two text bubbles overlapping</li>
                <li>ChatIcon.png --> Picture of one rectangular text bubble</li>
                <li>cross-round.png --> Picture of a transparent "X" in a black circle </li>
-               <li>cross.png --> Picture of a rectangular "X </li>
+               <li>cross.png --> Picture of a rectangular "X" </li>
                <li>delete-button.png --> Picture of a rectangular "X" with rounded-off edges</li>
                <li>download.png --> Picture of a block arrow pointing down</li>
                <li>editing.png --> Picture of a transparent pad and pencil overlapping </li>
