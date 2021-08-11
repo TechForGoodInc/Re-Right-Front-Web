@@ -143,14 +143,14 @@
                      <li>
                         <h4>HomeScreens</h4>
                         <ul>
-                           <li>AccountSettingsScreen.js </li>
-                           <li>ChangeEmailScreen.js </li>
-                           <li>ChangePasswordScreen.js </li>
-                           <li>ChangeUsernameScreen.js </li>
-                           <li>ChatScreen.js </li>
-                           <li>CreatePostScreen.js </li>
-                           <li>DevicePostScreen.js </li>
-                           <li>FriendProfileScreen.js </li>
+                           <li>AccountSettingsScreen.js --> A screen that allows the user to access multiple ways to change aspects of their account (email, username, password, darkmode, etc.)</li>
+                           <li>ChangeEmailScreen.js --> Promtps user with three fields in order to change their email: new email, confirm new email, and password. This is followed by a "continue" button to submit the change </li>
+                           <li>ChangePasswordScreen.js --> Promtps user with three fields in order to change their password: new password, confirm new password, and current password. This is followed by a "continue" button to submit the change </li>
+                           <li>ChangeUsernameScreen.js Promtps user with three fields in order to change their username: new username, confirm new username, password. This is followed by a "continue" button to submit the change </li>
+                           <li>ChatScreen.js --> same as ReachOutScreen2.js </li>
+                           <li>CreatePostScreen.js --> Prompts user to select one of three possible ways to post: stylized post type, text post type, or a post from the device. Each type is a blue button that the user can press in order to make their selection</li>
+                           <li>DevicePostScreen.js --> The screen pressing on "from device" selection from CreatePostScreen.js will bring you. Just a placeholder white screen</li>
+                           <li>FriendProfileScreen.js --> </li>
                            <li>FriendsScreen.js </li>
                            <li>HomeScreen.js </li>
                            <li>PostPreview.js </li>
@@ -158,11 +158,11 @@
                            <li>RecommendedFriendsScreen.js </li>
                            <li>SampleFriend.js </li>
                            <li>SamplePost.js </li>
-                           <li>StylizedPostScreen.js </li>
-                           <li>StylizedPostScreen2.js </li>
-                           <li>TextPostScreen.js </li>
-                           <li>UsableSearchBar.js </li>
-                           <li>LoggetOutScreen.js </li>
+                           <li>StylizedPostScreen.js  --> The screen pressing on "Choose Stylized Post Type" selection from CreatePostScreen.js will bring the user. Presents the user the option of selecting the background color (by providing numerous colors/shades), typing the text they want, and the image they want for the post.
+                           <li>StylizedPostScreen2.js --> The screen pressing on "Next" in StylizedPostScreen.js will bring the user. Allows for more editing and text editing. </li>
+                           <li>TextPostScreen.js -> The screen pressing on "Choose Stylized Text Type" selection from CreatePostScreen.js will bring you. Just a placeholder white screen</li></li>
+                           <li>UsableSearchBar.js --> Code for the searchbar that appears in ChatScreen.js for organizational purposes but also so that extra attributes can be added and expanded with ease</li>
+                           <li>LoggetOutScreen.js --> Displays rerightlogo.png above two fields that prompt the user to enter their username/email and their password. Below these fields are clickable blue text: "Create Account"(takes the user to SignupScreen1.js) and "Forgot Password" (takes the user to ForgotPassScreen1.js). Below the blue text is a "continue" button that takes the user to HomeScreen.js </li>
                            <li>LoginScreen.js </li>
                         </ul>
                      </li>
