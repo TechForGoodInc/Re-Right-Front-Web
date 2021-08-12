@@ -1,7 +1,7 @@
 //Friends Page
 import React, {Component} from 'react';
 import { View,StyleSheet, Text, Image, FlatList, TouchableOpacity, Pressable, Alert, Platform} from 'react-native';
-
+// External imports above, internal imports below
 import SearchBar from './UsableSearchBar';
 
 import '../../../config/global';

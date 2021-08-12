@@ -1,7 +1,7 @@
 import React, { useState ,useEffect}  from "react";
 import { StyleSheet, View, Text, Modal, Pressable, TouchableOpacity, Button, Platform, Image, ImageBackground } from "react-native";
 import ImagePicker from 'react-native-image-picker';
-
+// External imports above, internal imports below
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';

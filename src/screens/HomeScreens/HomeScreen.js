@@ -1,12 +1,13 @@
 //Rename to App.js to run
 import React, { useState, useEffect } from 'react';
 import { RefreshControl, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
-
+// External imports above, internal imports below
 import SamplePost from './SamplePost';
 
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
+import WebNavMenu from '../../components/WebNavMenu';
 
 const pad = 10;
 const feedflex = 6;

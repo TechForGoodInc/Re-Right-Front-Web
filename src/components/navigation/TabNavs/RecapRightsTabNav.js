@@ -3,15 +3,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import RecapRightsStackNav from '../StackNavs/RecapRightsStackNav';
-import RecapQuiz from '../../screens/RecapRightsScreens/RecapQuiz';
+import RecapQuiz from '../../../screens/RecapRightsScreens/RecapQuiz';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-
-import GetGlobalStyles from '../../../config/GetGlobalStyles';
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
 export default function RecapRightsTabNav({navigation}) {
     const colors = global.isDarkModeEnabled ? darkColors : color;

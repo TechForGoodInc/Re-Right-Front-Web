@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
-import HomeScreen from '../../screens/HomeScreens/HomeScreen';
+// External imports above, internal imports below
 import StackHeaderBackImage from '../StackHeaderBackImage';
+import HomeScreen from '../../../screens/HomeScreens/HomeScreen';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-
-import GetSignUp1Style from '../../../config/GetGlobalStyles';
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
 const Stack = createStackNavigator();
 
@@ -20,12 +19,12 @@ export default function HomeStackNav({route, navigation}) {
     const {width, height} = useDimensions().window;
     //styles are in a sperate folder 
     const [styles,setStyles] = useState(StyleSheet.create( 
-        GetSignUp1Style(landscape, width, height) 
+        GetGlobalStyles(landscape, width, height) 
     ));
     if (landscape || width > height ){
         () => {
         setStyles(StyleSheet.create( 
-            GetSignUp1Style(landscape, width, height) 
+            GetGlobalStyles(landscape, width, height) 
         ))
     }} 
     const StackHeaderStyle = styles.StackHeaderStyle;
@@ -56,7 +55,7 @@ export default function HomeStackNav({route, navigation}) {
                 initialParams={{isItDark: isItDark}}
                 options={{title: "R E - R I G H T", unmountOnBlur: true, headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
         </Stack.Navigator>

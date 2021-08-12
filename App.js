@@ -1,7 +1,8 @@
-import ReRightApp from './src/ReRightApp';
 import React, {useEffect, useState} from 'react';
-import './config/global';
 import { useColorScheme} from 'react-native';
+// External imports above, internal imports below
+import ReRightApp from './src/ReRightApp';
+import './config/global';
 
 
 const App = () => {

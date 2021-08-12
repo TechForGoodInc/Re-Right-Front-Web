@@ -1,7 +1,7 @@
 import SamplePost from './SamplePost';
 import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
-
+// External imports above, internal imports below
 import colors from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
 import GetGlobalStyles from '../../../config/GetGlobalStyles';

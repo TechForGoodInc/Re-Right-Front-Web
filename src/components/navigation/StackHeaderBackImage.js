@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+// External imports above, internal imports below
 
 export default function StackHeaderBackImage() {
     return (

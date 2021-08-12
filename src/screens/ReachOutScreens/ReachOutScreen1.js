@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable, View, StyleSheet, Text, Button, SafeAreaView, TextInput } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import CheckBoxHybrid from '../../components/CheckBoxHybrid';
 
 import '../../../config/global';
@@ -29,7 +29,9 @@ export default function ReachOutScreen1({navigation}) {
     //getting the dimensions and the orientation
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
-    //styles are here sorry for the mess
+    // Screen styles exist inside function declaration rather than externally or imported
+    // to allow toggling between light and dark mode colors dynamically. Styles could be
+    // refactored into an extenal function call (see SignupScreen1 for example).
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,

@@ -3,7 +3,7 @@ import { useColorScheme} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StyleSheet } from 'react-native';
 import { AntDesign, MaterialIcons, FontAwesome, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
-
+// External imports above, internal imports below
 import HomeTabNav from './TabNavs/HomeTabNav';
 import RecapRightsTabNav from './TabNavs/RecapRightsTabNav';
 import ReportAbuseStackNav from './StackNavs/ReportAbuseStackNav';
@@ -11,13 +11,11 @@ import ResearchStackNav from './StackNavs/ResearchStackNav';
 import ProfileStackNav from './StackNavs/ProfileStackNav';
 import ReachOutStackNav from './StackNavs/ReachOutStackNav';
 
-import HomeDrawer from './HomeDrawer';
-import color from '../../config/colors';
-import darkColors from '../../config/darkColors';
-import '../../config/global';
-import LoggedOutScreen from '../screens/LoggedOutScreen';
-import ReRightApp from '../ReRightApp';
-import LoginScreen from '../screens/LoginScreen';
+import LoginScreen from '../../screens/LoginScreen';
+
+import color from '../../../config/colors';
+import darkColors from '../../../config/darkColors';
+import '../../../config/global';
 
 const Drawer = createDrawerNavigator();
 
@@ -30,7 +28,7 @@ export default function HomeDrawerNav({navigation}) {
             drawerStyle={{
                 backgroundColor: colors.background_drawer,
                 }}
-            drawerContent={HomeDrawer}
+            //drawerContent={HomeDrawer}
             drawerContentOptions={{
                 // activeBackgroundColor: colors.active_tab,
                 activeBackgroundColor: colors.background_list_item,

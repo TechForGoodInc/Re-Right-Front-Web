@@ -1,7 +1,7 @@
 import { useDeviceOrientation, useDimensions } from "@react-native-community/hooks";
 import React, {useState} from "react";
 import { Image, Pressable, ScrollView, Text, View,Switch, StyleSheet, TextInput, SafeAreaView } from 'react-native'
-
+// External imports above, internal imports below
 import SearchBar from "./UsableSearchBar";
 
 import colors from "../../../config/colors";

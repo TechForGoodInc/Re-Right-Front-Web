@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import StackHeaderBackImage from '../StackHeaderBackImage';
-import FriendProfileScreen from '../../screens/HomeScreens/FriendProfileScreen';
-import RecommendedFriendsScreen from '../../screens/HomeScreens/RecommendedFriendsScreen';
-import FriendsScreenNavWrapper from '../FriendsScreenNavWrapper';
+import ResearchScreen from '../../../screens/ResearchAnalyticsScreens/ResearchScreen';
+import MapToolScreen from '../../../screens/ResearchAnalyticsScreens/MapToolScreen';
+import SubmitSuggestionScreen from '../../../screens/ResearchAnalyticsScreens/SubmitSuggestionScreen';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-
-import GetGlobalStyles from '../../../config/GetGlobalStyles';
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
 const Stack = createStackNavigator();
 
-export default function FriendsStackNav({navigation}) {
+export default function ResearchStackNav({navigation}) {
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
@@ -37,22 +36,19 @@ export default function FriendsStackNav({navigation}) {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Friends" screenOptions={{
+        <Stack.Navigator initialRoute="Research Analytics" screenOptions={{
             headerStyle: StackHeaderStyle,
             headerTitleStyle: StackTitleStyle,
             headerBackImage: StackHeaderBackImage,
             headerBackTitleStyle: StackBackTitleStyle }}>
-            <Stack.Screen name="Friends" component={FriendsScreenNavWrapper} props={{navigation: navigation}}
-                options={{title: "Friends", headerLeft: () => (
+            <Stack.Screen name="Research Anayltics" component={ResearchScreen}
+                options={{title: "Research Analytics", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
-            <Stack.Screen name="Recommended Friends" component={RecommendedFriendsScreen}
-                options={{title: "Recommended Friends"}}/>
-            <Stack.Screen name="Friend Profile" component={FriendProfileScreen}
-                options={{title: "Friends Name"}}/>
-            
+            <Stack.Screen name="Map Tool" component={MapToolScreen}/>
+            <Stack.Screen name="Submit Suggestion" component={SubmitSuggestionScreen}/>
         </Stack.Navigator>
     )
 }

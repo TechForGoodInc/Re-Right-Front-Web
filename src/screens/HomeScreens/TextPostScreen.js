@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
+// External imports above, internal imports below
 
 const TextPostScreen = ({navigation}) => {
     return ( 

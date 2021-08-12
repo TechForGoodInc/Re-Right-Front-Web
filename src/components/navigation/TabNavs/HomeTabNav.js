@@ -3,18 +3,17 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Platform, StyleSheet } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+// External imports above, internal imports below
 import HomeStackNav from '../StackNavs/HomeStackNav';
 import ProfileStackNav from '../StackNavs/ProfileStackNav';
 import FriendsStackNav from '../StackNavs/FriendsStackNav';
 import CreatePostStackNav from '../StackNavs/CreatePostStackNav';
 import ChatStackNav from '../StackNavs/ChatStackNav';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-
-import GetGlobalStyles from '../../../config/GetGlobalStyles';
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
 export default function HomeTabNav() {
     const colors = global.isDarkModeEnabled ? darkColors : color;

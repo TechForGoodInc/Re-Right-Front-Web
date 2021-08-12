@@ -1,23 +1,21 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
-
-import RecapRightScreen1 from '../../screens/RecapRightsScreens/RecapRightsScreen1';
-import RecapArticle from '../../screens/RecapRightsScreens/RecapArticle';
-import RecapQuiz from '../../screens/RecapRightsScreens/RecapQuiz';
+// External imports above, internal imports below
 import StackHeaderBackImage from '../StackHeaderBackImage';
+import FriendsScreenNavWrapper from '../FriendsScreenNavWrapper';
+import FriendProfileScreen from '../../../screens/HomeScreens/FriendProfileScreen';
+import RecommendedFriendsScreen from '../../../screens/HomeScreens/RecommendedFriendsScreen';
 
-import color from "../../../config/colors";
-import darkColors from "../../../config/darkColors";
-import '../../../config/global';
-
-import GetGlobalStyles from '../../../config/GetGlobalStyles';
-
+import GetGlobalStyles from '../../../../config/GetGlobalStyles';
+import color from "../../../../config/colors";
+import darkColors from "../../../../config/darkColors";
+import '../../../../config/global';
 
 const Stack = createStackNavigator();
 
-export default function RecapRightsStackNav({navigation}) {
+export default function FriendsStackNav({navigation}) {
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
@@ -34,28 +32,29 @@ export default function RecapRightsStackNav({navigation}) {
     const StackHeaderStyle = styles.StackHeaderStyle;
     const StackTitleStyle = styles.StackTitleStyle;
     const StackBackTitleStyle = styles.StackBackTitleStyle;
-
     const handleHamburgerPress = () => {
         navigation.openDrawer();
     }
     return (
-        <Stack.Navigator initialRoute="Recap Rights" screenOptions={{
+        <Stack.Navigator initialRoute="Friends" screenOptions={{
             headerStyle: StackHeaderStyle,
             headerTitleStyle: StackTitleStyle,
             headerBackImage: StackHeaderBackImage,
             headerBackTitleStyle: StackBackTitleStyle }}>
-            <Stack.Screen name="Recap Rights" component={RecapRightScreen1}
-                options={{title: "Recap Rights", headerLeft: () => (
+            <Stack.Screen name="Friends" component={FriendsScreenNavWrapper} props={{navigation: navigation}}
+                options={{title: "Friends", headerLeft: () => (
                     <TouchableOpacity activeOpacity = { .5 } onPress={ handleHamburgerPress }>
-                        <Image source={require('../../../assets/HMIcon.png')} style = {styles.menuicon} />
+                        <Image source={require('../../../../assets/HMIcon.png')} style = {styles.menuicon} />
                     </TouchableOpacity>
                     )}} />
-            <Stack.Screen name="RecapArticle" component={RecapArticle} options = { ({route}) => ({title: route.params.title})} />  
-            <Stack.Screen name="Human Rights Quiz" component={RecapQuiz} />    
+            <Stack.Screen name="Recommended Friends" component={RecommendedFriendsScreen}
+                options={{title: "Recommended Friends"}}/>
+            <Stack.Screen name="Friend Profile" component={FriendProfileScreen}
+                options={{title: "Friends Name"}}/>
+            
         </Stack.Navigator>
     )
 }
-
 const styles = StyleSheet.create({
     menuicon: {
       width: 50,

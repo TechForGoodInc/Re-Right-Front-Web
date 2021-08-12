@@ -28,7 +28,9 @@ const SignupScreen4 = ({route, navigation}) => {
     //getting the dimensions and the orientation
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
-    //styles are here
+    // Screen styles exist inside function declaration rather than externally or imported
+    // to allow toggling between light and dark mode colors dynamically. Styles could be
+    // refactored into an extenal function call (see SignupScreen1 for example).
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,
@@ -119,8 +121,8 @@ const SignupScreen4 = ({route, navigation}) => {
     })
     const handleSubmitPress = () => {
         navigation.reset({
-            index: 1,
-            routes: [{name: 'Logged Out'}, {name: 'Login'}],
+            index: 0,
+            routes: [{name: 'Login'}],
           });
     }
     const handleOkPress = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Text, StyleSheet, SafeAreaView, TouchableOpacity, ScrollView, Pressable} from "react-native";
-
+// External imports above, internal imports below
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
@@ -159,7 +159,9 @@ const ReportAbuseRecapRightsScreen = ({navigation}) => {
     },
   
   ];
-  //all styles are here sorry for the mess but we need this for dark mode to work
+    // Screen styles exist inside function declaration rather than externally or imported
+    // to allow toggling between light and dark mode colors dynamically. Styles could be
+    // refactored into an extenal function call (see SignupScreen1 for example).
   const styles = StyleSheet.create({
     background: {
       flex: 1,

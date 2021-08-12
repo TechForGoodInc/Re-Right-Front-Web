@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, TextInput, Text, Pressable, Platform, Alert, View} from 'react-native';
-
+// External imports above, internal imports below
 import '../../../config/global';
 import color from '../../../config/colors';
 import darkColors from '../../../config/darkColors';
@@ -21,7 +21,9 @@ export default function ReportAbuseScreen2({ navigation }) {
         // Jumps to the Home page of the hamburger menu
         navigation.jumpTo("Home");
     }
-    //all styles are here sorry for the mess but we need this for dark mode to work
+    // Screen styles exist inside function declaration rather than externally or imported
+    // to allow toggling between light and dark mode colors dynamically. Styles could be
+    // refactored into an extenal function call (see SignupScreen1 for example).
     const styles = StyleSheet.create({
         screenBackground: {
             justifyContent: 'space-between',

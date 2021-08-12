@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, TouchableWithoutFeedback, View, StyleSheet, Pressable, Keyboard, SafeAreaView } from 'react-native';
 import { KeycodeInput } from 'react-native-keycode';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
-
+// External imports above, internal imports below
 import color from "../../../config/colors";
 import darkColors from "../../../config/darkColors";
 import '../../../config/global';
@@ -29,7 +29,9 @@ export default function ForgotPassScreen2({navigation}) {
     var colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
-    //styles are here
+    // Screen styles exist inside function declaration rather than externally or imported
+    // to allow toggling between light and dark mode colors dynamically. Styles could be
+    // refactored into an extenal function call (see SignupScreen1 for example).
     const styles = StyleSheet.create( {
         container: {
             marginHorizontal: viewConstants.containerHorizontalMargins,

@@ -1,7 +1,7 @@
 import { useDeviceOrientation, useDimensions } from '@react-native-community/hooks';
 import React, {useEffect, useState} from 'react';
-import { useColorScheme} from 'react-native';
-import { Platform, View, Text, Button, StyleSheet, Pressable, Image, TextInput } from 'react-native';
+import { Platform, View, Text, StyleSheet, Pressable, Image, TextInput, useColorScheme } from 'react-native';
+// External imports above, internal imports below
 import color from "../../config/colors";
 import darkColors from "../../config/darkColors";
 import '../../config/global';
@@ -9,15 +9,16 @@ import GetGlobalStyles from '../../config/GetGlobalStyles';
 
 export default function LoginScreen({navigation}) {
     //getting the dimensions and the orientation
-    const colorScheme = useColorScheme();
-    const [isDark, setIsDark] = useState(colorScheme === global.default_color_scheme);
-    useEffect(() => {
-      setIsDark(colorScheme==="dark");
-      global.isDarkModeEnabled = isDark? true : false;
-        }, [colorScheme]);
+    //const colorScheme = useColorScheme();
+    //const [isDark, setIsDark] = useState(colorScheme === global.default_color_scheme);
+    //useEffect(() => {
+    //  setIsDark(colorScheme==="dark");
+    //  global.isDarkModeEnabled = isDark? true : false;
+    //    }, [colorScheme]);
     const colors = global.isDarkModeEnabled ? darkColors : color;
     const { landscape, portrait } = useDeviceOrientation();
     const {width, height} = useDimensions().window;
+
     const [globalStyles, setGlobalStyles] = useState(StyleSheet.create( 
         GetGlobalStyles(landscape, width, height) 
     ));
@@ -27,15 +28,15 @@ export default function LoginScreen({navigation}) {
             GetGlobalStyles(landscape, width, height) 
         ))
     }} 
-    //styles are here
+    // Screen styles exist inside function declaration rather than externally or imported
+    // to allow toggling between light and dark mode colors dynamically. Styles could be
+    // refactored into an extenal function call (see SignupScreen1 for example).
     const styles = StyleSheet.create({
-
         background: {
             flex: 1,
             backgroundColor: colors.background_screen,
             flexDirection: 'column',
         },
-       
          header: {
              flex: 0.5,
              alignItems: 'center',
@@ -75,7 +76,6 @@ export default function LoginScreen({navigation}) {
                 }
             })
          },
-       
          inputFields: {
              height: '18%',
              margin: '1%',
@@ -88,12 +88,9 @@ export default function LoginScreen({navigation}) {
              padding: 20,
              color: colors.text_general
          },
-      
-        
           buttonContainer: {
             flexDirection: 'row',
           },
-      
           continueButton: {
             width: "100%",
             height: '8%',
@@ -104,7 +101,6 @@ export default function LoginScreen({navigation}) {
             shadowColor: colors.shadow,
             shadowRadius: 10, 
           },
-      
           buttonText: {
             fontSize: 20,
             lineHeight: 21,
@@ -112,14 +108,12 @@ export default function LoginScreen({navigation}) {
             letterSpacing: 0.25,
             color: 'white',
           },
-       
         headertext: {
             fontWeight: '700',
             fontSize: 25, 
             color: colors.text_screen_header,
             marginBottom: '4%',
           },
-      
           linkView: {
               alignItems: 'center',
               bottom: '10%',
@@ -137,7 +131,7 @@ export default function LoginScreen({navigation}) {
   const handleForgotPassRoute = () => {
       navigation.navigate("Forgot Password 1");
   }
-  const handleSignUpRoute = () => {
+  const handleSignupRoute = () => {
    navigation.navigate("Signup 1");
 }
   const handleLoginRoute = () => {
@@ -186,6 +180,11 @@ export default function LoginScreen({navigation}) {
 
         <View style = {styles.links}>
             <View style = {styles.linkView}>
+                <Text 
+                    style={styles.linkText}
+                    onPress={() => handleSignupRoute()}>
+                    Create Account
+                </Text>
                 <Text 
                     style={styles.linkText}
                     onPress={() => handleForgotPassRoute()}>
